@@ -1,47 +1,33 @@
 {
-  "round": 3,
+  "round": 4,
+  "subround_for_zh_journal": 1,
   "threadId": "unknown-mcp-call-id-not-returned-in-cursor-ui",
-  "status": "post-review-followups-landed",
+  "status": "completed",
   "difficulty": "medium",
-  "last_score": 6.8,
+  "last_score": 6.4,
   "last_verdict": "almost",
-  "score_progression": [5.5, 6.2, 6.8],
-  "verdict_progression": ["not ready", "almost", "almost"],
-  "stop_reason": "score still <7.0; reviewer asks for executable validation (Docker replay) before paper",
-  "post_review_followups_completed": [
-    "honesty-audit static pass (renamed end-to-end -> static repair proxy; retired 98%/85% claims; scoped intent-aware to fixtures)",
-    "L4 false-heal probe (vanilla + abstain prompt) — 78.7% false-heal rate, soft abstain prompt has 0 effect",
-    "cross-app generalisation probe on payloadcms/payload (319 cases) — 3.8% raw reach, diagnosed as BEM/template-literal blind spot"
-  ],
-  "pending_experiments": [
-    "δ: Docker replay of 58 predicted repairs via reproduce.py (highest-ROI; user needs to install Docker Desktop) — skeleton at bench/scripts/docker_replay_TODO.sh",
-    "L1 baseClass resolver + CSS-module expansion (estimated 0.5 day) to lift payload reach from 3.8% to projected 35-50%",
-    "Direct baselines: Joseph runtime ladder + raw Playwright candidates + no-AST LLM prompt",
-    "Deterministic abstention rule (retrieval-score threshold) — soft prompt failed, deterministic should work"
-  ],
-  "deferred_followups": [
-    "wiki-enrich pass on 4 new papers (ReproBreak, Joseph 2026, UTFix, TRaf)",
-    "audit resolve_locators.py heuristics with manual labels"
-  ],
+  "score_progression": [5.5, 6.2, 6.8, 6.4],
+  "verdict_progression": ["not ready", "almost", "almost", "almost"],
+  "stop_reason": "R1 triggered STOP (6.4 + almost); auto-fixes applied for 6/6 reviewer-flagged categories (5 fully, 1 partial); awaiting user decision on R2 / template switch / final submission",
+  "stage_under_review": "paper-zh-journal (Chinese ordinary journal version)",
+  "review_artifact": "review-stage/AUTO_REVIEW_R4_zh_journal.md",
   "reviewer_backend": "codex-mcp-project-0-Thesis-codex",
-  "stage_under_review": "stage-2 pilot results (C-static + L3 v1 + L4 false-heal probe + cross-app)",
-  "review_artifact": "review-stage/AUTO_REVIEW_R3.md",
-  "headline_v1_numbers": {
-    "L1_reachability_koenig": "75/93 = 80.6%",
-    "L3_top1_on_reachable_koenig": "58/75 = 77.3%",
-    "static_repair_proxy_koenig": "58/93 = 62.4%",
-    "false_heal_rate_adversarial_vanilla": "59/75 = 78.7%",
-    "false_heal_rate_adversarial_abstain_prompt": "59/75 = 78.7% (identical — soft prompt fails)",
-    "cross_app_reach_payload_raw": "12/319 = 3.8%",
-    "cross_app_reach_payload_projected_with_baseClass": "35-50% (estimate)",
-    "wall_clock_heal_baseline_sec": 99,
-    "wall_clock_false_heal_probe_sec": 110
-  },
-  "paper_ready_quadruple": {
-    "L1_reach": "80.6%",
-    "L3_top1_reachable": "77.3%",
-    "static_repair_proxy_full93": "62.4%",
-    "adversarial_false_heal_without_oracle": "78.7%"
-  },
-  "timestamp": "2026-06-14T18:00:00+08:00"
+  "auto_fixes_landed_in_r1.5": [
+    "remove TODO-METADATA + L86 reminder in references.bib",
+    "fix li2022llmse -> li2024llmse key/year inconsistency (all sites)",
+    "shorten title to 'React 应用中 Playwright 测试隐性误修复的诊断研究'",
+    "L4 figure node: '尚未实现' -> '后续工作'",
+    "delete '附录中有详细记录' / '不在本短论文范围内' / '完整论文中会报告'",
+    "rewrite §5 future work from missing-validation to engineering-extension framing",
+    "Chinese terminology pass on §1 §2 §3 §4 §5 §7 (oracle/baseline/benchmark/ground-truth/fixture/sparse-checkout/HEAD reach)",
+    "switch bibstyle ACM -> gbt7714 (GB/T 7714-2015), now correctly rendering [J]/[Z]/[EB/OL]"
+  ],
+  "still_needs_user_input": [
+    "documentclass acmart -> ctexart (major layout change, deferred for user)",
+    "real author/affil/email/funding/grant numbers",
+    "verify zhang2022webtest 2022 49(6):1-15 page numbers via CNKI/Wanfang",
+    "pick concrete target journal"
+  ],
+  "next_review_round": "R2 attempted but Cursor MCP timed out on xhigh request; loop terminated at R1+R1.5 (auto-fixes landed). Re-run /auto-review-loop after handling user-only items to verify 7.0+ score.",
+  "timestamp": "2026-06-21T16:55:00+08:00"
 }

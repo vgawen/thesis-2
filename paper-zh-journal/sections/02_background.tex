@@ -1,0 +1,14 @@
+\section{背景与相关工作}
+\label{sec:background}
+
+\paragraph{定位器脆性与基准数据集。}
+ReproBreak~\cite{mouraReproBreak2026} 是迄今最大的可复现定位器失效语料（来自 359 个带 Cypress/Playwright 测试的 Web 仓库的 449 个可复现失效）。我们将 \texttt{tryghost/koenig}~\cite{koenig} 的 Playwright 切片（93 个可复现失效，分布于 19 个 commit）用作主要基底。
+
+\paragraph{自愈工具。}
+脆弱测试（flaky test）与测试自愈属于相邻问题域，前者的综述工作为后者提供了重要参考~\cite{liu2023flaky}。Healenium~\cite{healenium} 在运行时通过 DOM 相似度修复 Selenium 选择器，是最流行的工业界基线。Joseph~\cite{joseph2026zerocost} 基于 DOM 可访问性树确定性地重新抽取选择器，在单个电子商务 demo 上报告了 100\% 通过率，是确定性静态修复轴上最强的已发表基线，也是与本文 L1 基底最直接的比较对象。截至本文写作时，尚未发现有同行评议的 LLM 定位器修复工具在真实 Playwright 基准数据集上报告隐性误修复率；与之最接近的当代工作主要关注修复成功率或解释一致性，两者均不直接约束本文探针所针对的失败模式。
+
+\paragraph{缺失的部分。}
+上述工作均未在真实基准数据集上隔离\emph{隐性误修复}——即修复器给出语法通过、但指向错误元素的选择器、从而遮蔽真实 UI 变更的比率。Joseph 在一个右侧答案按构造一定可达的 demo 上报告了通过率；ReproBreak 提供了数据基底但未在其上评估任何修复器。\S\ref{sec:findings} 通过一个对抗性构造的探针填补这一空缺。
+
+\paragraph{React 相关细节。}
+\texttt{koenig-lexical}~\cite{lexicalRichText, koenig} 是一个基于 React + Lexical 的现代富文本编辑器，其 Playwright 套件在很大程度上依赖自定义 \texttt{data-kg-*} 属性（约占其失效的一半），而非 \texttt{data-testid}。\texttt{payloadcms/payload}~\cite{payloadCMS} 是一个 Next.js 后台 UI，其 CSS 类名遵循 BEM~\cite{bemMethodology}，使用 \texttt{\$\{baseClass\}\_\_suffix} 模板字面量 —— 这些字面量对 React 可见，但对纯字面量的 AST 抽取器不可见。这两种锚点文化的对比是我们跨应用发现的依据（\S\ref{sec:findings}，F3）。

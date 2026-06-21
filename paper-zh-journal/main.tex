@@ -1,0 +1,69 @@
+\documentclass[sigconf,nonacm=true]{acmart}
+
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric, fit, backgrounds}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+\captionsetup{font=small}
+
+% 中文支持（XeLaTeX + macOS 系统字体）
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage[numbers,sort&compress]{gbt7714}
+\setCJKmainfont[BoldFont={PingFang SC Semibold}, ItalicFont={Kaiti SC}]{Songti SC}
+\setCJKsansfont{PingFang SC}
+\setCJKmonofont{PingFang SC}
+\xeCJKsetup{CJKecglue={\hskip 0.15em plus 0.05em minus 0.05em}}
+
+\sloppy
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue!60!black,
+}
+
+\setcopyright{none}
+\acmConference[投稿版本]{中文期刊投稿版本}{2026}{}
+\acmYear{2026}
+\copyrightyear{2026}
+\settopmatter{printacmref=false, printccs=false, printfolios=true}
+
+\title{React 应用中 Playwright 测试隐性误修复的诊断研究}
+
+\author{第一作者\textsuperscript{$\dagger$}}
+\affiliation{\institution{作者单位（投稿前补全）}\country{}}
+\email{author@example.com}
+
+\thanks{$\dagger$\,通讯作者。本研究受 XXX 基金（编号 XXXXX）资助。\\
+\textbf{中图分类号}: TP311.5\quad\textbf{文献标识码}: A}
+
+\begin{document}
+
+\begin{abstract}
+\noindent\textbf{摘\ 要}\quad 大语言模型（LLM）驱动的端到端用户界面（UI）测试自愈方案，正被越来越多地用于吸收脆弱定位器（locator）带来的维护成本。本文在 ReproBreak 数据集的真实 Playwright 失效用例上，系统测量了此类修复器在缺乏行为级验证机制时的实际行为。在来自 \texttt{tryghost/koenig} 的 75 个可达失效用例上，先进的小型开源代码模型 \texttt{qwen2.5-coder:7b} 在对抗性构造的"目标元素缺失"场景下，于 \textbf{78.7\%} 的用例中给出了语法正确但指向错误元素的 Playwright 选择器，构成典型的隐性误修复；附加"无匹配时放弃"软提示守门规则后，结果数字保持不变（59/75），表明提示级守门对该失败模式形同虚设。本文进一步提出 HealReact 系统的 L1 静态基底（包括基于抽象语法树的元素抽取器、意图标注器与确定性校准），可静态覆盖 koenig 数据集中 93 个真实 Playwright 失效目标的 \textbf{80.6\%}。在该基底之上，L3 修复器在可达用例上的 top-1 正确率为 77.3\%（在全量数据集上的静态修复代理率为 62.4\%）；两个低成本确定性手段（testId 加权检索与强锚点后置过滤）在零回归前提下额外修复 5 个用例，形成帕累托改进。在 \texttt{payloadcms/payload} 上的跨应用探针进一步揭示了基于 BEM 模板字面量类名的静态盲区，并给出具体修复路径。三个发现共同表明：在无人值守的持续集成自愈场景下，引入行为重放 oracle 是必要的下一步。
+
+\noindent\textbf{关键词}\quad 软件测试; 自动测试修复; 测试自愈; 大语言模型; React; Playwright; 抽象语法树; 误修复
+\\[4pt]
+
+\noindent\textbf{Abstract}\quad LLM-driven self-healing for end-to-end UI tests is increasingly used to absorb the maintenance cost of brittle locators. We measure what happens when such healers are forced to operate without a behavioural oracle on real-world Playwright break cases from the ReproBreak dataset. Across 75 reachable koenig breaks, a state-of-the-art small open-weights code model (qwen2.5-coder:7b) silently emits a wrong yet resolver-valid Playwright selector in \textbf{78.7\%} of adversarial-by-construction cases where the ground-truth target is removed from the candidate set; appending an explicit ``abstain'' prompt guardrail produces identical numbers (59/75), demonstrating that prompt-level abstention does not mitigate the failure mode. We then describe HealReact's L1 substrate (AST extractor + intent labeller + deterministic calibration) which reaches \textbf{80.6\%} of the 93 real Playwright break targets statically. On top of this substrate the L3 healer answers 77.3\% of reachable breaks correctly (62.4\% of the full dataset as a static repair proxy); two cheap deterministic levers --- testId-weighted retrieval and a strict-anchor post-filter --- give a Pareto improvement of +5 correct cases with zero regressions. A cross-app probe on payloadcms/payload exposes a BEM template-literal class blind spot with a concrete fix path. Together these findings make the empirical case that a behavioural-replay oracle is a necessary next layer for unattended CI healing.
+
+\noindent\textbf{Keywords}\quad software testing; automated test repair; self-healing test; large language model; React; Playwright; abstract syntax tree; false heal
+\end{abstract}
+
+\maketitle
+
+\input{sections/01_intro}
+\input{sections/02_background}
+\input{sections/03_l1_substrate}
+\input{sections/04_findings}
+\input{sections/05_discussion}
+\input{sections/07_conclusion}
+
+\bibliography{references}
+
+\end{document}
