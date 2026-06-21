@@ -1,0 +1,13 @@
+{
+  "id": 621,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "ecee2a8e61e60b562ce7193729c98c7bb03cddbc",
+  "test_file_path": "packages/koenig-lexical/test/e2e/plus-button.test.js",
+  "line_no": 385,
+  "old_locator": "page.locator('[data-kg-card=\"markdown\"]'))",
+  "new_locator": "page.locator('[data-kg-card=\"codeblock\"]'))",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/ecee2a8e61e60b562ce7193729c98c7bb03cddbc/packages/koenig-lexical/test/e2e/plus-button.test.js",
+  "reproduce_instructions": null
+}

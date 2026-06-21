@@ -1,0 +1,64 @@
+\documentclass[sigconf,nonacm=true]{acmart}
+
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric, fit, backgrounds}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+\captionsetup{font=small}
+
+% 中文支持（XeLaTeX + macOS 系统字体）
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont={PingFang SC Semibold}, ItalicFont={Kaiti SC}]{Songti SC}
+\setCJKsansfont{PingFang SC}
+\setCJKmonofont{PingFang SC}
+\xeCJKsetup{CJKecglue={\hskip 0.15em plus 0.05em minus 0.05em}}
+
+\sloppy
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue!60!black,
+}
+
+\setcopyright{none}
+\acmConference[ICSE-NIER '27]{ICSE NIER Track}{2027}{Anonymous Venue}
+\acmYear{2027}
+\copyrightyear{2027}
+\settopmatter{printacmref=false, printccs=false, printfolios=true}
+
+\title{LLM 驱动 Playwright 修复中的隐性误修复:\\
+       一项诊断性研究与面向 React 测试的锚点感知静态基底}
+
+\author{匿名作者}
+\affiliation{\institution{匿名机构}\country{}}
+
+\begin{document}
+
+\begin{abstract}
+LLM 驱动的端到端 UI 测试自愈方案被越来越多地用来吸收脆弱定位器的维护成本。我们在 ReproBreak 数据集的真实 Playwright 失效用例上测量了\emph{当此类修复器在没有行为级 oracle 的情况下运行时}会发生什么。
+
+在来自 \texttt{tryghost/koenig} 的 75 个可达失效用例上，一个先进的小型开源代码模型 (\texttt{qwen2.5-coder:7b}) 在\emph{对抗性构造的目标元素被移除}场景下，于 \textbf{78.7\%} 的用例中沉默地给出了语法正确但元素错误的 Playwright 选择器 —— 这是一种典型的隐性误修复，会在下游遮蔽真实 UI 变更。带有"如无明确匹配则放弃"软提示守门规则的版本给出了与原版\emph{完全一致}的数字 (59/75)，证明软提示并不能缓解此失败模式。
+
+我们随后介绍 HealReact 的 L1 静态基底（AST 抽取器 + 意图标注器 + 确定性校准），它静态可达 koenig 93 个真实 Playwright 失效目标中的 \textbf{80.6\%}。在该基底上，L3 修复器在可达用例上 top-1 正确率为 77.3\%（在全量数据集上的静态修复代理率为 62.4\%）；两个廉价确定性杠杆（testId 加权检索、强锚点后置过滤）以零回归换得 +5 个新正确用例，构成帕累托改进。在 \texttt{payloadcms/payload} 上的跨应用探针（319 个失效）暴露了一处我们之前未预料到的 BEM/模板字面量盲区，并给出了具体修复路径。我们将这三个发现合起来论证: 对无人值守 CI 自愈而言，\emph{行为重放 oracle 是必要而非可选的下一步}。
+\end{abstract}
+
+\maketitle
+
+\input{sections/01_intro}
+\input{sections/02_background}
+\input{sections/03_l1_substrate}
+\input{sections/04_findings}
+\input{sections/05_discussion}
+\input{sections/06_roadmap}
+\input{sections/07_conclusion}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

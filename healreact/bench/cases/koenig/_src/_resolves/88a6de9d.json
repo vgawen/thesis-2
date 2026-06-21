@@ -1,0 +1,81 @@
+{
+  "commit": "88a6de9d5cb4787fa548cb8868f55538c9efbc40",
+  "sheet_records": 400,
+  "breaks_tested": 6,
+  "reachable_old": 0,
+  "reachable_new": 6,
+  "rows": [
+    {
+      "id": 836,
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-has-tk]",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "testid",
+      "new_value": "tk-indicator",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:89"
+    },
+    {
+      "id": 837,
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-has-tk]",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "testid",
+      "new_value": "tk-indicator",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:89"
+    },
+    {
+      "id": 839,
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-has-tk]",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "testid",
+      "new_value": "tk-indicator",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:89"
+    },
+    {
+      "id": 840,
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-has-tk]",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "testid",
+      "new_value": "tk-indicator",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:89"
+    },
+    {
+      "id": 841,
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-has-tk]",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "testid",
+      "new_value": "tk-indicator",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:89"
+    },
+    {
+      "id": 842,
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-has-tk]",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "testid",
+      "new_value": "tk-indicator",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:89"
+    }
+  ]
+}

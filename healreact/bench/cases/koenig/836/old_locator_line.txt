@@ -1,0 +1,5 @@
+   46 | 
+   47 |             await page.keyboard.type('TK');
+>> 48 |             await page.getByTestId('tk-indicator').hover();
+   49 | 
+   50 |             await expect(await page.getByRole('paragraph').getByText('TK')).toHaveClass('bg-lime-500 dark:bg-lime-800');

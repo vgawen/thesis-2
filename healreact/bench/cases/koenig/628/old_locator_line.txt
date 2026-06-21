@@ -1,0 +1,5 @@
+   66 |             await page.keyboard.type('t');
+   67 | 
+>> 68 |             await expect(await page.locator('[data-kg-plus-button]')).toHaveCount(0);
+   69 | 
+   70 |             await page.keyboard.press('Backspace');

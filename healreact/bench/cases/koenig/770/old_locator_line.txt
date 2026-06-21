@@ -1,0 +1,5 @@
+   126 |         const replaceButton = page.getByTestId('custom-thumbnail-replace');
+   127 |         replaceButton.click();
+>> 128 |         await expect(await page.getByTestId('media-upload-placeholder')).toBeVisible();
+   129 |     });
+   130 | 

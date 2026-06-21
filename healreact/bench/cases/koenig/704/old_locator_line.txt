@@ -1,0 +1,5 @@
+   396 |         await page.getByTestId('tab-design').click();
+   397 | 
+>> 398 |         const colorOptions = page.getByTestId('cta-background-color-picker');
+   399 |         await colorOptions.getByTestId('color-options-button').click();
+   400 | 

@@ -1,0 +1,906 @@
+{
+  "total": 93,
+  "old_kinds": {
+    "aria-label": 1,
+    "testid": 26,
+    "data-kg-*": 46,
+    "css": 20
+  },
+  "new_kinds": {
+    "testid": 35,
+    "data-kg-*": 46,
+    "css": 12
+  },
+  "transitions": {
+    "aria-label\u2192testid": 1,
+    "testid-rename": 26,
+    "data-kg-attribute-rename": 46,
+    "css-tweak": 12,
+    "css\u2192testid": 8
+  },
+  "per_file": {
+    "packages/koenig-lexical/test/e2e/content-visibility.test.js": 2,
+    "packages/koenig-lexical/test/e2e/floating-toolbar.test.js": 2,
+    "packages/koenig-lexical/test/e2e/plus-button.test.js": 21,
+    "packages/koenig-lexical/test/e2e/cards/audio-card.test.js": 4,
+    "packages/koenig-lexical/test/e2e/cards/bookmark-card-with-search.test.js": 1,
+    "packages/koenig-lexical/test/e2e/cards/bookmark-card-without-search.test.js": 1,
+    "packages/koenig-lexical/test/e2e/cards/button-card.test.js": 1,
+    "packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js": 3,
+    "packages/koenig-lexical/test/e2e/cards/callout-card.test.js": 1,
+    "packages/koenig-lexical/test/e2e/cards/email-card.test.js": 3,
+    "packages/koenig-lexical/test/e2e/cards/email-cta-card.test.js": 3,
+    "packages/koenig-lexical/test/e2e/cards/embed-card.test.js": 1,
+    "packages/koenig-lexical/test/e2e/cards/html-card.test.js": 1,
+    "packages/koenig-lexical/test/e2e/cards/image-card.test.js": 1,
+    "packages/koenig-lexical/test/e2e/cards/markdown-card.test.js": 2,
+    "packages/koenig-lexical/test/e2e/cards/product-card.test.js": 1,
+    "packages/koenig-lexical/test/e2e/cards/signup-card.test.js": 4,
+    "packages/koenig-lexical/test/e2e/cards/toggle-card.test.js": 3,
+    "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js": 18,
+    "packages/koenig-lexical/test/e2e/editors/basic-editor.test.js": 7,
+    "packages/koenig-lexical/test/e2e/editors/minimal-editor.test.js": 6,
+    "packages/koenig-lexical/test/e2e/plugins/KoenigSnippetPlugin.test.js": 1,
+    "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js": 6
+  },
+  "per_commit": {
+    "c5a1dbf5": 2,
+    "93882b2c": 35,
+    "ecee2a8e": 1,
+    "be7221b0": 13,
+    "f2d79731": 3,
+    "02d257a7": 2,
+    "47847878": 1,
+    "85d2db68": 1,
+    "0287844b": 1,
+    "ddee33cf": 2,
+    "3ba4b1aa": 1,
+    "46b8d7c3": 1,
+    "0f131733": 1,
+    "7efd028b": 1,
+    "a3ab1eb6": 2,
+    "1a453f7c": 15,
+    "07bbb08e": 2,
+    "cabe34a7": 3,
+    "88a6de9d": 6
+  },
+  "rows": [
+    {
+      "id": 614,
+      "old_kind": "aria-label",
+      "new_kind": "testid",
+      "change_type": "aria-label\u2192testid",
+      "old": "page.locator('[data-kg-card-toolbar=\"html\"] [aria-label=\"Visibility\"]'))",
+      "new": "page.locator('[data-kg-card-toolbar=\"html\"] [data-testid=\"edit-html\"]'))",
+      "file": "packages/koenig-lexical/test/e2e/content-visibility.test.js"
+    },
+    {
+      "id": 615,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('visibility-show-on-web-Toggle')",
+      "new": "page.getByTestId('visibility-show-on-web')",
+      "file": "packages/koenig-lexical/test/e2e/content-visibility.test.js"
+    },
+    {
+      "id": 616,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-floating-toolbar]'))",
+      "new": "page.locator('[data-kg-floating-toolbar]'))",
+      "file": "packages/koenig-lexical/test/e2e/floating-toolbar.test.js"
+    },
+    {
+      "id": 619,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-floating-toolbar]'))",
+      "new": "page.locator('[data-kg-floating-toolbar]'))",
+      "file": "packages/koenig-lexical/test/e2e/floating-toolbar.test.js"
+    },
+    {
+      "id": 621,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.locator('[data-kg-card=\"markdown\"]'))",
+      "new": "page.locator('[data-kg-card=\"codeblock\"]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 626,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-button]'))",
+      "new": "page.locator('[data-kg-plus-button]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 627,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-button]'))",
+      "new": "page.locator('[data-kg-plus-button]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 628,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-button]'))",
+      "new": "page.locator('[data-kg-plus-button]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 632,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.$('[data-lexical-editor] > p')",
+      "new": "page.locator('[data-lexical-editor] > p')",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 634,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-button]'))",
+      "new": "page.locator('[data-kg-plus-button]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 635,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.$('[data-lexical-editor] > p')",
+      "new": "page.locator('[data-lexical-editor] > p')",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 638,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-button]'))",
+      "new": "page.locator('[data-kg-plus-button]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 640,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-button]'))",
+      "new": "page.locator('[data-kg-plus-button]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 644,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-button]'))",
+      "new": "page.locator('[data-kg-plus-button]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 645,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.$('[data-lexical-editor] > p')",
+      "new": "page.locator('[data-lexical-editor] > p')",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 647,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-button]'))",
+      "new": "page.locator('[data-kg-plus-button]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 648,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.$('[data-lexical-editor] > p:nth-of-type(1)')",
+      "new": "page.locator('[data-lexical-editor] > p:nth-of-type(2)')",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 649,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-menu]'))",
+      "new": "page.locator('[data-kg-plus-menu]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 652,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-menu]'))",
+      "new": "page.locator('[data-kg-plus-menu]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 655,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-menu]'))",
+      "new": "page.locator('[data-kg-plus-menu]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 656,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.$('[data-lexical-editor] > p:nth-of-type(1)')",
+      "new": "page.locator('[data-lexical-editor] > p:nth-of-type(3)')",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 660,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-menu]'))",
+      "new": "page.locator('[data-kg-plus-menu]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 662,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-menu]'))",
+      "new": "page.locator('[data-kg-plus-button]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 663,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.$('[data-lexical-editor] > p')",
+      "new": "page.locator('[data-lexical-editor] > p')",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 664,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-menu]'))",
+      "new": "page.locator('[data-kg-plus-menu]'))",
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js"
+    },
+    {
+      "id": 685,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/audio-card.test.js"
+    },
+    {
+      "id": 688,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('audio-caption')",
+      "new": "page.getByTestId('audio-title')",
+      "file": "packages/koenig-lexical/test/e2e/cards/audio-card.test.js"
+    },
+    {
+      "id": 689,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('audio-caption'))",
+      "new": "page.getByTestId('audio-title'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/audio-card.test.js"
+    },
+    {
+      "id": 690,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('audio-caption'))",
+      "new": "page.getByTestId('audio-title'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/audio-card.test.js"
+    },
+    {
+      "id": 698,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/bookmark-card-with-search.test.js"
+    },
+    {
+      "id": 699,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/bookmark-card-without-search.test.js"
+    },
+    {
+      "id": 700,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/button-card.test.js"
+    },
+    {
+      "id": 702,
+      "old_kind": "css",
+      "new_kind": "testid",
+      "change_type": "css\u2192testid",
+      "old": "page.locator('[data-test-id=\"color-picker-accent\"]')",
+      "new": "page.locator('[data-testid=\"color-picker-accent\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js"
+    },
+    {
+      "id": 703,
+      "old_kind": "css",
+      "new_kind": "testid",
+      "change_type": "css\u2192testid",
+      "old": "page.locator('[data-test-id=\"color-picker-text\"]')",
+      "new": "page.locator('[data-testid=\"color-picker-text\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js"
+    },
+    {
+      "id": 704,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.click('[data-testid=\"media-upload-placeholder\"]')",
+      "new": "page.getByTestId('cta-background-color-picker')",
+      "file": "packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js"
+    },
+    {
+      "id": 705,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/callout-card.test.js"
+    },
+    {
+      "id": 709,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/email-card.test.js"
+    },
+    {
+      "id": 711,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.locator('[data-kg-card=\"email\"] ul > li:first-child')",
+      "new": "page.locator('[data-kg-card=\"email\"] [data-kg=\"editor\"] ul > li:first-child')",
+      "file": "packages/koenig-lexical/test/e2e/cards/email-card.test.js"
+    },
+    {
+      "id": 713,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.locator('[data-kg-card=\"email\"] ul > li:first-child')",
+      "new": "page.locator('[data-kg-card=\"email\"] [data-lexical-editor] ul > li:first-child')",
+      "file": "packages/koenig-lexical/test/e2e/cards/email-card.test.js"
+    },
+    {
+      "id": 714,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/email-cta-card.test.js"
+    },
+    {
+      "id": 715,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.locator('[data-kg-card-menu-item=\"Call to Action\"]'))",
+      "new": "page.locator('[data-kg-card-menu-item=\"Call to action\"]'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/email-cta-card.test.js"
+    },
+    {
+      "id": 716,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.locator('[data-kg-card-menu-item=\"Call to Action\"]'))",
+      "new": "page.locator('[data-kg-card-menu-item=\"Call to action\"]'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/email-cta-card.test.js"
+    },
+    {
+      "id": 720,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/embed-card.test.js"
+    },
+    {
+      "id": 723,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/html-card.test.js"
+    },
+    {
+      "id": 724,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/image-card.test.js"
+    },
+    {
+      "id": 746,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/markdown-card.test.js"
+    },
+    {
+      "id": 748,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-card=\"markdown\"] .cm-formatting-image')",
+      "new": "page.waitForSelector('[data-kg-card=\"markdown\"] .cm-image')",
+      "file": "packages/koenig-lexical/test/e2e/cards/markdown-card.test.js"
+    },
+    {
+      "id": 749,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/product-card.test.js"
+    },
+    {
+      "id": 750,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.locator('[data-testid=\"signup-card-container\"]')",
+      "new": "page.locator('[data-testid=\"signup-card-content\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/signup-card.test.js"
+    },
+    {
+      "id": 751,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.locator('[data-testid=\"media-upload-filled\"] img'))",
+      "new": "page.locator('[data-testid=\"signup-card-container\"] [data-testid=\"media-upload-filled\"] img'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/signup-card.test.js"
+    },
+    {
+      "id": 752,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.locator('[data-testid=\"media-upload-filled\"] img'))",
+      "new": "page.locator('[data-testid=\"signup-card-container\"] [data-testid=\"media-upload-filled\"] img'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/signup-card.test.js"
+    },
+    {
+      "id": 754,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('image-picker-background'))",
+      "new": "page.locator('[data-testid=\"media-upload-filled\"] img'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/signup-card.test.js"
+    },
+    {
+      "id": 756,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/toggle-card.test.js"
+    },
+    {
+      "id": 757,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.locator('.koenig-lexical-toggle-heading')",
+      "new": "page.locator('.koenig-lexical-heading')",
+      "file": "packages/koenig-lexical/test/e2e/cards/toggle-card.test.js"
+    },
+    {
+      "id": 758,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.locator('.koenig-lexical-toggle-heading')",
+      "new": "page.locator('.koenig-lexical-heading')",
+      "file": "packages/koenig-lexical/test/e2e/cards/toggle-card.test.js"
+    },
+    {
+      "id": 764,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 765,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('custom-thumbnail-replace')",
+      "new": "page.getByTestId('media-upload-remove')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 766,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('custom-thumbnails-errors'))",
+      "new": "page.getByTestId('media-upload-errors'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 767,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('custom-thumbnails-errors'))",
+      "new": "page.getByTestId('media-upload-errors'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 768,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('thumbnail-media-placeholder')",
+      "new": "page.getByTestId('media-upload-placeholder')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 769,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('custom-thumbnail-filled'))",
+      "new": "page.getByTestId('media-upload-filled'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 770,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('thumbnail-media-placeholder'))",
+      "new": "page.getByTestId('media-upload-placeholder'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 771,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('thumbnail-media-placeholder')",
+      "new": "page.getByTestId('media-upload-placeholder')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 772,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('thumbnail-media-placeholder')",
+      "new": "page.getByTestId('media-upload-placeholder')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 774,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 775,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('thumbnail-media-placeholder')",
+      "new": "page.getByTestId('media-upload-placeholder')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 776,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('thumbnail-media-placeholder')",
+      "new": "page.getByTestId('media-upload-placeholder')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 777,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('custom-thumbnail-filled'))",
+      "new": "page.getByTestId('media-upload-filled'))",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 778,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 779,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.getByTestId('thumbnail-media-placeholder')",
+      "new": "page.getByTestId('media-upload-placeholder')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 780,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 781,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 782,
+      "old_kind": "testid",
+      "new_kind": "testid",
+      "change_type": "testid-rename",
+      "old": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js"
+    },
+    {
+      "id": 783,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-plus-button]'))",
+      "new": "page.locator('[data-kg-plus-button]'))",
+      "file": "packages/koenig-lexical/test/e2e/editors/basic-editor.test.js"
+    },
+    {
+      "id": 784,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-slash-menu]'))",
+      "new": "page.locator('[data-kg-slash-menu]'))",
+      "file": "packages/koenig-lexical/test/e2e/editors/basic-editor.test.js"
+    },
+    {
+      "id": 785,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-slash-menu]'))",
+      "new": "page.locator('[data-kg-slash-menu]'))",
+      "file": "packages/koenig-lexical/test/e2e/editors/basic-editor.test.js"
+    },
+    {
+      "id": 786,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-floating-toolbar]'))",
+      "new": "page.locator('[data-kg-floating-toolbar]'))",
+      "file": "packages/koenig-lexical/test/e2e/editors/basic-editor.test.js"
+    },
+    {
+      "id": 788,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-floating-toolbar]'))",
+      "new": "page.locator('[data-kg-floating-toolbar]'))",
+      "file": "packages/koenig-lexical/test/e2e/editors/basic-editor.test.js"
+    },
+    {
+      "id": 791,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.$(h2ButtonSelector))",
+      "new": "page.locator(h2ButtonSelector))",
+      "file": "packages/koenig-lexical/test/e2e/editors/basic-editor.test.js"
+    },
+    {
+      "id": 792,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.$(h3ButtonSelector))",
+      "new": "page.locator(h3ButtonSelector))",
+      "file": "packages/koenig-lexical/test/e2e/editors/basic-editor.test.js"
+    },
+    {
+      "id": 793,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-slash-menu]'))",
+      "new": "page.locator('[data-kg-slash-menu]'))",
+      "file": "packages/koenig-lexical/test/e2e/editors/minimal-editor.test.js"
+    },
+    {
+      "id": 794,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-slash-menu]'))",
+      "new": "page.locator('[data-kg-slash-menu]'))",
+      "file": "packages/koenig-lexical/test/e2e/editors/minimal-editor.test.js"
+    },
+    {
+      "id": 795,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-floating-toolbar]'))",
+      "new": "page.locator('[data-kg-floating-toolbar]'))",
+      "file": "packages/koenig-lexical/test/e2e/editors/minimal-editor.test.js"
+    },
+    {
+      "id": 797,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.$('[data-kg-floating-toolbar]'))",
+      "new": "page.locator('[data-kg-floating-toolbar]'))",
+      "file": "packages/koenig-lexical/test/e2e/editors/minimal-editor.test.js"
+    },
+    {
+      "id": 800,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.$(h2ButtonSelector))",
+      "new": "page.locator(h2ButtonSelector))",
+      "file": "packages/koenig-lexical/test/e2e/editors/minimal-editor.test.js"
+    },
+    {
+      "id": 801,
+      "old_kind": "css",
+      "new_kind": "css",
+      "change_type": "css-tweak",
+      "old": "page.$(h3ButtonSelector))",
+      "new": "page.locator(h3ButtonSelector))",
+      "file": "packages/koenig-lexical/test/e2e/editors/minimal-editor.test.js"
+    },
+    {
+      "id": 834,
+      "old_kind": "data-kg-*",
+      "new_kind": "data-kg-*",
+      "change_type": "data-kg-attribute-rename",
+      "old": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "file": "packages/koenig-lexical/test/e2e/plugins/KoenigSnippetPlugin.test.js"
+    },
+    {
+      "id": 836,
+      "old_kind": "css",
+      "new_kind": "testid",
+      "change_type": "css\u2192testid",
+      "old": "page.locator('[data-has-tk]')",
+      "new": "page.getByTestId('tk-indicator')",
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js"
+    },
+    {
+      "id": 837,
+      "old_kind": "css",
+      "new_kind": "testid",
+      "change_type": "css\u2192testid",
+      "old": "page.locator('[data-has-tk]'))",
+      "new": "page.getByTestId('tk-indicator'))",
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js"
+    },
+    {
+      "id": 839,
+      "old_kind": "css",
+      "new_kind": "testid",
+      "change_type": "css\u2192testid",
+      "old": "page.locator('[data-has-tk]')",
+      "new": "page.getByTestId('tk-indicator')",
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js"
+    },
+    {
+      "id": 840,
+      "old_kind": "css",
+      "new_kind": "testid",
+      "change_type": "css\u2192testid",
+      "old": "page.locator('[data-has-tk]')",
+      "new": "page.getByTestId('tk-indicator')",
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js"
+    },
+    {
+      "id": 841,
+      "old_kind": "css",
+      "new_kind": "testid",
+      "change_type": "css\u2192testid",
+      "old": "page.locator('[data-has-tk]')",
+      "new": "page.getByTestId('tk-indicator')",
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js"
+    },
+    {
+      "id": 842,
+      "old_kind": "css",
+      "new_kind": "testid",
+      "change_type": "css\u2192testid",
+      "old": "page.locator('[data-has-tk]')",
+      "new": "page.getByTestId('tk-indicator')",
+      "file": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+results/
+playwright-report/
+.playwright-mcp/
+test-results/
+bench/ReactHealBench/apps/*/
+!bench/ReactHealBench/apps/.gitkeep
+.env
+.env.local
+*.log

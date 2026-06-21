@@ -1,0 +1,5 @@
+   205 |             expect(await page.locator('[data-kg-plus-menu]')).not.toBeNull();
+   206 |             await page.click('.koenig-lexical');
+>> 207 |             await expect(await page.locator('[data-kg-plus-menu]')).toHaveCount(0);
+   208 |         });
+   209 | 

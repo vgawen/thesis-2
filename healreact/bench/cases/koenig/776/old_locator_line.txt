@@ -1,0 +1,5 @@
+   237 | 
+   238 |         // Drop file
+>> 239 |         await page.getByTestId('media-upload-placeholder').dispatchEvent('drop', {dataTransfer});
+   240 | 
+   241 |         // Thumbnail should be visible

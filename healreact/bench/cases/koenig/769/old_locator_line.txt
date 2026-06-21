@@ -1,0 +1,5 @@
+   121 | 
+   122 |         // Thumbnail should be visible
+>> 123 |         await expect(await page.getByTestId('media-upload-filled')).toBeVisible();
+   124 | 
+   125 |         // Can remove thumbnail

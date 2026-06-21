@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "@tryghost:quietJS",
+    "@tryghost:automergeDevDependencies"
+  ],
+  "packageRules": [
+    {
+      "groupName": "rollup + plugins",
+      "packagePatterns": ["^rollup"]
+    },
+    {
+      "groupName": "lexical",
+      "packagePatterns": ["^lexical", "^@lexical"]
+    },
+    {
+      "groupName": "vitest",
+      "packagePatterns": ["^vitest", "^@vitest"]
+    }
+  ],
+  "ignoreDeps": ["vite"]
+}

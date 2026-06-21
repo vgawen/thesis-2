@@ -1,0 +1,20 @@
+\section{讨论与局限}
+\label{sec:discussion}
+
+\paragraph{78.7\% 对无人值守 CI 自愈意味着什么。}
+LLM 自愈最常见的部署故事是自主化: 一个失败的 E2E 测试触发 LLM，LLM 给出补丁，CI 自动提交（或自动作为 PR 评论发出）。我们的 F1 结果说: 任何不带行为 oracle 的此类部署都很危险 —— 在真实 React 代码库中约 15\% 的 Playwright 断裂里，朴素修复器会沉默地把断言改写到错误元素上。危险的失败模式不是"修复器让 build 挂掉"——build 挂掉本就是测试的职责——而是"修复器把 build 变绿但绿对的是错的目标"。
+
+\paragraph{为什么软提示安全网会失效。}
+\textsc{Vanilla = Abstain} 等同性（表~\ref{tab:falseheal}）反思之下并不令人意外。模型的训练目标奖励自信输出；系统提示里"应当放弃"的软指令，会与"产出一个像样的答案"这一更强的先验竞争。对工具设计的启示是: 反误修复的安全保障必须位于模型\emph{之外}—— 确定性检索阈值、锚点类别成员规则，乃至最终一个能证伪通过补丁的行为 oracle。
+
+\paragraph{为什么两个廉价确定性杠杆胜过提示工程。}
+F2 的 testId 加权检索与强锚点后置过滤在机制上显而易见，但它们在零回归的同时给朴素 7B 模型带来帕累托改进与约 22\% 的墙钟节约。我们不声称这能泛化到当前设置以外；我们把它当作 HealReact 的一条局部设计经验: 把锚点优先级约束放到候选池里和输出后置过滤里，比依靠系统提示让模型把约束内化更可靠。
+
+\paragraph{局限。}
+\textit{模型范围。}所有数字使用单一开源小型代码模型（\texttt{qwen2.5-coder:7b}）。我们尚未测量前沿模型（GPT-4 类）是否缩小 F1 上的差距。根据 \textsc{Vanilla = Abstain} 等同性的提示，我们的预测是单凭规模不足以在无确定性 oracle 的情况下闭合该差距，但这可测，完整论文中会报告。
+\textit{benchmark 范围。}主要数字来自单一 React+Playwright 代码库（koenig）。F3 扩展到第二个（payload），但那里的可达率被 BEM 盲区所限。
+\textit{静态修复代理 $\ne$ Playwright 通过率。}77.3\% / 62.4\% 的 L3 数字是解析器精确一致性。把它们换算成 Playwright pass/fail 需要在 ReproBreak 复现环境里用 Docker 重放打过补丁的测试，这是延后项（\S\ref{sec:roadmap}）。
+\textit{Baseline。}我们尚未在共享 benchmark 上与 Joseph~\cite{joseph2026zerocost} 或当代 LLM 修复器作正面对比。最直接的比较 —— Joseph 可访问性树阶梯在我们 F1 探针上的误修复率 —— 在 roadmap 上（\S\ref{sec:roadmap}，R4）。
+
+\paragraph{有效性威胁。}
+78.7\% 这个数字依赖解析器语义。\texttt{resolve\_locators.py} 把动态 JS 表达式属性值视为可能匹配、对复合 CSS 使用祖先过近似；这两个决策在 triage 场景下合理，但在边界情况下偏松。我们在补充诚实性审计中撤回了早期"可达率上限 98\%"的虚抬声明，在收紧解析器假设后以 80.6\% 作为保守数字。

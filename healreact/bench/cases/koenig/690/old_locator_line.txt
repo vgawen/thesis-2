@@ -1,0 +1,5 @@
+   267 | 
+   268 |         // Leave editing mode to display the toolbar
+>> 269 |         await expect(await page.getByTestId('audio-title')).toBeVisible();
+   270 |         await page.keyboard.press('Escape');
+   271 | 

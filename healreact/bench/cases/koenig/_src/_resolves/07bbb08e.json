@@ -1,0 +1,33 @@
+{
+  "commit": "07bbb08e61b3e5e6fddfe86edf5080716d78d095",
+  "sheet_records": 390,
+  "breaks_tested": 2,
+  "reachable_old": 0,
+  "reachable_new": 0,
+  "rows": [
+    {
+      "id": 757,
+      "file": "packages/koenig-lexical/test/e2e/cards/toggle-card.test.js",
+      "old_strategy": "css",
+      "old_value": ".koenig-lexical-toggle-heading",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "css",
+      "new_value": ".koenig-lexical-heading",
+      "new_hits": 0,
+      "new_top": null
+    },
+    {
+      "id": 758,
+      "file": "packages/koenig-lexical/test/e2e/cards/toggle-card.test.js",
+      "old_strategy": "css",
+      "old_value": ".koenig-lexical-toggle-heading",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "css",
+      "new_value": ".koenig-lexical-heading",
+      "new_hits": 0,
+      "new_top": null
+    }
+  ]
+}

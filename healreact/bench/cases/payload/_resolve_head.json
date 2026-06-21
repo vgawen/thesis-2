@@ -1,0 +1,2592 @@
+{
+  "rows": [
+    {
+      "id": "3630",
+      "old": "page.locator('.row-1 .cell-text')",
+      "new": "page.locator('.row-1 .cell-title')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3631",
+      "old": "page.locator('.dashboard')",
+      "new": "page.locator('.dashboard'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3632",
+      "old": "page.locator('.auth-fields')",
+      "new": "page.locator('.auth-fields'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3633",
+      "old": "page.locator('.list-controls')",
+      "new": "page.locator('.list-controls'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3634",
+      "old": "page.locator('#field-title')",
+      "new": "page.locator('#field-title'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3635",
+      "old": "page.locator('#field-title')",
+      "new": "page.locator('#field-title'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3636",
+      "old": "page.locator('.list-controls')",
+      "new": "page.locator('.list-controls'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3637",
+      "old": "page.locator('.dashboard')",
+      "new": "page.locator('.dashboard'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3638",
+      "old": "page.locator('#field-title')",
+      "new": "page.locator('#field-title'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3639",
+      "old": "page.locator('.auth-fields')",
+      "new": "page.locator('.auth-fields'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3640",
+      "old": "page.locator('.collection-list')",
+      "new": "page.locator('.collection-list'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3641",
+      "old": "page.locator('.list-controls')",
+      "new": "page.locator('.list-controls'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3642",
+      "old": "page.locator('.dashboard')",
+      "new": "page.locator('.dashboard'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3643",
+      "old": "page.locator('#field-title')",
+      "new": "page.locator('#field-title'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3644",
+      "old": "page.locator('.list-controls')",
+      "new": "page.locator('.list-controls'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3645",
+      "old": "page.locator('.auth-fields')",
+      "new": "page.locator('.auth-fields'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3646",
+      "old": "page.locator('.collection-list')",
+      "new": "page.locator('.collection-list'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3647",
+      "old": "page.locator('.nav')",
+      "new": "page.locator('.nav'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3648",
+      "old": "page.locator('.list-selection button', { hasText: 'Delete' })",
+      "new": "page.locator('.list-selection__button[aria-label=\"Delete\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3649",
+      "old": "page.locator('.list-selection button', { hasText: 'Delete' })",
+      "new": "page.locator('.list-selection__button[aria-label=\"Delete\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3650",
+      "old": "page.locator('.list-selection button', { hasText: 'Delete' })",
+      "new": "page.locator('.list-selection'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3651",
+      "old": "page.locator('.list-selection button', { hasText: 'Delete' })",
+      "new": "page.locator('.list-selection__button[aria-label=\"Delete\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3652",
+      "old": "page.locator('.list-selection button', { hasText: 'Delete' })",
+      "new": "page.locator('.list-selection__button[aria-label=\"Delete\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3653",
+      "old": "page.locator('.list-selection button', { hasText: 'Delete' })",
+      "new": "page.locator('.list-selection__button[aria-label=\"Delete\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3654",
+      "old": "page.locator('.list-selection button', { hasText: 'Delete' })",
+      "new": "page.locator('.list-selection__button[aria-label=\"Delete\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3655",
+      "old": "page.locator('#field-array button')",
+      "new": "page.locator('#field-array > button')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3656",
+      "old": "page.locator('.dashboard'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3657",
+      "old": "page.locator('.unauthorized'))",
+      "new": "page.locator('.unauthorized .form-header h1'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3658",
+      "old": "page.locator('.dashboard'))",
+      "new": "page.locator('form.login__form'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3659",
+      "old": "page.locator('.unauthorized'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3660",
+      "old": "page.locator('.next-error-h1'))",
+      "new": "page.locator('.unauthorized'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3661",
+      "old": "page.locator('.next-error-h1'))",
+      "new": "page.locator('.unauthorized'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3662",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3663",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3664",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3665",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3666",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3667",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3668",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3669",
+      "old": "page.locator('.unauthorized'))",
+      "new": "page.locator('.not-found'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3670",
+      "old": "page.locator('.unauthorized'))",
+      "new": "page.locator('.not-found'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3671",
+      "old": "page.locator('[id^=doc-drawer_create-not-update_1_]')",
+      "new": "page.locator(`[id^=doc-drawer_${createNotUpdateCollectionSlug}_1_]`)",
+      "category": "structural_break",
+      "new_hits": 5,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/CommandPalette/index.tsx",
+        183
+      ]
+    },
+    {
+      "id": "3672",
+      "old": "page.locator(`#card-${restrictedSlug}`))",
+      "new": "page.locator(`#card-${fullyRestrictedSlug}`))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3673",
+      "old": "page.locator('.unauthorized'))",
+      "new": "page.locator('.not-found'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3674",
+      "old": "page.locator('#nav-global-test'))",
+      "new": "page.locator('#nav-global-test')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3675",
+      "old": "page.locator('#field-approvedForRemoval + button')",
+      "new": "page.locator('#field-approvedForRemoval')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3676",
+      "old": "page.locator('input[name=\"restrictedField\"]'))",
+      "new": "page.locator('#field-restrictedField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3677",
+      "old": "page.locator('.doc-tab a[href$=\"/versions\"]')",
+      "new": "page.locator('a.doc-tab[href$=\"/versions\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3678",
+      "old": "page.locator('link[rel=\"icon\"]')",
+      "new": "page.locator('link[rel=\"icon\"][type=\"image/png\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3679",
+      "old": "page.locator('#field-confirm-password')",
+      "new": "page.locator('.form-submit > button')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3680",
+      "old": "page.locator('.dashboard__card-list .card')",
+      "new": "page.locator('.collections__card-list .card')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3681",
+      "old": "page.locator('.collection-list__no-results')",
+      "new": "page.locator('.no-results')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3682",
+      "old": "page.locator('.collection-list__no-results')",
+      "new": "page.locator('.no-results')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3683",
+      "old": "page.locator('.collection-list__page-info'))",
+      "new": "page.locator('.page-controls__page-info'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3684",
+      "old": "page.locator('input#select-all'))",
+      "new": "page.locator('.table input#select-all[checked]'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3685",
+      "old": "page.locator('input#select-all'))",
+      "new": "page.locator('.table input#select-all[checked]'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3686",
+      "old": "page.locator('input#select-all'))",
+      "new": "page.locator('.table input#select-all[checked]'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3687",
+      "old": "page.locator('#delete-posts #confirm-action')",
+      "new": "page.locator('#confirm-delete-many-docs #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3688",
+      "old": "page.locator('.publish-many__toggle')",
+      "new": "page.locator('.list-selection__button[aria-label=\"Publish\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3689",
+      "old": "page.locator('.unpublish-many__toggle')",
+      "new": "page.locator('.list-selection__button[aria-label=\"Unpublish\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3690",
+      "old": "page.locator('.delete-documents__toggle')",
+      "new": "page.locator('#confirm-delete-many-docs #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3691",
+      "old": "page.locator('.delete-documents__toggle')",
+      "new": "page.locator('#confirm-delete-many-docs #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3692",
+      "old": "page.locator('.payload-toast-container .toast-error'))",
+      "new": "page.locator('.payload-toast-container .toast-error')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3693",
+      "old": "page.locator('#field-parentArray > .array-field__add-button-wrap > button')",
+      "new": "page.locator('#field-parentArray > .array-field__add-row')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3694",
+      "old": "page.locator('.payload-toast-container'))",
+      "new": "page.locator('.payload-toast-container')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3695",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3696",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3697",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3698",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3699",
+      "old": "page.locator('#field-relationshipFiltered .react-select')",
+      "new": "page.locator(`#field-${fieldName} .react-select`)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3700",
+      "old": "page.locator('#field-relationshipFiltered .react-select')",
+      "new": "page.locator(`#field-${fieldName} .react-select`)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3701",
+      "old": "page.locator('#field-relationshipWithTitle .relationship--single-value__text')",
+      "new": "page.locator('#field-relationshipWithTitle')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3702",
+      "old": "page.locator('#field-relationship .rs__value-container')",
+      "new": "page.locator('#field-relationship .relationship--single-value__text')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3703",
+      "old": "page.locator('#field-relationshipWithTitle .react-select')",
+      "new": "page.locator('#field-relationshipWithTitle .relationship--single-value__text')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3704",
+      "old": "page.locator('#field-relationHasMany .rs__value-container > .rs__multi-value')",
+      "new": "page.locator('#field-relationHasMany .rs__value-container > .rs__multi-value'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3705",
+      "old": "page.locator('#field-relationToManyHasMany .rs__value-container > .rs__multi-value')",
+      "new": "page.locator('#field-relationToManyHasMany .rs__value-container > .rs__multi-value'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3706",
+      "old": "page.locator('.field-relationshipHasMany')",
+      "new": "page.locator('#field-relationshipHasMany')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3707",
+      "old": "page.locator('.field-relationshipMultiple')",
+      "new": "page.locator('#field-relationshipMultiple')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3708",
+      "old": "page.locator('.popup-button-list__button')",
+      "new": "page.locator('.popup__content .popup-button-list__button')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3709",
+      "old": "page.locator('.list-pills__button', { hasText: 'By Folder' })",
+      "new": "page.locator('.default-list-view-tabs__button', { hasText: 'By Folder' })",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3710",
+      "old": "page.locator('.list-pills__button', { hasText: 'By Folder' })",
+      "new": "page.locator('.default-list-view-tabs__button', { hasText: 'By Folder' })",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3711",
+      "old": "page.locator('.list-folder-pills__button', { hasText: 'By Folder' })",
+      "new": "page.locator('.list-pills__button', { hasText: 'By Folder' })",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3712",
+      "old": "page.locator('.list-folder-pills__button', { hasText: 'By Folder' })",
+      "new": "page.locator('.list-pills__button', { hasText: 'By Folder' })",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3713",
+      "old": "page.locator('.payload-toast-container'))",
+      "new": "page.locator('.doc-controls .move-doc-to-folder', { hasText: 'No Folder' })",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3714",
+      "old": "page.locator('#field-array #array-row-0')",
+      "new": "page.locator('#field-computedArray #computedArray-row-0')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3715",
+      "old": "page.locator('#field-array .array-row-0')",
+      "new": "page.locator('#field-computedArray #computedArray-row-0')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3716",
+      "old": "page.locator('#field-array .array-field__add-row')",
+      "new": "page.locator('#field-title')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3717",
+      "old": "page.locator('.collection-list__no-results')",
+      "new": "page.locator('.no-results')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3718",
+      "old": "page.locator('.field-type.join')",
+      "new": "page.locator('#field-relatedPosts.field-type.join')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3719",
+      "old": "page.locator('.field-type.join')",
+      "new": "page.locator('#field-relatedPosts.field-type.join')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3720",
+      "old": "page.locator('.field-type.join')",
+      "new": "page.locator('#field-relatedPosts.field-type.join')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3721",
+      "old": "page.locator('.field-type.join')",
+      "new": "page.locator('#field-relatedPosts.field-type.join')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3722",
+      "old": "page.locator('.field-type.join')",
+      "new": "page.locator('#field-relatedPosts.field-type.join')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3723",
+      "old": "page.locator('.field-type.join')",
+      "new": "page.locator('#field-relatedPosts.field-type.join')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3724",
+      "old": "page.locator('.field-type.join')",
+      "new": "page.locator('#field-relatedPosts.field-type.join')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3725",
+      "old": "page.locator('.field-type.join')",
+      "new": "page.locator('#field-relatedPosts.field-type.join')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3726",
+      "old": "page.locator('tbody tr:first-child .cell-title a')",
+      "new": "page.locator('tbody tr:first-child .cell-id a')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3727",
+      "old": "page.locator('input#field-navItems__0__link____newTab')",
+      "new": "page.locator('input#field-navItems__0__link__newTab')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3728",
+      "old": "page.locator('input#field-navItems__0__link__newTab')",
+      "new": "page.locator('input#field-navItems__0__link____newTab')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3729",
+      "old": "page.locator('tbody tr:first-child .cell-slug a')",
+      "new": "page.locator('tbody tr:first-child .cell-title a')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3730",
+      "old": "page.locator('input#field-navItems__0__link____newTab')",
+      "new": "page.locator('input#field-navItems__0__link__newTab')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3731",
+      "old": "page.locator('input#field-navItems__0__link__newTab')",
+      "new": "page.locator('input#field-navItems__0__link____newTab')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3732",
+      "old": "page.locator('tbody tr:first-child .cell-id a')",
+      "new": "page.locator('tbody tr:first-child .cell-slug a')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3733",
+      "old": "page.locator('.localizer .popup.popup--active'))",
+      "new": "page.locator('.popup__content'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3734",
+      "old": "page.locator('.localizer .popup.popup--active'))",
+      "new": "page.locator('.popup__content'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3735",
+      "old": "page.locator('.localizer .popup'))",
+      "new": "page.locator('.popup__content'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3736",
+      "old": "page.locator('.select-version-locales__label'))",
+      "new": "page.locator('.view-version__toggle-locales')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3737",
+      "old": "page.locator('.doc-controls__popup')",
+      "new": "page.locator('.doc-controls__popup button.popup-button')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3738",
+      "old": "page.locator('.array-field__add-row')",
+      "new": "page.locator('#field-topLevelArray .array-field__add-row')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3739",
+      "old": "page.locator('#field-layout .blocks-field__drawer-toggler')",
+      "new": "page.locator('#field-nav__layout .blocks-field__drawer-toggler')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3740",
+      "old": "page.locator('#field-title')",
+      "new": "page.locator('#field-description')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3741",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3742",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3743",
+      "old": "page.locator('.dashboard__card-list #card-menu .locked svg'))",
+      "new": "page.locator('.collections__card-list #card-menu .locked svg'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3744",
+      "old": "page.locator('.dashboard__card-list #card-menu .locked'))",
+      "new": "page.locator('.collections__card-list #card-menu .locked'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3745",
+      "old": "page.locator('.dashboard__card-list #card-menu .locked'))",
+      "new": "page.locator('.collections__card-list #card-menu .locked'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3746",
+      "old": "page.locator('.dashboard__card-list #card-admin .locked svg'))",
+      "new": "page.locator('.collections__card-list #card-admin .locked svg'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3747",
+      "old": "page.locator('.dashboard__card-list #card-admin .locked'))",
+      "new": "page.locator('.collections__card-list #card-admin .locked'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3748",
+      "old": "page.locator('.dashboard__card-list #card-admin .locked svg'))",
+      "new": "page.locator('.collections__card-list #card-admin .locked svg'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3749",
+      "old": "page.locator('.dashboard__card-list #card-admin .locked'))",
+      "new": "page.locator('.collections__card-list #card-admin .locked'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3750",
+      "old": "page.locator('.list-selection .list-selection__button')",
+      "new": "page.locator('.list-selection .list-selection__button#select-all-across-pages')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3751",
+      "old": "page.locator('#delete-posts #confirm-action')",
+      "new": "page.locator('#confirm-delete-many-docs #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3752",
+      "old": "page.locator('.list-selection .list-selection__button')",
+      "new": "page.locator('.list-selection__button[aria-label=\"Publish\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3753",
+      "old": "page.locator('.list-selection .list-selection__button')",
+      "new": "page.locator('.list-selection__button[aria-label=\"Unpublish\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3754",
+      "old": "page.locator('.list-selection .list-selection__button')",
+      "new": "page.locator('.list-selection .list-selection__button#select-all-across-pages')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3755",
+      "old": "page.locator('li[aria-label=\"API\"] a')",
+      "new": "page.locator('a[aria-label=\"API\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3756",
+      "old": "page.locator('.delete-documents__content p'))",
+      "new": "page.locator('#delete-posts .confirmation-modal__content p'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3757",
+      "old": "page.locator('#confirm-delete')",
+      "new": "page.locator('#delete-posts #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3758",
+      "old": "page.locator('#confirm-publish')",
+      "new": "page.locator('#publish-posts #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3759",
+      "old": "page.locator('#confirm-unpublish')",
+      "new": "page.locator('#unpublish-posts #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3760",
+      "old": "page.locator('li[aria-label=\"API\"] a')",
+      "new": "page.locator('header.app-header a[href=\"/admin/collections/posts\"]')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3761",
+      "old": "page.locator('#field-text')",
+      "new": "page.locator('#field-globalText')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3762",
+      "old": "page.locator('.table .row-1 .locked svg'))",
+      "new": "page.locator('.table .row-2 .locked svg'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3763",
+      "old": "page.locator('.table .row-2 .checkbox-input__input'))",
+      "new": "page.locator('.table .row-1 .checkbox-input__input'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3764",
+      "old": "page.locator('.row-1 .cell-title a')",
+      "new": "page.locator('.row-2 .cell-title a')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3765",
+      "old": "page.locator('#field-format .rs__control')",
+      "new": "page.locator('.format-field .rs__control')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3766",
+      "old": "page.locator('#field-format')",
+      "new": "page.locator('.format-field')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3767",
+      "old": "page.locator('.rs__option:has-text(\"pages\")')",
+      "new": "page.locator('.rs__option:text-is(\"Pages\")')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3768",
+      "old": "page.locator('.rs__option:has-text(\"pages\")')",
+      "new": "page.locator('.rs__option:text-is(\"Pages\")')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3769",
+      "old": "page.locator('.rs__option:has-text(\"pages\")')",
+      "new": "page.locator('.rs__option:text-is(\"Pages\")')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3770",
+      "old": "page.locator('.rs__option:has-text(\"pages\")')",
+      "new": "page.locator('.rs__option:text-is(\"Pages\")')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3771",
+      "old": "page.locator('.rs__option:has-text(\"pages\")')",
+      "new": "page.locator('#field-collectionSlug')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3772",
+      "old": "page.locator('.file-field__filename'))",
+      "new": "page.locator('#field-collectionSlug')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3773",
+      "old": "page.locator('.rs__option:has-text(\"pages\")')",
+      "new": "page.locator('#field-importMode')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3774",
+      "old": "page.locator('.rs__option:has-text(\"pages\")')",
+      "new": "page.locator('#field-collectionSlug')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3775",
+      "old": "page.locator('.rs__option:has-text(\"pages\")')",
+      "new": "page.locator('#field-collectionSlug')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3776",
+      "old": "page.locator('.rs__option:has-text(\"Update existing documents\")')",
+      "new": "page.locator('#field-importMode')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3777",
+      "old": "page.locator('.rs__option:has-text(\"posts-with-limits\")')",
+      "new": "page.locator('.rs__option:text-is(\"posts-with-limits\")')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3778",
+      "old": "page.locator('.rs__option:has-text(\"posts-with-limits\")')",
+      "new": "page.locator('.rs__option:text-is(\"posts-with-limits\")')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3779",
+      "old": "page.locator('.radio-input__styled-radio')",
+      "new": "page.locator('.lexical-link-edit-drawer'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3780",
+      "old": "page.locator(slugClass)",
+      "new": "page.locator(draftButtonClass)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3781",
+      "old": "page.getByText('Dashboard'))",
+      "new": "page.locator('.dashboard'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3782",
+      "old": "page.locator('.row-1 .cell-name')",
+      "new": "page.locator('.row-1 .cell-name a')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3783",
+      "old": "page.locator('.row-1 .cell-name')",
+      "new": "page.locator('.row-1 .cell-name a')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3784",
+      "old": "page.locator('.row-1 .cell-name')",
+      "new": "page.locator('.row-1 .cell-name a')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3785",
+      "old": "page.locator('.row-1 .cell-_select input')",
+      "new": "page.locator('.table tr:has-text(\"Post 1\")')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3786",
+      "old": "page.locator('.doc-controls__popup #action-delete')",
+      "new": "page.locator('.popup__content #action-delete')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3787",
+      "old": "page.locator('.doc-controls__popup #action-delete')",
+      "new": "page.locator('.popup__content #action-delete')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3788",
+      "old": "page.locator('.doc-controls__popup #action-delete')",
+      "new": "page.locator('.popup__content #action-delete')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3789",
+      "old": "page.locator('.doc-controls__popup #action-delete')",
+      "new": "page.locator('.popup__content #action-delete')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3790",
+      "old": "page.waitForSelector('[id^=\"doc-drawer_admin-thumbnail-size\"] #action-save')",
+      "new": "page.locator('[id^=\"doc-drawer_admin-thumbnail-size\"] #action-save'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3791",
+      "old": "page.locator('#bulk-upload-drawer-slug-1')",
+      "new": "page.locator('#hasManyThumbnailUpload-bulk-upload-drawer-slug-1')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3792",
+      "old": "page.locator('#bulk-upload-drawer-slug-1')",
+      "new": "page.locator('#hasManyUpload-bulk-upload-drawer-slug-1')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3793",
+      "old": "page.locator('#bulk-upload-drawer-slug-1')",
+      "new": "page.locator('#hasManyUpload-bulk-upload-drawer-slug-1')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3794",
+      "old": "page.locator('#bulk-upload-drawer-slug-1')",
+      "new": "page.locator('#hasManyUpload-bulk-upload-drawer-slug-1')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3795",
+      "old": "page.locator('#bulk-upload-drawer-slug-1')",
+      "new": "page.locator('#hasManyUpload-bulk-upload-drawer-slug-1')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3796",
+      "old": "page.locator('#bulk-upload-drawer-slug-1')",
+      "new": "page.locator('#hasManyUpload-bulk-upload-drawer-slug-1')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3797",
+      "old": "page.locator('.field-type:nth-of-type(2)",
+      "new": "page.locator('#field-versionedImage .icon--x')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3798",
+      "old": "page.locator('[id^=doc-drawer_media_2_]'))",
+      "new": "page.locator('[id^=doc-drawer_media_1_]'))",
+      "category": "structural_break",
+      "new_hits": 5,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/CommandPalette/index.tsx",
+        183
+      ]
+    },
+    {
+      "id": "3799",
+      "old": "page.locator('[id^=doc-drawer_media_2_] button#action-save')",
+      "new": "page.locator('[id^=doc-drawer_media_1_] button#action-save')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3800",
+      "old": "page.locator('.cell-title'))",
+      "new": "page.locator('.row-3 .cell-title'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3801",
+      "old": "page.locator('.Toastify .Toastify__toast--error'))",
+      "new": "page.locator('.payload-toast-container .toast-error'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3802",
+      "old": "page.locator('.Toastify .Toastify__toast--error'))",
+      "new": "page.locator('.payload-toast-container .toast-error'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3803",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3804",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.Toastify .Toastify__toast--success'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3805",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.Toastify .Toastify__toast--error'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3806",
+      "old": "page.locator('.field-versionedImage .icon--edit')",
+      "new": "page.locator('.field-type:nth-of-type(2)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3807",
+      "old": "page.locator('.field-versionedImage .icon--x')",
+      "new": "page.locator('.field-type:nth-of-type(2)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3808",
+      "old": "page.locator('tr.row-1 .thumbnail svg')",
+      "new": "page.locator('tr.row-1 .thumbnail img')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3809",
+      "old": "page.locator('.file-details__sizes .file-meta')",
+      "new": "page.locator('.file-field__previewSizes')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3810",
+      "old": "page.locator('.thumbnail-card__label')",
+      "new": "page.locator('tr.row-1 .cell-filename')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3811",
+      "old": "page.locator('.thumbnail-card__label')",
+      "new": "page.locator('tr.row-2 .cell-filename')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3812",
+      "old": "page.locator('.upload-card__filename')",
+      "new": "page.locator('.thumbnail-card__label')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3813",
+      "old": "page.locator('.doc-controls__controls .popup__content')",
+      "new": "page.locator('.popup__content')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3814",
+      "old": "page.locator('.doc-controls__controls .popup__content')",
+      "new": "page.locator('.popup__content')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3815",
+      "old": "page.locator('.render-field-diffs'))",
+      "new": "page.locator('.render-field-diffs')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3816",
+      "old": "page.locator('.render-field-diffs'))",
+      "new": "page.locator('.render-field-diffs')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3817",
+      "old": "page.locator('.restore-version__button')",
+      "new": "page.locator('.restore-version__restore-as-draft-button')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3818",
+      "old": "page.locator('.doc-tab[aria-label=\"Versions\"] .doc-tab__count')",
+      "new": "page.locator('.doc-tab[aria-label=\"Versions\"] .pill-version-count')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3819",
+      "old": "page.locator('.popup-button-list button')",
+      "new": "page.locator('#publish-locale')",
+      "category": "structural_break",
+      "new_hits": 1,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/PublishButton/index.tsx",
+        268
+      ]
+    },
+    {
+      "id": "3820",
+      "old": "page.locator('#confirm-delete')",
+      "new": "page.locator('#delete-draft-posts #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3821",
+      "old": "page.locator('#confirm-publish')",
+      "new": "page.locator('#publish-draft-posts #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3822",
+      "old": "page.locator('#confirm-publish')",
+      "new": "page.locator('#publish-autosave-posts #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3823",
+      "old": "page.locator('#confirm-unpublish')",
+      "new": "page.locator('#unpublish-draft-posts #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3824",
+      "old": "page.locator('.pill.restore-version')",
+      "new": "page.locator('.restore-version__button')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3825",
+      "old": "page.locator('.Toastify__toast--success'))",
+      "new": "page.locator('.payload-toast-container .toast-success'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3826",
+      "old": "page.locator('.Toastify__toast--success'))",
+      "new": "page.locator('.payload-toast-container .toast-success'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3827",
+      "old": "page.locator('.Toastify__toast--success'))",
+      "new": "page.locator('.payload-toast-container .toast-success'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3828",
+      "old": "page.locator('tbody tr .cell-title a')",
+      "new": "page.locator('tbody tr:nth-child(2)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3829",
+      "old": "page.locator('.custom-checkbox:has(#select-all)",
+      "new": "page.locator('.checkbox-input:has(#select-all)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3830",
+      "old": "page.locator('.custom-checkbox:has(#select-all)",
+      "new": "page.locator('.checkbox-input:has(#select-all)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3831",
+      "old": "page.locator('.custom-checkbox:has(#select-all)",
+      "new": "page.locator('.checkbox-input:has(#select-all)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3832",
+      "old": "page.locator('.custom-checkbox:has(#select-all)",
+      "new": "page.locator('.checkbox-input:has(#select-all)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3833",
+      "old": "page.locator('.select-all__input')",
+      "new": "page.locator('.custom-checkbox:has(#select-all)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3834",
+      "old": "page.locator('.select-all__input')",
+      "new": "page.locator('.custom-checkbox:has(#select-all)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3835",
+      "old": "page.locator('.select-all__input')",
+      "new": "page.locator('.custom-checkbox:has(#select-all)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3836",
+      "old": "page.locator('.select-all__input')",
+      "new": "page.locator('.custom-checkbox:has(#select-all)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3837",
+      "old": "page.locator('.popup--active .popup__content')",
+      "new": "page.locator('.popup__content')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3838",
+      "old": "page.locator('.popup--active .popup__content')",
+      "new": "page.locator('.popup__content')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3839",
+      "old": "page.locator('button#preview-button'))",
+      "new": "page.locator('#preview-button'))",
+      "category": "structural_break",
+      "new_hits": 1,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/PreviewButton/index.tsx",
+        43
+      ]
+    },
+    {
+      "id": "3840",
+      "old": "page.locator('button#preview-button'))",
+      "new": "page.locator('#preview-button'))",
+      "category": "structural_break",
+      "new_hits": 1,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/PreviewButton/index.tsx",
+        43
+      ]
+    },
+    {
+      "id": "3841",
+      "old": "page.locator('button#preview-button'))",
+      "new": "page.locator('#preview-button'))",
+      "category": "structural_break",
+      "new_hits": 1,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/PreviewButton/index.tsx",
+        43
+      ]
+    },
+    {
+      "id": "3842",
+      "old": "page.locator('button#preview-button'))",
+      "new": "page.locator('#preview-button'))",
+      "category": "structural_break",
+      "new_hits": 1,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/PreviewButton/index.tsx",
+        43
+      ]
+    },
+    {
+      "id": "3843",
+      "old": "page.locator('.btn.preview-btn'))",
+      "new": "page.locator('button#preview-button'))",
+      "category": "structural_break",
+      "new_hits": 1,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/PreviewButton/index.tsx",
+        43
+      ]
+    },
+    {
+      "id": "3844",
+      "old": "page.locator('.btn.preview-btn'))",
+      "new": "page.locator('button#preview-button'))",
+      "category": "structural_break",
+      "new_hits": 1,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/PreviewButton/index.tsx",
+        43
+      ]
+    },
+    {
+      "id": "3845",
+      "old": "page.locator('.btn.preview-btn'))",
+      "new": "page.locator('button#preview-button'))",
+      "category": "structural_break",
+      "new_hits": 1,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/PreviewButton/index.tsx",
+        43
+      ]
+    },
+    {
+      "id": "3846",
+      "old": "page.locator('.btn.preview-btn'))",
+      "new": "page.locator('button#preview-button'))",
+      "category": "structural_break",
+      "new_hits": 1,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/PreviewButton/index.tsx",
+        43
+      ]
+    },
+    {
+      "id": "3847",
+      "old": "page.locator('.doc-tab a[tabindex=\"-1\"]')",
+      "new": "page.locator(`.doc-tab:has-text(\"${customEditLabel}\")`)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3848",
+      "old": "page.locator(`.doc-tab a:has-text(\"${customTabLabel}\")`)",
+      "new": "page.locator(`a.doc-tab:has-text(\"${customTabLabel}\")`)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3849",
+      "old": "page.locator('.doc-tab__link:has-text(\"Custom\")')",
+      "new": "page.locator('.doc-tab:has-text(\"Custom\")')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3850",
+      "old": "page.locator(`#card-${postsCollectionSlug} a.card__click`)",
+      "new": "page.locator(`.card-${postsCollectionSlug} a.card__click`)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3851",
+      "old": "page.locator('.dashboard__card-list .card')",
+      "new": "page.locator('.collections__card-list .card__click')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3852",
+      "old": "page.locator('.dashboard__card-list .card')",
+      "new": "page.locator('.collections__card-list .card')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3853",
+      "old": "page.locator('.popup#settings-menu .popup__content')",
+      "new": "page.locator('.popup__content')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3854",
+      "old": "page.locator('header.app-header a[href=\"/admin/collections/posts\"]')",
+      "new": "page.locator(`header.app-header a[href=\"/admin/collections/posts\"]`)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3855",
+      "old": "page.locator('.nav .nav__link.active')",
+      "new": "page.locator('.nav .nav__link:has(.nav__link-indicator)')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3856",
+      "old": "page.locator('#search-filter-input')",
+      "new": "page.locator('.table table > tbody > tr'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3857",
+      "old": "page.locator('button.list-selection__button')",
+      "new": "page.locator('button#select-all-across-pages')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3858",
+      "old": "page.locator('#search-filter-input')",
+      "new": "page.locator('.table table > tbody > tr'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3859",
+      "old": "page.locator('button.list-selection__button')",
+      "new": "page.locator('button#select-all-across-pages')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3860",
+      "old": "page.locator('.table table > tbody > tr'))",
+      "new": "page.locator('.table table > tbody > tr')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3861",
+      "old": "page.locator('button.list-selection__button')",
+      "new": "page.locator('button#select-all-across-pages')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3862",
+      "old": "page.locator('#confirm-delete')",
+      "new": "page.locator(`[id=delete-${id}] #confirm-action`)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3863",
+      "old": "page.locator('#confirm-delete')",
+      "new": "page.locator('#delete-posts #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3864",
+      "old": "page.locator('#confirm-delete')",
+      "new": "page.locator('#delete-posts #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3865",
+      "old": "page.locator('#confirm-delete-many-docs #confirm-action'))",
+      "new": "page.locator('.delete-documents__toggle')",
+      "category": "structural_break",
+      "new_hits": 1,
+      "first_hit": [
+        "bench/cases/payload/_src/payload/packages/ui/src/elements/DeleteMany/index.tsx",
+        311
+      ]
+    },
+    {
+      "id": "3866",
+      "old": "page.locator('.collection-list__page-info'))",
+      "new": "page.locator('.page-controls__page-info'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3867",
+      "old": "page.locator('.collection-list__page-info'))",
+      "new": "page.locator('.page-controls__page-info'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3868",
+      "old": "page.locator('.collection-list__page-info'))",
+      "new": "page.locator('.page-controls__page-info'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3869",
+      "old": "page.locator('.collection-list__page-info'))",
+      "new": "page.locator('.page-controls__page-info'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3870",
+      "old": "page.locator('.collection-list__page-info'))",
+      "new": "page.locator('.page-controls__page-info'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3871",
+      "old": "page.locator('.column-selector'))",
+      "new": "page.locator('.pill-selector'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3872",
+      "old": "page.locator('.column-selector'))",
+      "new": "page.locator('.pill-selector'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3873",
+      "old": "page.locator('.column-selector'))",
+      "new": "page.locator('.pill-selector'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3874",
+      "old": "page.locator('.column-selector'))",
+      "new": "page.locator('.pill-selector'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3875",
+      "old": "page.locator('.column-selector'))",
+      "new": "page.locator('.pill-selector'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3876",
+      "old": "page.locator('.column-selector'))",
+      "new": "page.locator('.pill-selector'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3877",
+      "old": "page.locator('.list-controls .column-selector .column-selector__column')",
+      "new": "page.locator('.list-controls .pill-selector .pill-selector__pill')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3878",
+      "old": "page.locator('.row-1 .cell-namedGroup-someTextField'))",
+      "new": "page.locator('.row-1 .cell-namedGroup__someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3879",
+      "old": "page.locator('.row-1 .cell-namedGroup-someTextField'))",
+      "new": "page.locator('.row-1 .cell-namedGroup__someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3880",
+      "old": "page.locator('.row-1 .cell-namedTab-nestedTextFieldInNamedTab'))",
+      "new": "page.locator('.row-1 .cell-namedTab__nestedTextFieldInNamedTab'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3881",
+      "old": "page.locator('#heading-namedGroup-someTextField .sort-column__asc')",
+      "new": "page.locator('#heading-namedGroup__someTextField .sort-column__desc')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3882",
+      "old": "page.locator('.row-1 .cell-namedGroup-someTextField'))",
+      "new": "page.locator('.row-1 .cell-namedGroup__someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3883",
+      "old": "page.locator('.row-2 .cell-namedGroup-someTextField'))",
+      "new": "page.locator('.row-2 .cell-namedGroup__someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3884",
+      "old": "page.locator('.row-1 .cell-namedGroup-someTextField'))",
+      "new": "page.locator('.row-1 .cell-namedGroup__someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3885",
+      "old": "page.locator('.row-2 .cell-namedGroup-someTextField'))",
+      "new": "page.locator('.row-2 .cell-namedGroup__someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3886",
+      "old": "page.locator('.row-1 .cell-namedTab-nestedTextFieldInNamedTab'))",
+      "new": "page.locator('.row-1 .cell-namedTab__nestedTextFieldInNamedTab'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3887",
+      "old": "page.locator('.row-2 .cell-namedTab-nestedTextFieldInNamedTab'))",
+      "new": "page.locator('.row-2 .cell-namedTab__nestedTextFieldInNamedTab'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3888",
+      "old": "page.locator('.row-1 .cell-namedTab-nestedTextFieldInNamedTab'))",
+      "new": "page.locator('.row-1 .cell-namedTab__nestedTextFieldInNamedTab'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3889",
+      "old": "page.locator('.row-2 .cell-namedTab-nestedTextFieldInNamedTab'))",
+      "new": "page.locator('.row-2 .cell-namedTab__nestedTextFieldInNamedTab'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3890",
+      "old": "page.locator('.row-1 .cell-group-someTextField'))",
+      "new": "page.locator('.row-1 .cell-namedGroup-someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3891",
+      "old": "page.locator('.row-1 .cell-group-someTextField'))",
+      "new": "page.locator('.row-1 .cell-namedGroup-someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3892",
+      "old": "page.locator('#heading-group-someTextField .sort-column__asc')",
+      "new": "page.locator('#heading-namedGroup-someTextField .sort-column__desc')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3893",
+      "old": "page.locator('.row-1 .cell-group-someTextField'))",
+      "new": "page.locator('.row-1 .cell-namedGroup-someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3894",
+      "old": "page.locator('.row-2 .cell-group-someTextField'))",
+      "new": "page.locator('.row-2 .cell-namedGroup-someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3895",
+      "old": "page.locator('.row-1 .cell-group-someTextField'))",
+      "new": "page.locator('.row-1 .cell-namedGroup-someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3896",
+      "old": "page.locator('.row-2 .cell-group-someTextField'))",
+      "new": "page.locator('.row-2 .cell-namedGroup-someTextField'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3897",
+      "old": "page.locator('#delete-posts #confirm-action'))",
+      "new": "page.locator('#confirm-delete-many-docs #confirm-action'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3898",
+      "old": "page.locator('#delete-posts #confirm-action'))",
+      "new": "page.locator('#confirm-delete-many-docs #confirm-action'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3899",
+      "old": "page.locator('#delete-posts #confirm-action')",
+      "new": "page.locator('#confirm-delete-many-docs #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3900",
+      "old": "page.locator('#heading-group-nestedTitle .sort-column__asc')",
+      "new": "page.locator('#heading-group-someTextField .sort-column__desc')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3901",
+      "old": "page.locator(columnCountLocator)",
+      "new": "page.locator(tableHeaders)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3902",
+      "old": "page.locator(columnCountLocator))",
+      "new": "page.locator(tableHeaders))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3903",
+      "old": "page.locator(columnCountLocator))",
+      "new": "page.locator(tableHeaders))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3904",
+      "old": "page.locator('#confirm-delete'))",
+      "new": "page.locator('#delete-posts #confirm-action'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3905",
+      "old": "page.locator('#confirm-delete'))",
+      "new": "page.locator('#delete-posts #confirm-action'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3906",
+      "old": "page.locator('#confirm-delete')",
+      "new": "page.locator('#delete-posts #confirm-action')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3907",
+      "old": "page.locator('.condition__value >> input')",
+      "new": "page.locator('.where-builder')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3908",
+      "old": "page.locator('.per-page'))",
+      "new": "page.locator('.collection-list__page-info'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3909",
+      "old": "page.locator('#field-potentiallyEmptyArray__1__text')",
+      "new": "page.locator('#field-potentiallyEmptyArray__0__text'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3910",
+      "old": "page.locator('#field-potentiallyEmptyArray__2__text')",
+      "new": "page.locator('#field-potentiallyEmptyArray__0__group__text')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3911",
+      "old": "page.locator('#field-collapsedArray__0__text')",
+      "new": "page.locator(`#collapsedArray-row-0`)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3912",
+      "old": "page.locator('#custom-field'))",
+      "new": "page.locator('#custom-text-field'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3913",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3914",
+      "old": "page.locator('.Toastify__toast--success'))",
+      "new": "page.locator('.payload-toast-container .toast-success'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3915",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3916",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3917",
+      "old": "page.locator('.array-field__add-row')",
+      "new": "page.locator('#field-arrayWithConditionalField .array-field__add-row')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3918",
+      "old": "page.locator('.json-field #field-customJSON')",
+      "new": "page.locator('.json-field:not(.read-only)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3919",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3920",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3921",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3922",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3923",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3924",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3925",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3926",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3927",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3928",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3929",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3930",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3931",
+      "old": "page.locator('.json-field .inputarea')",
+      "new": "page.locator('.json-field .code-editor')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3932",
+      "old": "page.locator('#field-tabsInArray__0__tab2__text2')",
+      "new": "page.locator('#field-arrayWithTabs__0__tab2__text2')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3933",
+      "old": "page.locator('#field-tabsInArray__0__text'))",
+      "new": "page.locator('#field-arrayWithTabs__0__text'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3934",
+      "old": "page.locator('#field-tabsInArray__0__tab2__text2'))",
+      "new": "page.locator('#field-arrayWithTabs__0__tab2__text2'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3935",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3936",
+      "old": "page.locator('.Toastify'))",
+      "new": "page.locator('.payload-toast-container'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3937",
+      "old": "page.locator('.list-drawer__header-close')",
+      "new": "page.locator('.list-drawer__header .close-modal-button')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3938",
+      "old": "page.locator('.popup--active .rich-text-link__popup')",
+      "new": "page.locator('.popup__content .rich-text-link__popup')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3939",
+      "old": "page.locator('.popup--active .rich-text-link__popup')",
+      "new": "page.locator('.popup__content .rich-text-link__popup')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3940",
+      "old": "page.locator('#blocks-row-0')",
+      "new": "page.locator('.popup__content')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3941",
+      "old": "page.locator('.list-controls ~ .table')",
+      "new": "page.locator('.table-wrap .table')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3942",
+      "old": "page.locator('#blocks-row-0 .popup__content'))",
+      "new": "page.locator('.popup__content'))",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3943",
+      "old": "page.locator('#blocks-row-0 .popup__content')",
+      "new": "page.locator('.popup__content')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3944",
+      "old": "page.locator('tbody tr:first-child .cell-title a')",
+      "new": "page.locator('tbody tr:first-child a')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3945",
+      "old": "page.getByText(getHTMLContent((indent: number)",
+      "new": "page.getByText(htmlContent)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3946",
+      "old": "page.locator('label')",
+      "new": "page.locator('h3>span')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3947",
+      "old": "page.getByText(htmlContent)",
+      "new": "page.getByText(getHTMLContent((indent: number)",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    },
+    {
+      "id": "3948",
+      "old": "page.locator('.list-drawer__header-text')",
+      "new": "page.locator('.list-header__title')",
+      "category": "structural_break",
+      "new_hits": 0,
+      "first_hit": null
+    }
+  ]
+}

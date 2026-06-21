@@ -1,0 +1,5 @@
+   110 | 
+   111 |             const h3ButtonSelector = `[data-kg-floating-toolbar] [data-kg-toolbar-button="h3"] button`;
+>> 112 |             await expect(await page.locator(h3ButtonSelector)).toHaveCount(0);
+   113 |         });
+   114 |     });

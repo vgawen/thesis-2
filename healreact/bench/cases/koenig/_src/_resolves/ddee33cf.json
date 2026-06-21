@@ -1,0 +1,33 @@
+{
+  "commit": "ddee33cf8e82908d68ee14613eb8d8a76965b550",
+  "sheet_records": 464,
+  "breaks_tested": 2,
+  "reachable_old": 2,
+  "reachable_new": 2,
+  "rows": [
+    {
+      "id": 715,
+      "file": "packages/koenig-lexical/test/e2e/cards/email-cta-card.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-kg-card-menu-item=\"Call to Action\"]",
+      "old_hits": 1,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx:50",
+      "new_strategy": "css",
+      "new_value": "[data-kg-card-menu-item=\"Call to action\"]",
+      "new_hits": 1,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx:50"
+    },
+    {
+      "id": 716,
+      "file": "packages/koenig-lexical/test/e2e/cards/email-cta-card.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-kg-card-menu-item=\"Call to Action\"]",
+      "old_hits": 1,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx:50",
+      "new_strategy": "css",
+      "new_value": "[data-kg-card-menu-item=\"Call to action\"]",
+      "new_hits": 1,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx:50"
+    }
+  ]
+}

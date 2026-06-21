@@ -1,0 +1,5 @@
+   220 |             expect(await page.locator('[data-kg-plus-menu]')).not.toBeNull();
+   221 |             await page.keyboard.press('Escape');
+>> 222 |             await expect(await page.locator('[data-kg-plus-menu]')).toHaveCount(0);
+   223 |         });
+   224 | 

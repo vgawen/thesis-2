@@ -1,0 +1,113 @@
+\section{Three Empirical Findings}
+\label{sec:findings}
+
+All numbers below are reproducible from the open scripts \texttt{heal\_baseline.py}, \texttt{false\_heal\_probe.py}, and \texttt{cross\_app\_probe.py} against the JSON artefacts in \texttt{healreact/bench/cases/}. Wall-clock budget for the full sweep (both L3 variants + both false-heal probes) is $\approx$\,8\,min on an Apple M5 Pro / 48\,GB with Apple Metal acceleration only.
+
+\paragraph{Shared L3 protocol.} Across F1 and F2 the L3 healer runs \texttt{qwen2.5-coder:7b} via Ollama at \texttt{temperature=0}. The user prompt contains: (i) the broken Playwright selector verbatim; (ii) $\pm 3$ lines of test source around the break; (iii) the top-$k$ candidates from the LocatorSheet, retrieved by additive token-overlap scoring (testId $\times 3$, dataAttr key/value $\times 2$, aria/id/class/text/path $\times 1$). The model must emit three lines: \texttt{SELECTOR}, \texttt{CANDIDATE\_IDX}, \texttt{RATIONALE} (plain text, not JSON: JSON output was abandoned after the model repeatedly emitted unescaped quotes inside selectors). Tie handling in the resolver: the first matched record by \texttt{(componentFile, line)} order is the resolved target; multi-match selectors are flagged but the first hit is used for the metric.
+
+\subsection{F1: Silent false-heal under target absence}
+\label{sec:f1}
+
+\paragraph{Setup.}
+For each of the 75 \emph{reachable} koenig break cases (those for which the ground-truth element is present in the LocatorSheet at the break commit), we re-run the L3 healer with the \emph{same} prompt and retrieval, but with the ground-truth element \emph{forcibly removed} from both the LocatorSheet and the candidate set. The model literally cannot pick the correct answer. The correct response is to abstain (\texttt{CANDIDATE\_IDX: -1}); any resolvable selector emitted is a silent false heal that would silently rewrite the test against a wrong element.
+
+We compare two prompt variants:
+\begin{enumerate}
+\item \textsc{Vanilla}: the same system prompt as the L3 baseline.
+\item \textsc{Abstain}: the same prompt with an explicit ``ABSTAIN if no candidate fits'' guardrail appended, telling the model that \emph{``A blind heal that silently rewrites the test against the wrong element is always worse than abstention''.}
+\end{enumerate}
+
+\paragraph{Result.}
+Table~\ref{tab:falseheal} shows the outcome.
+
+\begin{table}[t]
+\centering
+\caption{False-heal probe (\S\ref{sec:f1}). The two prompt variants produce \emph{identical} numbers: prompt-level abstention does not reduce silent false heal.}
+\label{tab:falseheal}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+prompt & abstain\,(good) & false-heal\,(bad) & unresolved & \textbf{false-heal\,\%} \\
+\midrule
+\textsc{Vanilla} & 13 & 59 & 3 & \textbf{78.7\%} \\
+\textsc{+ Abstain guardrail} & 13 & 59 & 3 & \textbf{78.7\%} \\
+\bottomrule
+\end{tabular}
+\\[2pt]
+{\scriptsize $n=75$ reachable koenig breaks. Ground-truth target removed from candidate set; any resolvable selector emitted is a silent false heal.}
+\end{table}
+
+\paragraph{Interpretation.}
+The 78.7\% number is the \emph{upper bound} of silent false heal, because every case is adversarial-by-construction. On a mixed workload, only the cases where the L1 sheet is missing the target (in our pilot, 18/93 = 19\% of koenig breaks) face this risk; a naive multiplication gives $\approx 0.19 \times 0.79 = 15\%$ as a back-of-the-envelope risk estimate, not a measured deployment rate (the adversarial probe's behaviour need not transfer one-to-one to genuinely-runtime-only-reachable cases). Even as a risk estimate we read it as too high to permit unattended CI auto-commit of LLM-proposed selector patches.
+
+The \textsc{Vanilla = Abstain} identity is the more diagnostic finding: a 7B coder model on this task does not change its observed behaviour in response to a soft prompt guardrail. Any robust abstention has to be \emph{deterministic} (retrieval-score thresholds, anchor-class membership) or \emph{runtime-grounded} (behavioural-replay oracle on a recorded green build). This empirically motivates evaluating HealReact's L4 layer (behavioural-replay validation) as the next layer rather than relying on prompt-level safeguards.
+
+\subsection{F2: L3 baseline and two cheap deterministic levers}
+\label{sec:f2}
+
+\paragraph{Setup.}
+On the same 75 reachable koenig breaks, we evaluate two L3 variants:
+\begin{itemize}
+\item \textsc{v0 (baseline)}: candidates are retrieved by token-overlap with the broken selector; system prompt asks the model to prefer testIds.
+\item \textsc{v1}: (i) the retrieval scorer up-weights testId matches ($\times 3$) over dataAttr keys/values ($\times 2$) over aria/id/class/text/path ($\times 1$); (ii) a deterministic strict-anchor post-filter rewrites the proposed selector to \texttt{getByTestId(testId)} whenever the chosen candidate carries a testId but the model emitted a non-testId selector. The system prompt is unchanged.
+\end{itemize}
+
+Both runs use \texttt{qwen2.5-coder:7b} at \texttt{temperature=0}. Ground truth is the resolver-matched target element of the \texttt{new\_locator} string in ReproBreak.
+
+\paragraph{Result.}
+\begin{table}[t]
+\centering
+\caption{L3 v0 $\to$ v1 lever Pareto on 75 reachable koenig breaks. v1 = v0 + testId-weighted retrieval + strict-anchor post-filter.}
+\label{tab:l3-levers}
+\small
+\begin{tabular}{lrr}
+\toprule
+metric & v0 (baseline) & v1 (this paper) \\
+\midrule
+top-1 exact element match & 53 / 75 (70.7\%) & \textbf{58 / 75 (77.3\%)} \\
+valid Playwright selector & 67 / 75 (89.3\%) & 68 / 75 (90.7\%) \\
+static repair proxy (full 93) & 53 / 93 (57.0\%) & \textbf{58 / 93 (62.4\%)} \\
+wall-clock (s, full sweep) & 128 & 99 \\
+\midrule
+strict-anchor post-filter triggered & --- & 2 / 75 (both correct) \\
+newly-correct cases (vs v0) & --- & 5 (ids 615, 702, 703, 715, 716) \\
+regressed cases (vs v0) & --- & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Interpretation.}
+Both levers are cheap (one regex-priority change, one $\approx 10$-line post-filter), deterministic, and require no model retraining. The strict-anchor filter alone fires twice and is correct both times; it neuters the failure mode in which the LLM picks the right candidate but writes the selector against a less-stable anchor. The Pareto improvement (5 gained, 0 lost) is the kind of evidence reviewers accept faster than ``the LLM got better''. This finding pairs with F1: \emph{deterministic} interventions move the needle where \emph{prompt} interventions do not.
+
+\subsection{F3: Cross-app generalisation and the BEM blind spot}
+\label{sec:f3}
+
+\paragraph{Setup.}
+A reviewer-grade critique of any single-app pilot is that it learns app-specific conventions. We sparse-checkout the HEAD of \texttt{payloadcms/payload}~\cite{payloadCMS} (the second-largest Playwright cohort in ReproBreak, 319 break pairs) and run the unmodified L1 extractor on \texttt{packages/ui/src} (457 records). For each break pair, we resolve the \texttt{new\_locator} string against this sheet (a HEAD-reachability proxy; per-commit pairing is out of scope for this paper).
+
+\paragraph{Result.}
+\begin{table}[t]
+\centering
+\caption{Cross-app L1 reachability (\S\ref{sec:f3}). The raw drop is real but the cause is diagnosable.}
+\label{tab:cross-app}
+\small
+\begin{tabular}{lrr}
+\toprule
+metric & \texttt{koenig} & \texttt{payload} \\
+\midrule
+extractor records (mean / single) & $\approx$\,400 per commit & 457 (HEAD) \\
+Playwright break pairs & 93 (reproduced) & 319 (CSV) \\
+\texttt{new\_locator} reachable & 75 / 93 = \textbf{80.6\%} & 12 / 319 = \textbf{3.8\%} \\
+\midrule
+dominant anchor & \texttt{data-kg-*} ($\sim$50\%) & CSS class$^\dagger$ \\
+template-literal classes? & rare & ubiquitous (BEM) \\
+\bottomrule
+\end{tabular}
+\\[2pt]
+{\scriptsize $^\dagger$payload dominant-anchor share is sampled from the 307 misses, not from the full break population.}
+\end{table}
+
+The raw 3.8\% looks catastrophic, but inspection of the 307 misses tells a clean story. payload uses BEM~\cite{bemMethodology}: every component declares a \texttt{baseClass} constant (e.g.\ \texttt{const baseClass = 'dashboard'}) and writes className values as template literals such as \texttt{\{`\$\{baseClass\}\_\_add-button`\}}. Tests reference the \emph{rendered} class \texttt{.dashboard\_\_add-button}, which is invisible to a literal-string AST extractor.
+
+\paragraph{Interpretation.}
+This is not a refutation of HealReact's L1 design; it identifies a scoped blind spot whose fix is a deterministic AST pass: a \texttt{baseClass} resolver that walks back to the constant declaration and expands template literals (with an equivalent expander for CSS Modules~\cite{cssModules}). From spot-checking a non-systematic sample of the 307 misses we expect a post-fix raw reach lift, but this is a hypothesis, not a measurement, and we report it only in the roadmap (\S\ref{sec:roadmap}, R2). The 3.8\% number is the honest raw measurement under the current extractor. The finding's contribution is the falsifiable cross-app generalisation claim itself: anchor-culture diversity (\texttt{data-testid} vs custom \texttt{data-*} vs BEM template literals) is a gating axis for locator-repair tool generalisability, and any benchmark restricted to one app likely overestimates how general a tool is.

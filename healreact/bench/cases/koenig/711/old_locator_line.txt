@@ -1,0 +1,5 @@
+   193 |         await page.keyboard.press(`${ctrlOrCmd}+z`);
+   194 | 
+>> 195 |         const emailCard = page.locator('[data-kg-card="email"] [data-kg="editor"] ul > li:first-child');
+   196 |         await expect(emailCard).toHaveText('List item 1');
+   197 |     });

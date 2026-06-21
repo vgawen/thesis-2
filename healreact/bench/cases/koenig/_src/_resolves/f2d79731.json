@@ -1,0 +1,45 @@
+{
+  "commit": "f2d79731f635934393c95353b1853a897c968c50",
+  "sheet_records": 357,
+  "breaks_tested": 3,
+  "reachable_old": 3,
+  "reachable_new": 3,
+  "rows": [
+    {
+      "id": 688,
+      "file": "packages/koenig-lexical/test/e2e/cards/audio-card.test.js",
+      "old_strategy": "testid",
+      "old_value": "audio-caption",
+      "old_hits": 5,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:87",
+      "new_strategy": "testid",
+      "new_value": "audio-title",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:87"
+    },
+    {
+      "id": 689,
+      "file": "packages/koenig-lexical/test/e2e/cards/audio-card.test.js",
+      "old_strategy": "testid",
+      "old_value": "audio-caption",
+      "old_hits": 5,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:87",
+      "new_strategy": "testid",
+      "new_value": "audio-title",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:87"
+    },
+    {
+      "id": 690,
+      "file": "packages/koenig-lexical/test/e2e/cards/audio-card.test.js",
+      "old_strategy": "testid",
+      "old_value": "audio-caption",
+      "old_hits": 5,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:87",
+      "new_strategy": "testid",
+      "new_value": "audio-title",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:87"
+    }
+  ]
+}

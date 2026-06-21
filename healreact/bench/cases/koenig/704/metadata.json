@@ -1,0 +1,13 @@
+{
+  "id": 704,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "47847878d2b37cba846d31e2d97c0fe1e4441a20",
+  "test_file_path": "packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js",
+  "line_no": 398,
+  "old_locator": "page.click('[data-testid=\"media-upload-placeholder\"]')",
+  "new_locator": "page.getByTestId('cta-background-color-picker')",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/47847878d2b37cba846d31e2d97c0fe1e4441a20/packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js",
+  "reproduce_instructions": null
+}

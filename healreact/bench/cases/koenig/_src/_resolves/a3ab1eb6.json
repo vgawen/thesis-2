@@ -1,0 +1,33 @@
+{
+  "commit": "a3ab1eb608f85df2db279ff8e669e8b183951280",
+  "sheet_records": 350,
+  "breaks_tested": 2,
+  "reachable_old": 0,
+  "reachable_new": 0,
+  "rows": [
+    {
+      "id": 751,
+      "file": "packages/koenig-lexical/test/e2e/cards/signup-card.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-testid=\"media-upload-filled\"] img",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "css",
+      "new_value": "[data-testid=\"signup-card-container\"] [data-testid=\"media-upload-filled\"] img",
+      "new_hits": 0,
+      "new_top": null
+    },
+    {
+      "id": 752,
+      "file": "packages/koenig-lexical/test/e2e/cards/signup-card.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-testid=\"media-upload-filled\"] img",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "css",
+      "new_value": "[data-testid=\"signup-card-container\"] [data-testid=\"media-upload-filled\"] img",
+      "new_hits": 0,
+      "new_top": null
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "commits_processed": 19,
+  "commits_ok": 19,
+  "breaks_total": 93,
+  "reach_old_total": 66,
+  "reach_new_total": 75,
+  "pct_old": 71.0,
+  "pct_new": 80.6,
+  "elapsed_sec": 74.6
+}

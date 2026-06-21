@@ -1,0 +1,1486 @@
+{
+  "model": "qwen2.5-coder:7b",
+  "n": 75,
+  "exact_match": 53,
+  "same_file_match": 53,
+  "valid_selector": 67,
+  "elapsed_sec": 127.5,
+  "rows": [
+    {
+      "id": 702,
+      "commit": "02d257a7",
+      "old_locator": "page.locator('[data-test-id=\"color-picker-accent\"]')",
+      "new_locator": "page.locator('[data-testid=\"color-picker-accent\"]')",
+      "proposed_selector": "page.locator('[aria-label=\"Color value\"]')",
+      "candidate_idx": 3,
+      "rationale": "Aria label is stable and unique.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/ColorPicker.jsx",
+        86
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 845
+    },
+    {
+      "id": 703,
+      "commit": "02d257a7",
+      "old_locator": "page.locator('[data-test-id=\"color-picker-text\"]')",
+      "new_locator": "page.locator('[data-testid=\"color-picker-text\"]')",
+      "proposed_selector": "page.locator('[aria-label=\"Color value\"]')",
+      "candidate_idx": 3,
+      "rationale": "Aria label is stable and unique.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/ColorPicker.jsx",
+        86
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 835
+    },
+    {
+      "id": 749,
+      "commit": "0f131733",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1222
+    },
+    {
+      "id": 768,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 4,
+      "rationale": "Direct match by testId",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 690
+    },
+    {
+      "id": 769,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('custom-thumbnail-filled'))",
+      "new_locator": "page.getByTestId('media-upload-filled'))",
+      "proposed_selector": "page.getByTestId('media-upload-filled')",
+      "candidate_idx": 3,
+      "rationale": "Direct match by testId",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 689
+    },
+    {
+      "id": 770,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder'))",
+      "new_locator": "page.getByTestId('media-upload-placeholder'))",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 4,
+      "rationale": "Direct match by testId",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1627
+    },
+    {
+      "id": 771,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 4,
+      "rationale": "Direct match on testId",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1628
+    },
+    {
+      "id": 772,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 4,
+      "rationale": "Direct match on testId",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1624
+    },
+    {
+      "id": 774,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "candidate_idx": 4,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1658
+    },
+    {
+      "id": 775,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 4,
+      "rationale": "Direct match to the old selector.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1694
+    },
+    {
+      "id": 776,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 4,
+      "rationale": "Direct match by testId",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1657
+    },
+    {
+      "id": 777,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('custom-thumbnail-filled'))",
+      "new_locator": "page.getByTestId('media-upload-filled'))",
+      "proposed_selector": "page.getByTestId('media-upload-filled')",
+      "candidate_idx": 3,
+      "rationale": "Direct match by testId",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1674
+    },
+    {
+      "id": 778,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "candidate_idx": 4,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1689
+    },
+    {
+      "id": 779,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 4,
+      "rationale": "Direct match to the old selector.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1718
+    },
+    {
+      "id": 780,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "candidate_idx": 4,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1708
+    },
+    {
+      "id": 781,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "candidate_idx": 4,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1707
+    },
+    {
+      "id": 782,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "candidate_idx": 4,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1711
+    },
+    {
+      "id": 746,
+      "commit": "3ba4b1aa",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2240
+    },
+    {
+      "id": 704,
+      "commit": "47847878",
+      "old_locator": "page.click('[data-testid=\"media-upload-placeholder\"]')",
+      "new_locator": "page.getByTestId('cta-background-color-picker')",
+      "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "candidate_idx": 0,
+      "rationale": "The original selector is still valid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1847
+    },
+    {
+      "id": 750,
+      "commit": "7efd028b",
+      "old_locator": "page.locator('[data-testid=\"signup-card-container\"]')",
+      "new_locator": "page.locator('[data-testid=\"signup-card-content\"]')",
+      "proposed_selector": "page.locator('[data-testid=\"signup-card-content\"]')",
+      "candidate_idx": 5,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1847
+    },
+    {
+      "id": 836,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "new_locator": "page.getByTestId('tk-indicator')",
+      "proposed_selector": "page.locator('[data-has-tk]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates found.",
+      "proposed_target": null,
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 908
+    },
+    {
+      "id": 837,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]'))",
+      "new_locator": "page.getByTestId('tk-indicator'))",
+      "proposed_selector": "page.locator('[data-has-tk]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates found.",
+      "proposed_target": null,
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 889
+    },
+    {
+      "id": 839,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "new_locator": "page.getByTestId('tk-indicator')",
+      "proposed_selector": "page.locator('[data-has-tk]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates found.",
+      "proposed_target": null,
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 890
+    },
+    {
+      "id": 840,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "new_locator": "page.getByTestId('tk-indicator')",
+      "proposed_selector": "page.locator('[data-has-tk]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates found.",
+      "proposed_target": null,
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 805
+    },
+    {
+      "id": 841,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "new_locator": "page.getByTestId('tk-indicator')",
+      "proposed_selector": "page.locator('[data-has-tk]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates found.",
+      "proposed_target": null,
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 810
+    },
+    {
+      "id": 842,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "new_locator": "page.getByTestId('tk-indicator')",
+      "proposed_selector": "page.locator('[data-has-tk]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates found.",
+      "proposed_target": null,
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 809
+    },
+    {
+      "id": 616,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 906
+    },
+    {
+      "id": 619,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 884
+    },
+    {
+      "id": 626,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "candidate_idx": 1,
+      "rationale": "Aria label is the most stable anchor.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 1479
+    },
+    {
+      "id": 627,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "candidate_idx": 1,
+      "rationale": "Aria label is the most stable anchor available.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 1555
+    },
+    {
+      "id": 628,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "candidate_idx": 1,
+      "rationale": "Aria label is the most stable anchor.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 1549
+    },
+    {
+      "id": 634,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "candidate_idx": 1,
+      "rationale": "Aria label is the most stable anchor available.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 1569
+    },
+    {
+      "id": 638,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "candidate_idx": 1,
+      "rationale": "Most stable anchor available.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 1474
+    },
+    {
+      "id": 640,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "candidate_idx": 1,
+      "rationale": "Aria label is the most stable anchor.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 1586
+    },
+    {
+      "id": 644,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "candidate_idx": 1,
+      "rationale": "Aria label is the most stable anchor available.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 1631
+    },
+    {
+      "id": 647,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "candidate_idx": 1,
+      "rationale": "Aria label is the most stable anchor.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 1579
+    },
+    {
+      "id": 649,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "proposed_selector": "page.locator(\"[data-kg-plus-menu]\")",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1402
+    },
+    {
+      "id": 652,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1479
+    },
+    {
+      "id": 655,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1478
+    },
+    {
+      "id": 660,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "candidate_idx": 2,
+      "rationale": "Aria label is the most stable anchor available.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 1625
+    },
+    {
+      "id": 662,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator(\"[data-kg-plus-button]\")",
+      "candidate_idx": 1,
+      "rationale": "Direct match on data-kg-plus-button",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1460
+    },
+    {
+      "id": 664,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1492
+    },
+    {
+      "id": 783,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "candidate_idx": 1,
+      "rationale": "Aria label is the most stable anchor.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 1639
+    },
+    {
+      "id": 784,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "proposed_selector": "page.locator(\"[data-kg-slash-menu]\")",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1219
+    },
+    {
+      "id": 785,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "proposed_selector": "page.locator(\"[data-kg-slash-menu]\")",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1229
+    },
+    {
+      "id": 786,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1041
+    },
+    {
+      "id": 788,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1026
+    },
+    {
+      "id": 793,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "proposed_selector": "page.locator(\"[data-kg-slash-menu]\")",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1225
+    },
+    {
+      "id": 794,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "proposed_selector": "page.locator(\"[data-kg-slash-menu]\")",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1220
+    },
+    {
+      "id": 795,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1042
+    },
+    {
+      "id": 797,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "candidate_idx": 0,
+      "rationale": "Direct match on data-testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1023
+    },
+    {
+      "id": 685,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2619
+    },
+    {
+      "id": 698,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2658
+    },
+    {
+      "id": 699,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2600
+    },
+    {
+      "id": 700,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2458
+    },
+    {
+      "id": 705,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2619
+    },
+    {
+      "id": 709,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2560
+    },
+    {
+      "id": 714,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2399
+    },
+    {
+      "id": 720,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2549
+    },
+    {
+      "id": 723,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2898
+    },
+    {
+      "id": 724,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2703
+    },
+    {
+      "id": 756,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2520
+    },
+    {
+      "id": 764,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2699
+    },
+    {
+      "id": 834,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"planes\"]').filter({hasText: 'planes'})",
+      "candidate_idx": 0,
+      "rationale": "Uses role and data-kg-card-menu-item for stability.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2735
+    },
+    {
+      "id": 614,
+      "commit": "c5a1dbf5",
+      "old_locator": "page.locator('[data-kg-card-toolbar=\"html\"] [aria-label=\"Visibility\"]'))",
+      "new_locator": "page.locator('[data-kg-card-toolbar=\"html\"] [data-testid=\"edit-html\"]'))",
+      "proposed_selector": "page.locator('[data-testid=\"visibility-message\"]')",
+      "candidate_idx": 2,
+      "rationale": "Most stable anchor available.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        90
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/nodes/HtmlNodeComponent.jsx",
+        119
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 2572
+    },
+    {
+      "id": 615,
+      "commit": "c5a1dbf5",
+      "old_locator": "page.getByTestId('visibility-show-on-web-Toggle')",
+      "new_locator": "page.getByTestId('visibility-show-on-web')",
+      "proposed_selector": "page.locator('input')",
+      "candidate_idx": 5,
+      "rationale": "Input element within ToggleSetting component",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        336
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        90
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 2030
+    },
+    {
+      "id": 765,
+      "commit": "cabe34a7",
+      "old_locator": "page.getByTestId('custom-thumbnail-replace')",
+      "new_locator": "page.getByTestId('media-upload-remove')",
+      "proposed_selector": "page.getByTestId('remove-thumbnail')",
+      "candidate_idx": 6,
+      "rationale": "Most stable anchor available.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2147
+    },
+    {
+      "id": 766,
+      "commit": "cabe34a7",
+      "old_locator": "page.getByTestId('custom-thumbnails-errors'))",
+      "new_locator": "page.getByTestId('media-upload-errors'))",
+      "proposed_selector": "page.getByTestId('thumbnail-errors')",
+      "candidate_idx": 2,
+      "rationale": "Direct match on testId",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1315
+    },
+    {
+      "id": 767,
+      "commit": "cabe34a7",
+      "old_locator": "page.getByTestId('custom-thumbnails-errors'))",
+      "new_locator": "page.getByTestId('media-upload-errors'))",
+      "proposed_selector": "page.getByTestId('thumbnail-errors')",
+      "candidate_idx": 2,
+      "rationale": "Direct match on testId",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1388
+    },
+    {
+      "id": 715,
+      "commit": "ddee33cf",
+      "old_locator": "page.locator('[data-kg-card-menu-item=\"Call to Action\"]'))",
+      "new_locator": "page.locator('[data-kg-card-menu-item=\"Call to action\"]'))",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][aria-label^=\"Call to action\"]')",
+      "candidate_idx": 0,
+      "rationale": "Role and partial aria-label match.",
+      "proposed_target": null,
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 2621
+    },
+    {
+      "id": 716,
+      "commit": "ddee33cf",
+      "old_locator": "page.locator('[data-kg-card-menu-item=\"Call to Action\"]'))",
+      "new_locator": "page.locator('[data-kg-card-menu-item=\"Call to action\"]'))",
+      "proposed_selector": "page.locator('[role=\"menuitem\"][aria-label^=\"Call to action\"]')",
+      "candidate_idx": 0,
+      "rationale": "Uses role and aria-label for stability.",
+      "proposed_target": null,
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 2474
+    },
+    {
+      "id": 621,
+      "commit": "ecee2a8e",
+      "old_locator": "page.locator('[data-kg-card=\"markdown\"]'))",
+      "new_locator": "page.locator('[data-kg-card=\"codeblock\"]'))",
+      "proposed_selector": "page.locator('[data-kg-card=\"codeblock\"]')",
+      "candidate_idx": -1,
+      "rationale": "No suitable candidate found.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardWrapper.jsx",
+        53
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardWrapper.jsx",
+        53
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2562
+    },
+    {
+      "id": 688,
+      "commit": "f2d79731",
+      "old_locator": "page.getByTestId('audio-caption')",
+      "new_locator": "page.getByTestId('audio-title')",
+      "proposed_selector": "page.locator('div[data-testid=\"audio-title\"]')",
+      "candidate_idx": 2,
+      "rationale": "Direct match on data-testid attribute.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2346
+    },
+    {
+      "id": 689,
+      "commit": "f2d79731",
+      "old_locator": "page.getByTestId('audio-caption'))",
+      "new_locator": "page.getByTestId('audio-title'))",
+      "proposed_selector": "page.getByTestId('audio-title')",
+      "candidate_idx": -1,
+      "rationale": "No candidate with a testId.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2276
+    },
+    {
+      "id": 690,
+      "commit": "f2d79731",
+      "old_locator": "page.getByTestId('audio-caption'))",
+      "new_locator": "page.getByTestId('audio-title'))",
+      "proposed_selector": "page.getByTestId('audio-title')",
+      "candidate_idx": -1,
+      "rationale": "No candidate with a testId.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2328
+    }
+  ]
+}

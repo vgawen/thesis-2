@@ -1,0 +1,5 @@
+   279 |         // Upload video
+   280 |         await uploadVideo(page);
+>> 281 |         await page.waitForSelector('[data-testid="media-upload-placeholder"]');
+   282 | 
+   283 |         // Leave editing mode to display the toolbar

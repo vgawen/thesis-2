@@ -1,0 +1,13 @@
+{
+  "id": 765,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "cabe34a7ea46255561bff8f090830327848e6ef6",
+  "test_file_path": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js",
+  "line_no": 122,
+  "old_locator": "page.getByTestId('custom-thumbnail-replace')",
+  "new_locator": "page.getByTestId('media-upload-remove')",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/cabe34a7ea46255561bff8f090830327848e6ef6/packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js",
+  "reproduce_instructions": null
+}

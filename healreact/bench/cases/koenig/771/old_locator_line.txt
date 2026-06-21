@@ -1,0 +1,5 @@
+   140 | 
+   141 |         // Custom thumbnail should be visible
+>> 142 |         const emptyThumbnail = await page.getByTestId('media-upload-placeholder');
+   143 | 
+   144 |         // Upload thumbnail

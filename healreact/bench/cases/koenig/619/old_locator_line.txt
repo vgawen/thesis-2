@@ -1,0 +1,5 @@
+   33 |         await page.keyboard.press('ArrowRight');
+   34 | 
+>> 35 |         await expect(await page.locator('[data-kg-floating-toolbar]')).toHaveCount(0);
+   36 |     });
+   37 | 

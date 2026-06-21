@@ -1,0 +1,5 @@
+   240 | 
+   241 |         // Thumbnail should be visible
+>> 242 |         await expect(await page.getByTestId('media-upload-filled')).toBeVisible();
+   243 |     });
+   244 | 

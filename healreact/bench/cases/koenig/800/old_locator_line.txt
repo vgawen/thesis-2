@@ -1,0 +1,5 @@
+   100 | 
+   101 |             const h2ButtonSelector = `[data-kg-floating-toolbar] [data-kg-toolbar-button="h2"] button`;
+>> 102 |             await expect(await page.locator(h2ButtonSelector)).toHaveCount(0);
+   103 | 
+   104 |             const h3ButtonSelector = `[data-kg-floating-toolbar] [data-kg-toolbar-button="h3"] button`;

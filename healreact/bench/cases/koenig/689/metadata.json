@@ -1,0 +1,13 @@
+{
+  "id": 689,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "f2d79731f635934393c95353b1853a897c968c50",
+  "test_file_path": "packages/koenig-lexical/test/e2e/cards/audio-card.test.js",
+  "line_no": 257,
+  "old_locator": "page.getByTestId('audio-caption'))",
+  "new_locator": "page.getByTestId('audio-title'))",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/f2d79731f635934393c95353b1853a897c968c50/packages/koenig-lexical/test/e2e/cards/audio-card.test.js",
+  "reproduce_instructions": null
+}

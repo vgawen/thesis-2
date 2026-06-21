@@ -1,0 +1,5 @@
+   81 |             });
+   82 | 
+>> 83 |             await page.getByTestId('tk-indicator').click();
+   84 | 
+   85 |             await page.evaluate(() => window.getSelection().toString()).then((selection) => {

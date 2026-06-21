@@ -1,0 +1,21 @@
+{
+  "commit": "ecee2a8e61e60b562ce7193729c98c7bb03cddbc",
+  "sheet_records": 396,
+  "breaks_tested": 1,
+  "reachable_old": 1,
+  "reachable_new": 1,
+  "rows": [
+    {
+      "id": 621,
+      "file": "packages/koenig-lexical/test/e2e/plus-button.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-kg-card=\"markdown\"]",
+      "old_hits": 1,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardWrapper.jsx:53",
+      "new_strategy": "css",
+      "new_value": "[data-kg-card=\"codeblock\"]",
+      "new_hits": 1,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardWrapper.jsx:53"
+    }
+  ]
+}

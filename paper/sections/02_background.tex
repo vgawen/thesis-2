@@ -1,0 +1,14 @@
+\section{Background and Related Work}
+\label{sec:background}
+
+\paragraph{Locator brittleness and benchmarks.}
+ReproBreak~\cite{mouraReproBreak2026} is the largest reproducible locator-break corpus to date (449 reproduced breaks from 359 web repositories with Cypress/Playwright tests). We use the \texttt{tryghost/koenig}~\cite{koenig} Playwright slice (93 reproduced breaks across 19 commits) as the primary substrate.
+
+\paragraph{Self-healing tools.}
+Healenium~\cite{healenium} repairs Selenium selectors via DOM similarity at runtime; it is the most popular practitioner baseline. Joseph~\cite{joseph2026zerocost} re-extracts selectors deterministically via a DOM accessibility tree, reporting 100\% pass on a single e-commerce demo; this is the strongest published baseline on the deterministic static-repair axis and the most direct point of comparison for our L1 substrate. We are not aware of a peer-reviewed LLM-based locator-repair tool that reports false-heal rate on a real-world Playwright benchmark; the closest contemporary line of work focuses on repair-success or explanation-consistency metrics, neither of which directly bounds the failure mode our probe targets.
+
+\paragraph{What is missing.}
+None of the above isolates \emph{silent false heal} --- the rate at which the healer emits a passing-but-wrong selector that masks a real UI change. Joseph reports pass rate on a single demo where the right answer is reachable from the accessibility ladder by construction; ReproBreak provides the data substrate but does not evaluate any healer on it. Section~\ref{sec:findings} addresses this gap via an adversarial-by-construction probe.
+
+\paragraph{React specifics.}
+\texttt{koenig-lexical}~\cite{lexicalRichText, koenig} is a modern React + Lexical rich-text editor whose Playwright suite leans heavily on custom \texttt{data-kg-*} attributes (about half of its breaks) rather than \texttt{data-testid}. \texttt{payloadcms/payload}~\cite{payloadCMS} is a Next.js admin UI whose CSS classes follow BEM~\cite{bemMethodology}, using \texttt{\$\{baseClass\}\_\_suffix} template literals that are visible to React but not to a literal-string AST extractor. The contrast between these two anchor cultures is the basis for our cross-app finding (\S\ref{sec:findings}, F3).

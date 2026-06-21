@@ -1,0 +1,5 @@
+   31 |         await page.keyboard.press('/');
+   32 |         await page.keyboard.type('cta');
+>> 33 |         await expect(page.locator('[data-kg-card-menu-item="Call to action"]')).toBeVisible();
+   34 |         await expect(page.locator('[data-kg-card-menu-item="Email call to action"]')).not.toBeVisible();
+   35 |     });

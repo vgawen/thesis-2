@@ -1,0 +1,5 @@
+    9 |     test('caret does not appear on empty editor', async function ({page}) {
+   10 |         await focusEditor(page);
+>> 11 |         await expect(await page.locator('[data-kg-plus-button]')).toHaveCount(0);
+   12 |     });
+   13 | 

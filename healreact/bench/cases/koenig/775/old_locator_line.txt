@@ -1,0 +1,5 @@
+   231 |         // Create and dispatch data transfer
+   232 |         const dataTransfer = await createDataTransfer(page, [{filePath, fileName: 'large-image.png', fileType: 'image/png'}]);
+>> 233 |         await page.getByTestId('media-upload-placeholder').dispatchEvent('dragover', {dataTransfer});
+   234 | 
+   235 |         // Dragover text should be visible

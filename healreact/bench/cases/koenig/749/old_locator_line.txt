@@ -1,0 +1,5 @@
+   348 |         await page.keyboard.press('Enter');
+   349 |         await page.keyboard.type('/snippet');
+>> 350 |         await expect(page.locator('[data-kg-cardmenu-selected="true"]').filter({hasText: 'snippet'})).toBeVisible();
+   351 |         await page.keyboard.press('Enter');
+   352 |         await expect(await page.locator('[data-kg-card="product"]')).toHaveCount(2);

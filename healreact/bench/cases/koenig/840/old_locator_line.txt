@@ -1,0 +1,5 @@
+   92 | 
+   93 |             await page.keyboard.type('TK and TK and TK');
+>> 94 |             await page.getByTestId('tk-indicator').click();
+   95 | 
+   96 |             // piece 2 in the array is the child node

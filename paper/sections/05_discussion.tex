@@ -1,0 +1,20 @@
+\section{Discussion and Limitations}
+\label{sec:discussion}
+
+\paragraph{What 78.7\% means for unattended CI healing.}
+The most common deployment story for LLM-based self-healing is autonomous: a failing E2E test triggers an LLM, the LLM proposes a patch, the CI auto-commits (or auto-posts as a PR comment). Our F1 result says that any such deployment without a behavioural oracle is dangerous: in $\approx$\,15\% of broken Playwright tests on a real React codebase, the bare healer will silently rewrite the assertion against a wrong element. The dangerous failure mode is not ``the healer breaks the build'' --- builds breaking is what tests are for --- but ``the healer makes the build green against the wrong target.''
+
+\paragraph{Why soft prompt safety nets fail.}
+The \textsc{Vanilla = Abstain} identity (Table~\ref{tab:falseheal}) is, on reflection, unsurprising. The model's training objective rewards confident outputs; a soft instruction in the system prompt that abstention is preferred competes with a much stronger prior to ``produce a plausible answer''. The implication for tool design is that anti-false-heal safeguards have to sit \emph{outside} the model: deterministic retrieval thresholds, anchor-class membership rules, and ultimately a behavioural oracle that can falsify a passing patch.
+
+\paragraph{Why two cheap deterministic levers beat prompt engineering.}
+F2's testId-weighted retrieval and strict-anchor post-filter are mechanically obvious, but they Pareto-improve a bare 7B model with zero regressions and a $\approx$\,22\% wall-clock saving on this pilot. We do not claim this generalises beyond the present setup; we note it as a local design lesson for HealReact: putting an anchor-priority constraint into the candidate pool and into the output post-filter was more reliable than relying on the model's system prompt to enforce it.
+
+\paragraph{Limitations.}
+\textit{Model scope.} All numbers use a single open-weights small coder model (\texttt{qwen2.5-coder:7b}). We have not yet measured whether a frontier model (GPT-4-class) closes the gap on F1. Our prediction, from the \textsc{Vanilla = Abstain} identity, is that scale alone will not close it without a deterministic oracle, but this is testable and we will report it in the full paper.
+\textit{Benchmark scope.} The primary numbers are on a single React+Playwright codebase (koenig). F3 extends to a second (payload), but reachability there is gated by the BEM blind spot.
+\textit{Static repair proxy $\ne$ Playwright pass rate.} The 77.3\% / 62.4\% L3 numbers are resolver-exact agreement. Converting them into Playwright pass/fail requires Docker-based replay of the patched tests against ReproBreak's reproduction environment, which is deferred (\S\ref{sec:roadmap}).
+\textit{Baselines.} We do not yet compare head-to-head with Joseph~\cite{joseph2026zerocost} or with contemporary LLM-based healers on a shared benchmark. The most direct comparison --- false-heal rate of Joseph's accessibility-tree ladder on our F1 probe --- is on the roadmap (\S\ref{sec:roadmap}, R4).
+
+\paragraph{Threats to validity.}
+The 78.7\% number depends on resolver semantics. \texttt{resolve\_locators.py} treats dynamic JS-expression attribute values as may-match and uses ancestor over-approximation for compound CSS; both decisions are reasonable for triage but over-permissive in edge cases. We retire an earlier, inflated ``98\% reachability ceiling'' claim in the supplementary honesty audit and stand on 80.6\% as the conservative number under tightened resolver assumptions.

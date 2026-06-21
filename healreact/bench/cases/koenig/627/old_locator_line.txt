@@ -1,0 +1,5 @@
+   59 |             });
+   60 | 
+>> 61 |             await expect(await page.locator('[data-kg-plus-button]')).toHaveCount(0);
+   62 |         });
+   63 | 

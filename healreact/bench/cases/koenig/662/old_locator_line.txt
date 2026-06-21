@@ -1,0 +1,5 @@
+   295 | 
+   296 |             await expect(await page.locator('[data-kg-plus-menu]')).toHaveCount(0);
+>> 297 |             expect(await page.locator('[data-kg-plus-button]')).not.toBeNull();
+   298 | 
+   299 |             await assertSelection(page, {

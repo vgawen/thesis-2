@@ -1,0 +1,24 @@
+{
+  "name": "healreact",
+  "version": "0.1.0",
+  "private": true,
+  "description": "HealReact — AST-anchored intent locators + fault-localising LLM healer for React E2E tests",
+  "type": "module",
+  "scripts": {
+    "extract": "tsx src/ast/extractor.ts",
+    "test:pilot": "playwright test tests/pilot",
+    "test:e2e": "playwright test tests/e2e",
+    "bench:fetch": "bash scripts/bench_fetch.sh",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "ts-morph": "^25.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

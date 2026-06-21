@@ -1,0 +1,5 @@
+   86 |             await page.keyboard.type('text for selection');
+   87 | 
+>> 88 |             await expect(await page.locator('[data-kg-floating-toolbar]')).toHaveCount(0);
+   89 | 
+   90 |             await page.keyboard.down('Shift');

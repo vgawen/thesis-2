@@ -1,0 +1,5 @@
+   174 | 
+   175 |         // Check that title updated
+>> 176 |         expect(await page.getByTestId('audio-title').inputValue()).toEqual('Audio sample 1');
+   177 |     });
+   178 | 

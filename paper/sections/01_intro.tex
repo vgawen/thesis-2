@@ -1,0 +1,25 @@
+\section{Introduction}
+\label{sec:intro}
+
+Maintaining brittle UI test suites is a persistent maintenance cost in modern web engineering. A renamed CSS class, a re-parented React component, or a refactored handler that preserves user-visible behaviour is enough to break dozens of end-to-end (E2E) Playwright tests. The natural response, championed by both industry tools (Healenium, mabl) and a growing line of academic work~\cite{joseph2026zerocost, mouraReproBreak2026, healenium}, is \emph{self-healing}: when a locator fails, automatically rewrite it to point at the equivalent element in the new DOM.
+
+The promise is real and the recent literature has made it look near-solved. Joseph~\cite{joseph2026zerocost} reports 100\% pass on a single demo by walking a deterministic accessibility-tree ladder, and contemporary LLM-based locator healers report large repair-success rates with various consistency safeguards. But these numbers all share a structural blind spot: they measure \emph{whether the patched test passes}, not \emph{whether the patch points at the element the developer actually meant}. A healer that always finds \emph{some} resolvable selector --- any element with similar attributes will do --- is silently dangerous, because every passing-but-wrong heal masks a real UI change that should have been surfaced as a regression.
+
+We measure this failure mode directly on real-world Playwright break cases from the ReproBreak~\cite{mouraReproBreak2026} dataset. Our findings, on the 75 reachable koenig breaks, are uncomfortable:
+
+\begin{itemize}
+\item \textbf{F1 --- Silent false heal is the default.} When the ground-truth target element is forcibly removed from the candidate set, a bare LLM healer (\texttt{qwen2.5-coder:7b}~\cite{qwenCoderTech2024}) emits a resolver-valid but \emph{wrong} Playwright selector in \textbf{78.7\%} of cases (59/75). Only 17.3\% of the time does it correctly abstain.
+\item \textbf{F2 --- Soft prompt-level abstention does not work.} Adding an explicit ``ABSTAIN if no candidate fits'' guardrail to the system prompt produces \emph{identical} numbers (59/75 in both variants, $\Delta=0$). The model treats the rule as decorative.
+\item \textbf{F3 --- Cross-app generalisation is gated by anchor-culture indirection.} A second React+Playwright codebase (\texttt{payloadcms/payload}, 319 break pairs) uses BEM-style template-literal classes that the current static extractor cannot evaluate, dropping raw reach from 80.6\% (on koenig) to 3.8\%. We diagnose this as a deliberate, fixable blind spot, not a refutation.
+\end{itemize}
+
+\noindent The first two findings give direct empirical motivation for evaluating behavioural-replay validation as the next layer of an unattended-healing pipeline; we do not yet measure end-to-end masking under replay (\S\ref{sec:roadmap}, R1+R3). The third finding gives a falsifiable cross-app generalisation claim: any locator-repair tool benchmarked on a single app likely overestimates generalisability, because anchor culture (\texttt{data-testid} vs \texttt{data-kg-*} vs BEM template literals) varies substantially across React codebases.
+
+We additionally describe HealReact's L1 substrate --- an AST extractor plus an LLM-derived intent labeller with deterministic post-calibration --- which reaches 80.6\% of the 93 koenig break targets statically, and on top of which a small local L3 healer answers 77.3\% of reachable cases correctly (62.4\% of the full dataset as a static repair proxy\footnote{We use ``static repair proxy'' rather than ``end-to-end repair'' throughout: resolver-exact-element agreement is correlated with --- but neither a lower nor an upper bound on --- the Playwright pass rate (a statically-exact match can still fail at runtime under visibility/timing constraints; a statically-different match can still pass against a re-rendered DOM). Converting one number into the other requires Docker-based replay, which we mark as immediate roadmap (\S\ref{sec:roadmap}).}). Two cheap deterministic levers --- testId-weighted retrieval and a strict-anchor post-filter --- give a Pareto improvement of $+5$ correct cases with zero regressions, suggesting deterministic post-processing is a more reliable safety net than prompt engineering.
+
+\paragraph{Contributions.}
+(i) A diagnostic measurement of silent false-heal on a real Playwright dataset, and a demonstration that prompt-level abstention does not mitigate it (\S\ref{sec:findings});
+(ii) HealReact's L1 substrate as a falsifiable, locally-runnable static layer (\S\ref{sec:l1}); and
+(iii) Two deterministic safety levers that Pareto-improve a bare LLM healer (\S\ref{sec:findings}).
+
+The 78.7\% number is the upper bound (adversarial-by-construction); on the 18 of 93 truly-unreachable koenig cases it translates to $\approx 15\%$ silent false-heal across the unattended workload. We argue (\S\ref{sec:discussion}) this is already high enough to refuse unattended CI auto-commit of LLM-proposed selector patches.

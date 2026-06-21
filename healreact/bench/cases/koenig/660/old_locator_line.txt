@@ -1,0 +1,5 @@
+   274 | 
+   275 |             await page.keyboard.type('Test');
+>> 276 |             await expect(await page.locator('[data-kg-plus-menu]')).toHaveCount(0);
+   277 |             expect(await page.$eval('[data-lexical-editor] > p', p => p.innerText))
+   278 |                 .toBe('Test');

@@ -1,0 +1,5 @@
+   209 | 
+   210 |         // wait for image markdown to be inserted
+>> 211 |         await page.waitForSelector('[data-kg-card="markdown"] .cm-image');
+   212 | 
+   213 |         await assertRootChildren(page, JSON.stringify([

@@ -1,0 +1,13 @@
+{
+  "id": 715,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "ddee33cf8e82908d68ee14613eb8d8a76965b550",
+  "test_file_path": "packages/koenig-lexical/test/e2e/cards/email-cta-card.test.js",
+  "line_no": 33,
+  "old_locator": "page.locator('[data-kg-card-menu-item=\"Call to Action\"]'))",
+  "new_locator": "page.locator('[data-kg-card-menu-item=\"Call to action\"]'))",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/ddee33cf8e82908d68ee14613eb8d8a76965b550/packages/koenig-lexical/test/e2e/cards/email-cta-card.test.js",
+  "reproduce_instructions": null
+}

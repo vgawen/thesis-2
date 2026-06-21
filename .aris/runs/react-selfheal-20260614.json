@@ -1,0 +1,47 @@
+{
+  "run_id": "react-selfheal-20260614",
+  "created": "2026-06-14T04:19:54Z",
+  "updated": "2026-06-14T05:45:04Z",
+  "phases": [
+    {
+      "phase": "idea-discovery",
+      "status": "accepted",
+      "artifact": "idea-stage/IDEA_REPORT.md",
+      "verdict_id": "auto-review-loop-r2-6.2-almost",
+      "reviewer": "codex-mcp-project-0-Thesis-codex",
+      "updated": "2026-06-14T05:35:39Z"
+    },
+    {
+      "phase": "experiment-bridge",
+      "status": "running",
+      "artifact": "refine-logs/EXPERIMENT_PROGRESS.md",
+      "verdict_id": null,
+      "reviewer": null,
+      "updated": "2026-06-14T05:45:04Z"
+    },
+    {
+      "phase": "auto-review-loop",
+      "status": "pending",
+      "artifact": null,
+      "verdict_id": null,
+      "reviewer": null,
+      "updated": "2026-06-14T04:19:54Z"
+    },
+    {
+      "phase": "summary",
+      "status": "pending",
+      "artifact": null,
+      "verdict_id": null,
+      "reviewer": null,
+      "updated": "2026-06-14T04:19:54Z"
+    },
+    {
+      "phase": "paper-writing",
+      "status": "pending",
+      "artifact": null,
+      "verdict_id": null,
+      "reviewer": null,
+      "updated": "2026-06-14T04:19:54Z"
+    }
+  ]
+}

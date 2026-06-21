@@ -1,0 +1,5 @@
+   148 |         await page.keyboard.type('Heading');
+   149 | 
+>> 150 |         const heading = page.locator('.koenig-lexical-heading');
+   151 |         await expect(heading).toContainText('Heading');
+   152 |     });

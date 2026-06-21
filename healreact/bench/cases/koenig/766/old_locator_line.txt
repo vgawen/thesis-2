@@ -1,0 +1,5 @@
+   146 | 
+   147 |         // Errors should be visible
+>> 148 |         await expect(await page.getByTestId('media-upload-errors')).toBeVisible();
+   149 |     });
+   150 | 

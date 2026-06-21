@@ -1,0 +1,5 @@
+   195 |         test('opens on button click', async function ({page}) {
+   196 |             await focusEditor(page);
+>> 197 |             await expect(await page.locator('[data-kg-plus-menu]')).toHaveCount(0);
+   198 |             await page.click('[data-kg-plus-button]');
+   199 |             expect(await page.locator('[data-kg-plus-menu]')).not.toBeNull();

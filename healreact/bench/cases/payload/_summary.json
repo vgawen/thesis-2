@@ -1,0 +1,8 @@
+{
+  "repo": "payloadcms/payload",
+  "n_break_pairs": 319,
+  "n_records_extracted": 457,
+  "new_locator_reachable_at_head": 12,
+  "reach_pct": 3.8,
+  "extracted_dir": "packages/ui/src"
+}

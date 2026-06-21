@@ -1,0 +1,5 @@
+   254 |         // Create and dispatch data transfer
+   255 |         const dataTransfer = await createDataTransfer(page, [{filePath, fileName: 'video.mp4', fileType: 'video/mp4'}]);
+>> 256 |         await page.getByTestId('media-upload-placeholder').dispatchEvent('drop', {dataTransfer});
+   257 | 
+   258 |         // Errors should be visible

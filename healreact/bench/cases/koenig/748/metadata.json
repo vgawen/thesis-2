@@ -1,0 +1,13 @@
+{
+  "id": 748,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "46b8d7c3972af402bbc0489d16427e5ba3bdd26c",
+  "test_file_path": "packages/koenig-lexical/test/e2e/cards/markdown-card.test.js",
+  "line_no": 211,
+  "old_locator": "page.waitForSelector('[data-kg-card=\"markdown\"] .cm-formatting-image')",
+  "new_locator": "page.waitForSelector('[data-kg-card=\"markdown\"] .cm-image')",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/46b8d7c3972af402bbc0489d16427e5ba3bdd26c/packages/koenig-lexical/test/e2e/cards/markdown-card.test.js",
+  "reproduce_instructions": null
+}

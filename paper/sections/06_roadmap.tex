@@ -1,0 +1,19 @@
+\section{Roadmap to the Full Method Paper}
+\label{sec:roadmap}
+
+The findings above motivate four concrete deliverables for the full HealReact paper:
+
+\paragraph{R1: Docker-replayed pass/fail.}
+Convert the static repair proxy (62.4\%) into a real Playwright pass rate by running each of the 58 v1-correct repairs through ReproBreak's per-commit Docker environment. The infrastructure (\texttt{reproduce.py}, per-commit Dockerfiles, the v1-correct case manifest) is in place; engineering work remains to wire end-to-end pass/fail collection.
+
+\paragraph{R2: \texttt{baseClass} + CSS-modules expander.}
+A small AST pass that walks back to component-local \texttt{const baseClass = '...'} declarations (and CSS Modules \texttt{styles.foo} imports), then evaluates template literals such as \texttt{\{`\$\{baseClass\}\_\_suffix`\}} into literal class strings. F3 hypothesises this substantially lifts payload reach; we will report the realised number.
+
+\paragraph{R3: Behavioural-replay oracle (L4).}
+The empirical case for L4 is F1 (\S\ref{sec:f1}). Implementation plan: at green-baseline time, record the failing-test's network HAR + console + DOM-event trace; at heal time, re-run the healed test and reject any patch whose canonicalised request/response sequence (timestamps, UUIDs, JWTs redacted) diverges from baseline. The pass-rate we care about is precision-of-acceptance under paired mutants --- a fresh metric, no prior baseline.
+
+\paragraph{R4: Baseline comparison on a shared substrate.}
+Run Joseph's zero-cost accessibility-tree ladder~\cite{joseph2026zerocost} on the same 93 koenig cases and report side-by-side reachability per break type, plus its false-heal rate on the F1 adversarial probe. This is the most direct head-to-head comparison; the present short paper does not claim ranking against any specific LLM-based baseline.
+
+\paragraph{Replication.}
+All numbers in this paper are reproducible from the scripts under \texttt{healreact/bench/scripts/} (\texttt{extract\_breaks.py}, \texttt{run\_reachability\_all.py}, \texttt{heal\_baseline.py}, \texttt{false\_heal\_probe.py}, \texttt{cross\_app\_probe.py}) against the ReproBreak database and the public sources of \texttt{tryghost/koenig} and \texttt{payloadcms/payload}; we will release the artefact bundle (scripts + per-case JSONs + LocatorSheets) with the camera-ready version. Wall-clock budget on Apple M5 Pro (no external API calls): $\approx$\,8\,min for the full sweep.

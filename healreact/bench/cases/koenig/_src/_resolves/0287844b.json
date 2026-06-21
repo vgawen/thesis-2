@@ -1,0 +1,21 @@
+{
+  "commit": "0287844b585c5b30fc2716b2d780df5a8aa427c8",
+  "sheet_records": 450,
+  "breaks_tested": 1,
+  "reachable_old": 0,
+  "reachable_new": 0,
+  "rows": [
+    {
+      "id": 713,
+      "file": "packages/koenig-lexical/test/e2e/cards/email-card.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-kg-card=\"email\"] ul > li:first-child",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "css",
+      "new_value": "[data-kg-card=\"email\"] [data-lexical-editor] ul > li:first-child",
+      "new_hits": 0,
+      "new_top": null
+    }
+  ]
+}

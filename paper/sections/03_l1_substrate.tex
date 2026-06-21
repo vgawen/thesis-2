@@ -1,0 +1,53 @@
+\section{The HealReact L1 Substrate}
+\label{sec:l1}
+
+HealReact's L1 layer is the static substrate on top of which the L3 healer and any future behavioural oracle (L4) operate. It has three parts (Figure~\ref{fig:arch}).
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize\sffamily,
+  every node/.style={align=center},
+  box/.style={draw, rounded corners=2pt, inner sep=4pt, minimum height=7mm, minimum width=18mm, fill=white},
+  layer/.style={draw, rounded corners=3pt, inner sep=6pt, fill=blue!4},
+  arrow/.style={-{Latex[length=1.6mm]}, thick},
+  dashbox/.style={draw, dashed, rounded corners=2pt, inner sep=4pt, fill=gray!8},
+]
+% L1
+\node[box] (ast) {AST extractor\\\scriptsize \texttt{ts-morph}};
+\node[box, right=4mm of ast] (intent) {Intent labeller\\\scriptsize \texttt{qwen2.5:3b}};
+\node[box, right=4mm of intent] (cal) {Calibrator\\\scriptsize rules A--J};
+\node[layer, fit=(ast)(intent)(cal), label={[anchor=west, xshift=-1mm]north west:\textbf{L1} (static, this paper)}] (l1) {};
+
+% L3
+\node[box, below=12mm of intent, fill=orange!8] (heal) {L3 healer\\\scriptsize \texttt{qwen2.5-coder:7b}\\\scriptsize + retrieval + strict anchor};
+
+% L4 (future)
+\node[dashbox, right=7mm of heal, minimum height=12mm, minimum width=30mm] (oracle) {\textbf{L4} behavioural\\replay oracle\\\scriptsize \emph{not yet implemented}};
+
+% Sheet
+\node[box, below=4mm of heal, fill=green!8] (sheet) {\texttt{LocatorSheet.json}\\\scriptsize 304 records on koenig\\\scriptsize 80.6\% reachability};
+
+% arrows
+\draw[arrow] (ast) -- (intent);
+\draw[arrow] (intent) -- (cal);
+\draw[arrow] (cal.south) |- (sheet.west);
+\draw[arrow] (sheet.east) -| (heal.south);
+\draw[arrow] (heal.east) -- node[above, font=\scriptsize]{proposed patch} (oracle.west);
+\draw[arrow] (oracle.south) |- ++(-22mm,-5mm) node[above right, font=\scriptsize]{commit / reject};
+\end{tikzpicture}
+\caption{HealReact pipeline. L1 (this paper) is the static AST anchor substrate (intent labels are present in the implementation but evaluated only on synthetic fixtures in this paper); L3 is the LLM healer evaluated in \S\ref{sec:findings}. L4 (dashed) is the behavioural-replay oracle whose need is motivated empirically by the false-heal probe in \S\ref{sec:findings} but is not yet implemented.}
+\label{fig:arch}
+\end{figure}
+
+\paragraph{AST extractor.}
+Built on \texttt{ts-morph}~\cite{tsmorph}, the extractor walks every \texttt{.tsx}/\texttt{.jsx} file in a target directory and emits a JSON \texttt{LocatorSheet} record per interactive JSX element. Each record contains the element tag, parent chain, role, \texttt{data-testid}, \texttt{aria-label}, \texttt{id}, \texttt{className}, free-text content, and crucially \emph{any} custom \texttt{data-*} attribute (captured in a \texttt{dataAttrs} map). The extractor also treats any JSX element that carries a stable anchor (\texttt{data-testid}, \texttt{data-cy}, \texttt{data-kg-*}, \texttt{aria-label}, or camelCase \texttt{dataTestId}/\texttt{testId}/\texttt{testID} props) as interactive --- not just the canonical HTML tag set. This single change moved anchor coverage on \texttt{koenig-lexical} from 22\% to 48\% and the resolver hit rate from 0\% to 71\%, illustrating how much of modern React's brittleness lives in custom wrapper components.
+
+\paragraph{Intent labeller and calibrator (synthetic-only in this paper).}
+HealReact additionally includes an LLM intent-labelling pass (\texttt{qwen2.5:3b} via Ollama~\cite{ollama}) that, given each component's source and JSX context, emits a short intent label (e.g.\ \texttt{submit-order-button}, \texttt{toggle-email-notification}), followed by a deterministic calibration layer of ten rules (A--J) that flag suspicious labels --- compressed sibling-set labels, tag-as-noun degenerations, role/intent mismatches --- and demote their confidence. Flagged records are re-prompted to \texttt{qwen2.5-coder:7b} as a cheap-then-expensive verifier (a common staged-verification pattern in unit-test repair). \textbf{Important scope note}: in this paper the intent layer is evaluated only on a 32-element synthetic fixture set (documented in supplementary material). All real-data results in \S\ref{sec:findings} use the extractor's anchors + lexical retrieval --- not L1 intent labels. Validating L1 intent stability on real code is part of the full method paper, not this short paper.
+
+\paragraph{Locator resolver as a falsifiable lens.}
+We built a Playwright-selector parser/matcher that consumes any selector expression (\texttt{page.locator}, \texttt{getByTestId}, \texttt{getByRole}, \texttt{waitForSelector}, raw CSS) and returns the set of LocatorSheet records it would match. This is the lens through which every claim in \S\ref{sec:findings} is verified: reachability is ``does the broken selector resolve to a sheet record?''; L3 correctness is ``does the resolver map the LLM-proposed selector and the ground-truth selector to the same element?''. Building this lens forced us to handle quote-aware nested arguments, dynamic JS-expression attribute values, and bare-attribute selectors; an earlier version inflated reachability to 85--98\% via parser bugs, which we now flag in the honesty audit.
+
+\paragraph{Headline number.}
+On \texttt{koenig-lexical} at 19 break commits, the extractor produces $\approx$\,400 LocatorSheet records per commit on average (range 314--489 across commits) and the resolver reaches \textbf{75 / 93 = 80.6\%} of the real Playwright break targets statically. The remaining 18 cases require runtime DOM (e.g.\ Lexical-rendered \texttt{<p>} nodes generated at runtime), which is the canonical L2 territory and not addressed in this paper.

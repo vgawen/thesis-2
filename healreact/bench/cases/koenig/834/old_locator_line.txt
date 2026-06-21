@@ -1,0 +1,5 @@
+   34 |         await page.keyboard.type('/snippet');
+   35 |         // Wait for snippet to appear in slash menu before pressing Enter
+>> 36 |         await expect(page.locator('[data-kg-cardmenu-selected="true"]').filter({hasText: 'planes'})).toBeVisible();
+   37 |         await page.keyboard.press('Enter');
+   38 |         await page.waitForSelector('[data-kg-card="image"]');

@@ -1,0 +1,84 @@
+'use client'
+import { getTranslation } from '@payloadcms/translations'
+import React from 'react'
+
+import type { TextFilterProps as Props } from './types.js'
+
+import { useTranslation } from '../../../../providers/Translation/index.js'
+import { ReactSelect } from '../../../ReactSelect/index.js'
+
+export const Text: React.FC<Props> = (props) => {
+  const { disabled, field, onChange, operator, value } = props
+  const { i18n, t } = useTranslation()
+
+  const ariaLabel = field?.label ? getTranslation(field.label, i18n) : t('general:enterAValue')
+
+  const hasMany = field?.hasMany ?? false
+  const isMulti = ['in', 'not_in'].includes(operator) || hasMany
+
+  const [valueToRender, setValueToRender] = React.useState<
+    { id: string; label: string; value: { value: string } }[]
+  >([])
+
+  const onSelect = React.useCallback(
+    (selectedOption) => {
+      let newValue
+      if (!selectedOption) {
+        newValue = []
+      } else if (isMulti) {
+        if (Array.isArray(selectedOption)) {
+          newValue = selectedOption.map((option) => option.value?.value || option.value)
+        } else {
+          newValue = [selectedOption.value?.value || selectedOption.value]
+        }
+      }
+
+      onChange(newValue)
+    },
+    [isMulti, onChange],
+  )
+
+  React.useEffect(() => {
+    if (Array.isArray(value)) {
+      setValueToRender(
+        value.map((val, index) => {
+          return {
+            id: `${val}${index}`, // append index to avoid duplicate keys but allow duplicate numbers
+            label: `${val}`,
+            value: {
+              toString: () => `${val}${index}`,
+              value: (val as any)?.value || val,
+            },
+          }
+        }),
+      )
+    } else {
+      setValueToRender([])
+    }
+  }, [value])
+
+  return isMulti ? (
+    <ReactSelect
+      aria-label={ariaLabel}
+      disabled={disabled}
+      isClearable
+      isCreatable
+      isMulti={isMulti}
+      isSortable
+      onChange={onSelect}
+      options={[]}
+      placeholder={t('general:enterAValue')}
+      value={valueToRender || []}
+    />
+  ) : (
+    <input
+      aria-label={ariaLabel}
+      className="form-input"
+      disabled={disabled}
+      onChange={(e) => onChange(e.target.value)}
+      placeholder={t('general:enterAValue')}
+      type="text"
+      value={value || ''}
+    />
+  )
+}

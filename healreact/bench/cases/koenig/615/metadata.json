@@ -1,0 +1,13 @@
+{
+  "id": 615,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "c5a1dbf580e206cb74b8966e260d038e099eb2ce",
+  "test_file_path": "packages/koenig-lexical/test/e2e/content-visibility.test.js",
+  "line_no": 148,
+  "old_locator": "page.getByTestId('visibility-show-on-web-Toggle')",
+  "new_locator": "page.getByTestId('visibility-show-on-web')",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/c5a1dbf580e206cb74b8966e260d038e099eb2ce/packages/koenig-lexical/test/e2e/content-visibility.test.js",
+  "reproduce_instructions": null
+}

@@ -1,0 +1,5 @@
+   448 |         const fileChooser = await fileChooserPromise;
+   449 |         await fileChooser.setFiles([filePath]);
+>> 450 |         await expect(page.locator('[data-testid="signup-card-container"] [data-testid="media-upload-filled"] img')).toHaveAttribute('src', /blob:/);
+   451 |         // Click swap
+   452 |         await page.click('[data-testid="media-upload-swap"]');

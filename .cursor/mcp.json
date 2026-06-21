@@ -1,0 +1,9 @@
+{
+  "_comment": "Project-scoped MCP servers for the HealReact research workspace. Codex authenticates via ChatGPT login (already set up). To make these available across ALL projects, merge into ~/.cursor/mcp.json. After editing, fully restart Cursor (cmd+Q then reopen) so the agent picks up the new tool list at session start.",
+  "mcpServers": {
+    "codex": {
+      "command": "codex",
+      "args": ["mcp-server"]
+    }
+  }
+}

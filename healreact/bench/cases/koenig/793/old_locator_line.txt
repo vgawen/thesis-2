@@ -1,0 +1,5 @@
+   61 |     test('ignores slash menu on blank paragraph', async function ({page}) {
+   62 |         await focusEditor(page);
+>> 63 |         await expect(await page.locator('[data-kg-slash-menu]')).toHaveCount(0);
+   64 |         await page.keyboard.type('/');
+   65 |         await expect(await page.locator('[data-kg-slash-menu]')).toHaveCount(0);

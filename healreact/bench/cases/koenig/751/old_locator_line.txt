@@ -1,0 +1,5 @@
+   327 |         await fileChooser.setFiles([filePath]);
+   328 | 
+>> 329 |         await expect(page.locator('[data-testid="signup-card-container"] [data-testid="media-upload-filled"] img')).toHaveAttribute('src', /blob:/);
+   330 |     });
+   331 | 

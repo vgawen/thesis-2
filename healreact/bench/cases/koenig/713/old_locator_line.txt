@@ -1,0 +1,5 @@
+   183 |         await page.keyboard.press(`${ctrlOrCmd}+z`);
+   184 | 
+>> 185 |         const emailCard = page.locator('[data-kg-card="email"] [data-lexical-editor] ul > li:first-child');
+   186 |         await expect(emailCard).toHaveText('List item 1');
+   187 |     });

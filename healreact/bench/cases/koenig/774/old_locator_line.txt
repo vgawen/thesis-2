@@ -1,0 +1,5 @@
+   227 | 
+   228 |         // Wait for custom thumbnail
+>> 229 |         await page.waitForSelector('[data-testid="media-upload-placeholder"]');
+   230 | 
+   231 |         // Create and dispatch data transfer

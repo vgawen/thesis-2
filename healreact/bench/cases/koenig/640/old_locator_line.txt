@@ -1,0 +1,5 @@
+   129 |             await page.keyboard.type('- ');
+   130 | 
+>> 131 |             await expect(await page.locator('[data-kg-plus-button]')).toHaveCount(0);
+   132 | 
+   133 |             const pHandle = await page.locator('[data-lexical-editor] > p');

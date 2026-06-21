@@ -1,0 +1,13 @@
+{
+  "id": 756,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "be7221b04998766fead7a3830f1adf94fff2ef2a",
+  "test_file_path": "packages/koenig-lexical/test/e2e/cards/toggle-card.test.js",
+  "line_no": 253,
+  "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+  "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/be7221b04998766fead7a3830f1adf94fff2ef2a/packages/koenig-lexical/test/e2e/cards/toggle-card.test.js",
+  "reproduce_instructions": null
+}

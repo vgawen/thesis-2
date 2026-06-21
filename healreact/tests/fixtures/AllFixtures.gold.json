@@ -1,0 +1,359 @@
+{
+  "_doc": "L1 intent ground-truth PROPOSAL for AllFixtures.LocatorSheet.json. Reviewer (you): edit `goldIntent` and `notes` in-place, then save as AllFixtures.gold.json. The `interactive` field is the truth label for whether the element is genuinely interactive at runtime (clickable, focusable-input, form-root). For non-interactive elements goldIntent must be 'non-interactive'. Intent format: <verb>-<noun>[-<modifier>], kebab-case, ASCII, no punctuation. KEY: each record now keyed by (componentFile, line, tag) \u2014 survives extractor schema changes.",
+  "_intent_vocabulary_hint": [
+    "set-*, toggle-*, select-*, enter-*",
+    "submit-*, apply-*, save-*, discard-*, cancel-*, delete-*, remove-*, create-*",
+    "open-*, close-*, expand-*, collapse-*",
+    "navigate-to-*, search-*"
+  ],
+  "records": [
+    {
+      "idx": 0,
+      "file": "SampleCart.tsx",
+      "tag": "input",
+      "line": 10,
+      "anchors": "testid=cart-qty-input, aria=cart.qty",
+      "interactive": true,
+      "goldIntent": "set-cart-quantity",
+      "notes": "number input controlling per-line qty",
+      "key": "tests/fixtures/SampleCart.tsx:L10:input"
+    },
+    {
+      "idx": 1,
+      "file": "SampleCart.tsx",
+      "tag": "button",
+      "line": 17,
+      "anchors": "testid=remove-item-btn, aria='Remove item', text='Remove', onClick",
+      "interactive": true,
+      "goldIntent": "remove-cart-item",
+      "notes": "",
+      "key": "tests/fixtures/SampleCart.tsx:L17:button"
+    },
+    {
+      "idx": 2,
+      "file": "SampleCart.tsx",
+      "tag": "form",
+      "line": 26,
+      "anchors": "onSubmit",
+      "interactive": true,
+      "goldIntent": "submit-coupon",
+      "notes": "this form wraps ONLY the coupon input+apply button, not the whole cart \u2014 see L28/L29",
+      "key": "tests/fixtures/SampleCart.tsx:L26:form"
+    },
+    {
+      "idx": 3,
+      "file": "SampleCart.tsx",
+      "tag": "label",
+      "line": 27,
+      "anchors": "(label for coupon input)",
+      "interactive": false,
+      "goldIntent": "non-interactive",
+      "notes": "",
+      "key": "tests/fixtures/SampleCart.tsx:L27:label"
+    },
+    {
+      "idx": 4,
+      "file": "SampleCart.tsx",
+      "tag": "input",
+      "line": 28,
+      "anchors": "(coupon code text input)",
+      "interactive": true,
+      "goldIntent": "enter-coupon-code",
+      "notes": "input \u2260 button \u2014 verb is 'enter'",
+      "key": "tests/fixtures/SampleCart.tsx:L28:input"
+    },
+    {
+      "idx": 5,
+      "file": "SampleCart.tsx",
+      "tag": "button",
+      "line": 29,
+      "anchors": "type=submit inside coupon form, text='Apply'",
+      "interactive": true,
+      "goldIntent": "apply-coupon",
+      "notes": "",
+      "key": "tests/fixtures/SampleCart.tsx:L29:button"
+    },
+    {
+      "idx": 6,
+      "file": "SampleCart.tsx",
+      "tag": "a",
+      "line": 33,
+      "anchors": "href=/checkout, text='Checkout'",
+      "interactive": true,
+      "goldIntent": "navigate-to-checkout",
+      "notes": "",
+      "key": "tests/fixtures/SampleCart.tsx:L33:a"
+    },
+    {
+      "idx": 7,
+      "file": "SampleCart.tsx",
+      "tag": "div",
+      "line": 36,
+      "anchors": "onClick=quickAdd",
+      "interactive": true,
+      "goldIntent": "quick-add-item",
+      "notes": "div with onClick \u2014 IS interactive even though tag suggests otherwise",
+      "key": "tests/fixtures/SampleCart.tsx:L36:div"
+    },
+    {
+      "idx": 8,
+      "file": "SampleNavbar.tsx",
+      "tag": "a",
+      "line": 14,
+      "anchors": "href=/, contains <img alt='Acme'>",
+      "interactive": true,
+      "goldIntent": "navigate-to-home",
+      "notes": "brand link is a real navigation control",
+      "key": "tests/fixtures/SampleNavbar.tsx:L14:a"
+    },
+    {
+      "idx": 9,
+      "file": "SampleNavbar.tsx",
+      "tag": "form",
+      "line": 18,
+      "anchors": "role=search, onSubmit",
+      "interactive": true,
+      "goldIntent": "submit-search",
+      "notes": "",
+      "key": "tests/fixtures/SampleNavbar.tsx:L18:form"
+    },
+    {
+      "idx": 10,
+      "file": "SampleNavbar.tsx",
+      "tag": "label",
+      "line": 19,
+      "anchors": "htmlFor=q-top, text from search.label",
+      "interactive": false,
+      "goldIntent": "non-interactive",
+      "notes": "",
+      "key": "tests/fixtures/SampleNavbar.tsx:L19:label"
+    },
+    {
+      "idx": 11,
+      "file": "SampleNavbar.tsx",
+      "tag": "input",
+      "line": 20,
+      "anchors": "id=q-top, name=q, type=search, placeholder=search.placeholder",
+      "interactive": true,
+      "goldIntent": "enter-search-query",
+      "notes": "input \u2260 submit; user types here",
+      "key": "tests/fixtures/SampleNavbar.tsx:L20:input"
+    },
+    {
+      "idx": 12,
+      "file": "SampleNavbar.tsx",
+      "tag": "button",
+      "line": 21,
+      "anchors": "type=submit, aria=search.submit",
+      "interactive": true,
+      "goldIntent": "submit-search",
+      "notes": "",
+      "key": "tests/fixtures/SampleNavbar.tsx:L21:button"
+    },
+    {
+      "idx": 13,
+      "file": "SampleNavbar.tsx",
+      "tag": "button",
+      "line": 28,
+      "anchors": "testid=user-menu-toggle, aria-haspopup=menu, aria-expanded=false",
+      "interactive": true,
+      "goldIntent": "toggle-user-menu",
+      "notes": "",
+      "key": "tests/fixtures/SampleNavbar.tsx:L28:button"
+    },
+    {
+      "idx": 14,
+      "file": "SampleNavbar.tsx",
+      "tag": "a",
+      "line": 34,
+      "anchors": "href=/login, text=nav.signIn",
+      "interactive": true,
+      "goldIntent": "navigate-to-login",
+      "notes": "",
+      "key": "tests/fixtures/SampleNavbar.tsx:L34:a"
+    },
+    {
+      "idx": 15,
+      "file": "SampleNavbar.tsx",
+      "tag": "a",
+      "line": 39,
+      "anchors": "href=/signup, text=nav.signUp, data-intent=create-account",
+      "interactive": true,
+      "goldIntent": "create-account",
+      "notes": "data-intent is explicit",
+      "key": "tests/fixtures/SampleNavbar.tsx:L39:a"
+    },
+    {
+      "idx": 16,
+      "file": "SampleSettings.tsx",
+      "tag": "form",
+      "line": 17,
+      "anchors": "onSubmit",
+      "interactive": true,
+      "goldIntent": "save-settings",
+      "notes": "submit handler \u21d2 saving the settings page; NOT 'submit-settings' (rebranded for clarity)",
+      "key": "tests/fixtures/SampleSettings.tsx:L17:form"
+    },
+    {
+      "idx": 17,
+      "file": "SampleSettings.tsx",
+      "tag": "label",
+      "line": 20,
+      "anchors": "wraps notifyEmail checkbox",
+      "interactive": false,
+      "goldIntent": "non-interactive",
+      "notes": "",
+      "key": "tests/fixtures/SampleSettings.tsx:L20:label"
+    },
+    {
+      "idx": 18,
+      "file": "SampleSettings.tsx",
+      "tag": "input",
+      "line": 21,
+      "anchors": "type=checkbox, name=notifyEmail, defaultChecked",
+      "interactive": true,
+      "goldIntent": "toggle-email-notification",
+      "notes": "",
+      "key": "tests/fixtures/SampleSettings.tsx:L21:input"
+    },
+    {
+      "idx": 19,
+      "file": "SampleSettings.tsx",
+      "tag": "label",
+      "line": 24,
+      "anchors": "wraps notifyPush checkbox",
+      "interactive": false,
+      "goldIntent": "non-interactive",
+      "notes": "",
+      "key": "tests/fixtures/SampleSettings.tsx:L24:label"
+    },
+    {
+      "idx": 20,
+      "file": "SampleSettings.tsx",
+      "tag": "input",
+      "line": 25,
+      "anchors": "type=checkbox, name=notifyPush",
+      "interactive": true,
+      "goldIntent": "toggle-push-notification",
+      "notes": "",
+      "key": "tests/fixtures/SampleSettings.tsx:L25:input"
+    },
+    {
+      "idx": 21,
+      "file": "SampleSettings.tsx",
+      "tag": "label",
+      "line": 28,
+      "anchors": "wraps notifyDigest checkbox",
+      "interactive": false,
+      "goldIntent": "non-interactive",
+      "notes": "",
+      "key": "tests/fixtures/SampleSettings.tsx:L28:label"
+    },
+    {
+      "idx": 22,
+      "file": "SampleSettings.tsx",
+      "tag": "input",
+      "line": 29,
+      "anchors": "type=checkbox, name=notifyDigest",
+      "interactive": true,
+      "goldIntent": "toggle-weekly-digest",
+      "notes": "",
+      "key": "tests/fixtures/SampleSettings.tsx:L29:input"
+    },
+    {
+      "idx": 23,
+      "file": "SampleSettings.tsx",
+      "tag": "label",
+      "line": 36,
+      "anchors": "htmlFor=lang, text=settings.locale.language",
+      "interactive": false,
+      "goldIntent": "non-interactive",
+      "notes": "",
+      "key": "tests/fixtures/SampleSettings.tsx:L36:label"
+    },
+    {
+      "idx": 24,
+      "file": "SampleSettings.tsx",
+      "tag": "select",
+      "line": 37,
+      "anchors": "id=lang, name=language, defaultValue=en, three options",
+      "interactive": true,
+      "goldIntent": "select-language",
+      "notes": "",
+      "key": "tests/fixtures/SampleSettings.tsx:L37:select"
+    },
+    {
+      "idx": 25,
+      "file": "SampleSettings.tsx",
+      "tag": "button",
+      "line": 45,
+      "anchors": "type=button, testid=settings-discard, text=settings.discard",
+      "interactive": true,
+      "goldIntent": "discard-settings",
+      "notes": "",
+      "key": "tests/fixtures/SampleSettings.tsx:L45:button"
+    },
+    {
+      "idx": 26,
+      "file": "SampleSettings.tsx",
+      "tag": "button",
+      "line": 48,
+      "anchors": "type=submit, className=btn-primary, text=settings.save",
+      "interactive": true,
+      "goldIntent": "save-settings",
+      "notes": "",
+      "key": "tests/fixtures/SampleSettings.tsx:L48:button"
+    },
+    {
+      "idx": 27,
+      "file": "SampleSettings.tsx",
+      "tag": "button",
+      "line": 55,
+      "anchors": "type=button, testid=delete-account-btn, aria=settings.deleteAccount",
+      "interactive": true,
+      "goldIntent": "delete-account",
+      "notes": "destructive \u2014 must stay distinct from discard/cancel",
+      "key": "tests/fixtures/SampleSettings.tsx:L55:button"
+    },
+    {
+      "key": "tests/fixtures/SampleCart.tsx:L8:ul",
+      "file": "SampleCart.tsx",
+      "tag": "ul",
+      "line": 8,
+      "anchors": "aria=cart items",
+      "interactive": false,
+      "goldIntent": "non-interactive",
+      "notes": "list wrapper around cart items"
+    },
+    {
+      "key": "tests/fixtures/SampleNavbar.tsx:L13:nav",
+      "file": "SampleNavbar.tsx",
+      "tag": "nav",
+      "line": 13,
+      "anchors": "aria=primary",
+      "interactive": false,
+      "goldIntent": "non-interactive",
+      "notes": "navigation landmark"
+    },
+    {
+      "key": "tests/fixtures/SampleSettings.tsx:L14:section",
+      "file": "SampleSettings.tsx",
+      "tag": "section",
+      "line": 14,
+      "anchors": "aria-labelledby=settings-h",
+      "interactive": false,
+      "goldIntent": "non-interactive",
+      "notes": "settings root landmark"
+    },
+    {
+      "key": "tests/fixtures/SampleSettings.tsx:L54:section",
+      "file": "SampleSettings.tsx",
+      "tag": "section",
+      "line": 54,
+      "anchors": "aria=settings.dangerZone",
+      "interactive": false,
+      "goldIntent": "non-interactive",
+      "notes": "danger zone wrapper"
+    }
+  ]
+}

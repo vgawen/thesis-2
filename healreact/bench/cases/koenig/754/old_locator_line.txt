@@ -1,0 +1,5 @@
+   137 | 
+   138 |         // Check if it is also set as an image in the panel
+>> 139 |         await expect(page.locator('[data-testid="media-upload-filled"] img')).toHaveAttribute('src', /blob:/);
+   140 |     });
+   141 | 

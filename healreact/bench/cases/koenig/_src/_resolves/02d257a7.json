@@ -1,0 +1,33 @@
+{
+  "commit": "02d257a7ef0aa74fe6fd6022185cfda69e1b5534",
+  "sheet_records": 463,
+  "breaks_tested": 2,
+  "reachable_old": 0,
+  "reachable_new": 2,
+  "rows": [
+    {
+      "id": 702,
+      "file": "packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-test-id=\"color-picker-accent\"]",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "css",
+      "new_value": "[data-testid=\"color-picker-accent\"]",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:91"
+    },
+    {
+      "id": 703,
+      "file": "packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-test-id=\"color-picker-text\"]",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "css",
+      "new_value": "[data-testid=\"color-picker-text\"]",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:91"
+    }
+  ]
+}

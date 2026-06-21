@@ -1,0 +1,5 @@
+   70 |         await expect(await page.locator('[data-kg-slash-menu]')).toHaveCount(0);
+   71 |         await page.keyboard.type('/');
+>> 72 |         await expect(await page.locator('[data-kg-slash-menu]')).toHaveCount(0);
+   73 |     });
+   74 | 

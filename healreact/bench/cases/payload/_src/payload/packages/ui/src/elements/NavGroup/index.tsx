@@ -1,0 +1,71 @@
+'use client'
+import type { NavPreferences } from 'payload'
+
+import { PREFERENCE_KEYS } from 'payload/shared'
+import React, { useState } from 'react'
+
+import { ChevronIcon } from '../../icons/Chevron/index.js'
+import { usePreferences } from '../../providers/Preferences/index.js'
+import { useNav } from '../Nav/context.js'
+import './index.css'
+
+const baseClass = 'nav-group'
+
+type Props = {
+  children: React.ReactNode
+  isOpen?: boolean
+  label: string
+}
+
+export const NavGroup: React.FC<Props> = ({ children, isOpen: isOpenFromProps, label }) => {
+  const [collapsed, setCollapsed] = useState(
+    typeof isOpenFromProps !== 'undefined' ? !isOpenFromProps : false,
+  )
+
+  const { setPreference } = usePreferences()
+  const { navOpen } = useNav()
+
+  if (label) {
+    const toggleCollapsed = () => {
+      const newGroupPrefs: NavPreferences['groups'] = {}
+
+      if (!newGroupPrefs?.[label]) {
+        newGroupPrefs[label] = { open: Boolean(collapsed) }
+      } else {
+        newGroupPrefs[label].open = Boolean(collapsed)
+      }
+
+      void setPreference(PREFERENCE_KEYS.NAV, { groups: newGroupPrefs }, true)
+      setCollapsed(!collapsed)
+    }
+
+    return (
+      <div
+        className={[`${baseClass}`, `${label}`, collapsed && `${baseClass}--collapsed`]
+          .filter(Boolean)
+          .join(' ')}
+        id={`nav-group-${label}`}
+      >
+        <button
+          className={[
+            `${baseClass}__toggle`,
+            `${baseClass}__toggle--${collapsed ? 'collapsed' : 'open'}`,
+          ]
+            .filter(Boolean)
+            .join(' ')}
+          onClick={toggleCollapsed}
+          tabIndex={!navOpen ? -1 : 0}
+          type="button"
+        >
+          <div className={`${baseClass}__indicator`}>
+            <ChevronIcon direction={collapsed ? 'right' : 'down'} size={16} />
+          </div>
+          <div className={`${baseClass}__label`}>{label}</div>
+        </button>
+        {!collapsed && <div className={`${baseClass}__content`}>{children}</div>}
+      </div>
+    )
+  }
+
+  return <React.Fragment>{children}</React.Fragment>
+}

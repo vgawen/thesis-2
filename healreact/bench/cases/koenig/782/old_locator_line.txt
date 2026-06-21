@@ -1,0 +1,5 @@
+   344 |         // Upload video
+   345 |         await uploadVideo(page);
+>> 346 |         await page.waitForSelector('[data-testid="media-upload-placeholder"]');
+   347 | 
+   348 |         // create snippet

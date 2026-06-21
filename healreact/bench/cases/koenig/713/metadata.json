@@ -1,0 +1,13 @@
+{
+  "id": 713,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "0287844b585c5b30fc2716b2d780df5a8aa427c8",
+  "test_file_path": "packages/koenig-lexical/test/e2e/cards/email-card.test.js",
+  "line_no": 185,
+  "old_locator": "page.locator('[data-kg-card=\"email\"] ul > li:first-child')",
+  "new_locator": "page.locator('[data-kg-card=\"email\"] [data-lexical-editor] ul > li:first-child')",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/0287844b585c5b30fc2716b2d780df5a8aa427c8/packages/koenig-lexical/test/e2e/cards/email-card.test.js",
+  "reproduce_instructions": null
+}

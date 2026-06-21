@@ -1,0 +1,5 @@
+   120 | 
+   121 |         // Can remove thumbnail
+>> 122 |         const replaceButton = page.getByTestId('media-upload-remove');
+   123 |         await replaceButton.click();
+   124 |         await expect(await page.getByTestId('media-upload-placeholder')).toBeVisible();

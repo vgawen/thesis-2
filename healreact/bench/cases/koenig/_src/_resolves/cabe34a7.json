@@ -1,0 +1,45 @@
+{
+  "commit": "cabe34a7ea46255561bff8f090830327848e6ef6",
+  "sheet_records": 345,
+  "breaks_tested": 3,
+  "reachable_old": 3,
+  "reachable_new": 3,
+  "rows": [
+    {
+      "id": 765,
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js",
+      "old_strategy": "testid",
+      "old_value": "custom-thumbnail-replace",
+      "old_hits": 5,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx:15",
+      "new_strategy": "testid",
+      "new_value": "media-upload-remove",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx:15"
+    },
+    {
+      "id": 766,
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js",
+      "old_strategy": "testid",
+      "old_value": "custom-thumbnails-errors",
+      "old_hits": 5,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx:15",
+      "new_strategy": "testid",
+      "new_value": "media-upload-errors",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx:15"
+    },
+    {
+      "id": 767,
+      "file": "packages/koenig-lexical/test/e2e/cards/video-card.firefox.test.js",
+      "old_strategy": "testid",
+      "old_value": "custom-thumbnails-errors",
+      "old_hits": 5,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx:15",
+      "new_strategy": "testid",
+      "new_value": "media-upload-errors",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx:15"
+    }
+  ]
+}

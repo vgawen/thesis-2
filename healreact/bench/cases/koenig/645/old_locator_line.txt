@@ -1,0 +1,5 @@
+   146 |             await page.keyboard.press('Enter');
+   147 | 
+>> 148 |             const firstPHandle = await page.locator('[data-lexical-editor] > p').nth(0);
+   149 |             await firstPHandle.hover();
+   150 | 

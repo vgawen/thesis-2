@@ -1,0 +1,5 @@
+   146 |             // click on the surrounding label rather than the inner label/input
+   147 |             await page.getByTestId('visibility-show-on-web').click();
+>> 148 |             await expect(page.getByTestId('visibility-show-on-web').locator('input')).not.toBeChecked();
+   149 |         });
+   150 |     });

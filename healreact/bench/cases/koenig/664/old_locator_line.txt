@@ -1,0 +1,5 @@
+   314 |             await page.click('[data-kg-card-menu-item="Divider"]');
+   315 | 
+>> 316 |             await expect(await page.locator('[data-kg-plus-menu]')).toHaveCount(0);
+   317 | 
+   318 |             await assertHTML(page, html`

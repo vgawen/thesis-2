@@ -1,0 +1,46 @@
+{
+  "source": "locator_analysis.csv (candidate locator changes; NOT reproduced breaks)",
+  "total_candidate_changes": 9604,
+  "distinct_repos": 216,
+  "by_framework_syntax": {
+    "playwright_style": 5294,
+    "cypress_style": 4737
+  },
+  "react_subset_candidates": {
+    "playwright": 1775,
+    "cypress": 1077,
+    "repos_used": [
+      "citizenlabdotco/citizenlab",
+      "ethyca/fides",
+      "kong/insomnia",
+      "mattermost/mattermost",
+      "microsoft/playwright",
+      "payloadcms/payload",
+      "porsche-design-system/porsche-design-system",
+      "tryghost/koenig"
+    ]
+  },
+  "reproduced_breaks_total": 449,
+  "reproduced_breaks_react_playwright": {
+    "total": 143,
+    "per_repo": {
+      "tryghost/koenig": 93,
+      "microsoft/playwright": 50
+    }
+  },
+  "note": "9604 rows in locator_analysis.csv are CANDIDATE locator changes; the paper reports 449 REPRODUCED breaks. To get the reproduced subset, download data/ReproBreak.db from Figshare and re-run this script.",
+  "db_tables": [
+    "reproduce_files",
+    "locator_change",
+    "git_commit",
+    "test_file",
+    "repository",
+    "test_file_commit",
+    "locator_break"
+  ],
+  "reproduced_by_framework": {
+    "cypress": 258,
+    "playwright": 191
+  },
+  "pilot_tryghost_koenig_reproduced_playwright": 93
+}

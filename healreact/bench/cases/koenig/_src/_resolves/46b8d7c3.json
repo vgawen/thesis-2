@@ -1,0 +1,21 @@
+{
+  "commit": "46b8d7c3972af402bbc0489d16427e5ba3bdd26c",
+  "sheet_records": 358,
+  "breaks_tested": 1,
+  "reachable_old": 0,
+  "reachable_new": 0,
+  "rows": [
+    {
+      "id": 748,
+      "file": "packages/koenig-lexical/test/e2e/cards/markdown-card.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-kg-card=\"markdown\"] .cm-formatting-image",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "css",
+      "new_value": "[data-kg-card=\"markdown\"] .cm-image",
+      "new_hits": 0,
+      "new_top": null
+    }
+  ]
+}

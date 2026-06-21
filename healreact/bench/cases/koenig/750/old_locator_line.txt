@@ -1,0 +1,5 @@
+   502 |         await page.click('[data-testid="signup-swapped"]');
+   503 |         // Check the parent class name was updated
+>> 504 |         const swappedContainer = await page.locator('[data-testid="signup-card-content"]');
+   505 |         await expect(swappedContainer).toHaveClass(/sm:flex-row-reverse/);
+   506 |     });

@@ -1,0 +1,5 @@
+   464 |         // Change back to text color
+   465 |         await page.locator('[data-testid="cta-link-color-picker"] button').click();
+>> 466 |         await page.locator('[data-testid="color-picker-text"]').click();
+   467 |         const finalColor = await ctaCard.evaluate(el => getComputedStyle(el).getPropertyValue('--cta-link-color'));
+   468 |         expect(finalColor.trim()).toBe('#394047'); // Back to default text color

@@ -1,0 +1,5 @@
+   111 |             });
+   112 | 
+>> 113 |             await page.getByTestId('tk-indicator').click();
+   114 | 
+   115 |             await assertSelection(page, {

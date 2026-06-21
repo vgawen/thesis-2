@@ -1,0 +1,5 @@
+   304 |             });
+   305 | 
+>> 306 |             const p1 = await page.locator('[data-lexical-editor] > p').first();
+   307 |             const p1Box = await p1.boundingBox();
+   308 |             await assertPosition(page, '[data-kg-plus-button]', {y: p1Box.y}, {threshold: 5});

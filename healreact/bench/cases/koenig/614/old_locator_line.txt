@@ -1,0 +1,5 @@
+   33 |             await expect(page.locator('[data-kg-card="html"]')).toHaveAttribute('data-kg-card-editing', 'false');
+   34 |             await expect(page.locator('[data-kg-card-toolbar="html"]')).toBeVisible();
+>> 35 |             await expect(page.locator('[data-kg-card-toolbar="html"] [data-testid="edit-html"]')).toBeVisible();
+   36 |         });
+   37 | 

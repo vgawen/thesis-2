@@ -1,0 +1,5 @@
+   118 |             await secondPHandle.hover();
+   119 | 
+>> 120 |             await expect(await page.locator('[data-kg-plus-button]')).toHaveCount(0);
+   121 |         });
+   122 | 

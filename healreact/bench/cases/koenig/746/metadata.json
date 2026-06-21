@@ -1,0 +1,13 @@
+{
+  "id": 746,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "3ba4b1aa8777a32a7a8bc8274275e11c7e292b9f",
+  "test_file_path": "packages/koenig-lexical/test/e2e/cards/markdown-card.test.js",
+  "line_no": 687,
+  "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+  "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/3ba4b1aa8777a32a7a8bc8274275e11c7e292b9f/packages/koenig-lexical/test/e2e/cards/markdown-card.test.js",
+  "reproduce_instructions": null
+}

@@ -1,0 +1,33 @@
+{
+  "commit": "c5a1dbf580e206cb74b8966e260d038e099eb2ce",
+  "sheet_records": 438,
+  "breaks_tested": 2,
+  "reachable_old": 1,
+  "reachable_new": 2,
+  "rows": [
+    {
+      "id": 614,
+      "file": "packages/koenig-lexical/test/e2e/content-visibility.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-kg-card-toolbar=\"html\"] [aria-label=\"Visibility\"]",
+      "old_hits": 0,
+      "old_top": null,
+      "new_strategy": "css",
+      "new_value": "[data-kg-card-toolbar=\"html\"] [data-testid=\"edit-html\"]",
+      "new_hits": 1,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/nodes/HtmlNodeComponent.jsx:119"
+    },
+    {
+      "id": 615,
+      "file": "packages/koenig-lexical/test/e2e/content-visibility.test.js",
+      "old_strategy": "testid",
+      "old_value": "visibility-show-on-web-Toggle",
+      "old_hits": 5,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:90",
+      "new_strategy": "testid",
+      "new_value": "visibility-show-on-web",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:90"
+    }
+  ]
+}

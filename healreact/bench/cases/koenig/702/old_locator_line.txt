@@ -1,0 +1,5 @@
+   458 |         // Change to accent color
+   459 |         await page.locator('[data-testid="cta-link-color-picker"] button').click();
+>> 460 |         await page.locator('[data-testid="color-picker-accent"]').click();
+   461 |         const accentColor = await ctaCard.evaluate(el => getComputedStyle(el).getPropertyValue('--cta-link-color'));
+   462 |         expect(accentColor.trim()).toBe('#ff0095'); // Default accent color

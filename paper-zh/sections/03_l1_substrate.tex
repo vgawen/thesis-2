@@ -1,0 +1,48 @@
+\section{HealReact L1 静态基底}
+\label{sec:l1}
+
+HealReact 的 L1 层是 L3 修复器与任何未来行为 oracle（L4）所运行其上的静态基底。它由三部分组成（图~\ref{fig:arch}）。
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize\sffamily,
+  every node/.style={align=center},
+  box/.style={draw, rounded corners=2pt, inner sep=4pt, minimum height=7mm, minimum width=18mm, fill=white},
+  layer/.style={draw, rounded corners=3pt, inner sep=6pt, fill=blue!4},
+  arrow/.style={-{Latex[length=1.6mm]}, thick},
+  dashbox/.style={draw, dashed, rounded corners=2pt, inner sep=4pt, fill=gray!8},
+]
+\node[box] (ast) {AST 抽取器\\\scriptsize \texttt{ts-morph}};
+\node[box, right=4mm of ast] (intent) {意图标注器\\\scriptsize \texttt{qwen2.5:3b}};
+\node[box, right=4mm of intent] (cal) {校准器\\\scriptsize 规则 A--J};
+\node[layer, fit=(ast)(intent)(cal), label={[anchor=west, xshift=-1mm]north west:\textbf{L1}（静态，本文）}] (l1) {};
+
+\node[box, below=12mm of intent, fill=orange!8] (heal) {L3 修复器\\\scriptsize \texttt{qwen2.5-coder:7b}\\\scriptsize + 检索 + 强锚点};
+
+\node[dashbox, right=7mm of heal, minimum height=12mm, minimum width=30mm] (oracle) {\textbf{L4} 行为重放\\oracle\\\scriptsize \emph{尚未实现}};
+
+\node[box, below=4mm of heal, fill=green!8] (sheet) {\texttt{LocatorSheet.json}\\\scriptsize koenig 上约 400 条记录/commit\\\scriptsize 80.6\% 可达率};
+
+\draw[arrow] (ast) -- (intent);
+\draw[arrow] (intent) -- (cal);
+\draw[arrow] (cal.south) |- (sheet.west);
+\draw[arrow] (sheet.east) -| (heal.south);
+\draw[arrow] (heal.east) -- node[above, font=\scriptsize]{补丁} (oracle.west);
+\draw[arrow] (oracle.south) |- ++(-22mm,-5mm) node[above right, font=\scriptsize]{接受/拒绝};
+\end{tikzpicture}
+\caption{HealReact 流水线。L1（本文）是静态 AST 锚点基底（实现中包含意图标签，但本文仅在合成 fixture 上评估）；L3 是 \S\ref{sec:findings} 中评估的 LLM 修复器。L4（虚线）是其必要性由 \S\ref{sec:findings} 的误修复探针在经验上\emph{动机化}的行为重放 oracle，但尚未实现。}
+\label{fig:arch}
+\end{figure}
+
+\paragraph{AST 抽取器。}
+基于 \texttt{ts-morph}~\cite{tsmorph} 构建的抽取器遍历目标目录下的每个 \texttt{.tsx}/\texttt{.jsx} 文件，并为每个交互式 JSX 元素发出一条 JSON \texttt{LocatorSheet} 记录。每条记录包含元素 tag、父链、role、\texttt{data-testid}、\texttt{aria-label}、\texttt{id}、\texttt{className}、自由文本内容，关键还包括\emph{任意}自定义 \texttt{data-*} 属性（捕获在 \texttt{dataAttrs} 映射中）。抽取器还把任何承载稳定锚点（\texttt{data-testid}、\texttt{data-cy}、\texttt{data-kg-*}、\texttt{aria-label}，或驼峰 \texttt{dataTestId}/\texttt{testId}/\texttt{testID} prop）的 JSX 元素都视为可交互 —— 而不仅是规范 HTML tag 集。仅这一项改动就将 \texttt{koenig-lexical} 上的锚点覆盖率从 22\% 提升到 48\%、解析器命中率从 0\% 提升到 71\%，说明现代 React 的脆性中有相当部分藏在自定义包装组件里。
+
+\paragraph{意图标注器与校准器（本文仅在合成数据上评估）。}
+HealReact 还包含一个 LLM 意图标注 pass（经由 Ollama~\cite{ollama} 运行的 \texttt{qwen2.5:3b}），它根据每个组件的源码与 JSX 上下文给出一个简短的意图标签（例如 \texttt{submit-order-button}、\texttt{toggle-email-notification}），随后是一个由十条规则（A--J）组成的确定性校准层，负责标记可疑标签 —— 压缩兄弟集合标签、把 tag 当名词的退化、role/intent 不匹配等 —— 并降低其置信度。被标记的记录会被重新喂给 \texttt{qwen2.5-coder:7b}，扮演一个先廉价后昂贵的验证器（单元测试修复中常见的分级验证模式）。\textbf{重要的范围说明}: 在本文中，意图层仅在一个 32 元素的合成 fixture 集上被评估（附录中有详细记录）。\S\ref{sec:findings} 中所有真实数据的结果都使用抽取器的锚点 + 词法检索 —— \emph{不}使用 L1 意图标签。在真实代码上验证 L1 意图稳定性属于完整方法论文的内容，不在本短论文范围内。
+
+\paragraph{定位器解析器作为可证伪的透镜。}
+我们构建了一个 Playwright 选择器解析/匹配器，它接受任意选择器表达式（\texttt{page.locator}、\texttt{getByTestId}、\texttt{getByRole}、\texttt{waitForSelector}、原始 CSS）并返回它会匹配的 LocatorSheet 记录集。这是 \S\ref{sec:findings} 中每个论断被验证的透镜: 可达性是"断裂的选择器是否能解析到 sheet 中的某条记录？"；L3 正确性是"解析器是否把 LLM 提议的选择器与 ground truth 选择器映射到同一元素？"。构建这个透镜迫使我们处理引号感知的嵌套参数、动态 JS 表达式属性值、以及裸属性选择器；早期版本由于解析器 bug 把可达率虚抬到 85--98\%，我们现在在诚实性审计中明确标注了这一点。
+
+\paragraph{头条数字。}
+在 \texttt{koenig-lexical} 的 19 个失效 commit 上，抽取器每 commit 平均产出约 400 条 LocatorSheet 记录（跨 commit 范围 314--489），解析器在静态层面可达真实 Playwright 失效目标的 \textbf{75 / 93 = 80.6\%}。剩余 18 个用例需要运行时 DOM（例如 Lexical 在运行时渲染出的 \texttt{<p>} 节点），这是经典的 L2 领域，本文不予处理。

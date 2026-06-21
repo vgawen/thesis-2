@@ -1,0 +1,5 @@
+   57 | 
+   58 |             await page.keyboard.type('TK and TK and TK');
+>> 59 |             await expect(await page.getByTestId('tk-indicator')).toBeVisible();
+   60 |         });
+   61 | 

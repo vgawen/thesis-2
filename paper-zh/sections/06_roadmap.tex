@@ -1,0 +1,19 @@
+\section{通往完整方法论文的 Roadmap}
+\label{sec:roadmap}
+
+上述发现为完整 HealReact 论文动机化了四项具体交付:
+
+\paragraph{R1: Docker 重放的 pass/fail。}
+通过把 58 个 v1 正确的修复逐一放进 ReproBreak 的逐 commit Docker 环境运行，把静态修复代理（62.4\%）转换为真实的 Playwright 通过率。基础设施（\texttt{reproduce.py}、逐 commit Dockerfiles、v1 正确用例清单）已就绪；尚需做端到端 pass/fail 采集的工程工作。
+
+\paragraph{R2: \texttt{baseClass} + CSS-modules 展开器。}
+一个小型 AST pass，回溯到组件局部 \texttt{const baseClass = '...'} 声明（与 CSS Modules \texttt{styles.foo} import），然后把 \texttt{\{`\$\{baseClass\}\_\_suffix`\}} 这类模板字面量求值成字面量 class 字符串。F3 假设这能显著抬升 payload 可达率；我们会报告实测数字。
+
+\paragraph{R3: 行为重放 oracle（L4）。}
+L4 的经验性依据来自 F1（\S\ref{sec:f1}）。实现计划: 在绿基线时刻为失败测试录制网络 HAR + console + DOM 事件 trace；在自愈时刻重跑打过补丁的测试，并拒绝任何其规范化（时间戳/UUID/JWT 脱敏）后的 request/response 序列偏离基线的补丁。我们关心的通过率是"配对突变下的接受精度"—— 一个新的指标，无既有 baseline。
+
+\paragraph{R4: 在共享基底上的 baseline 对比。}
+在同样的 93 个 koenig 用例上跑 Joseph 的零成本可访问性树阶梯~\cite{joseph2026zerocost}，按失效类型逐项报告并列可达率，并报告其在 F1 对抗探针上的误修复率。这是最直接的正面对比；本短论文不声称在任何特定 LLM baseline 上的排名。
+
+\paragraph{复现。}
+本文所有数字都可由 \texttt{healreact/bench/scripts/} 下的脚本（\texttt{extract\_breaks.py}、\texttt{run\_reachability\_all.py}、\texttt{heal\_baseline.py}、\texttt{false\_heal\_probe.py}、\texttt{cross\_app\_probe.py}）针对 ReproBreak 数据库与 \texttt{tryghost/koenig} 及 \texttt{payloadcms/payload} 的公开源码复现；我们会随 camera-ready 发布工件包（脚本 + 逐用例 JSON + LocatorSheets）。在 Apple M5 Pro 上的墙钟预算（无外部 API 调用）: 完整 sweep 约 8\,min。

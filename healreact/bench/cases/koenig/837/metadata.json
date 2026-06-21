@@ -1,0 +1,13 @@
+{
+  "id": 837,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "88a6de9d5cb4787fa548cb8868f55538c9efbc40",
+  "test_file_path": "packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js",
+  "line_no": 59,
+  "old_locator": "page.locator('[data-has-tk]'))",
+  "new_locator": "page.getByTestId('tk-indicator'))",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/88a6de9d5cb4787fa548cb8868f55538c9efbc40/packages/koenig-lexical/test/e2e/plugins/TKPlugin.test.js",
+  "reproduce_instructions": null
+}

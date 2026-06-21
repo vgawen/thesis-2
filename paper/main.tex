@@ -1,0 +1,56 @@
+\documentclass[sigconf,nonacm=true]{acmart}
+
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric, fit, backgrounds}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+\captionsetup{font=small}
+
+% Slightly relax line-breaking to absorb residual overfull boxes from
+% URL-like \texttt strings without resorting to manual hyphenation hints.
+\sloppy
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue!60!black,
+}
+
+\setcopyright{none}
+\acmConference[ICSE-NIER '27]{ICSE NIER Track}{2027}{Anonymous Venue}
+\acmYear{2027}
+\copyrightyear{2027}
+\settopmatter{printacmref=false, printccs=false, printfolios=true}
+
+\title{Silent False-Heal in LLM-Driven Playwright Repair:\\
+       A Diagnostic Study and an Anchor-Aware Static Substrate for React Tests}
+
+\author{Anonymous Authors}
+\affiliation{\institution{Anonymous Institution}\country{}}
+
+\begin{document}
+
+\begin{abstract}
+LLM-driven self-healing for end-to-end UI tests is increasingly proposed as a way to absorb the maintenance cost of brittle locators. We measure what happens when such healers are forced to operate without a behavioural oracle on real Playwright break cases from the ReproBreak dataset.
+Across 75 reachable breaks from \texttt{tryghost/koenig}, a state-of-the-art small open-weights code model (\texttt{qwen2.5-coder:7b}) silently emits a wrong, resolver-valid Playwright selector in \textbf{78.7\%} of adversarial cases where the ground-truth target is absent from the candidate set --- a silent false heal that would mask the underlying UI change downstream. A prompt-level abstention guardrail produces \emph{identical} numbers (59/75 in both variants), demonstrating that soft prompts do not mitigate this failure mode.
+We then describe HealReact's L1 substrate (AST extractor + intent labeller + deterministic calibration) which reaches \textbf{80.6\%} of the 93 koenig breaks statically. On top of this substrate, the L3 healer answers 77.3\% of reachable breaks correctly (62.4\% of the full dataset as a static repair proxy), and two cheap deterministic levers (testId-weighted retrieval, strict-anchor post-filter) give a Pareto improvement of +5 correct cases with zero regressions. A cross-app probe on \texttt{payloadcms/payload} (319 breaks) exposes a BEM/template-literal blind spot we did not anticipate, with a concrete fix path. We read these findings as direct empirical motivation for behavioural-replay validation as the next layer to evaluate; the present study does not yet measure end-to-end test masking under such replay.
+\end{abstract}
+
+\maketitle
+
+\input{sections/01_intro}
+\input{sections/02_background}
+\input{sections/03_l1_substrate}
+\input{sections/04_findings}
+\input{sections/05_discussion}
+\input{sections/06_roadmap}
+\input{sections/07_conclusion}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

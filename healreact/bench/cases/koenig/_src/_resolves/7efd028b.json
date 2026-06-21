@@ -1,0 +1,21 @@
+{
+  "commit": "7efd028b0d1608a3ae10e90e9609931299228389",
+  "sheet_records": 361,
+  "breaks_tested": 1,
+  "reachable_old": 1,
+  "reachable_new": 1,
+  "rows": [
+    {
+      "id": 750,
+      "file": "packages/koenig-lexical/test/e2e/cards/signup-card.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-testid=\"signup-card-container\"]",
+      "old_hits": 5,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:87",
+      "new_strategy": "css",
+      "new_value": "[data-testid=\"signup-card-content\"]",
+      "new_hits": 5,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx:87"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "private": true,
+  "repository": "https://github.com/TryGhost/Koenig",
+  "author": "Ghost Foundation",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "eslintIgnore": [
+    "**/node_modules/**"
+  ],
+  "scripts": {
+    "dev": "echo \"Implement me!\"",
+    "prepare": "husky install .github/hooks",
+    "presetup": "yarn",
+    "setup": "lerna bootstrap && lerna run build",
+    "test": "lerna run test",
+    "lint": "lerna run lint",
+    "preship": "yarn test",
+    "ship": "lerna publish --git-remote ${GHOST_UPSTREAM:-origin}"
+  },
+  "devDependencies": {
+    "eslint": "8.40.0",
+    "eslint-plugin-ghost": "2.18.1",
+    "husky": "8.0.3",
+    "lerna": "6.0.0",
+    "lint-staged": "12.5.0"
+  },
+  "renovate": {
+    "extends": [
+      "@tryghost:quietJS",
+      "@tryghost:automergeDevDependencies"
+    ],
+    "packageRules": [
+      {
+        "groupName": "rollup + plugins",
+        "packagePatterns": [
+          "^rollup"
+        ]
+      },
+      {
+        "groupName": "lexical",
+        "packagePatterns": [
+          "^lexical",
+          "^@lexical"
+        ]
+      },
+      {
+        "groupName": "vitest",
+        "packagePatterns": [
+          "^vitest",
+          "^@vitest"
+        ]
+      }
+    ],
+    "ignoreDeps": [
+      "vite"
+    ]
+  }
+}

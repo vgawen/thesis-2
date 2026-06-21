@@ -1,0 +1,13 @@
+{
+  "id": 797,
+  "repository": "tryghost/koenig",
+  "framework": "playwright",
+  "commit_sha": "93882b2c1d3f2358d8bd8b93315f283972b07732",
+  "test_file_path": "packages/koenig-lexical/test/e2e/editors/minimal-editor.test.js",
+  "line_no": 88,
+  "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+  "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+  "snapshot_status": "ok",
+  "snapshot_url": "https://raw.githubusercontent.com/tryghost/koenig/93882b2c1d3f2358d8bd8b93315f283972b07732/packages/koenig-lexical/test/e2e/editors/minimal-editor.test.js",
+  "reproduce_instructions": null
+}

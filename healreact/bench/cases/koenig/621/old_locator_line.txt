@@ -1,0 +1,5 @@
+   383 |             await page.click('[data-kg-plus-button]');
+   384 |             await page.waitForTimeout(200);
+>> 385 |             await expect(page.locator('[data-kg-card="codeblock"]')).toBeVisible();
+   386 | 
+   387 |             await assertHTML(page, html`

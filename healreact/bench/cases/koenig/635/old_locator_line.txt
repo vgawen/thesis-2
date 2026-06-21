@@ -1,0 +1,5 @@
+   110 |             await expect(await page.locator('[data-kg-plus-button]')).toHaveCount(0);
+   111 | 
+>> 112 |             const firstPHandle = await page.locator('[data-lexical-editor] > p').nth(0);
+   113 |             await firstPHandle.hover();
+   114 | 

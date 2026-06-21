@@ -1,0 +1,5 @@
+   153 |             await page.keyboard.type('T');
+   154 | 
+>> 155 |             await expect(await page.locator('[data-kg-plus-button]')).toHaveCount(0);
+   156 |         });
+   157 | 

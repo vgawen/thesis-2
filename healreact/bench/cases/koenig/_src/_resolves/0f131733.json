@@ -1,0 +1,21 @@
+{
+  "commit": "0f13173347d32001be82b87a98d6b3abc29a8468",
+  "sheet_records": 461,
+  "breaks_tested": 1,
+  "reachable_old": 1,
+  "reachable_new": 1,
+  "rows": [
+    {
+      "id": 749,
+      "file": "packages/koenig-lexical/test/e2e/cards/product-card.test.js",
+      "old_strategy": "css",
+      "old_value": "[data-kg-cardmenu-selected=\"true\"]",
+      "old_hits": 2,
+      "old_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx:50",
+      "new_strategy": "css",
+      "new_value": "[data-kg-cardmenu-selected=\"true\"]",
+      "new_hits": 2,
+      "new_top": "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx:50"
+    }
+  ]
+}
