@@ -22,8 +22,22 @@
     "Chinese terminology pass on §1 §2 §3 §4 §5 §7 (oracle/baseline/benchmark/ground-truth/fixture/sparse-checkout/HEAD reach)",
     "switch bibstyle ACM -> gbt7714 (GB/T 7714-2015), now correctly rendering [J]/[Z]/[EB/OL]"
   ],
-  "target_journal": "电脑知识与技术 (CN 34-1205/TP, ISSN 1009-3044, 旬刊)",
-  "submission_portal": "http://www.dnzs.net.cn (软件技术栏目: xsjl@dnzs.net.cn)",
+  "target_journal": "无线互联科技 (CN 32-1675/TN, ISSN 1672-6944, 半月刊, 江苏省科技厅主管)",
+  "submission_portal": "http://qkcb.jssti.cn (or email hlkj@sti.js.cn; tel 025-85433097)",
+  "previous_target_dropped": "电脑知识与技术 (4500-6000 元过贵)",
+  "expected_fee": "3000-3200 元 (4-5 版, 600-800/版, 3版起发)",
+  "expected_timeline": "审稿15天-1月, 录用→见刊1-3月, 总计2-4月",
+  "journal_specific_requirements_met": {
+    "title_<=20字": "17字 ✅",
+    "abstract_<=200字": "178字 ✅",
+    "keywords_3-5": "5个 ✅",
+    "中英文对照": "已有 ✅",
+    "中图分类号+文献标识码": "TP311.5 / A ✅",
+    "字数 >= 5000": "~6621字符 ✅",
+    "GB/T 7714 引用": "已有 ✅",
+    "作者简介(年份/性别/民族/籍贯/职称/学位/方向)": "占位待填 ⚠️"
+  },
+  "warning_dual_journal_redirect": "编辑部可能让作者转投《江苏科技信息》(同一单位姊妹刊), 若只想要《无线互联科技》要明确拒绝",
   "adapted_to_journal_layout_done": [
     "documentclass acmart -> ctexart (twocolumn, fontset=none + xeCJK + Songti SC/PingFang SC)",
     "title shortened to 17 chars: 'React 应用 Playwright 测试隐性误修复研究'",
