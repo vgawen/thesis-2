@@ -26,6 +26,7 @@
 \caption{误修复探针（\S\ref{sec:f1}）。两个提示变体产出\emph{完全一致}的数字: 软提示守门规则并不降低隐性误修复。}
 \label{tab:falseheal}
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lrrrr}
 \toprule
 prompt & 放弃\,(好) & 误修复\,(坏) & 未解析 & \textbf{误修复\,\%} \\
@@ -33,7 +34,7 @@ prompt & 放弃\,(好) & 误修复\,(坏) & 未解析 & \textbf{误修复\,\%} \
 \textsc{Vanilla} & 13 & 59 & 3 & \textbf{78.7\%} \\
 \textsc{+ 放弃守门规则} & 13 & 59 & 3 & \textbf{78.7\%} \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \\[2pt]
 {\scriptsize $n=75$ 个可达 koenig 失效用例。Ground truth 目标已从候选集中移除；任何被给出的可解析选择器即为一次隐性误修复。}
 \end{table}
@@ -61,6 +62,7 @@ prompt & 放弃\,(好) & 误修复\,(坏) & 未解析 & \textbf{误修复\,\%} \
 \caption{L3 v0 $\to$ v1 杠杆帕累托改进（75 个可达 koenig 失效）。v1 = v0 + testId 加权检索 + 强锚点后置过滤。}
 \label{tab:l3-levers}
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lrr}
 \toprule
 指标 & v0（基线） & v1（本文） \\
@@ -74,7 +76,7 @@ top-1 精确元素匹配 & 53 / 75 (70.7\%) & \textbf{58 / 75 (77.3\%)} \\
 新增正确用例（vs v0） & --- & 5（ids 615, 702, 703, 715, 716） \\
 回归用例（vs v0） & --- & 0 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \paragraph{解读。}
@@ -92,6 +94,7 @@ top-1 精确元素匹配 & 53 / 75 (70.7\%) & \textbf{58 / 75 (77.3\%)} \\
 \caption{跨应用 L1 可达率（\S\ref{sec:f3}）。原始下降是真实的，但成因可诊断。}
 \label{tab:cross-app}
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lrr}
 \toprule
 指标 & \texttt{koenig} & \texttt{payload} \\
@@ -103,7 +106,7 @@ Playwright 失效配对 & 93（已复现） & 319（CSV） \\
 主导锚点 & \texttt{data-kg-*}（约 50\%） & CSS class$^\dagger$ \\
 模板字面量 class? & 罕见 & 普遍（BEM） \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \\[2pt]
 {\scriptsize $^\dagger$payload 的主导锚点占比来自对 307 个未命中用例的采样，而非全量失效分布。}
 \end{table}

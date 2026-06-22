@@ -32,12 +32,14 @@
   urlcolor=blue!60!black,
 }
 
-\title{React 应用 Playwright 测试隐性误修复研究}
+\title{React 应用 Playwright 测试隐性误修复研究\\
+\large \mdseries Research on silent false healing in playwright test repair for react applications}
 
 \author{
-  第一作者\thanks{作者简介：第一作者（19XX—），性别，民族，籍贯（省市），职称，学位（学历），研究方向：软件工程、自动化测试。\\
-  通讯作者 E-mail：author@example.com。本研究受 XXX 基金（编号 XXXXX）资助。}\\
-  \small 作者单位（投稿前补全），城市 邮编
+  高东彪\\
+  \small（软视软件（苏州）有限公司，江苏 苏州 \,215123）\\
+  \small Gao Dongbiao\\
+  \small (Zoom Video Communications (Suzhou), Inc., Suzhou 215123, China)
 }
 \date{}
 
@@ -46,6 +48,7 @@
 \twocolumn[
   \begin{@twocolumnfalse}
   \maketitle
+  \vspace{-12pt}
   \begin{quote}
   \small
   \noindent\textbf{摘\ 要：}大语言模型驱动的 UI 测试自愈正用于降低脆弱定位器的维护成本。本文在 ReproBreak 数据集 koenig 项目 75 个真实 Playwright 可达失效用例上，测量代码模型 qwen2.5-coder:7b 在缺乏行为验证时的行为：78.7\% 对抗场景中模型给出指向错误元素的选择器（即隐性误修复），附加“无匹配则放弃”软提示后结果不变。给出 HealReact 系统 L1 静态基底（AST 抽取、意图标注、确定性校准），静态覆盖 80.6\% 真实失效目标，L3 修复器在可达用例上 top-1 正确率达 77.3\%。结果表明：无人值守持续集成自愈场景下，引入行为重放验证器是必要的下一步。
@@ -67,6 +70,13 @@
   \end{@twocolumnfalse}
 ]
 
+\begingroup
+\renewcommand{\thefootnote}{}
+\footnotetext{\footnotesize 作者简介：高东彪（1986—），男，工程师，学士；研究方向：AI 在软件测试中的应用。\\通信作者：高东彪，E-mail：gdb\_1986@163.com。}
+\endgroup
+\addtocounter{footnote}{-1}
+
+\setcounter{section}{-1}
 \input{sections/01_intro}
 \input{sections/02_background}
 \input{sections/03_l1_substrate}
