@@ -22,11 +22,21 @@
     "Chinese terminology pass on §1 §2 §3 §4 §5 §7 (oracle/baseline/benchmark/ground-truth/fixture/sparse-checkout/HEAD reach)",
     "switch bibstyle ACM -> gbt7714 (GB/T 7714-2015), now correctly rendering [J]/[Z]/[EB/OL]"
   ],
+  "target_journal": "电脑知识与技术 (CN 34-1205/TP, ISSN 1009-3044, 旬刊)",
+  "submission_portal": "http://www.dnzs.net.cn (软件技术栏目: xsjl@dnzs.net.cn)",
+  "adapted_to_journal_layout_done": [
+    "documentclass acmart -> ctexart (twocolumn, fontset=none + xeCJK + Songti SC/PingFang SC)",
+    "title shortened to 17 chars: 'React 应用 Playwright 测试隐性误修复研究'",
+    "abstract shortened from 660 to ~280 zh chars (under 300 limit)",
+    "keywords: 6 (within 3-8)",
+    "bilingual abstract + 中图分类号 TP311.5 + 文献标识码 A",
+    "GB/T 7714 references",
+    "page layout: 6 pages two-column, ~6621 effective words (under 10000 limit)",
+    "removed all acmart leftovers (acmConference/setcopyright/affiliation/email)"
+  ],
   "still_needs_user_input": [
-    "documentclass acmart -> ctexart (major layout change, deferred for user)",
-    "real author/affil/email/funding/grant numbers",
-    "verify zhang2022webtest 2022 49(6):1-15 page numbers via CNKI/Wanfang",
-    "pick concrete target journal"
+    "fill real author name/affiliation/city/postal-code/email/funding-grant-number in main.tex L25-L27",
+    "verify zhang2022webtest 2022 49(6):1-15 page numbers via CNKI/Wanfang"
   ],
   "next_review_round": "R2 attempted but Cursor MCP timed out on xhigh request; loop terminated at R1+R1.5 (auto-fixes landed). Re-run /auto-review-loop after handling user-only items to verify 7.0+ score.",
   "timestamp": "2026-06-21T16:55:00+08:00"
