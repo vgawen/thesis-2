@@ -3,6 +3,9 @@
 
 下文所有数字都可由开放脚本 \texttt{heal\_baseline.py}、\texttt{false\_heal\_probe.py} 与 \texttt{cross\_app\_probe.py} 在 \texttt{healreact/bench/cases/} 下的 JSON 工件上复现。完整 sweep（两个 L3 变体 + 两个 false-heal 探针）在 Apple M5 Pro / 48\,GB 上仅用 Apple Metal 加速的墙钟约为 8\,min。
 
+\paragraph{复现配置。}
+为便于复现，本文固定以下设置：L3 修复器与意图标注器分别经 Ollama 运行 \texttt{qwen2.5-coder:7b} 与 \texttt{qwen2.5:3b}，二者均取 \texttt{temperature}=0（贪心解码、单次采样）；候选检索采用加性 token 重叠打分，权重为 testId$\times 3$、dataAttr key/value$\times 2$、aria/id/class/text/path$\times 1$，取 top-$k$ 候选（$k$ 与各探针配置一并记录在工件 JSON 中）。每个失效用例的逐条记录（用例 id、所属 commit、断裂选择器、ReproBreak \texttt{new\_locator}、候选数、模型原始输出、解析结果、是否判为误修复）连同所用模型版本摘要、koenig 的 19 个失效 commit 与 payload 的 HEAD 快照标识，均随 \texttt{healreact/bench/cases/} 工件一并发布，作为本文结果的复现与审计依据。\textbf{代码与数据可用性}：上述脚本与 JSON/CSV 工件作为本文补充材料提供，并冻结于发表时的版本（含各脚本运行命令、模型 tag/digest 与 commit 标识）；若期刊不支持补充材料，可向作者索取冻结版本归档。表~\ref{tab:falseheal}--\ref{tab:cross-app} 中的每一项原始计数（样本数、放弃/误修复/未解析、排除规则）均可由该工件直接复算。
+
 \paragraph{共享 L3 协议。}
 在 F1 与 F2 中，L3 修复器都经由 Ollama 以 \texttt{temperature=0} 调用 \texttt{qwen2.5-coder:7b}。用户提示包含: (i) 原样给出的断裂 Playwright 选择器；(ii) 失效行附近的 $\pm 3$ 行测试源码；(iii) 来自 LocatorSheet 的 top-$k$ 候选，按加性 token 重叠打分检索（testId $\times 3$、dataAttr key/value $\times 2$、aria/id/class/text/path $\times 1$）。模型必须给出三行: \texttt{SELECTOR}、\texttt{CANDIDATE\_IDX}、\texttt{RATIONALE}（纯文本，非 JSON: 在模型反复在选择器中输出未转义引号后放弃了 JSON）。解析器的 tie 处理: 按 \texttt{(componentFile, line)} 顺序的第一个匹配记录作为解析目标；多匹配的选择器会被标记，但 metric 中使用第一个命中。
 
@@ -15,7 +18,7 @@
 我们比较两个提示变体:
 \begin{enumerate}
 \item \textsc{Vanilla}：与 L3 基线相同的系统提示。
-\item \textsc{Abstain}: 同一提示外加一条明确的"如无候选契合则放弃"守门规则，告诉模型 \emph{``一次沉默地把测试改写到错误元素上的盲修复永远比放弃更糟''}。
+\item \textsc{Abstain}: 同一提示外加一条明确的“如无候选契合则放弃”守门规则，告诉模型 \emph{“一次沉默地把测试改写到错误元素上的盲修复永远比放弃更糟”}。
 \end{enumerate}
 
 \paragraph{结果。}
@@ -36,7 +39,7 @@ prompt & 放弃\,(好) & 误修复\,(坏) & 未解析 & \textbf{误修复\,\%} \
 \bottomrule
 \end{tabular}}
 \\[2pt]
-{\scriptsize $n=75$ 个可达 koenig 失效用例。Ground truth 目标已从候选集中移除；任何被给出的可解析选择器即为一次隐性误修复。}
+{\scriptsize $n=75$ 个可达 koenig 失效用例。Ground truth 目标已从候选集中移除；任何被给出的可解析选择器即为一次隐性误修复。78.7\%（59/75）的 Wilson 95\% 置信区间约为 [68.1\%, 86.4\%]。在 \texttt{temperature}=0 的确定性解码下，两提示变体在 75 个用例上逐例标签一致（故聚合计数与逐用例结果均相同，$\Delta=0$）。}
 \end{table}
 
 \paragraph{解读。}
@@ -80,7 +83,7 @@ top-1 精确元素匹配 & 53 / 75 (70.7\%) & \textbf{58 / 75 (77.3\%)} \\
 \end{table}
 
 \paragraph{解读。}
-两项手段均成本低廉（一次正则优先级调整、一段约 10 行的后置过滤）、完全确定性、无需任何模型再训练。强锚点过滤器单独触发两次且两次均正确，消除了"LLM 选中正确候选但在生成选择器时挂到了不稳定锚点上"这一失败模式。5 增 0 减的帕累托改进具有较强的可复现性。该结果与 F1 相互呼应：在确定性介入有效之处，提示级介入往往力有未逮。
+两项手段均成本低廉（一次正则优先级调整、一段约 10 行的后置过滤）、完全确定性、无需任何模型再训练。强锚点后置过滤器独立触发 2 次且两次均正确，消除了“LLM 选中正确候选但在生成选择器时挂到了不稳定锚点上”这一失败模式。需要明确的是，本文给出的是 v0 与 v1（两手段\emph{叠加}）的端到端对比，尚未拆分“仅 testId 加权检索”与“仅强锚点过滤”的独立贡献；因此“两个手段各自的边际增益”属未分离归因，严格的二因子析因消融（factorial ablation，含 McNemar 配对检验）留作后续工作。在此前提下，5 增 0 减的帕累托改进仍具有较强的可复现性。该结果与 F1 相互呼应：在确定性介入有效之处，提示级介入往往力有未逮。
 
 \subsection{F3: 跨应用泛化与 BEM 盲区}
 \label{sec:f3}
@@ -114,4 +117,4 @@ Playwright 失效配对 & 93（已复现） & 319（CSV） \\
 原始 3.8\% 看起来灾难性，但对 307 个未命中用例的检查给出干净的故事。payload 使用 BEM~\cite{bemMethodology}: 每个组件声明一个 \texttt{baseClass} 常量（例如 \texttt{const baseClass = 'dashboard'}），并以 \texttt{\{`\$\{baseClass\}\_\_add-button`\}} 这样的模板字面量写出 className。测试引用\emph{渲染后}的类 \texttt{.dashboard\_\_add-button}，这对一个纯字面量的 AST 抽取器是不可见的。
 
 \paragraph{解读。}
-这一结果并非对 HealReact L1 设计的否证，而是识别出一处范围明确的盲区，其修复对应一次确定性的 AST 处理：构造一个 \texttt{baseClass} 解析器，回溯到常量声明并展开其模板字面量，并配以一个 CSS Modules~\cite{cssModules} 等价的展开器。基于对 307 个未命中用例的非系统采样，本文\emph{假设}修复后原始可达率会显著抬升，但该结论尚属假设而非测量。3.8\% 是当前抽取器下诚实的原始测量值。该发现真正的贡献是这条可证伪的跨应用泛化论断本身：锚点文化的多样性（\texttt{data-testid} vs 自定义 \texttt{data-*} vs BEM 模板字面量）是定位器修复工具泛化能力的关卡，任何仅在单一应用上完成基准测试的工具都很可能高估其泛化性。
+这一结果并非对 HealReact L1 设计的否证，而是识别出一处范围明确的盲区，其修复对应一次确定性的 AST 处理：构造一个 \texttt{baseClass} 解析器，回溯到常量声明并展开其模板字面量，并配以一个 CSS Modules~\cite{cssModules} 等价的展开器。基于对 307 个未命中用例的\emph{非系统}采样，本文\emph{假设}修复后原始可达率会显著抬升，但该结论尚属假设而非测量；对全部 307 个未命中用例做系统化的失因标注（BEM、CSS Modules、运行时 DOM、解析器局限等类别计数）、固定 payload 逐 commit 与 ReproBreak 配对对齐，均留作后续工作（本文所用 payload HEAD 快照的 commit 标识随工件发布）。3.8\% 是当前抽取器下诚实的原始测量值。该发现真正的贡献是这条可证伪的跨应用泛化\emph{假设}本身：锚点文化的多样性（\texttt{data-testid} vs 自定义 \texttt{data-*} vs BEM 模板字面量）很可能是定位器修复工具泛化能力的关卡，任何仅在单一应用上完成基准测试的工具都可能高估其泛化性。

@@ -1,0 +1,14 @@
+{
+  "current_round": 2,
+  "threadId": "not-returned-by-cursor-mcp-ui",
+  "reviewer_model": "gpt-5.5",
+  "reviewer_effort": "xhigh",
+  "reviewer_bias_guard": true,
+  "last_score": 6,
+  "status": "completed",
+  "score_progression": [6, 6],
+  "verdict_progression": ["almost", "almost"],
+  "max_rounds": 2,
+  "stop_reason": "MAX_ROUNDS=2 reached; remaining R2 weaknesses (raw-artifact URL/hash, F1 paired stats, resolver strict/permissive sensitivity sweep, F2 factorial ablation, F3 per-commit alignment) require NEW experiments/data and are out of scope for a writing-only improvement loop.",
+  "timestamp": "2026-06-23T20:05:00+08:00"
+}
