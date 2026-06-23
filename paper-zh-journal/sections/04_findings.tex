@@ -39,13 +39,33 @@ prompt & 放弃\,(好) & 误修复\,(坏) & 未解析 & \textbf{误修复\,\%} \
 \bottomrule
 \end{tabular}}
 \\[2pt]
-{\scriptsize $n=75$ 个可达 koenig 失效用例。Ground truth 目标已从候选集中移除；任何被给出的可解析选择器即为一次隐性误修复。78.7\%（59/75）的 Wilson 95\% 置信区间约为 [68.1\%, 86.4\%]。在 \texttt{temperature}=0 的确定性解码下，两提示变体在 75 个用例上逐例标签一致（故聚合计数与逐用例结果均相同，$\Delta=0$）。}
+{\scriptsize $n=75$ 个可达 koenig 失效用例。Ground truth 目标已从候选集中移除；任何被给出的可解析选择器即为一次隐性误修复。78.7\%（59/75）的 Wilson 95\% 置信区间约为 [68.1\%, 86.4\%]。}
+\end{table}
+
+为排除“聚合计数偶然相同”的可能，表~\ref{tab:falseheal-paired} 给出两提示变体的\emph{逐用例}配对交叉表。
+
+\begin{table}[t]
+\centering
+\caption{Vanilla 与 Abstain 的逐用例配对交叉表（\S\ref{sec:f1}，$n=75$）。所有非对角元素均为 0，表明两变体在每一个用例上给出\emph{完全相同}的判定，而非仅聚合计数相同。}
+\label{tab:falseheal-paired}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Vanilla＼Abstain & 放弃 & 误修复 & 未解析 \\
+\midrule
+放弃\,(好)   & 13 & 0 & 0 \\
+误修复\,(坏) & 0  & 59 & 0 \\
+未解析       & 0  & 0 & 3 \\
+\bottomrule
+\end{tabular}
+\\[2pt]
+{\scriptsize 在 \texttt{temperature}=0 的确定性解码下，75 个用例的逐例标签两两一致（off-diagonal $=0$，$\Delta=0$）。}
 \end{table}
 
 \paragraph{解读。}
 78.7\% 是隐性误修复的\emph{上界}，因为每个用例都是对抗性构造。在混合工作负载下，只有 L1 sheet 缺失目标的用例（本试点中是 18/93 = 19\% 的 koenig 失效）面临此风险；朴素地相乘得到 $\approx 0.19 \times 0.79 = 15\%$，作为一个粗略的风险估计、而非测量到的部署率（对抗性探针的行为不必一对一地迁移到真正只在运行时可达的用例上）。即便作为风险估计，我们仍认为这已经高到不能允许 CI 无人值守地自动提交 LLM 提议的选择器补丁。
 
-\textsc{Vanilla} 与 \textsc{Abstain} 之间的等同性是更具诊断意义的发现：一个 7B 规模的代码模型在该任务上不会因软提示式的守门规则而改变其可观察行为。任何稳健的放弃机制都必须置于模型\emph{之外}：例如确定性的检索分数阈值、锚点类别归属规则，或能够证伪通过补丁的行为验证器。该结果从实证层面支持将 HealReact 的 L4 层（行为重放验证器）作为下一层加以构建，而非依赖提示级别的安全网。
+\textsc{Vanilla} 与 \textsc{Abstain} 之间的等同性是更具诊断意义的发现，且这一等同性是\emph{逐用例}成立的（表~\ref{tab:falseheal-paired}：75 个用例的配对判定无一发生改变）：一个 7B 规模的代码模型在该任务上不会因软提示式的守门规则而改变其可观察行为。任何稳健的放弃机制都必须置于模型\emph{之外}：例如确定性的检索分数阈值、锚点类别归属规则，或能够证伪通过补丁的行为验证器。该结果从实证层面支持将 HealReact 的 L4 层（行为重放验证器）作为下一层加以构建，而非依赖提示级别的安全网。
 
 \subsection{F2：L3 基线与两个低成本确定性手段}
 \label{sec:f2}
