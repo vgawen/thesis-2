@@ -130,7 +130,7 @@ def parse_locator_expr(expr: str) -> dict:
 
 # ---------- matching ----------
 
-def record_matches_constraint(rec: dict, c: dict) -> bool:
+def record_matches_constraint(rec: dict, c: dict, strict: bool = False) -> bool:
     if c.get("tag") and c["tag"] != "*" and c["tag"].lower() != rec.get("elementTag", "").lower():
         return False
     if c.get("id") and c["id"] != (rec.get("id") or ""):
@@ -172,11 +172,15 @@ def record_matches_constraint(rec: dict, c: dict) -> bool:
             if not present:
                 return False
             # Dynamic JS expression attribute values like `{isSelected}` /
-            # `{props.color}` cannot be evaluated statically. We treat them as
-            # "this attribute MAY take the selector's value at runtime", which
-            # is the most useful approximation for L1 reachability.
+            # `{props.color}` cannot be evaluated statically. PERMISSIVE mode
+            # treats them as "this attribute MAY take the selector's value at
+            # runtime" (the most useful over-approximation for L1 reachability).
+            # STRICT mode refuses to confirm an unverifiable value-equality and
+            # counts it as a non-match.
             got_stripped = got.strip()
             if got_stripped.startswith("{") and got_stripped.endswith("}"):
+                if strict:
+                    return False
                 continue
             if op == "=" and got != v:
                 return False
@@ -201,11 +205,11 @@ def record_matches_constraint(rec: dict, c: dict) -> bool:
     return True
 
 
-def matches_chain(rec: dict, all_recs: list[dict], chain: list[dict]) -> bool:
+def matches_chain(rec: dict, all_recs: list[dict], chain: list[dict], strict: bool = False) -> bool:
     if not chain:
         return False
     # Last constraint applies to rec itself.
-    if not record_matches_constraint(rec, chain[-1]):
+    if not record_matches_constraint(rec, chain[-1], strict):
         return False
     # Earlier constraints must each match SOME ancestor in record's parentChain
     # (we only have tags in parentChain, not full ancestor records — best-effort).
@@ -219,17 +223,21 @@ def matches_chain(rec: dict, all_recs: list[dict], chain: list[dict]) -> bool:
             if not any(a == c["tag"] for a in ancestors):
                 return False
             continue
-        # Best-effort: scan all records in the same component file for an ancestor candidate.
+        # Non-tag ancestor constraint. PERMISSIVE: best-effort same-file join
+        # (any record in the file satisfies c). STRICT: parentChain carries only
+        # tags, so a non-tag ancestor constraint cannot be confirmed → non-match.
+        if strict:
+            return False
         same_file = [r for r in all_recs if r.get("componentFile") == rec.get("componentFile") and r is not rec]
-        if not any(record_matches_constraint(r, c) for r in same_file):
+        if not any(record_matches_constraint(r, c, strict) for r in same_file):
             return False
     return True
 
 
-def find_matches(sheet_records: list[dict], query: dict, max_n: int = 5) -> list[dict]:
+def find_matches(sheet_records: list[dict], query: dict, max_n: int = 5, strict: bool = False) -> list[dict]:
     hits = []
     for r in sheet_records:
-        if matches_chain(r, sheet_records, query["chain"]):
+        if matches_chain(r, sheet_records, query["chain"], strict):
             hits.append(r)
             if len(hits) >= max_n:
                 break

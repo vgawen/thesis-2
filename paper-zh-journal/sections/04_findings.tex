@@ -73,37 +73,53 @@ Vanilla＼Abstain & 放弃 & 误修复 & 未解析 \\
 \paragraph{设置。}
 在同样的 75 个可达 koenig 失效用例上，我们评估两个 L3 变体:
 \begin{itemize}
-\item \textsc{v0（基线）}：候选按与断裂选择器的词元重叠程度检索；系统提示要求模型优先选择 testId 类锚点。
-\item \textsc{v1}: (i) 检索打分器把 testId 匹配上加权（$\times 3$）排在 dataAttr key/value（$\times 2$）和 aria/id/class/text/path（$\times 1$）之上；(ii) 一个确定性强锚点后置过滤器: 当所选候选携带 testId 但模型给出的不是 testId 选择器时，将其确定性地重写为 \texttt{getByTestId(testId)}。系统提示不变。
+\item \textsc{v0（基线，两杠杆均关）}：候选按与断裂选择器的词元重叠程度检索，所有锚点（含 testId）统一权重；无后置过滤；系统提示要求模型优先选择 testId 类锚点。
+\item \textsc{v1（两杠杆均开）}: (i) 检索打分器把 testId 匹配加权（$\times 3$）排在 dataAttr key/value（$\times 2$）和 aria/id/class/text/path（$\times 1$）之上；(ii) 一个确定性强锚点后置过滤器: 当所选候选携带 testId 但模型给出的不是 testId 选择器时，将其确定性地重写为 \texttt{getByTestId(testId)}。系统提示不变。
 \end{itemize}
 
-两次运行都使用 \texttt{qwen2.5-coder:7b}，\texttt{temperature=0}。Ground truth 是 ReproBreak 中 \texttt{new\_locator} 字符串所匹配的目标元素（经解析器解析）。
+为分离两个杠杆各自的贡献，我们进一步以\emph{二因子析因}（testId 加权 $\in\{$关,开$\}$ $\times$ 后置过滤 $\in\{$关,开$\}$）跑满 4 个臂（表~\ref{tab:l3-factorial}）。所有臂均使用 \texttt{qwen2.5-coder:7b}、\texttt{temperature=0}、同一系统提示；Ground truth 是 ReproBreak 中 \texttt{new\_locator} 字符串所匹配的目标元素（经解析器解析）。
 
 \paragraph{结果。}
 \begin{table}[t]
 \centering
-\caption{L3 v0 $\to$ v1 杠杆帕累托改进（75 个可达 koenig 失效）。v1 = v0 + testId 加权检索 + 强锚点后置过滤。}
+\caption{L3 v0 $\to$ v1 端到端对比（75 个可达 koenig 失效）。v1 = v0 + testId 加权检索 + 强锚点后置过滤；v0 为两杠杆均关的统一权重基线。}
 \label{tab:l3-levers}
 \small
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{lrr}
 \toprule
-指标 & v0（基线） & v1（本文） \\
+指标 & v0（两杠杆关） & v1（两杠杆开） \\
 \midrule
-top-1 精确元素匹配 & 53 / 75 (70.7\%) & \textbf{58 / 75 (77.3\%)} \\
-有效 Playwright 选择器 & 67 / 75 (89.3\%) & 68 / 75 (90.7\%) \\
-静态修复代理（全量 93） & 53 / 93 (57.0\%) & \textbf{58 / 93 (62.4\%)} \\
-墙钟（秒，完整 sweep） & 128 & 99 \\
+top-1 精确元素匹配 & 55 / 75 (73.3\%) & \textbf{58 / 75 (77.3\%)} \\
+有效 Playwright 选择器 & 68 / 75 (90.7\%) & 68 / 75 (90.7\%) \\
+静态修复代理（全量 93） & 55 / 93 (59.1\%) & \textbf{58 / 93 (62.4\%)} \\
 \midrule
-强锚点后置过滤触发 & --- & 2 / 75（两次都正确） \\
-新增正确用例（vs v0） & --- & 5（ids 615, 702, 703, 715, 716） \\
+强锚点后置过滤触发 & 0 & 2 / 75（两次都正确） \\
+新增正确用例（vs v0） & --- & 3 \\
 回归用例（vs v0） & --- & 0 \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
+\begin{table}[t]
+\centering
+\caption{两杠杆二因子析因（top-1 精确元素匹配，$n=75$）。行=testId 加权，列=强锚点后置过滤。每个杠杆单独带来 +2、两者合计 +3、零回归；方向一致但在该样本量下未达统计显著。}
+\label{tab:l3-factorial}
+\small
+\begin{tabular}{lrr}
+\toprule
+ & 过滤：关 & 过滤：开 \\
+\midrule
+加权：关 & 55 / 75 & 57 / 75 \\
+加权：开 & 57 / 75 & \textbf{58 / 75} \\
+\bottomrule
+\end{tabular}
+\\[2pt]
+{\scriptsize McNemar 精确检验（双侧）：单开加权或单开过滤相对“两关”均为 $+2/-0$（$p=0.50$）；两者全开相对“两关”为 $+3/-0$（$p=0.25$）。所有差异方向一致、零回归，但在 $n=75$ 下均未达 $p<0.05$。}
+\end{table}
+
 \paragraph{解读。}
-两项手段均成本低廉（一次正则优先级调整、一段约 10 行的后置过滤）、完全确定性、无需任何模型再训练。强锚点后置过滤器独立触发 2 次且两次均正确，消除了“LLM 选中正确候选但在生成选择器时挂到了不稳定锚点上”这一失败模式。需要明确的是，本文给出的是 v0 与 v1（两手段\emph{叠加}）的端到端对比，尚未拆分“仅 testId 加权检索”与“仅强锚点过滤”的独立贡献；因此“两个手段各自的边际增益”属未分离归因，严格的二因子析因消融（factorial ablation，含 McNemar 配对检验）留作后续工作。在此前提下，5 增 0 减的帕累托改进仍具有较强的可复现性。该结果与 F1 相互呼应：在确定性介入有效之处，提示级介入往往力有未逮。
+两项手段均成本低廉（一次正则优先级调整、一段约 10 行的后置过滤）、完全确定性、无需任何模型再训练。借助表~\ref{tab:l3-factorial} 的二因子析因可分离两者贡献：以“两杠杆均关”为基线（55/75），单开 testId 加权检索与单开强锚点过滤各带来 +2 个精确匹配，两者全开合计 +3、且\emph{零回归}；强锚点后置过滤器在 v1 中独立触发 2 次且两次均正确，消除了“LLM 选中正确候选但在生成选择器时挂到了不稳定锚点上”这一失败模式。须如实说明：这些增益方向一致、无一造成回归，但在 $n=75$ 的样本量下经 McNemar 精确检验均\emph{未达统计显著}（$p\ge0.25$）；因此我们把它们定位为“低成本、零回归的确定性工程杠杆”，而非已被统计确立的性能提升。该结果与 F1 相互呼应：在确定性介入有效之处，提示级介入往往力有未逮。
 
 \subsection{F3: 跨应用泛化与 BEM 盲区}
 \label{sec:f3}

@@ -1,0 +1,43 @@
+{
+  "n_breaks": 93,
+  "modes": {
+    "permissive": {
+      "reach_new": 75,
+      "reach_old": 66,
+      "multi_new": 46,
+      "unresolved_new": 18
+    },
+    "strict": {
+      "reach_new": 51,
+      "reach_old": 27,
+      "multi_new": 0,
+      "unresolved_new": 42
+    }
+  },
+  "flipped_perm_to_strict": [
+    614,
+    621,
+    685,
+    698,
+    699,
+    700,
+    702,
+    703,
+    705,
+    709,
+    714,
+    715,
+    716,
+    720,
+    723,
+    724,
+    746,
+    749,
+    750,
+    756,
+    764,
+    766,
+    767,
+    834
+  ]
+}

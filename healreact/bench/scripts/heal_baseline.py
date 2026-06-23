@@ -132,16 +132,20 @@ def keyword_tokens(loc: str) -> set[str]:
     return toks
 
 
-def retrieve_candidates(sheet_records: list[dict], old_locator: str, k: int = 15) -> list[dict]:
+def retrieve_candidates(sheet_records: list[dict], old_locator: str, k: int = 15,
+                        testid_weight: int = 3) -> list[dict]:
     """Score each record by token overlap with the old_locator, return top-k.
 
     Scoring (additive):
-      +3 for each token that matches the record's testId (exact or substring)
+      +testid_weight for each token that matches the record's testId (exact or substring)
       +2 for each token that matches a dataAttr key
       +2 for each token that matches a dataAttr value
       +1 for each token that matches aria-label / id / className / text / file path
     A token that matches via the testId path is the highest signal for a
     Playwright break: most repairs land back on the same testid family.
+
+    `testid_weight` is the ablation knob for F2: 3 = testId-weighted retrieval
+    (v1), 1 = uniform anchor weighting (no special testId boost, the v0 arm).
     """
     needles = keyword_tokens(old_locator)
     scored = []
@@ -159,7 +163,7 @@ def retrieve_candidates(sheet_records: list[dict], old_locator: str, k: int = 15
         for n in needles:
             n = n.lower()
             if testid and (n == testid or n in testid or testid in n):
-                score += 3
+                score += testid_weight
             if n in da_keys:
                 score += 2
             if n in da_vals:
@@ -205,7 +209,16 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0, help="0 = all reachable")
     ap.add_argument("--model", default=os.environ.get("HEALREACT_HEAL_MODEL", "qwen2.5-coder:7b"))
     ap.add_argument("--out", type=Path, default=BENCH_ROOT / "_heal_baseline.json")
+    # F2 factorial-ablation knobs (default ON = v1 behaviour, preserves backward compat):
+    ap.add_argument("--no-testid-weighting", dest="testid_weighting", action="store_false",
+                    help="disable testId x3 retrieval weighting (use uniform anchor weights)")
+    ap.add_argument("--no-post-filter", dest="post_filter", action="store_false",
+                    help="disable deterministic strong-anchor post-filter (getByTestId rewrite)")
+    ap.set_defaults(testid_weighting=True, post_filter=True)
     args = ap.parse_args()
+    testid_weight = 3 if args.testid_weighting else 1
+    print(f"arm: testid_weighting={args.testid_weighting} post_filter={args.post_filter}",
+          file=sys.stderr)
 
     # Collect (commit, reachable cases) from per-commit resolve JSONs.
     resolves = sorted((BENCH_ROOT / "_src" / "_resolves").glob("*.json"))
@@ -242,7 +255,8 @@ def main() -> int:
     for i, c in enumerate(all_cases, 1):
         meta = c["meta"]
         sheet_records = sheets[c["commit"]]
-        candidates = retrieve_candidates(sheet_records, meta["old_locator"], k=10)
+        candidates = retrieve_candidates(sheet_records, meta["old_locator"], k=10,
+                                         testid_weight=testid_weight)
         ctx = context_lines(c["snap_path"], meta["line_no"])
         cand_json = [{"idx": i, **short_candidate(r)} for i, r in enumerate(candidates)]
         user_prompt = (
@@ -268,7 +282,7 @@ def main() -> int:
         # "testId beats aria-label / data-kg-* / class" anchor priority
         # deterministically — the system prompt asks for it but small models
         # routinely drift.
-        if 0 <= cand_idx < len(candidates):
+        if args.post_filter and 0 <= cand_idx < len(candidates):
             chosen = candidates[cand_idx]
             chosen_tid = chosen.get("testId")
             if chosen_tid and proposed:
