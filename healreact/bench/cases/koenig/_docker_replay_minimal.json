@@ -1,0 +1,81 @@
+{
+  "summary": {
+    "n_attempted": 3,
+    "true_pass": 2,
+    "resolver_correct_runtime_broken": 1,
+    "infrastructure_fail": 0,
+    "true_pass_rate_attempted": 66.7,
+    "end_to_end_repair_pass_rate_over_93": 2.2
+  },
+  "rows": [
+    {
+      "id": 702,
+      "commit_sha": "02d257a7ef0aa74fe6fd6022185cfda69e1b5534",
+      "test_file_path": "packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js",
+      "line_no": 460,
+      "old_locator": "page.locator('[data-test-id=\"color-picker-accent\"]')",
+      "new_locator": "page.locator('[data-testid=\"color-picker-accent\"]')",
+      "proposed_selector": "page.getByTestId('color-picker-toggle')",
+      "patch_note": "patched",
+      "fixed": {
+        "status": "passed",
+        "exit_code": 0,
+        "timed_out": false,
+        "log_tail": "\n> @tryghost/koenig-lexical@1.6.6 test:e2e\n> NODE_ENV=test NODE_OPTIONS='--experimental-specifier-resolution=node --no-warnings' VITE_TEST=true playwright test /app/packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js\n\n\nRunning 34 tests using 1 worker\n\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\n  34 passed (9.0s)\n::notice title=\ud83c\udfad Playwright Run Summary::  34 passed (9.0s)\n"
+      },
+      "patched": {
+        "status": "failed",
+        "exit_code": 1,
+        "timed_out": false,
+        "log_tail": "0A      463 |         %0A        at /app/packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js:460:55\n::error file=test/e2e/cards/call-to-action-card.test.js,title=[chromium] \u203a test/e2e/cards/call-to-action-card.test.js:448:5 \u203a Call To Action Card \u203a can change link color::  1) [chromium] \u203a test/e2e/cards/call-to-action-card.test.js:448:5 \u203a Call To Action Card \u203a can change link color %0A%0A    Retry #1 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500%0A    Test timeout of 30000ms exceeded.\n::error file=test/e2e/cards/call-to-action-card.test.js,title=[chromium] \u203a test/e2e/cards/call-to-action-card.test.js:448:5 \u203a Call To Action Card \u203a can change link color,line=460,col=55::  1) [chromium] \u203a test/e2e/cards/call-to-action-card.test.js:448:5 \u203a Call To Action Card \u203a can change link color %0A%0A    Retry #1 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500%0A    Error: locator.click: Target page, context or browser has been closed%0A    Call log:%0A      - waiting for getByTestId('color-picker-toggle')%0A%0A%0A      458 |         // Change to accent color%0A      459 |         await page.locator('[data-testid=\"cta-link-color-picker\"] button').click();%0A    > 460 |         await page.getByTestId('color-picker-toggle').click();%0A          |                                                       ^%0A      461 |         const accentColor = await ctaCard.evaluate(el => getComputedStyle(el).getPropertyValue('--cta-link-color'));%0A      462 |         expect(accentColor.trim()).toBe('#ff0095'); // Default accent color%0A      463 |         %0A        at /app/packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js:460:55\n::error file=test/e2e/cards/call-to-action-card.test.js,title=[chromium] \u203a test/e2e/cards/call-to-action-card.test.js:448:5 \u203a Call To Action Card \u203a can change link color::  1) [chromium] \u203a test/e2e/cards/call-to-action-card.test.js:448:5 \u203a Call To Action Card \u203a can change link color %0A%0A    Retry #2 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500%0A    Test timeout of 30000ms exceeded.\n::error file=test/e2e/cards/call-to-action-card.test.js,title=[chromium] \u203a test/e2e/cards/call-to-action-card.test.js:448:5 \u203a Call To Action Card \u203a can change link color,line=460,col=55::  1) [chromium] \u203a test/e2e/cards/call-to-action-card.test.js:448:5 \u203a Call To Action Card \u203a can change link color %0A%0A    Retry #2 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500%0A    Error: locator.click: Target page, context or browser has been closed%0A    Call log:%0A      - waiting for getByTestId('color-picker-toggle')%0A%0A%0A      458 |         // Change to accent color%0A      459 |         await page.locator('[data-testid=\"cta-link-color-picker\"] button').click();%0A    > 460 |         await page.getByTestId('color-picker-toggle').click();%0A          |                                                       ^%0A      461 |         const accentColor = await ctaCard.evaluate(el => getComputedStyle(el).getPropertyValue('--cta-link-color'));%0A      462 |         expect(accentColor.trim()).toBe('#ff0095'); // Default accent color%0A      463 |         %0A        at /app/packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js:460:55\n::notice title=\ud83c\udfad Playwright Run Summary::  1 failed%0A    [chromium] \u203a test/e2e/cards/call-to-action-card.test.js:448:5 \u203a Call To Action Card \u203a can change link color %0A  33 passed (1.7m)\nnpm error Lifecycle script `test:e2e` failed with error:\nnpm error code 1\nnpm error path /app/packages/koenig-lexical\nnpm error workspace @tryghost/koenig-lexical@1.6.6\nnpm error location /app/packages/koenig-lexical\nnpm error command failed\nnpm error command sh -c NODE_ENV=test NODE_OPTIONS='--experimental-specifier-resolution=node --no-warnings' VITE_TEST=true playwright test /app/packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js\n"
+      },
+      "verdict": "resolver_correct_runtime_broken"
+    },
+    {
+      "id": 703,
+      "commit_sha": "02d257a7ef0aa74fe6fd6022185cfda69e1b5534",
+      "test_file_path": "packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js",
+      "line_no": 466,
+      "old_locator": "page.locator('[data-test-id=\"color-picker-text\"]')",
+      "new_locator": "page.locator('[data-testid=\"color-picker-text\"]')",
+      "proposed_selector": "page.locator('[data-testid=\"color-picker-text\"]')",
+      "patch_note": "patched",
+      "fixed": {
+        "status": "passed",
+        "exit_code": 0,
+        "timed_out": false,
+        "log_tail": "\n> @tryghost/koenig-lexical@1.6.6 test:e2e\n> NODE_ENV=test NODE_OPTIONS='--experimental-specifier-resolution=node --no-warnings' VITE_TEST=true playwright test /app/packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js\n\n\nRunning 34 tests using 1 worker\n\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\n  34 passed (9.6s)\n::notice title=\ud83c\udfad Playwright Run Summary::  34 passed (9.6s)\n"
+      },
+      "patched": {
+        "status": "passed",
+        "exit_code": 0,
+        "timed_out": false,
+        "log_tail": "\n> @tryghost/koenig-lexical@1.6.6 test:e2e\n> NODE_ENV=test NODE_OPTIONS='--experimental-specifier-resolution=node --no-warnings' VITE_TEST=true playwright test /app/packages/koenig-lexical/test/e2e/cards/call-to-action-card.test.js\n\n\nRunning 34 tests using 1 worker\n\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\n  34 passed (8.4s)\n::notice title=\ud83c\udfad Playwright Run Summary::  34 passed (8.4s)\n"
+      },
+      "verdict": "true_pass"
+    },
+    {
+      "id": 615,
+      "commit_sha": "c5a1dbf580e206cb74b8966e260d038e099eb2ce",
+      "test_file_path": "packages/koenig-lexical/test/e2e/content-visibility.test.js",
+      "line_no": 148,
+      "old_locator": "page.getByTestId('visibility-show-on-web-Toggle')",
+      "new_locator": "page.getByTestId('visibility-show-on-web')",
+      "proposed_selector": "page.getByTestId('visibility-show-on-web')",
+      "patch_note": "patched",
+      "fixed": {
+        "status": "passed",
+        "exit_code": 0,
+        "timed_out": false,
+        "log_tail": "\n> @tryghost/koenig-lexical@1.3.26 test:e2e\n> NODE_ENV=test NODE_OPTIONS='--experimental-specifier-resolution=node --no-warnings' VITE_TEST=true playwright test /app/packages/koenig-lexical/test/e2e/content-visibility.test.js\n\n\nRunning 12 tests using 1 worker\n\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\n  12 passed (6.7s)\n::notice title=\ud83c\udfad Playwright Run Summary::  12 passed (6.7s)\n"
+      },
+      "patched": {
+        "status": "passed",
+        "exit_code": 0,
+        "timed_out": false,
+        "log_tail": "\n> @tryghost/koenig-lexical@1.3.26 test:e2e\n> NODE_ENV=test NODE_OPTIONS='--experimental-specifier-resolution=node --no-warnings' VITE_TEST=true playwright test /app/packages/koenig-lexical/test/e2e/content-visibility.test.js\n\n\nRunning 12 tests using 1 worker\n\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\n  12 passed (5.9s)\n::notice title=\ud83c\udfad Playwright Run Summary::  12 passed (5.9s)\n"
+      },
+      "verdict": "true_pass"
+    }
+  ]
+}
