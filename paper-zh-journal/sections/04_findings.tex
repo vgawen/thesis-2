@@ -4,7 +4,7 @@
 下文所有数字都可由开放脚本 \texttt{heal\_baseline.py}、\texttt{false\_heal\_probe.py} 与 \texttt{cross\_app\_probe.py} 在 \texttt{healreact/bench/cases/} 下的 JSON 工件上复现。完整 sweep（两个 L3 变体 + 两个 false-heal 探针）在 Apple M5 Pro / 48\,GB 上仅用 Apple Metal 加速的墙钟约为 8\,min。
 
 \paragraph{复现配置。}
-为便于复现，本文固定以下设置：L3 修复器与意图标注器分别经 Ollama 运行 \texttt{qwen2.5-coder:7b} 与 \texttt{qwen2.5:3b}，二者均取 \texttt{temperature}=0（贪心解码、单次采样）；候选检索采用加性 token 重叠打分，权重为 testId$\times 3$、dataAttr key/value$\times 2$、aria/id/class/text/path$\times 1$，取 top-$k$ 候选（$k$ 与各探针配置一并记录在工件 JSON 中）。每个失效用例的逐条记录（用例 id、koenig 所属 commit、断裂选择器、ReproBreak \texttt{new\_locator}、模型给出的选择器与所选候选下标、rationale、解析得到的目标元素、是否判为误修复/精确匹配）以及汇总头部的模型 tag（\texttt{qwen2.5-coder:7b}）均随 \texttt{healreact/bench/cases/} 工件一并发布，作为本文结果的复现与审计依据。\textbf{代码与数据可用性}：上述脚本与 JSON 工件作为本文补充材料提供并冻结于发表时的版本；表~\ref{tab:falseheal}--\ref{tab:cross-app} 中的每一项原始计数（样本数、放弃/误修复/未解析、精确匹配）均可由该工件直接复算。我们另附一份工件清单，汇总各脚本的运行命令、输入数据校验和、koenig 与 payload 的 commit 标识及模型版本；若期刊不支持补充材料，可向作者索取该归档。
+为便于复现，本文固定以下设置：L3 修复器与意图标注器分别经 Ollama 运行 \texttt{qwen2.5-coder:7b} 与 \texttt{qwen2.5:3b}，二者均取 \texttt{temperature}=0（贪心解码、单次采样）；候选检索采用加性 token 重叠打分，权重为 testId$\times 3$、dataAttr key/value$\times 2$、aria/id/class/text/path$\times 1$，取 top-$k$ 候选（$k$ 与各探针配置一并记录在工件 JSON 中）。每个失效用例的逐条记录（用例 id、koenig 所属 commit、断裂选择器、ReproBreak \texttt{new\_locator}、模型给出的选择器与所选候选下标、rationale、选择器语法校验结果、解析得到的目标元素、是否判为误修复/精确匹配）以及汇总头部的模型 tag（\texttt{qwen2.5-coder:7b}）均随 \texttt{healreact/bench/cases/} 工件一并发布，作为本文结果的复现与审计依据。\textbf{代码与数据可用性}：上述脚本与 JSON 工件作为本文补充材料提供并冻结于发表时的版本；表~\ref{tab:falseheal}--\ref{tab:cross-app} 中的每一项原始计数（样本数、放弃/误修复/未解析、精确匹配）均可由该工件直接复算。我们另附一份工件清单，汇总各脚本的运行命令、输入数据校验和、koenig 与 payload 的 commit 标识及模型版本；若期刊不支持补充材料，可向作者索取该归档。
 
 \paragraph{共享 L3 协议。}
 在 F1 与 F2 中，L3 修复器都经由 Ollama 以 \texttt{temperature=0} 调用 \texttt{qwen2.5-coder:7b}。用户提示包含: (i) 原样给出的断裂 Playwright 选择器；(ii) 失效行附近的 $\pm 3$ 行测试源码；(iii) 来自 LocatorSheet 的 top-$k$ 候选，按加性 token 重叠打分检索（testId $\times 3$、dataAttr key/value $\times 2$、aria/id/class/text/path $\times 1$）。模型必须给出三行: \texttt{SELECTOR}、\texttt{CANDIDATE\_IDX}、\texttt{RATIONALE}（纯文本，非 JSON: 在模型反复在选择器中输出未转义引号后放弃了 JSON）。解析器的 tie 处理: 按 \texttt{(componentFile, line)} 顺序的第一个匹配记录作为解析目标；多匹配的选择器会被标记，但 metric 中使用第一个命中。
@@ -74,7 +74,7 @@ Vanilla＼Abstain & 放弃 & 误修复 & 未解析 \\
 在同样的 75 个可达 koenig 失效用例上，我们评估两个 L3 变体:
 \begin{itemize}
 \item \textsc{v0（基线，两杠杆均关）}：候选按与断裂选择器的词元重叠程度检索，所有锚点（含 testId）统一权重；无后置过滤；系统提示要求模型优先选择 testId 类锚点。
-\item \textsc{v1（两杠杆均开）}: (i) 检索打分器把 testId 匹配加权（$\times 3$）排在 dataAttr key/value（$\times 2$）和 aria/id/class/text/path（$\times 1$）之上；(ii) 一个确定性强锚点后置过滤器: 当所选候选携带 testId 但模型给出的不是 testId 选择器时，将其确定性地重写为 \texttt{getByTestId(testId)}。系统提示不变。
+\item \textsc{v1（两杠杆均开）}: (i) 检索打分器把 testId 匹配加权（$\times 3$）排在 dataAttr key/value（$\times 2$）和 aria/id/class/text/path（$\times 1$）之上；(ii) 一个确定性强锚点后置过滤器: 当所选候选携带可静态求值的 testId 但模型给出的不是 testId 选择器时，将其确定性地重写为 \texttt{getByTestId(testId)}；若 testId 来自不可求值的 JSX 表达式，则不做重写。系统提示不变。
 \end{itemize}
 
 为分离两个杠杆各自的贡献，我们进一步以\emph{二因子析因}（testId 加权 $\in\{$关,开$\}$ $\times$ 后置过滤 $\in\{$关,开$\}$）跑满 4 个臂（表~\ref{tab:l3-factorial}）。所有臂均使用 \texttt{qwen2.5-coder:7b}、\texttt{temperature=0}、同一系统提示；Ground truth 是 ReproBreak 中 \texttt{new\_locator} 字符串所匹配的目标元素（经解析器解析）。
@@ -94,7 +94,7 @@ top-1 精确元素匹配 & 55 / 75 (73.3\%) & \textbf{58 / 75 (77.3\%)} \\
 有效 Playwright 选择器 & 68 / 75 (90.7\%) & 68 / 75 (90.7\%) \\
 静态修复代理（全量 93） & 55 / 93 (59.1\%) & \textbf{58 / 93 (62.4\%)} \\
 \midrule
-强锚点后置过滤触发 & 0 & 2 / 75（两次都正确） \\
+强锚点后置过滤触发 & 0 & 1 / 75（正确） \\
 新增正确用例（vs v0） & --- & 3 \\
 回归用例（vs v0） & --- & 0 \\
 \bottomrule
@@ -119,7 +119,7 @@ top-1 精确元素匹配 & 55 / 75 (73.3\%) & \textbf{58 / 75 (77.3\%)} \\
 \end{table}
 
 \paragraph{解读。}
-两项手段均成本低廉（一次正则优先级调整、一段约 10 行的后置过滤）、完全确定性、无需任何模型再训练。借助表~\ref{tab:l3-factorial} 的二因子析因可分离两者贡献：以“两杠杆均关”为基线（55/75），单开 testId 加权检索与单开强锚点过滤各带来 +2 个精确匹配，两者全开合计 +3、且\emph{零回归}；强锚点后置过滤器在 v1 中独立触发 2 次且两次均正确，消除了“LLM 选中正确候选但在生成选择器时挂到了不稳定锚点上”这一失败模式。须如实说明：这些增益方向一致、无一造成回归，但在 $n=75$ 的样本量下经 McNemar 精确检验均\emph{未达统计显著}（$p\ge0.25$）；因此我们把它们定位为“低成本、零回归的确定性工程杠杆”，而非已被统计确立的性能提升。该结果与 F1 相互呼应：在确定性介入有效之处，提示级介入往往力有未逮。
+两项手段均成本低廉（一次正则优先级调整、一段约 10 行的后置过滤）、完全确定性、无需任何模型再训练。借助表~\ref{tab:l3-factorial} 的二因子析因可分离两者贡献：以“两杠杆均关”为基线（55/75），单开 testId 加权检索与单开强锚点过滤各带来 +2 个精确匹配，两者全开合计 +3、且\emph{零回归}；强锚点后置过滤器在过滤单开臂触发 2 次且均正确，在 v1 全开臂触发 1 次且正确，消除了部分“LLM 选中正确候选但在生成选择器时挂到了不稳定锚点上”的失败模式。须如实说明：这些增益方向一致、无一造成回归，但在 $n=75$ 的样本量下经 McNemar 精确检验均\emph{未达统计显著}（$p\ge0.25$）；因此我们把它们定位为“低成本、零回归的确定性工程杠杆”，而非已被统计确立的性能提升。该结果与 F1 相互呼应：在确定性介入有效之处，提示级介入往往力有未逮。
 
 \subsection{F3: 跨应用泛化与 BEM 盲区}
 \label{sec:f3}

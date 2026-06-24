@@ -123,6 +123,22 @@ McNemar 精确检验：单开任一杠杆 +2/−0 (p=0.50)，两者全开 +3/−
 
 重编译通过：8 页、0 overfull、无重复 label、无未解析引用。快照 `main_step2.3_resolver.pdf`。
 
+## 后记：Research Review 6.8/10 后修复 F2 selector 有效性
+**问题**：重新评审指出 `_abl_w1_f1.json` 中 id 750 曾把 `{'signup-card-content'}` 直接拼成 `page.getByTestId('{'signup-card-content'}')`，这是 JS 语法非法 selector，却会被旧静态 oracle 计入 `exact_match=true`。
+
+**脚本修复**：
+1. `heal_baseline.py` 新增 `build_testid_selector` / `normalize_static_js_string` / `is_supported_selector_expr`，将简单 JSX 字符串表达式（如 `{'foo'}`）规范化为合法 `getByTestId('foo')`，并跳过不可静态求值的动态表达式（如 `{props.testId}`）。
+2. 在 resolve 前写入并检查 `selector_syntax_valid`；语法非法的 selector 不再进入 `find_matches`，不能贡献 `exact_match`。
+3. 新增 `test_heal_baseline.py` 回归测试，覆盖 `{'signup-card-content'}` 规范化与旧非法嵌套引号拒绝。
+
+**重跑 2×2 F2 结果（n=75）**：
+| | 过滤关 | 过滤开 |
+|---|---|---|
+| 加权关 | 55 | 57 |
+| 加权开 | 57 | **58** |
+
+复算结论保持：单开任一杠杆 +2/−0 (p=0.50)，两者全开 +3/−0 (p=0.25)，方向一致、零回归、未达显著。所有四臂 `syntax_invalid_nonempty=0`；id 750 现为合法 `page.locator('[data-testid="signup-card-content"]')` 且 `selector_syntax_valid=true`。后置过滤触发计数需诚实更新：过滤单开臂触发 2 次且均正确，v1 全开臂触发 1 次且正确。§F2 表格与解读已同步。
+
 ## Step 8 格式检查（最终）
 - 页数：7 页（双栏，《无线互联科技》篇幅内）✓
 - 重复 label：无 ✓

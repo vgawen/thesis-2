@@ -23,8 +23,8 @@
 
 ## 对下一步的判断
 - **不必须全量 58-case replay**：只要论文不声称端到端通过率，3-case pilot 对普通中文工程期刊短论文可作为 sanity check。
-- **必须先修 F2 selector 有效性**：当前离 7/10 最近的动作是修 id 750 这类语法非法 selector 被计入 exact 的问题，并重算 F2 表。
-- 如果修完后数字变成 57/75、+2 或 +2 且有 1 回归，也可以投，但正文必须诚实更新“零回归 / +3”的措辞。
+- **F2 selector 有效性已按评审意见修复**：`heal_baseline.py` 已规范化可静态求值的 JSX testId、跳过不可求值动态 testId，并写入 `selector_syntax_valid`；四个 F2 臂已重跑。
+- 重跑后数字仍为 55/57/57/58，`+3/-0`、零回归结论保持；所有四臂 `syntax_invalid_nonempty=0`，id 750 不再产生非法 `getByTestId`。
 
 ## 一句话
 按普通中文工程期刊短论文标准，**现稿接近可投，但不建议按当前工件直接投；修复 F2 selector 有效性并重生成表后，可以投稿**。

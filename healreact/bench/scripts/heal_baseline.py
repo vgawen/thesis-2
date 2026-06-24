@@ -112,6 +112,75 @@ def parse_response(s: str) -> dict:
     return out
 
 
+def normalize_static_js_string(value: str | None) -> str | None:
+    """Return a static string value for literal-like JSX attribute values.
+
+    LocatorSheet may store JSX expression containers such as
+    `{'signup-card-content'}`. That is statically recoverable, but arbitrary
+    expressions like `{props.testId}` are not safe to rewrite into getByTestId.
+    """
+    if not value:
+        return None
+    v = str(value).strip()
+    if v.startswith("{") and v.endswith("}"):
+        inner = v[1:-1].strip()
+        if len(inner) >= 2 and inner[0] == inner[-1] and inner[0] in {"'", '"'}:
+            v = inner[1:-1]
+        else:
+            return None
+    if not v or any(ch in v for ch in "\r\n"):
+        return None
+    return v
+
+
+def js_string_literal(value: str) -> str:
+    """Render a JavaScript string literal for a Playwright selector argument."""
+    if "'" not in value and "\\" not in value:
+        return f"'{value}'"
+    return json.dumps(value)
+
+
+def build_testid_selector(testid: str | None) -> str | None:
+    """Build a syntactically valid getByTestId selector for static testId values."""
+    normalized = normalize_static_js_string(testid)
+    if normalized is None:
+        return None
+    return f"page.getByTestId({js_string_literal(normalized)})"
+
+
+def _first_string_arg_is_syntactically_closed(expr: str) -> bool:
+    m = re.search(
+        r'(?:locator|\$|getByTestId|getByRole|getByLabel|getByText|getByPlaceholder|'
+        r'querySelector|waitForSelector)\s*\(\s*([\'"])',
+        expr,
+    )
+    if not m:
+        return False
+    quote = m.group(1)
+    i = m.end(1)
+    escaped = False
+    while i < len(expr):
+        ch = expr[i]
+        if escaped:
+            escaped = False
+        elif ch == "\\":
+            escaped = True
+        elif ch == quote:
+            rest = expr[i + 1:].lstrip()
+            return not rest or rest[0] in {")", ",", "."}
+        i += 1
+    return False
+
+
+def is_supported_selector_expr(expr: str) -> bool:
+    """Lightweight syntax guard for the Playwright forms this resolver supports."""
+    if not expr:
+        return False
+    if parse_locator_expr(expr).get("strategy") == "unknown":
+        return False
+    return _first_string_arg_is_syntactically_closed(expr)
+
+
 def keyword_tokens(loc: str) -> set[str]:
     """Extract data-attribute names + literal string values from a Playwright expr.
     Also split kebab/camel composite values into sub-tokens (e.g. 'media-upload-placeholder'
@@ -285,19 +354,24 @@ def main() -> int:
         if args.post_filter and 0 <= cand_idx < len(candidates):
             chosen = candidates[cand_idx]
             chosen_tid = chosen.get("testId")
-            if chosen_tid and proposed:
-                uses_tid = (f"data-testid=\"{chosen_tid}\"" in proposed
-                            or f"data-testid='{chosen_tid}'" in proposed
-                            or f"getByTestId('{chosen_tid}')" in proposed
-                            or f'getByTestId("{chosen_tid}")' in proposed)
-                if not uses_tid:
-                    proposed = f"page.getByTestId('{chosen_tid}')"
+            normalized_tid = normalize_static_js_string(chosen_tid)
+            if chosen_tid and proposed and normalized_tid:
+                uses_tid = (f"data-testid=\"{normalized_tid}\"" in proposed
+                            or f"data-testid='{normalized_tid}'" in proposed
+                            or f"getByTestId('{normalized_tid}')" in proposed
+                            or f'getByTestId("{normalized_tid}")' in proposed)
+                rewritten = build_testid_selector(chosen_tid)
+                if not uses_tid and rewritten:
+                    proposed = rewritten
                     guard_note = "strict-anchor: rewrote to getByTestId"
+            elif chosen_tid and proposed:
+                guard_note = "strict-anchor: skipped dynamic testId"
 
         # Resolve proposed selector against the sheet.
         prop_target = None
         prop_hits = []
-        if proposed:
+        selector_syntax_valid = is_supported_selector_expr(proposed)
+        if proposed and selector_syntax_valid:
             q = parse_locator_expr(proposed)
             prop_hits = find_matches(sheet_records, q)
             if prop_hits:
@@ -320,6 +394,7 @@ def main() -> int:
             "old_locator": meta["old_locator"],
             "new_locator": meta["new_locator"],
             "proposed_selector": proposed,
+            "selector_syntax_valid": selector_syntax_valid,
             "candidate_idx": cand_idx,
             "guard_note": guard_note,
             "rationale": obj.get("rationale", ""),

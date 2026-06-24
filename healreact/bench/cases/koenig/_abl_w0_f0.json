@@ -4,7 +4,7 @@
   "exact_match": 55,
   "same_file_match": 55,
   "valid_selector": 68,
-  "elapsed_sec": 81.6,
+  "elapsed_sec": 111.4,
   "rows": [
     {
       "id": 702,
@@ -12,6 +12,7 @@
       "old_locator": "page.locator('[data-test-id=\"color-picker-accent\"]')",
       "new_locator": "page.locator('[data-testid=\"color-picker-accent\"]')",
       "proposed_selector": "page.locator('[aria-label=\"Pick color\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Most stable anchor available.",
@@ -25,7 +26,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 1384
+      "ms": 4279
     },
     {
       "id": 703,
@@ -33,6 +34,7 @@
       "old_locator": "page.locator('[data-test-id=\"color-picker-text\"]')",
       "new_locator": "page.locator('[data-testid=\"color-picker-text\"]')",
       "proposed_selector": "page.locator('[aria-label=\"Pick color\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Most stable anchor available.",
@@ -46,7 +48,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 1345
+      "ms": 1582
     },
     {
       "id": 749,
@@ -54,6 +56,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-cardmenu-selected=\"{isSelected}\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-cardmenu-selected for stability.",
@@ -67,7 +70,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1115
+      "ms": 1991
     },
     {
       "id": 768,
@@ -75,6 +78,7 @@
       "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
       "new_locator": "page.getByTestId('media-upload-placeholder')",
       "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match by testId",
@@ -88,7 +92,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1520
+      "ms": 1492
     },
     {
       "id": 769,
@@ -96,6 +100,7 @@
       "old_locator": "page.getByTestId('custom-thumbnail-filled'))",
       "new_locator": "page.getByTestId('media-upload-filled'))",
       "proposed_selector": "page.getByTestId('media-upload-filled')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Direct match by testId",
@@ -109,7 +114,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 644
+      "ms": 1510
     },
     {
       "id": 770,
@@ -117,6 +122,7 @@
       "old_locator": "page.getByTestId('thumbnail-media-placeholder'))",
       "new_locator": "page.getByTestId('media-upload-placeholder'))",
       "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match by testId",
@@ -130,7 +136,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1389
+      "ms": 1498
     },
     {
       "id": 771,
@@ -138,6 +144,7 @@
       "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
       "new_locator": "page.getByTestId('media-upload-placeholder')",
       "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match by testId",
@@ -151,7 +158,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1409
+      "ms": 1499
     },
     {
       "id": 772,
@@ -159,6 +166,7 @@
       "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
       "new_locator": "page.getByTestId('media-upload-placeholder')",
       "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match on testId",
@@ -172,7 +180,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1420
+      "ms": 1489
     },
     {
       "id": 774,
@@ -180,6 +188,7 @@
       "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
       "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
       "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -193,7 +202,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1553
+      "ms": 1523
     },
     {
       "id": 775,
@@ -201,6 +210,7 @@
       "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
       "new_locator": "page.getByTestId('media-upload-placeholder')",
       "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match by testId",
@@ -214,7 +224,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1404
+      "ms": 1524
     },
     {
       "id": 776,
@@ -222,6 +232,7 @@
       "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
       "new_locator": "page.getByTestId('media-upload-placeholder')",
       "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match by testId",
@@ -235,7 +246,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1400
+      "ms": 1524
     },
     {
       "id": 777,
@@ -243,6 +254,7 @@
       "old_locator": "page.getByTestId('custom-thumbnail-filled'))",
       "new_locator": "page.getByTestId('media-upload-filled'))",
       "proposed_selector": "page.getByTestId('media-upload-filled')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Direct match by testId",
@@ -256,7 +268,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 638
+      "ms": 1519
     },
     {
       "id": 778,
@@ -264,6 +276,7 @@
       "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
       "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
       "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -277,7 +290,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1566
+      "ms": 1524
     },
     {
       "id": 779,
@@ -285,6 +298,7 @@
       "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
       "new_locator": "page.getByTestId('media-upload-placeholder')",
       "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match by testId",
@@ -298,7 +312,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1444
+      "ms": 1503
     },
     {
       "id": 780,
@@ -306,6 +320,7 @@
       "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
       "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
       "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match on data-testid",
@@ -319,7 +334,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1556
+      "ms": 1499
     },
     {
       "id": 781,
@@ -327,6 +342,7 @@
       "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
       "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
       "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match on data-testid",
@@ -340,7 +356,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1512
+      "ms": 1494
     },
     {
       "id": 782,
@@ -348,6 +364,7 @@
       "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
       "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
       "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match on data-testid",
@@ -369,6 +386,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -382,7 +400,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1093
+      "ms": 1963
     },
     {
       "id": 704,
@@ -390,6 +408,7 @@
       "old_locator": "page.click('[data-testid=\"media-upload-placeholder\"]')",
       "new_locator": "page.getByTestId('cta-background-color-picker')",
       "proposed_selector": "page.locator('[data-testid=\"media-upload-placeholder\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "The original selector is still valid.",
@@ -403,7 +422,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1048
+      "ms": 1619
     },
     {
       "id": 750,
@@ -411,6 +430,7 @@
       "old_locator": "page.locator('[data-testid=\"signup-card-container\"]')",
       "new_locator": "page.locator('[data-testid=\"signup-card-content\"]')",
       "proposed_selector": "page.locator('[data-testid=\"signup-card-content\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -424,7 +444,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1507
+      "ms": 1715
     },
     {
       "id": 836,
@@ -432,6 +452,7 @@
       "old_locator": "page.locator('[data-has-tk]')",
       "new_locator": "page.getByTestId('tk-indicator')",
       "proposed_selector": "page.locator('[data-has-tk]')",
+      "selector_syntax_valid": true,
       "candidate_idx": -1,
       "guard_note": "",
       "rationale": "No candidates found.",
@@ -442,7 +463,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 787
+      "ms": 788
     },
     {
       "id": 837,
@@ -450,6 +471,7 @@
       "old_locator": "page.locator('[data-has-tk]'))",
       "new_locator": "page.getByTestId('tk-indicator'))",
       "proposed_selector": "page.locator('[data-has-tk]')",
+      "selector_syntax_valid": true,
       "candidate_idx": -1,
       "guard_note": "",
       "rationale": "No candidates found.",
@@ -460,7 +482,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 771
+      "ms": 774
     },
     {
       "id": 839,
@@ -468,6 +490,7 @@
       "old_locator": "page.locator('[data-has-tk]')",
       "new_locator": "page.getByTestId('tk-indicator')",
       "proposed_selector": "page.locator('[data-has-tk]')",
+      "selector_syntax_valid": true,
       "candidate_idx": -1,
       "guard_note": "",
       "rationale": "No candidates found.",
@@ -478,7 +501,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 771
+      "ms": 779
     },
     {
       "id": 840,
@@ -486,6 +509,7 @@
       "old_locator": "page.locator('[data-has-tk]')",
       "new_locator": "page.getByTestId('tk-indicator')",
       "proposed_selector": "page.locator('[data-has-tk]')",
+      "selector_syntax_valid": true,
       "candidate_idx": -1,
       "guard_note": "",
       "rationale": "No candidates found.",
@@ -496,7 +520,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 696
+      "ms": 699
     },
     {
       "id": 841,
@@ -504,24 +528,7 @@
       "old_locator": "page.locator('[data-has-tk]')",
       "new_locator": "page.getByTestId('tk-indicator')",
       "proposed_selector": "page.locator('[data-has-tk]')",
-      "candidate_idx": -1,
-      "guard_note": "",
-      "rationale": "No candidates found.",
-      "proposed_target": null,
-      "ground_truth_target": [
-        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
-        89
-      ],
-      "exact_match": false,
-      "same_file_match": false,
-      "ms": 698
-    },
-    {
-      "id": 842,
-      "commit": "88a6de9d",
-      "old_locator": "page.locator('[data-has-tk]')",
-      "new_locator": "page.getByTestId('tk-indicator')",
-      "proposed_selector": "page.locator('[data-has-tk]')",
+      "selector_syntax_valid": true,
       "candidate_idx": -1,
       "guard_note": "",
       "rationale": "No candidates found.",
@@ -535,11 +542,31 @@
       "ms": 700
     },
     {
+      "id": 842,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "new_locator": "page.getByTestId('tk-indicator')",
+      "proposed_selector": "page.locator('[data-has-tk]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": -1,
+      "guard_note": "",
+      "rationale": "No candidates found.",
+      "proposed_target": null,
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 704
+    },
+    {
       "id": 616,
       "commit": "93882b2c",
       "old_locator": "page.$('[data-kg-floating-toolbar]'))",
       "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
       "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -553,7 +580,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 880
+      "ms": 860
     },
     {
       "id": 619,
@@ -561,6 +588,7 @@
       "old_locator": "page.$('[data-kg-floating-toolbar]'))",
       "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
       "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -574,7 +602,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 828
+      "ms": 796
     },
     {
       "id": 626,
@@ -582,6 +610,7 @@
       "old_locator": "page.$('[data-kg-plus-button]'))",
       "new_locator": "page.locator('[data-kg-plus-button]'))",
       "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Aria label is the most stable anchor available.",
@@ -595,7 +624,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 1325
+      "ms": 1295
     },
     {
       "id": 627,
@@ -603,6 +632,7 @@
       "old_locator": "page.$('[data-kg-plus-button]'))",
       "new_locator": "page.locator('[data-kg-plus-button]'))",
       "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Aria label is the most stable anchor available.",
@@ -616,7 +646,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 822
+      "ms": 1307
     },
     {
       "id": 628,
@@ -624,6 +654,7 @@
       "old_locator": "page.$('[data-kg-plus-button]'))",
       "new_locator": "page.locator('[data-kg-plus-button]'))",
       "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Aria label is the most stable anchor available.",
@@ -637,7 +668,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 805
+      "ms": 1302
     },
     {
       "id": 634,
@@ -645,6 +676,7 @@
       "old_locator": "page.$('[data-kg-plus-button]'))",
       "new_locator": "page.locator('[data-kg-plus-button]'))",
       "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Aria label is the most stable anchor available.",
@@ -658,7 +690,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 818
+      "ms": 1324
     },
     {
       "id": 638,
@@ -666,6 +698,7 @@
       "old_locator": "page.$('[data-kg-plus-button]'))",
       "new_locator": "page.locator('[data-kg-plus-button]'))",
       "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Most stable anchor available.",
@@ -679,7 +712,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 721
+      "ms": 1227
     },
     {
       "id": 640,
@@ -687,6 +720,7 @@
       "old_locator": "page.$('[data-kg-plus-button]'))",
       "new_locator": "page.locator('[data-kg-plus-button]'))",
       "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Aria label is the most stable anchor available.",
@@ -700,7 +734,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 809
+      "ms": 1301
     },
     {
       "id": 644,
@@ -708,6 +742,7 @@
       "old_locator": "page.$('[data-kg-plus-button]'))",
       "new_locator": "page.locator('[data-kg-plus-button]'))",
       "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Most stable anchor available.",
@@ -721,7 +756,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 711
+      "ms": 1205
     },
     {
       "id": 647,
@@ -729,6 +764,7 @@
       "old_locator": "page.$('[data-kg-plus-button]'))",
       "new_locator": "page.locator('[data-kg-plus-button]'))",
       "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Aria label is the most stable anchor available.",
@@ -742,7 +778,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 804
+      "ms": 1305
     },
     {
       "id": 649,
@@ -750,6 +786,7 @@
       "old_locator": "page.$('[data-kg-plus-menu]'))",
       "new_locator": "page.locator('[data-kg-plus-menu]'))",
       "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid",
@@ -763,7 +800,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 673
+      "ms": 1183
     },
     {
       "id": 652,
@@ -771,6 +808,7 @@
       "old_locator": "page.$('[data-kg-plus-menu]'))",
       "new_locator": "page.locator('[data-kg-plus-menu]'))",
       "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid",
@@ -784,7 +822,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 684
+      "ms": 1213
     },
     {
       "id": 655,
@@ -792,6 +830,7 @@
       "old_locator": "page.$('[data-kg-plus-menu]'))",
       "new_locator": "page.locator('[data-kg-plus-menu]'))",
       "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid",
@@ -805,7 +844,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 684
+      "ms": 1221
     },
     {
       "id": 660,
@@ -813,6 +852,7 @@
       "old_locator": "page.$('[data-kg-plus-menu]'))",
       "new_locator": "page.locator('[data-kg-plus-menu]'))",
       "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Aria label is the most stable anchor available.",
@@ -826,7 +866,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 816
+      "ms": 1332
     },
     {
       "id": 662,
@@ -834,6 +874,7 @@
       "old_locator": "page.$('[data-kg-plus-menu]'))",
       "new_locator": "page.locator('[data-kg-plus-button]'))",
       "proposed_selector": "page.locator('[data-kg-plus-button]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 1,
       "guard_note": "",
       "rationale": "Direct match on data-kg-plus-button",
@@ -847,7 +888,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 734
+      "ms": 1259
     },
     {
       "id": 664,
@@ -855,6 +896,7 @@
       "old_locator": "page.$('[data-kg-plus-menu]'))",
       "new_locator": "page.locator('[data-kg-plus-menu]'))",
       "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid",
@@ -868,7 +910,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 702
+      "ms": 1220
     },
     {
       "id": 783,
@@ -876,6 +918,7 @@
       "old_locator": "page.$('[data-kg-plus-button]'))",
       "new_locator": "page.locator('[data-kg-plus-button]'))",
       "proposed_selector": "page.locator('[aria-label=\"Add a card\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 3,
       "guard_note": "",
       "rationale": "Aria label is the most stable anchor available.",
@@ -889,7 +932,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 844
+      "ms": 1327
     },
     {
       "id": 784,
@@ -897,6 +940,7 @@
       "old_locator": "page.$('[data-kg-slash-menu]'))",
       "new_locator": "page.locator('[data-kg-slash-menu]'))",
       "proposed_selector": "page.locator(\"[data-kg-slash-menu]\")",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -910,7 +954,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 681
+      "ms": 938
     },
     {
       "id": 785,
@@ -918,6 +962,7 @@
       "old_locator": "page.$('[data-kg-slash-menu]'))",
       "new_locator": "page.locator('[data-kg-slash-menu]'))",
       "proposed_selector": "page.locator(\"[data-kg-slash-menu]\")",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -931,7 +976,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 647
+      "ms": 933
     },
     {
       "id": 786,
@@ -939,6 +984,7 @@
       "old_locator": "page.$('[data-kg-floating-toolbar]'))",
       "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
       "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -952,7 +998,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 807
+      "ms": 810
     },
     {
       "id": 788,
@@ -960,6 +1006,7 @@
       "old_locator": "page.$('[data-kg-floating-toolbar]'))",
       "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
       "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -973,7 +1020,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 805
+      "ms": 811
     },
     {
       "id": 793,
@@ -981,6 +1028,7 @@
       "old_locator": "page.$('[data-kg-slash-menu]'))",
       "new_locator": "page.locator('[data-kg-slash-menu]'))",
       "proposed_selector": "page.locator(\"[data-kg-slash-menu]\")",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -994,7 +1042,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 919
+      "ms": 955
     },
     {
       "id": 794,
@@ -1002,6 +1050,7 @@
       "old_locator": "page.$('[data-kg-slash-menu]'))",
       "new_locator": "page.locator('[data-kg-slash-menu]'))",
       "proposed_selector": "page.locator(\"[data-kg-slash-menu]\")",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -1015,7 +1064,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 634
+      "ms": 946
     },
     {
       "id": 795,
@@ -1023,6 +1072,7 @@
       "old_locator": "page.$('[data-kg-floating-toolbar]'))",
       "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
       "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -1036,7 +1086,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 836
+      "ms": 821
     },
     {
       "id": 797,
@@ -1044,6 +1094,7 @@
       "old_locator": "page.$('[data-kg-floating-toolbar]'))",
       "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
       "proposed_selector": "page.locator(\"[data-kg-floating-toolbar]\")",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Direct match on data-testid.",
@@ -1057,7 +1108,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 801
+      "ms": 827
     },
     {
       "id": 685,
@@ -1065,6 +1116,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -1078,7 +1130,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 2047
+      "ms": 2055
     },
     {
       "id": 698,
@@ -1086,6 +1138,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -1099,7 +1152,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1109
+      "ms": 2049
     },
     {
       "id": 699,
@@ -1107,6 +1160,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-cardmenu-selected=\"{isSelected}\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -1120,7 +1174,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1120
+      "ms": 2059
     },
     {
       "id": 700,
@@ -1128,6 +1182,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-cardmenu-selected=\"{isSelected}\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-cardmenu-selected for stability.",
@@ -1141,7 +1196,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1128
+      "ms": 2065
     },
     {
       "id": 705,
@@ -1149,6 +1204,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -1162,7 +1218,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1099
+      "ms": 2064
     },
     {
       "id": 709,
@@ -1170,6 +1226,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -1183,7 +1240,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1119
+      "ms": 2119
     },
     {
       "id": 714,
@@ -1191,6 +1248,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -1204,7 +1262,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1132
+      "ms": 2044
     },
     {
       "id": 720,
@@ -1212,6 +1270,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -1225,7 +1284,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1138
+      "ms": 2079
     },
     {
       "id": 723,
@@ -1233,6 +1292,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -1246,7 +1306,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1150
+      "ms": 2067
     },
     {
       "id": 724,
@@ -1254,6 +1314,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -1267,7 +1328,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1174
+      "ms": 2129
     },
     {
       "id": 756,
@@ -1275,6 +1336,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-cardmenu-selected=\"{isSelected}\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -1288,7 +1350,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1163
+      "ms": 2081
     },
     {
       "id": 764,
@@ -1296,6 +1358,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-card-menu-item=\"snippet\"]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses role and data-kg-card-menu-item for stability.",
@@ -1309,7 +1372,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1128
+      "ms": 2068
     },
     {
       "id": 834,
@@ -1317,6 +1380,7 @@
       "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
       "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
       "proposed_selector": "page.locator('[role=\"menuitem\"][data-kg-cardmenu-selected=\"{isSelected}\"]').filter({hasText: 'planes'})",
+      "selector_syntax_valid": true,
       "candidate_idx": 1,
       "guard_note": "",
       "rationale": "Uses role and data-kg-cardmenu-selected for stability.",
@@ -1330,7 +1394,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1140
+      "ms": 2083
     },
     {
       "id": 614,
@@ -1338,6 +1402,7 @@
       "old_locator": "page.locator('[data-kg-card-toolbar=\"html\"] [aria-label=\"Visibility\"]'))",
       "new_locator": "page.locator('[data-kg-card-toolbar=\"html\"] [data-testid=\"edit-html\"]'))",
       "proposed_selector": "page.locator('[data-kg-card=\"html\"] [data-testid=\"edit-html\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 2,
       "guard_note": "",
       "rationale": "data-testid is most stable and unique.",
@@ -1348,7 +1413,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 1592
+      "ms": 2072
     },
     {
       "id": 615,
@@ -1356,6 +1421,7 @@
       "old_locator": "page.getByTestId('visibility-show-on-web-Toggle')",
       "new_locator": "page.getByTestId('visibility-show-on-web')",
       "proposed_selector": "page.locator('label[data-testid=\"{dataTestId}\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 6,
       "guard_note": "",
       "rationale": "Uses data-testid from the label element.",
@@ -1369,7 +1435,7 @@
       ],
       "exact_match": false,
       "same_file_match": false,
-      "ms": 1591
+      "ms": 1739
     },
     {
       "id": 765,
@@ -1377,6 +1443,7 @@
       "old_locator": "page.getByTestId('custom-thumbnail-replace')",
       "new_locator": "page.getByTestId('media-upload-remove')",
       "proposed_selector": "page.getByTestId('remove-thumbnail')",
+      "selector_syntax_valid": true,
       "candidate_idx": 6,
       "guard_note": "",
       "rationale": "Most stable anchor available.",
@@ -1390,7 +1457,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 668
+      "ms": 1553
     },
     {
       "id": 766,
@@ -1398,6 +1465,7 @@
       "old_locator": "page.getByTestId('custom-thumbnails-errors'))",
       "new_locator": "page.getByTestId('media-upload-errors'))",
       "proposed_selector": "page.getByTestId('thumbnail-errors')",
+      "selector_syntax_valid": true,
       "candidate_idx": 2,
       "guard_note": "",
       "rationale": "Direct match on testId",
@@ -1411,7 +1479,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1030
+      "ms": 1046
     },
     {
       "id": 767,
@@ -1419,6 +1487,7 @@
       "old_locator": "page.getByTestId('custom-thumbnails-errors'))",
       "new_locator": "page.getByTestId('media-upload-errors'))",
       "proposed_selector": "page.getByTestId('thumbnail-errors')",
+      "selector_syntax_valid": true,
       "candidate_idx": 2,
       "guard_note": "",
       "rationale": "Direct match on testId",
@@ -1432,7 +1501,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1069
+      "ms": 1041
     },
     {
       "id": 715,
@@ -1440,6 +1509,7 @@
       "old_locator": "page.locator('[data-kg-card-menu-item=\"Call to Action\"]'))",
       "new_locator": "page.locator('[data-kg-card-menu-item=\"Call to action\"]'))",
       "proposed_selector": "page.locator('[data-kg-card-menu-item=\"{label}\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses data-testid with dynamic value.",
@@ -1453,7 +1523,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1671
+      "ms": 1885
     },
     {
       "id": 716,
@@ -1461,6 +1531,7 @@
       "old_locator": "page.locator('[data-kg-card-menu-item=\"Call to Action\"]'))",
       "new_locator": "page.locator('[data-kg-card-menu-item=\"Call to action\"]'))",
       "proposed_selector": "page.locator('[data-kg-card-menu-item=\"{label}\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": 0,
       "guard_note": "",
       "rationale": "Uses data-testid with dynamic value.",
@@ -1474,7 +1545,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1673
+      "ms": 1873
     },
     {
       "id": 621,
@@ -1482,6 +1553,7 @@
       "old_locator": "page.locator('[data-kg-card=\"markdown\"]'))",
       "new_locator": "page.locator('[data-kg-card=\"codeblock\"]'))",
       "proposed_selector": "page.locator('[data-kg-card=\"codeblock\"]')",
+      "selector_syntax_valid": true,
       "candidate_idx": -1,
       "guard_note": "",
       "rationale": "No suitable candidate found.",
@@ -1495,7 +1567,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1476
+      "ms": 1778
     },
     {
       "id": 688,
@@ -1503,6 +1575,7 @@
       "old_locator": "page.getByTestId('audio-caption')",
       "new_locator": "page.getByTestId('audio-title')",
       "proposed_selector": "page.getByTestId('audio-title')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match on data-testid attribute.",
@@ -1516,7 +1589,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1434
+      "ms": 1581
     },
     {
       "id": 689,
@@ -1524,6 +1597,7 @@
       "old_locator": "page.getByTestId('audio-caption'))",
       "new_locator": "page.getByTestId('audio-title'))",
       "proposed_selector": "page.getByTestId('audio-title')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match on data-testid attribute.",
@@ -1537,7 +1611,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1421
+      "ms": 1584
     },
     {
       "id": 690,
@@ -1545,6 +1619,7 @@
       "old_locator": "page.getByTestId('audio-caption'))",
       "new_locator": "page.getByTestId('audio-title'))",
       "proposed_selector": "page.getByTestId('audio-title')",
+      "selector_syntax_valid": true,
       "candidate_idx": 5,
       "guard_note": "",
       "rationale": "Direct match on data-testid attribute.",
@@ -1558,7 +1633,7 @@
       ],
       "exact_match": true,
       "same_file_match": true,
-      "ms": 1486
+      "ms": 1647
     }
   ]
 }

@@ -29,15 +29,17 @@
 | `cross_app_probe.py` | `python3 cross_app_probe.py` | F3 payload 跨应用 |
 | `docker_replay_minimal.py` | `./docker_replay_TODO.sh --ids 615,702,703 --timeout-sec 180` | 3-case Docker 运行时重放 pilot |
 
+F2 的 `heal_baseline.py` 产物包含 `selector_syntax_valid` 字段；后置过滤只会把可静态求值的 testId（例如 JSX `{'foo'}`）规范化为合法 `getByTestId('foo')`，不可求值的动态表达式不参与重写。
+
 ## 产物校验和（sha256 前 16 位）
 | 文件（`bench/cases/koenig/`，payload 除外） | sha256[:16] |
 |---|---|
 | `_false_heal_probe_vanilla.json` | `0c9b8d10bd7f60f8` |
 | `_false_heal_probe_abstain.json` | `b6dd7c965ebb4ced` |
-| `_abl_w0_f0.json` | `ea635e119dce8c1c` |
-| `_abl_w1_f0.json` | `9edcacfc1fe30718` |
-| `_abl_w0_f1.json` | `2221862b234cef5e` |
-| `_abl_w1_f1.json` | `7f73f95234aa3373` |
+| `_abl_w0_f0.json` | `7a6bae575b7310fe` |
+| `_abl_w1_f0.json` | `7b94b3f7e1ec26e5` |
+| `_abl_w0_f1.json` | `3b4f30abd1254b38` |
+| `_abl_w1_f1.json` | `d80560405e501562` |
 | `_resolver_sensitivity.json` | `3702b60d0808c206` |
 | `_docker_replay_minimal.json` | `79658ce8a1050ff1` |
 | `payload/_summary.json` | `94ddac814cbf4a53` |
