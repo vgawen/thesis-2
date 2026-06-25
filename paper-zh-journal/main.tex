@@ -25,6 +25,7 @@
 \captionsetup{font=small, labelsep=quad}
 \titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
 \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
 
 \sloppy
 
@@ -35,8 +36,8 @@
   urlcolor=blue!60!black,
 }
 
-\title{React 应用 Playwright 测试选择器层面隐性误修复研究\\
-\large \mdseries Research on Selector-Level Silent False Healing in Playwright Test Repair for React Applications}
+\title{Playwright 测试隐性误修复研究\\
+\large \mdseries Research on silent false healing in Playwright test repair}
 
 \author{
   高东彪\\
@@ -54,7 +55,7 @@
   \vspace{-12pt}
   \begin{quote}
   \small
-  \noindent\textbf{摘\ 要：}大语言模型驱动的 UI 测试自愈正用于降低脆弱定位器的维护成本。本文在 ReproBreak 数据集 koenig 项目 75 个真实 Playwright 可达失效用例上，于\emph{选择器解析层面}测量代码模型 qwen2.5-coder:7b 在缺乏行为验证时的行为：在对抗性构造场景下，78.7\% 的用例中模型给出可解析但指向错误元素的选择器（即选择器层面隐性误修复的对抗性上界），附加“无匹配则放弃”软提示后结果不变。给出 HealReact 系统 L1 静态基底（AST 抽取、意图标注、确定性校准；本文实证数字主要基于 AST 锚点抽取与词法检索），静态覆盖 80.6\% 真实失效目标，L3 修复器在可达用例上 top-1 选择器精确匹配率达 77.3\%。结果表明：无人值守持续集成自愈场景下，引入行为重放验证器是必要的下一步；本文数字为静态解析层面的诊断性指标，与运行时测试通过率之间的换算仍需真实重放。
+  \noindent\textbf{摘\ 要：}为降低 Playwright 测试中脆弱定位器维护成本，文章研究大语言模型（Large Language Model，LLM）驱动的测试自愈是否产生隐性误修复。以 ReproBreak 数据集 koenig 项目 75 个真实可达失效用例为对象，在选择器解析层面测试 qwen2.5-coder:7b，并构建基于抽象语法树的 HealReact 静态基底。结果表明，目标元素被移除时，78.7\% 的用例生成指向错误元素的可解析选择器，静态基底覆盖 80.6\% 的真实失效目标。研究认为，无人值守持续集成自愈需要行为重放验证器。
 
   \vspace{2pt}
   \noindent\textbf{关键词：}测试自愈；大语言模型；Playwright；React；隐性误修复
@@ -63,10 +64,10 @@
   \noindent\textbf{中图分类号：}TP311.5\quad\textbf{文献标识码：}A
 
   \vspace{4pt}
-  \noindent\textbf{Abstract:} LLM-driven self-healing for end-to-end UI tests is increasingly used to absorb the maintenance cost of brittle locators. On real-world Playwright break cases from the ReproBreak dataset, across 75 reachable koenig breaks, we measure -- at the selector-resolution level -- that qwen2.5-coder:7b emits a wrong yet resolver-valid Playwright selector in 78.7\% of adversarial-by-construction cases (an adversarial upper bound on selector-level silent false healing); an explicit ``abstain'' prompt guardrail produces identical numbers. HealReact's L1 substrate (AST extractor + intent labeller + deterministic calibration) reaches 80.6\% of the 93 real break targets statically; on top of it the L3 healer attains 77.3\% top-1 exact-element selector matching on reachable breaks. We make the empirical case that a behavioural-replay oracle is a necessary next layer for unattended CI healing; all numbers here are static, selector-resolution diagnostics, and their mapping to runtime test-pass rates still requires real replay.
+  \noindent\textbf{Abstract：} To reduce the maintenance cost of brittle locators in Playwright tests, this paper studies whether large language model (LLM)-driven test self-healing causes silent false healing. Using 75 real reachable break cases from the koenig project in the ReproBreak dataset, qwen2.5-coder:7b is evaluated at the selector-resolution level, and an abstract syntax tree-based HealReact static substrate is built. The results show that, when the target element is removed, 78.7\% of cases produce resolver-valid selectors pointing to wrong elements, and the static substrate covers 80.6\% of real break targets. The study concludes that unattended continuous integration self-healing requires a behavioral replay verifier.
 
   \vspace{2pt}
-  \noindent\textbf{Keywords:} software testing; self-healing test; large language model; Playwright; React; abstract syntax tree
+  \noindent\textbf{Key words：} self-healing test; large language model; Playwright; React; silent false healing
 
   \vspace{6pt}
   \end{quote}
@@ -75,7 +76,7 @@
 
 \begingroup
 \renewcommand{\thefootnote}{}
-\footnotetext{\footnotesize 作者简介：高东彪（1986—），男，工程师，学士；研究方向：AI 在软件测试中的应用。\\通信作者：高东彪，E-mail：gdb\_1986@163.com。}
+\footnotetext{\footnotesize 作者简介：高东彪（1986—），男，工程师，学士；研究方向：AI 在软件测试中的应用。\\*通信作者：高东彪（1986—），男，工程师，学士；研究方向：AI 在软件测试中的应用。E-mail：gdb\_1986@163.com。}
 \endgroup
 \setcounter{footnote}{0}
 
