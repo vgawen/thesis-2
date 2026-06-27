@@ -94,6 +94,8 @@ Qwen 的 \textsc{Vanilla} 与 \textsc{Abstain} 等同性是更具诊断意义的
 F2 仅作为辅助工程经验报告。在同样的 75 个可达 koenig 失效用例上，我们比较两杠杆均关的 v0 与两杠杆均开的 v1，并用二因子析因分离 testId 加权检索与强锚点后置过滤的边际贡献；所有臂均使用 \texttt{qwen2.5-coder:7b}、同一系统提示、同一候选池与同一解析器 oracle。Ground truth 是 ReproBreak 中 \texttt{new\_locator} 字符串所匹配的目标元素（经解析器解析）。
 
 \subsubsection{结果}
+表~\ref{tab:l3-levers} 显示，两杠杆全开时 top-1 精确元素匹配从 55/75（73.3\%）提升到 58/75（77.3\%），全量 93 个失效用例上的静态修复代理从 59.1\% 提升到 62.4\%，且未引入回归。表~\ref{tab:l3-factorial} 进一步说明，该改进来自两个确定性杠杆的叠加：单开 testId 加权或强锚点后置过滤均为 +2/-0，两者全开为 +3/-0；但这些差异在 $n=75$ 下均未达到统计显著。
+
 \begin{table}[t]
 \centering
 \caption{L3 v0 $\to$ v1 端到端对比（75 个可达 koenig 失效）。v1 = v0 + testId 加权检索 + 强锚点后置过滤；v0 为两杠杆均关的统一权重基线。}
