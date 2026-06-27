@@ -55,7 +55,7 @@
   \vspace{-12pt}
   \begin{quote}
   \small
-  \noindent\textbf{摘\ 要：}为降低 Playwright 测试中脆弱定位器维护成本，文章研究大语言模型（Large Language Model，LLM）驱动的测试自愈是否产生隐性误修复。以 ReproBreak 数据集 koenig 项目 75 个真实可达失效用例为对象，本文在选择器解析层面对 LLM 修复器进行对抗性诊断，并以 HealReact 的 L1/L3 静态基底作为可复现测量平台。结果表明，目标元素被移除时，\texttt{qwen2.5-coder:7b} 在 78.7\% 的用例中生成指向错误元素的可解析选择器，显式放弃提示未改变逐用例判定；\texttt{gpt-4o} 在同一协议下由 84.0\% 降至 68.0\%，但仍保留高比例误修复。静态基底覆盖 80.6\% 的真实失效目标，但该数字不等同于真实 Playwright 运行时通过率。研究认为，无人值守持续集成自愈需要行为重放验证器。
+  \noindent\textbf{摘\ 要：}为降低 Playwright 测试中脆弱定位器维护成本，本文研究大语言模型（Large Language Model，LLM）驱动的测试自愈是否产生隐性误修复。以 ReproBreak 数据集 koenig 项目 75 个真实可达失效用例为对象，本文在选择器解析层面对 LLM 修复器进行对抗性诊断，并以 HealReact 的 L1/L3 静态基底作为可复现测量平台。结果表明，目标元素被移除时，\texttt{qwen2.5-coder:7b} 在 78.7\% 的用例中生成指向错误元素的可解析选择器，显式放弃提示未改变逐用例判定；\texttt{gpt-4o} 在同一协议下由 84.0\% 降至 68.0\%，但仍保留高比例误修复。静态基底覆盖 80.6\% 的真实失效目标，但该数字不等同于真实 Playwright 运行时通过率。研究认为，无人值守持续集成自愈需要行为重放验证器。
 
   \vspace{2pt}
   \noindent\textbf{关键词：}测试自愈；大语言模型；Playwright；React；隐性误修复
