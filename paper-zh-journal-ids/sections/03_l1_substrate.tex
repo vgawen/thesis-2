@@ -1,0 +1,59 @@
+\section{HealReact L1 静态基底}
+\label{sec:l1}
+
+HealReact 设想为一条按“静态 $\to$ 行为验证”递进的四层流水线（编号即由静态程度递减、行为验证程度递增的次序给出）：\textbf{L1}（静态 AST 锚点基底，本文）从源码静态抽取候选元素；\textbf{L2}（运行时 DOM 捕获层）补足仅在运行时才渲染、静态不可见的元素；\textbf{L3}（LLM 选择器修复器，本文）在前两层产出的候选上推断修复后的选择器；\textbf{L4}（行为重放验证器）以真实重放证伪“通过但错指”的补丁。这套 L1--L4 编号是本文对 HealReact 系统的自定义层级命名，并非引自外部框架。本文\emph{实现并评估} L1 与 L3；L2 与 L4 在本文中仅作设计占位（分别对应运行时 DOM 捕获与行为重放验证，均留作后续工作）。
+
+HealReact 的 L1 层是 L3 修复器与任何未来行为 oracle（L4）所运行其上的静态基底。它由三部分组成（图~\ref{fig:arch}）。
+
+\begin{figure}[t]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[
+  font=\scriptsize\sffamily,
+  every node/.style={align=center},
+  box/.style={draw, rounded corners=2pt, inner sep=3.5pt, minimum height=7mm, minimum width=18mm, fill=white},
+  layer/.style={draw, rounded corners=3pt, inner sep=5pt, fill=blue!12},
+  arrow/.style={-{Latex[length=1.6mm]}, thick},
+  dashbox/.style={draw, dashed, rounded corners=2pt, inner sep=4pt, fill=gray!8},
+]
+\node[box] (ast) {AST 抽取器\\\texttt{ts-morph}};
+\node[box, right=3mm of ast] (intent) {意图标注器\\\texttt{qwen2.5:3b}};
+\node[box, right=3mm of intent] (cal) {校准器\\规则 A--J};
+\begin{pgfonlayer}{background}
+\node[layer, fit=(ast)(intent)(cal), label={[font=\bfseries, yshift=1mm]above:L1 静态基底（本文）}] (l1) {};
+\end{pgfonlayer}
+
+\node[box, below=8mm of intent, minimum width=40mm, fill=green!20] (sheet)
+  {\texttt{LocatorSheet.json}\\koenig 上约 400 条记录/commit\\80.6\% 可达率};
+
+\node[dashbox, below left=8mm and 4mm of sheet, minimum height=12mm, minimum width=24mm, fill=gray!18] (rt)
+  {\textbf{L2} 运行时\\DOM 捕获\\（后续工作）};
+\node[box, below=8mm of sheet, minimum height=12mm, minimum width=29mm, fill=orange!20] (heal)
+  {\textbf{L3} 修复器\\\texttt{qwen2.5-coder:7b}\\+ 检索 + 强锚点};
+\node[dashbox, below right=8mm and 4mm of sheet, minimum height=12mm, minimum width=28mm, fill=gray!18] (oracle)
+  {\textbf{L4} 行为重放\\验证器\\（后续工作）};
+
+\draw[arrow] (ast) -- (intent);
+\draw[arrow] (intent) -- (cal);
+\draw[arrow] (l1.south) -- (sheet.north);
+\draw[arrow] (sheet.south) -- (heal.north);
+\draw[arrow, dashed] (rt.east) -- node[above, font=\tiny]{运行时补充} (heal.west);
+\draw[arrow] (heal.east) -- node[above, font=\scriptsize]{补丁} (oracle.west);
+\draw[arrow] (oracle.north) |- node[pos=0.25, right, font=\tiny]{接受/拒绝} (sheet.east);
+\end{tikzpicture}%
+}
+\caption{HealReact 流水线。L1（本文）是静态 AST 锚点基底，意图标注层在本文中仅在 32 元素的小规模构造样例（fixture）上评估；L3 是 \S\ref{sec:findings} 中评估的 LLM 修复器。L2（运行时 DOM 捕获）与 L4（行为重放验证器 / virtual oracle）以虚线框表示，二者在本文中均为设计占位、留作后续工作：L2 负责静态不可见的运行时元素，L4 的必要性由 \S\ref{sec:findings} 中的对抗性误修复探针在经验上得到充分动机化。}
+\label{fig:arch}
+\end{figure}
+
+\subsection{AST 抽取器}
+基于 \texttt{ts-morph}~\cite{tsmorph} 构建的抽取器遍历目标目录下的每个 \texttt{.tsx}/\texttt{.jsx} 文件，并为每个交互式 JSX 元素发出一条 JSON \texttt{LocatorSheet} 记录。每条记录包含元素 tag、父链、role、\texttt{data-testid}、\texttt{aria-label}、\texttt{id}、\texttt{className}、自由文本内容，关键还包括\emph{任意}自定义 \texttt{data-*} 属性（捕获在 \texttt{dataAttrs} 映射中）。抽取器还把任何承载稳定锚点（\texttt{data-testid}、\texttt{data-cy}、\texttt{data-kg-*}、\texttt{aria-label}，或驼峰 \texttt{dataTestId}/\texttt{testId}/\texttt{testID} prop）的 JSX 元素都视为可交互 —— 而不仅是规范 HTML tag 集。仅这一项改动就将 \texttt{koenig-lexical} 上的锚点覆盖率从 22\% 提升到 48\%、解析器命中率从 0\% 提升到 71\%，说明现代 React 的脆性中有相当部分藏在自定义包装组件里。
+
+\subsection{意图标注器与校准器}
+HealReact 还包含一个 LLM 意图标注流程（经 Ollama~\cite{ollama} 运行的 \texttt{qwen2.5:3b}），它依据组件源码与 JSX 上下文为每个交互元素生成简短的功能性意图标签（例如 \texttt{submit-order-button}、\texttt{toggle-email-notification}）；随后由一个十条规则（A--J）构成的确定性校准层负责识别并降低可疑标签的置信度，可疑模式包括兄弟集合的塌缩标签、把 HTML tag 直接当名词的退化、以及 role 与 intent 不匹配等。被标记的记录将被重新提交给 \texttt{qwen2.5-coder:7b} 重打标签，形成“先廉价后昂贵”的分级验证机制。\textbf{范围说明}：本文对意图层的评估限定在 32 元素的构造样例集（fixture）上；\S\ref{sec:findings} 中针对真实失效用例的所有数字仅使用抽取器输出的锚点与词法检索，\emph{不}使用 L1 意图标签。真实代码库上对意图稳定性的大规模评估超出本文范围。
+
+\subsection{定位器解析器作为可证伪的透镜}
+我们构建了一个 Playwright 选择器解析/匹配器，它接受任意选择器表达式（\texttt{page.locator}、\texttt{getByTestId}、\texttt{getByRole}、\texttt{waitForSelector}、原始 CSS）并返回它会匹配的 LocatorSheet 记录集。这是 \S\ref{sec:findings} 中每个论断被验证的透镜: 可达性是“断裂的选择器是否能解析到 sheet 中的某条记录？”；L3 正确性是“解析器是否把 LLM 提议的选择器与 ground truth 选择器映射到同一元素？”。构建这个透镜迫使我们处理引号感知的嵌套参数、动态 JS 表达式属性值、以及裸属性选择器；早期版本由于解析器 bug 把可达率虚抬到 85--98\%，我们现在在诚实性审计中明确标注了这一点。
+
+\subsection{头条数字}
+在 \texttt{koenig-lexical} 的 19 个失效 commit 上，抽取器每 commit 平均产出约 400 条 LocatorSheet 记录（跨 commit 范围 314--489），解析器在静态层面可达真实 Playwright 失效目标的 \textbf{75 / 93 = 80.6\%}。剩余 18 个用例需要运行时 DOM（例如 Lexical 框架在运行时才渲染出的 \texttt{<p>} 节点），属于经典的运行时 DOM 捕获范畴，由 HealReact 的 L2 层负责。

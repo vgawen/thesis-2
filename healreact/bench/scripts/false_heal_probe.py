@@ -31,8 +31,24 @@ import sys
 import time
 from pathlib import Path
 
+try:
+    from dotenv import load_dotenv as _load_dotenv
+except ImportError:
+    _load_dotenv = None
+
 # Reuse the healer's plumbing — same model, same prompt, same retrieval.
 ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = ROOT.parent.parent
+
+
+def load_project_dotenv(env_path: Path | None = None) -> bool:
+    """Load healreact/.env without overriding variables already exported by the shell."""
+    if _load_dotenv is None:
+        return False
+    return _load_dotenv(env_path or (PROJECT_ROOT / ".env"), override=False)
+
+
+load_project_dotenv()
 sys.path.insert(0, str(ROOT))
 from heal_baseline import (  # type: ignore
     SYSTEM_PROMPT, chat, parse_response, retrieve_candidates,
