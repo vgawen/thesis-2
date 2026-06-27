@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2f3a45"/>
+    </marker>
+    <style>
+      .label { font-family: Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #1f2933; }
+      .small { font-size: 20px; }
+      .tiny { font-size: 17px; }
+      .title { font-size: 24px; font-weight: 700; }
+      .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; }
+      .box { fill: #ffffff; stroke: #45515f; stroke-width: 2; rx: 8; }
+      .dash { stroke-dasharray: 9 7; }
+      .arrow { stroke: #2f3a45; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .arrowDash { stroke: #2f3a45; stroke-width: 3; fill: none; stroke-dasharray: 8 7; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="50" y="44" width="880" height="178" rx="16" fill="#e8f1fb" stroke="#51677d" stroke-width="2"/>
+  <text x="490" y="82" text-anchor="middle" class="label title">L1 静态基底（本文）</text>
+
+  <rect x="98" y="112" width="210" height="76" class="box"/>
+  <text x="203" y="142" text-anchor="middle" class="label small">AST 抽取器</text>
+  <text x="203" y="171" text-anchor="middle" class="label small mono">ts-morph</text>
+
+  <rect x="385" y="112" width="210" height="76" class="box"/>
+  <text x="490" y="142" text-anchor="middle" class="label small">意图标注器</text>
+  <text x="490" y="171" text-anchor="middle" class="label small mono">qwen2.5:3b</text>
+
+  <rect x="672" y="112" width="210" height="76" class="box"/>
+  <text x="777" y="142" text-anchor="middle" class="label small">校准器</text>
+  <text x="777" y="171" text-anchor="middle" class="label small">规则 A-J</text>
+
+  <path d="M308 150 H385" class="arrow"/>
+  <path d="M595 150 H672" class="arrow"/>
+
+  <rect x="300" y="272" width="380" height="92" rx="10" fill="#dff2dc" stroke="#4f7b55" stroke-width="2"/>
+  <text x="490" y="307" text-anchor="middle" class="label small mono">LocatorSheet.json</text>
+  <text x="490" y="335" text-anchor="middle" class="label tiny">koenig 上约 400 条记录/commit</text>
+  <text x="490" y="360" text-anchor="middle" class="label tiny">80.6% 可达率</text>
+
+  <path d="M490 222 V272" class="arrow"/>
+
+  <rect x="92" y="438" width="220" height="84" rx="10" fill="#eef0f2" stroke="#68737f" stroke-width="2" class="dash"/>
+  <text x="202" y="470" text-anchor="middle" class="label small" font-weight="700">L2 运行时</text>
+  <text x="202" y="499" text-anchor="middle" class="label small">DOM 捕获</text>
+  <text x="202" y="522" text-anchor="middle" class="label tiny">（后续工作）</text>
+
+  <rect x="350" y="432" width="280" height="96" rx="10" fill="#fde5c8" stroke="#9a6837" stroke-width="2"/>
+  <text x="490" y="464" text-anchor="middle" class="label small" font-weight="700">L3 修复器</text>
+  <text x="490" y="493" text-anchor="middle" class="label tiny mono">qwen2.5-coder:7b</text>
+  <text x="490" y="519" text-anchor="middle" class="label tiny">+ 检索 + 强锚点</text>
+
+  <rect x="688" y="438" width="240" height="84" rx="10" fill="#eef0f2" stroke="#68737f" stroke-width="2" class="dash"/>
+  <text x="808" y="470" text-anchor="middle" class="label small" font-weight="700">L4 行为重放</text>
+  <text x="808" y="499" text-anchor="middle" class="label small">验证器</text>
+  <text x="808" y="522" text-anchor="middle" class="label tiny">（后续工作）</text>
+
+  <path d="M490 364 V432" class="arrow"/>
+  <path d="M312 480 H350" class="arrowDash"/>
+  <text x="331" y="462" text-anchor="middle" class="label tiny">运行时补充</text>
+  <path d="M630 480 H688" class="arrow"/>
+  <text x="659" y="462" text-anchor="middle" class="label tiny">补丁</text>
+  <path d="M808 438 V396 H680" class="arrow"/>
+  <text x="838" y="408" text-anchor="middle" class="label tiny">接受/拒绝</text>
+</svg>
