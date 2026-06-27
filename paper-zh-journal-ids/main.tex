@@ -55,7 +55,7 @@
   \vspace{-12pt}
   \begin{quote}
   \small
-  \noindent\textbf{摘\ 要：}为降低 Playwright 测试中脆弱定位器维护成本，文章研究大语言模型（Large Language Model，LLM）驱动的测试自愈是否产生隐性误修复。以 ReproBreak 数据集 koenig 项目 75 个真实可达失效用例为对象，在选择器解析层面测试 qwen2.5-coder:7b，并构建基于抽象语法树的 HealReact 静态基底。结果表明，目标元素被移除时，78.7\% 的用例生成指向错误元素的可解析选择器，静态基底覆盖 80.6\% 的真实失效目标。研究认为，无人值守持续集成自愈需要行为重放验证器。
+  \noindent\textbf{摘\ 要：}为降低 Playwright 测试中脆弱定位器维护成本，文章研究大语言模型（Large Language Model，LLM）驱动的测试自愈是否产生隐性误修复。以 ReproBreak 数据集 koenig 项目 75 个真实可达失效用例为对象，本文在选择器解析层面对 LLM 修复器进行对抗性诊断，并以 HealReact 的 L1/L3 静态基底作为可复现测量平台。结果表明，目标元素被移除时，\texttt{qwen2.5-coder:7b} 在 78.7\% 的用例中生成指向错误元素的可解析选择器，显式放弃提示未改变逐用例判定；\texttt{gpt-4o} 在同一协议下由 84.0\% 降至 68.0\%，但仍保留高比例误修复。静态基底覆盖 80.6\% 的真实失效目标，但该数字不等同于真实 Playwright 运行时通过率。研究认为，无人值守持续集成自愈需要行为重放验证器。
 
   \vspace{2pt}
   \noindent\textbf{关键词：}测试自愈；大语言模型；Playwright；React；隐性误修复
@@ -64,7 +64,7 @@
   \noindent\textbf{中图分类号：}TP311.5\quad\textbf{文献标识码：}A
 
   \vspace{4pt}
-  \noindent\textbf{Abstract：} To reduce the maintenance cost of brittle locators in Playwright tests, this paper studies whether large language model (LLM)-driven test self-healing causes silent false healing. Using 75 real reachable break cases from the koenig project in the ReproBreak dataset, qwen2.5-coder:7b is evaluated at the selector-resolution level, and an abstract syntax tree-based HealReact static substrate is built. The results show that, when the target element is removed, 78.7\% of cases produce resolver-valid selectors pointing to wrong elements, and the static substrate covers 80.6\% of real break targets. The study concludes that unattended continuous integration self-healing requires a behavioral replay verifier.
+  \noindent\textbf{Abstract：} To reduce the maintenance cost of brittle locators in Playwright tests, this paper studies whether large language model (LLM)-driven test self-healing causes silent false healing. Using 75 real reachable break cases from the koenig project in the ReproBreak dataset, we perform an adversarial selector-resolution-level diagnosis and use the L1/L3 static substrate of HealReact as a reproducible measurement platform. The results show that, when the target element is removed, \texttt{qwen2.5-coder:7b} produces resolver-valid selectors pointing to wrong elements in 78.7\% of cases, and an explicit abstention prompt does not change per-case decisions. Under the same protocol, \texttt{gpt-4o} decreases the rate from 84.0\% to 68.0\%, but still leaves many false heals. The static substrate covers 80.6\% of real break targets, but this number is not a real Playwright runtime pass rate. The study concludes that unattended continuous integration self-healing requires a behavioral replay verifier.
 
   \vspace{2pt}
   \noindent\textbf{Key words：} self-healing test; large language model; Playwright; React; silent false healing

@@ -1,0 +1,1333 @@
+{
+  "backend": "openai-compatible",
+  "model": "gpt-4o",
+  "base_url": "https://api.openai.com/v1",
+  "request_delay_sec": 2.0,
+  "max_retries": 8,
+  "retry_base_sec": 10.0,
+  "prompt_variant": "vanilla",
+  "n": 75,
+  "abstain": 12,
+  "false_heal": 63,
+  "unresolved": 0,
+  "error": 0,
+  "false_heal_rate_pct": 84.0,
+  "abstain_rate_pct": 16.0,
+  "elapsed_sec": 251.0,
+  "rows": [
+    {
+      "id": 702,
+      "commit": "02d257a7",
+      "old_locator": "page.locator('[data-test-id=\"color-picker-accent\"]')",
+      "gt_new_locator": "page.locator('[data-testid=\"color-picker-accent\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "proposed_selector": "page.getByTestId('color-selector-button')",
+      "candidate_idx": 5,
+      "rationale": "Uses a stable testId attribute for the color selector button.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigNestedEditor.jsx",
+        43
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 703,
+      "commit": "02d257a7",
+      "old_locator": "page.locator('[data-test-id=\"color-picker-text\"]')",
+      "gt_new_locator": "page.locator('[data-testid=\"color-picker-text\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "proposed_selector": "page.getByTestId('color-selector-button')",
+      "candidate_idx": 5,
+      "rationale": "It uses a stable testId attribute.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigNestedEditor.jsx",
+        43
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 749,
+      "commit": "0f131733",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the existing data-kg-cardmenu-selected attribute without a value.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 768,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "gt_new_locator": "page.getByTestId('media-upload-placeholder')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "Matches the testId 'media-upload-placeholder' from the context and candidate list.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 769,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('custom-thumbnail-filled'))",
+      "gt_new_locator": "page.getByTestId('media-upload-filled'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-filled')",
+      "candidate_idx": 3,
+      "rationale": "The candidate with testId 'media-upload-filled' matches the context and is the most stable choice.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 770,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder'))",
+      "gt_new_locator": "page.getByTestId('media-upload-placeholder'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "Candidate 0 matches the testId 'media-upload-placeholder' used in the context.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 771,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "gt_new_locator": "page.getByTestId('media-upload-placeholder')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "The candidate with testId 'media-upload-placeholder' matches the intended element.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 772,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "gt_new_locator": "page.getByTestId('media-upload-placeholder')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "The candidate with testId 'media-upload-placeholder' matches the intended element in the test context.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 774,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "gt_new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "Matches the testId in the broken selector and is the most stable anchor.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 775,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "gt_new_locator": "page.getByTestId('media-upload-placeholder')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "The candidate with testId 'media-upload-placeholder' matches the intended target element.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 776,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "gt_new_locator": "page.getByTestId('media-upload-placeholder')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "The candidate with testId 'media-upload-placeholder' matches the intended functional UI element.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 777,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('custom-thumbnail-filled'))",
+      "gt_new_locator": "page.getByTestId('media-upload-filled'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-filled')",
+      "candidate_idx": 3,
+      "rationale": "The candidate with testId 'media-upload-filled' matches the context and is the most stable choice.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 778,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "gt_new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "The candidate with testId \"media-upload-placeholder\" matches the broken selector's intent.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 779,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "gt_new_locator": "page.getByTestId('media-upload-placeholder')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "The candidate with testId 'media-upload-placeholder' matches the intended functional UI element.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 780,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "gt_new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "The candidate with testId \"media-upload-placeholder\" matches the broken selector's purpose.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 781,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "gt_new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "The candidate with testId \"media-upload-placeholder\" matches the broken selector's intended target.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 782,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "gt_new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "Candidate 0 has the exact testId needed for the selector.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 746,
+      "commit": "3ba4b1aa",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[role=\"menuitem\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "The role attribute is stable and matches the intended menu item.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 704,
+      "commit": "47847878",
+      "old_locator": "page.click('[data-testid=\"media-upload-placeholder\"]')",
+      "gt_new_locator": "page.getByTestId('cta-background-color-picker')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "candidate_idx": 0,
+      "rationale": "The candidate with idx 0 has the same testId as the old selector.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigNestedEditor.jsx",
+        43
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 750,
+      "commit": "7efd028b",
+      "old_locator": "page.locator('[data-testid=\"signup-card-container\"]')",
+      "gt_new_locator": "page.locator('[data-testid=\"signup-card-content\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "proposed_selector": "page.getByTestId('signup-card-content')",
+      "candidate_idx": 1,
+      "rationale": "Candidate 1 has the exact testId needed for the selector.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigNestedEditor.jsx",
+        38
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 836,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "gt_new_locator": "page.getByTestId('tk-indicator')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "candidate_idx": -1,
+      "rationale": "The test context already uses getByTestId('tk-indicator').",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 837,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]'))",
+      "gt_new_locator": "page.getByTestId('tk-indicator'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "candidate_idx": -1,
+      "rationale": "The test already uses getByTestId with 'tk-indicator'.",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 839,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "gt_new_locator": "page.getByTestId('tk-indicator')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "candidate_idx": -1,
+      "rationale": "The test context suggests using getByTestId with 'tk-indicator'.",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 840,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "gt_new_locator": "page.getByTestId('tk-indicator')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "candidate_idx": -1,
+      "rationale": "The selector already uses getByTestId which is stable and preferred.",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 841,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "gt_new_locator": "page.getByTestId('tk-indicator')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "candidate_idx": -1,
+      "rationale": "The test already uses getByTestId with 'tk-indicator'.",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 842,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "gt_new_locator": "page.getByTestId('tk-indicator')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "candidate_idx": -1,
+      "rationale": "The test already uses getByTestId with 'tk-indicator'.",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 616,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "gt_new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates available; selector remains unchanged.",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 619,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "gt_new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates available to select from.",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 626,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-button]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "candidate_idx": 2,
+      "rationale": "Role and name provide a stable and specific selector for the button.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 627,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-button]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "candidate_idx": 2,
+      "rationale": "Role and name provide a stable and descriptive selector for the button.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 628,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-button]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "candidate_idx": 2,
+      "rationale": "Role and accessible name provide a stable and descriptive selector.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 634,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-button]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "candidate_idx": 2,
+      "rationale": "Role and name provide a stable and descriptive selector for the button.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 638,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-button]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "candidate_idx": 2,
+      "rationale": "Role and name provide a stable and descriptive selector for the button.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 640,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-button]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "candidate_idx": 2,
+      "rationale": "Role and name provide a stable and specific selector for the button.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 644,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-button]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "candidate_idx": 2,
+      "rationale": "Role and name provide a stable and specific selector for the button.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 647,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-button]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "candidate_idx": 2,
+      "rationale": "Role and name provide a stable and specific selector for the button.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 649,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "proposed_selector": "page.locator('[data-kg-plus-container]')",
+      "candidate_idx": 1,
+      "rationale": "Uses the stable data-kg-plus-container attribute on the relevant div element.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/plugins/PlusCardMenuPlugin.jsx",
+        250
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 652,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "proposed_selector": "page.locator('[data-kg-plus-container]')",
+      "candidate_idx": 1,
+      "rationale": "The candidate with `data-kg-plus-container` is the closest match to the original selector.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/plugins/PlusCardMenuPlugin.jsx",
+        250
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 655,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "proposed_selector": "page.locator('[data-kg-plus-container]')",
+      "candidate_idx": 1,
+      "rationale": "The candidate has a stable data-kg-* attribute, which is preferred.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/plugins/PlusCardMenuPlugin.jsx",
+        250
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 660,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "proposed_selector": "page.locator('[data-kg-plus-container]')",
+      "candidate_idx": 1,
+      "rationale": "It uses a stable data-kg-* attribute, similar to the old selector.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/plugins/PlusCardMenuPlugin.jsx",
+        250
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 662,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-button]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "candidate_idx": 0,
+      "rationale": "Candidate 0 has the exact data attribute used in the old selector.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 664,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "proposed_selector": "page.locator('[data-kg-plus-container]')",
+      "candidate_idx": 1,
+      "rationale": "Uses the available data-kg-* attribute for stability.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/plugins/PlusCardMenuPlugin.jsx",
+        250
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 783,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "gt_new_locator": "page.locator('[data-kg-plus-button]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "candidate_idx": 2,
+      "rationale": "Role and name provide a stable and specific selector for the button.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 784,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "gt_new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "proposed_selector": "page.locator('[data-kg-slash-container]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the available data-kg-slash-container attribute for stability.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/plugins/SlashCardMenuPlugin.jsx",
+        304
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 785,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "gt_new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "proposed_selector": "page.locator('[data-kg-slash-container]')",
+      "candidate_idx": 0,
+      "rationale": "Use the available data-kg-slash-container attribute for stability.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/plugins/SlashCardMenuPlugin.jsx",
+        304
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 786,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "gt_new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates provided; selector remains unchanged.",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 788,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "gt_new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates available; selector remains unchanged.",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 793,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "gt_new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "proposed_selector": "page.locator('[data-kg-slash-container]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the available data-kg-slash-container attribute for stability.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/plugins/SlashCardMenuPlugin.jsx",
+        304
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 794,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "gt_new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "proposed_selector": "page.locator('[data-kg-slash-container]')",
+      "candidate_idx": 0,
+      "rationale": "Use the available data-kg-slash-container attribute for stability.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/plugins/SlashCardMenuPlugin.jsx",
+        304
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 795,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "gt_new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates available; selector remains unchanged.",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 797,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "gt_new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "candidate_idx": -1,
+      "rationale": "No candidates available; selector remains unchanged.",
+      "resolved_target": null,
+      "verdict": "abstain"
+    },
+    {
+      "id": 685,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the existing data-kg-cardmenu-selected attribute without a specific value for stability.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 698,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[role=\"menuitem\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "The role attribute is stable and matches the intended menu item.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 699,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[role=\"menuitem\"]')",
+      "candidate_idx": 0,
+      "rationale": "The role attribute is stable and matches the intended element.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 700,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[role=\"menuitem\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Role attribute is stable and matches the intended element.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 705,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the existing data-kg-cardmenu-selected attribute without a value, ensuring stability.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 709,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[role=\"menuitem\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "Role \"menuitem\" is stable and matches the intended element.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 714,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[role=\"menuitem\"]').filter({hasText: 'snippet'})",
+      "candidate_idx": 0,
+      "rationale": "The role attribute is stable and matches the intended menu item.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 720,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the existing data-kg-cardmenu-selected attribute without a value for stability.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 723,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the existing data-kg-cardmenu-selected attribute without a specific value.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 724,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the same data attribute without a specific value, ensuring stability.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 756,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the existing data-kg-cardmenu-selected attribute without a specific value.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 764,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the existing data-kg-cardmenu-selected attribute without a value.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 834,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the existing data-kg-cardmenu-selected attribute without a specific value.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        96
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 614,
+      "commit": "c5a1dbf5",
+      "old_locator": "page.locator('[data-kg-card-toolbar=\"html\"] [aria-label=\"Visibility\"]'))",
+      "gt_new_locator": "page.locator('[data-kg-card-toolbar=\"html\"] [data-testid=\"edit-html\"]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/nodes/HtmlNodeComponent.jsx",
+        119
+      ],
+      "proposed_selector": "page.locator('[data-kg-card-toolbar=\"html\"]')",
+      "candidate_idx": 0,
+      "rationale": "The selector uses the stable data-kg-card-toolbar attribute from candidate 0.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/nodes/HtmlNodeComponent.jsx",
+        107
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 615,
+      "commit": "c5a1dbf5",
+      "old_locator": "page.getByTestId('visibility-show-on-web-Toggle')",
+      "gt_new_locator": "page.getByTestId('visibility-show-on-web')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        90
+      ],
+      "proposed_selector": "page.getByTestId('visibility-show-on-web')",
+      "candidate_idx": 0,
+      "rationale": "Candidate 0 has the matching testId 'visibility-show-on-web'.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigNestedEditor.jsx",
+        40
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 765,
+      "commit": "cabe34a7",
+      "old_locator": "page.getByTestId('custom-thumbnail-replace')",
+      "gt_new_locator": "page.getByTestId('media-upload-remove')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('remove-thumbnail')",
+      "candidate_idx": 6,
+      "rationale": "The testId 'remove-thumbnail' matches the context of removing a thumbnail.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        21
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 766,
+      "commit": "cabe34a7",
+      "old_locator": "page.getByTestId('custom-thumbnails-errors'))",
+      "gt_new_locator": "page.getByTestId('media-upload-errors'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('thumbnail-errors')",
+      "candidate_idx": 2,
+      "rationale": "The candidate with testId 'thumbnail-errors' matches the intended error display functionality.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        21
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 767,
+      "commit": "cabe34a7",
+      "old_locator": "page.getByTestId('custom-thumbnails-errors'))",
+      "gt_new_locator": "page.getByTestId('media-upload-errors'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "proposed_selector": "page.getByTestId('thumbnail-errors')",
+      "candidate_idx": 2,
+      "rationale": "Candidate 2 has the closest matching testId for errors.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        21
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 715,
+      "commit": "ddee33cf",
+      "old_locator": "page.locator('[data-kg-card-menu-item=\"Call to Action\"]'))",
+      "gt_new_locator": "page.locator('[data-kg-card-menu-item=\"Call to action\"]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[data-kg-cardmenu-idx]')",
+      "candidate_idx": 2,
+      "rationale": "Uses a stable data-kg-* attribute on a relevant CardMenuItem.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        140
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 716,
+      "commit": "ddee33cf",
+      "old_locator": "page.locator('[data-kg-card-menu-item=\"Call to Action\"]'))",
+      "gt_new_locator": "page.locator('[data-kg-card-menu-item=\"Call to action\"]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "proposed_selector": "page.locator('[data-kg-cardmenu-idx]')",
+      "candidate_idx": 2,
+      "rationale": "Uses available data-kg-* attribute for stability.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        140
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 621,
+      "commit": "ecee2a8e",
+      "old_locator": "page.locator('[data-kg-card=\"markdown\"]'))",
+      "gt_new_locator": "page.locator('[data-kg-card=\"codeblock\"]'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardWrapper.jsx",
+        53
+      ],
+      "proposed_selector": "page.locator('[data-kg-card-toolbar=\"markdown\"]')",
+      "candidate_idx": 0,
+      "rationale": "Uses the most similar data attribute to the original selector.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/nodes/MarkdownNodeComponent.jsx",
+        42
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 688,
+      "commit": "f2d79731",
+      "old_locator": "page.getByTestId('audio-caption')",
+      "gt_new_locator": "page.getByTestId('audio-title')",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "proposed_selector": "page.getByTestId('audio-title')",
+      "candidate_idx": 3,
+      "rationale": "The testId 'audio-title' matches the context and is the most stable identifier available.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigNestedEditor.jsx",
+        37
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 689,
+      "commit": "f2d79731",
+      "old_locator": "page.getByTestId('audio-caption'))",
+      "gt_new_locator": "page.getByTestId('audio-title'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "proposed_selector": "page.getByTestId('audio-title')",
+      "candidate_idx": 3,
+      "rationale": "The candidate with testId 'audio-title' matches the intended element in the test context.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigNestedEditor.jsx",
+        37
+      ],
+      "verdict": "false_heal"
+    },
+    {
+      "id": 690,
+      "commit": "f2d79731",
+      "old_locator": "page.getByTestId('audio-caption'))",
+      "gt_new_locator": "page.getByTestId('audio-title'))",
+      "gt_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "proposed_selector": "page.getByTestId('audio-title')",
+      "candidate_idx": 3,
+      "rationale": "The candidate with testId 'audio-title' matches the intended element in the test context.",
+      "resolved_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigNestedEditor.jsx",
+        37
+      ],
+      "verdict": "false_heal"
+    }
+  ]
+}

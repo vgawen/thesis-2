@@ -29,6 +29,8 @@ import json
 import os
 import sys
 import time
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 try:
@@ -80,6 +82,56 @@ CRITICAL — ABSTAIN GUARDRAIL:
 """
 
 
+def chat_with_backend(args, system_prompt: str, user_prompt: str) -> str:
+    if args.backend == "ollama":
+        return chat(args.model, system_prompt, user_prompt)
+
+    api_key = os.environ.get(args.api_key_env)
+    if not api_key:
+        raise RuntimeError(f"{args.api_key_env} is not set")
+
+    payload = {
+        "model": args.model,
+        "temperature": 0,
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+    }
+    req = urllib.request.Request(
+        args.base_url.rstrip("/") + "/chat/completions",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    for attempt in range(args.max_retries + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            return data["choices"][0]["message"]["content"]
+        except urllib.error.HTTPError as e:
+            if e.code != 429 or attempt >= args.max_retries:
+                raise
+            retry_after = e.headers.get("Retry-After")
+            if retry_after:
+                delay = float(retry_after)
+            else:
+                delay = min(60.0, args.retry_base_sec * (2 ** attempt))
+            print(f"rate limited by API; retrying in {delay:.1f}s (attempt {attempt + 1}/{args.max_retries})",
+                  file=sys.stderr)
+            time.sleep(delay)
+
+    raise RuntimeError("unreachable retry loop exit")
+
+
+def maybe_wait_between_requests(args) -> None:
+    if args.backend == "openai-compatible" and args.request_delay_sec > 0:
+        time.sleep(args.request_delay_sec)
+
+
 def load_heal_baseline() -> tuple[list[dict], dict[str, list[dict]]]:
     """Recover (reachable cases, sheets-by-commit) the same way heal_baseline does."""
     resolves = sorted((BENCH_ROOT / "_src" / "_resolves").glob("*.json"))
@@ -111,6 +163,14 @@ def main() -> int:
     ap.add_argument("--prompt", choices=["vanilla", "abstain"], default="vanilla",
                     help="vanilla = same prompt as heal_baseline; abstain = explicit ABSTAIN guardrail")
     ap.add_argument("--out", type=Path, default=None)
+    ap.add_argument("--backend", choices=["ollama", "openai-compatible"],
+                    default=os.environ.get("HEALREACT_BACKEND", "ollama"))
+    ap.add_argument("--model", default=os.environ.get("HEALREACT_HEAL_MODEL", MODEL))
+    ap.add_argument("--base-url", default=os.environ.get("HEALREACT_OPENAI_BASE_URL", "https://api.openai.com/v1"))
+    ap.add_argument("--api-key-env", default="OPENAI_API_KEY")
+    ap.add_argument("--request-delay-sec", type=float, default=float(os.environ.get("HEALREACT_REQUEST_DELAY_SEC", "1.0")))
+    ap.add_argument("--max-retries", type=int, default=int(os.environ.get("HEALREACT_MAX_RETRIES", "6")))
+    ap.add_argument("--retry-base-sec", type=float, default=float(os.environ.get("HEALREACT_RETRY_BASE_SEC", "5.0")))
     args = ap.parse_args()
 
     system_prompt = ABSTAIN_PROMPT if args.prompt == "abstain" else SYSTEM_PROMPT
@@ -149,7 +209,8 @@ def main() -> int:
         )
 
         try:
-            raw = chat(MODEL, system_prompt, user_prompt)
+            maybe_wait_between_requests(args)
+            raw = chat_with_backend(args, system_prompt, user_prompt)
             obj = parse_response(raw)
         except Exception as e:
             error += 1
@@ -201,7 +262,12 @@ def main() -> int:
     elapsed = time.time() - t0
     tot = abstain + false_heal + unresolved
     summary = {
-        "model": MODEL,
+        "backend": args.backend,
+        "model": args.model,
+        "base_url": args.base_url if args.backend == "openai-compatible" else None,
+        "request_delay_sec": args.request_delay_sec if args.backend == "openai-compatible" else None,
+        "max_retries": args.max_retries if args.backend == "openai-compatible" else None,
+        "retry_base_sec": args.retry_base_sec if args.backend == "openai-compatible" else None,
         "prompt_variant": args.prompt,
         "n": len(out),
         "abstain": abstain,
@@ -216,7 +282,8 @@ def main() -> int:
     out_path.write_text(json.dumps(summary, indent=2))
     print()
     print("========= FALSE-HEAL PROBE SUMMARY =========")
-    print(f"model              : {MODEL}")
+    print(f"backend            : {args.backend}")
+    print(f"model              : {args.model}")
     print(f"n cases            : {len(out)}")
     print(f"abstain (good)     : {abstain} ({summary['abstain_rate_pct']}%)")
     print(f"false_heal (bad)   : {false_heal} ({summary['false_heal_rate_pct']}%)")
