@@ -36,14 +36,11 @@
   urlcolor=blue!60!black,
 }
 
-\title{Playwright 测试隐性误修复研究\\
-\large \mdseries Research on silent false healing in Playwright test repair}
+\title{Playwright 测试隐性误修复研究}
 
 \author{
   高东彪\\
-  \small（软视软件（苏州）有限公司，江苏 苏州 \,215000）\\
-  \small Gao Dongbiao\\
-  \small (Zoom Video Communications (Suzhou), Inc., Suzhou 215000, China)
+  \small（软视软件（苏州）有限公司，江苏 苏州 \,215000）
 }
 \date{}
 
@@ -61,9 +58,16 @@
   \noindent\textbf{关键词：}测试自愈；大语言模型；Playwright；React；隐性误修复
 
   \vspace{2pt}
-  \noindent\textbf{中图分类号：}TP311.5\quad\textbf{文献标识码：}A
+  \noindent\textbf{中图分类号：}TP311.5
 
   \vspace{4pt}
+  \begin{center}
+  \textbf{Research on silent false healing in Playwright test repair}\\
+  Gao Dongbiao\\
+  \small (Zoom Video Communications (Suzhou), Inc., Suzhou 215000, China)
+  \end{center}
+
+  \vspace{2pt}
   \noindent\textbf{Abstract：} To reduce the maintenance cost of brittle locators in Playwright tests, this paper studies whether large language model (LLM)-driven test self-healing causes silent false healing. Using 75 real reachable break cases from the koenig project in the ReproBreak dataset, we perform an adversarial selector-resolution-level diagnosis and use the L1/L3 static substrate of HealReact as a reproducible measurement platform. The results show that, when the target element is removed, \texttt{qwen2.5-coder:7b} produces resolver-valid selectors pointing to wrong elements in 78.7\% of cases, and an explicit abstention prompt does not change per-case decisions. Under the same protocol, \texttt{gpt-4o} decreases the rate from 84.0\% to 68.0\%, but still leaves many false heals. The static substrate covers 80.6\% of real break targets, but this number is not a real Playwright runtime pass rate. The study concludes that unattended continuous integration self-healing requires a behavioral replay verifier.
 
   \vspace{2pt}
