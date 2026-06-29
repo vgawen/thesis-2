@@ -1,13 +1,13 @@
 \section{三个实证发现}
 \label{sec:findings}
 
-下文所有数字都可由开放脚本 \texttt{heal\_baseline.py}、\texttt{false\_heal\_probe.py} 与 \texttt{cross\_app\_probe.py} 在 \texttt{healreact/bench/cases/} 下的 JSON 工件上复现。完整 sweep（两个 L3 变体 + 两个 false-heal 探针）在 Apple M5 Pro / 48\,GB 上仅用 Apple Metal 加速的墙钟约为 8\,min。
+下文所有数字都可由开放脚本 \texttt{heal\_baseline.py}、\texttt{false\_heal\_probe.py} 与 \texttt{cross\_app\_probe.py} 在 \texttt{healreact/bench/cases/} 下的 JSON 工件上复现。完整实验扫描（两个 L3 变体 + 两个 false-heal 探针）在 Apple M5 Pro / 48\,GB 上仅用 Apple Metal 加速时，实际运行时间约为 8\,min。
 
 \subsection{复现配置}
 为便于复现，本文固定以下设置：L3 修复器与意图标注器分别经 Ollama 运行 \texttt{qwen2.5-coder:7b} 与 \texttt{qwen2.5:3b}，二者均取 \texttt{temperature}=0（贪心解码、单次采样）；候选检索采用加性 token 重叠打分，权重为 testId$\times 3$、dataAttr key/value$\times 2$、aria/id/class/text/path$\times 1$，取 top-$k$ 候选（$k$ 与各探针配置一并记录在工件 JSON 中）。每个失效用例的逐条记录（用例 id、koenig 所属 commit、断裂选择器、ReproBreak \texttt{new\_locator}、模型给出的选择器与所选候选下标、rationale、选择器语法校验结果、解析得到的目标元素、是否判为误修复/精确匹配）以及汇总头部的模型 tag（\texttt{qwen2.5-coder:7b}）均随 \texttt{healreact/bench/cases/} 工件一并发布，作为本文结果的复现与审计依据。\textbf{代码与数据可用性}：上述脚本、JSON 工件、工件清单与论文快照已公开归档于 GitHub: \url{https://github.com/vgawen/healreact}；表~\ref{tab:falseheal}--\ref{tab:cross-app} 中的每一项原始计数（样本数、放弃/误修复/未解析、精确匹配）均可由该归档直接复算。工件清单汇总各脚本的运行命令、输入数据校验和、koenig 与 payload 的 commit 标识及模型版本。
 
 \subsection{共享 L3 协议}
-在 F1 与 F2 中，L3 修复器都经由 Ollama 以 \texttt{temperature=0} 调用 \texttt{qwen2.5-coder:7b}。用户提示包含: (i) 原样给出的断裂 Playwright 选择器；(ii) 失效行附近的 $\pm 3$ 行测试源码；(iii) 来自 LocatorSheet 的 top-$k$ 候选，按加性 token 重叠打分检索（testId $\times 3$、dataAttr key/value $\times 2$、aria/id/class/text/path $\times 1$）。模型必须给出三行: \texttt{SELECTOR}、\texttt{CANDIDATE\_IDX}、\texttt{RATIONALE}（纯文本，非 JSON: 在模型反复在选择器中输出未转义引号后放弃了 JSON）。解析器的 tie 处理: 按 \texttt{(componentFile, line)} 顺序的第一个匹配记录作为解析目标；多匹配的选择器会被标记，但 metric 中使用第一个命中。
+在 F1 与 F2 中，L3 修复器都经由 Ollama 以 \texttt{temperature=0} 调用 \texttt{qwen2.5-coder:7b}。用户提示包含: (i) 原样给出的断裂 Playwright 选择器；(ii) 失效行附近的 $\pm 3$ 行测试源码；(iii) 来自 LocatorSheet 的 top-$k$ 候选，按加性 token 重叠打分检索（testId $\times 3$、dataAttr key/value $\times 2$、aria/id/class/text/path $\times 1$）。模型必须给出三行: \texttt{SELECTOR}、\texttt{CANDIDATE\_IDX}、\texttt{RATIONALE}（纯文本，非 JSON: 在模型反复在选择器中输出未转义引号后放弃了 JSON）。解析器的多匹配冲突处理规则如下：按 \texttt{(componentFile, line)} 顺序的第一个匹配记录作为解析目标；多匹配的选择器会被标记，但指标计算中使用第一个命中。
 
 \subsection{F1: 目标缺失下的隐性误修复}
 \label{sec:f1}
@@ -15,7 +15,7 @@
 \subsubsection{设置}
 对 75 个\emph{可达}的 koenig 失效用例（即失效 commit 处 LocatorSheet 中存在真值（ground truth）元素的用例），本文以\emph{相同}的提示与检索条件重跑 L3 修复器，但将真值元素从 LocatorSheet 与候选集中\emph{强制移除}，使模型在字面意义上无法选中正确答案。此时正确响应应当是放弃（\texttt{CANDIDATE\_IDX: -1}）；任何给出可解析选择器的响应都是一次会沉默地将测试改写到错误元素上的隐性误修复。
 
-我们比较两个提示变体:
+文章比较两个提示变体:
 \begin{enumerate}
 \item \textsc{Vanilla}：与 L3 基线相同的系统提示。
 \item \textsc{Abstain}: 同一提示外加一条明确的“如无候选契合则放弃”守门规则，告诉模型 \emph{“一次沉默地把测试改写到错误元素上的盲修复永远比放弃更糟”}。
@@ -39,7 +39,7 @@ prompt & 放弃\,(好) & 误修复\,(坏) & 未解析 & \textbf{误修复\,\%} \
 \bottomrule
 \end{tabular}}
 \\[2pt]
-{\scriptsize $n=75$ 个可达 koenig 失效用例。Ground truth 目标已从候选集中移除；任何被给出的可解析选择器即为一次隐性误修复。78.7\%（59/75）的 Wilson 95\% 置信区间约为 [68.1\%, 86.4\%]。}
+{\scriptsize $n=75$ 个可达 koenig 失效用例。真值目标已从候选集中移除；任何被给出的可解析选择器即为一次隐性误修复。78.7\%（59/75）的 Wilson 95\% 置信区间约为 [68.1\%, 86.4\%]。}
 \end{table}
 
 为排除“聚合计数偶然相同”的可能，表~\ref{tab:falseheal-paired} 给出两提示变体的\emph{逐用例}配对交叉表。
@@ -63,21 +63,21 @@ Vanilla＼Abstain & 放弃 & 误修复 & 未解析 \\
 \end{table}
 
 \subsubsection{解读}
-78.7\% 是隐性误修复的\emph{上界}，因为每个用例都是对抗性构造。在混合工作负载下，只有 L1 sheet 缺失目标的用例（本试点中是 18/93 = 19\% 的 koenig 失效）面临此风险；朴素地相乘得到 $\approx 0.19 \times 0.79 = 15\%$，作为一个粗略的风险估计、而非测量到的部署率（对抗性探针的行为不必一对一地迁移到真正只在运行时可达的用例上）。即便作为风险估计，我们仍认为这已经高到不能允许 CI 无人值守地自动提交 LLM 提议的选择器补丁。
+78.7\% 是隐性误修复的\emph{上界}，因为每个用例都是对抗性构造。在混合工作负载下，只有 L1 sheet 缺失目标的用例（本实验中是 18/93 = 19\% 的 koenig 失效）面临此风险；朴素地相乘得到 $\approx 0.19 \times 0.79 = 15\%$，作为一个粗略的风险估计、而非测量到的部署率（对抗性探针的行为不必一对一地迁移到真正只在运行时可达的用例上）。即便作为风险估计，文章仍认为该风险已经高到不能允许 CI 无人值守地自动提交 LLM 提议的选择器补丁。
 
 \textsc{Vanilla} 与 \textsc{Abstain} 之间的等同性是更具诊断意义的发现，且这一等同性是\emph{逐用例}成立的（表~\ref{tab:falseheal-paired}：75 个用例的配对判定无一发生改变）：一个 7B 规模的代码模型在该任务上不会因软提示式的守门规则而改变其可观察行为。任何稳健的放弃机制都必须置于模型\emph{之外}：例如确定性的检索分数阈值、锚点类别归属规则，或能够证伪通过补丁的行为验证器。该结果从实证层面支持将 HealReact 的 L4 层（行为重放验证器）作为下一层加以构建，而非依赖提示级别的安全网。
 
-\subsection{F2：L3 基线与两个低成本确定性手段}
+\subsection{F2：L3 基线与两个低开销确定性手段}
 \label{sec:f2}
 
 \subsubsection{设置}
-在同样的 75 个可达 koenig 失效用例上，我们评估两个 L3 变体:
+在同样的 75 个可达 koenig 失效用例上，文章评估两个 L3 变体:
 \begin{itemize}
 \item \textsc{v0（基线，两杠杆均关）}：候选按与断裂选择器的词元重叠程度检索，所有锚点（含 testId）统一权重；无后置过滤；系统提示要求模型优先选择 testId 类锚点。
 \item \textsc{v1（两杠杆均开）}: (i) 检索打分器把 testId 匹配加权（$\times 3$）排在 dataAttr key/value（$\times 2$）和 aria/id/class/text/path（$\times 1$）之上；(ii) 一个确定性强锚点后置过滤器: 当所选候选携带可静态求值的 testId 但模型给出的不是 testId 选择器时，将其确定性地重写为 \texttt{getByTestId(testId)}；若 testId 来自不可求值的 JSX 表达式，则不做重写。系统提示不变。
 \end{itemize}
 
-为分离两个杠杆各自的贡献，我们进一步以\emph{二因子析因}（testId 加权 $\in\{$关,开$\}$ $\times$ 后置过滤 $\in\{$关,开$\}$）跑满 4 个臂（表~\ref{tab:l3-factorial}）。所有臂均使用 \texttt{qwen2.5-coder:7b}、\texttt{temperature=0}、同一系统提示；Ground truth 是 ReproBreak 中 \texttt{new\_locator} 字符串所匹配的目标元素（经解析器解析）。
+为分离两个杠杆各自的贡献，文章进一步以\emph{二因子析因}（testId 加权 $\in\{$关,开$\}$ $\times$ 后置过滤 $\in\{$关,开$\}$）跑满 4 个臂（表~\ref{tab:l3-factorial}）。所有臂均使用 \texttt{qwen2.5-coder:7b}、\texttt{temperature=0}、同一系统提示；真值是 ReproBreak 中 \texttt{new\_locator} 字符串所匹配的目标元素（经解析器解析）。
 
 \subsubsection{结果}
 \begin{table}[t]
@@ -92,7 +92,7 @@ Vanilla＼Abstain & 放弃 & 误修复 & 未解析 \\
 \midrule
 top-1 精确元素匹配 & 55 / 75 (73.3\%) & \textbf{58 / 75 (77.3\%)} \\
 有效 Playwright 选择器 & 68 / 75 (90.7\%) & 68 / 75 (90.7\%) \\
-静态修复代理（全量 93） & 55 / 93 (59.1\%) & \textbf{58 / 93 (62.4\%)} \\
+静态修复代理指标（全量 93） & 55 / 93 (59.1\%) & \textbf{58 / 93 (62.4\%)} \\
 \midrule
 强锚点后置过滤触发 & 0 & 1 / 75（正确） \\
 新增正确用例（vs v0） & --- & 3 \\
@@ -119,13 +119,13 @@ top-1 精确元素匹配 & 55 / 75 (73.3\%) & \textbf{58 / 75 (77.3\%)} \\
 \end{table}
 
 \subsubsection{解读}
-两项手段均成本低廉（一次正则优先级调整、一段约 10 行的后置过滤）、完全确定性、无需任何模型再训练。借助表~\ref{tab:l3-factorial} 的二因子析因可分离两者贡献：以“两杠杆均关”为基线（55/75），单开 testId 加权检索与单开强锚点过滤各带来 +2 个精确匹配，两者全开合计 +3、且\emph{零回归}；强锚点后置过滤器在过滤单开臂触发 2 次且均正确，在 v1 全开臂触发 1 次且正确，消除了部分“LLM 选中正确候选但在生成选择器时挂到了不稳定锚点上”的失败模式。须如实说明：这些增益方向一致、无一造成回归，但在 $n=75$ 的样本量下经 McNemar 精确检验均\emph{未达统计显著}（$p\ge0.25$）；因此我们把它们定位为“低成本、零回归的确定性工程杠杆”，而非已被统计确立的性能提升。该结果与 F1 相互呼应：在确定性介入有效之处，提示级介入往往力有未逮。
+两项手段均为低开销改动（一次正则优先级调整、一段约 10 行的后置过滤）、完全确定性、无需任何模型再训练。借助表~\ref{tab:l3-factorial} 的二因子析因可分离两者贡献：以“两杠杆均关”为基线（55/75），单开 testId 加权检索与单开强锚点过滤各带来 +2 个精确匹配，两者全开合计 +3、且\emph{零回归}；强锚点后置过滤器在过滤单开臂触发 2 次且均正确，在 v1 全开臂触发 1 次且正确，消除了部分“LLM 选中正确候选但在生成选择器时挂到了不稳定锚点上”的失败模式。须如实说明：这些增益方向一致、无一造成回归，但在 $n=75$ 的样本量下经 McNemar 精确检验均\emph{未达统计显著}（$p\ge0.25$）；因此，文章把它们定位为“低开销、零回归的确定性工程杠杆”，而非已被统计确立的性能提升。该结果与 F1 相互呼应：在确定性介入有效之处，提示级介入的效果较为有限。
 
 \subsection{F3: 跨应用泛化与 BEM 盲区}
 \label{sec:f3}
 
 \subsubsection{设置}
-任何仅在单一应用上完成的试点都可能被审稿人合理质疑：所学到的可能只是应用专有的约定。为此本文以 \texttt{git sparse-checkout} 方式仅检出 \texttt{payloadcms/payload}~\cite{payloadCMS} 的最新版本（HEAD；ReproBreak 中第二大的 Playwright 案例组，包含 319 个失效配对），在 \texttt{packages/ui/src} 上运行未修改的 L1 抽取器，产出 457 条记录。对每个失效配对，使用 \texttt{new\_locator} 字符串在该记录表上做解析匹配（以 HEAD 版本可达率作为代理指标，逐 commit 配对未纳入本文）。
+任何仅在单一应用上完成的实验都可能被审稿人合理质疑：所学到的可能只是应用专有的约定。为此本文以 \texttt{git sparse-checkout} 方式仅检出 \texttt{payloadcms/payload}~\cite{payloadCMS} 的最新版本（HEAD；ReproBreak 中第二大的 Playwright 案例组，包含 319 个失效配对），在 \texttt{packages/ui/src} 上运行未修改的 L1 抽取器，产出 457 条记录。对每个失效配对，使用 \texttt{new\_locator} 字符串在该记录表上做解析匹配（以 HEAD 版本可达率作为代理指标，逐 commit 配对未纳入本文）。
 
 \subsubsection{结果}
 \begin{table}[t]
@@ -150,7 +150,7 @@ Playwright 失效配对 & 93（已复现） & 319（CSV） \\
 {\scriptsize $^\dagger$payload 的主导锚点占比来自对 307 个未命中用例的采样，而非全量失效分布。}
 \end{table}
 
-原始 3.8\% 看起来灾难性，但对 307 个未命中用例的检查给出干净的故事。payload 使用 BEM~\cite{bemMethodology}: 每个组件声明一个 \texttt{baseClass} 常量（例如 \texttt{const baseClass = 'dashboard'}），并以 \texttt{\{`\$\{baseClass\}\_\_add-button`\}} 这样的模板字面量写出 className。测试引用\emph{渲染后}的类 \texttt{.dashboard\_\_add-button}，这对一个纯字面量的 AST 抽取器是不可见的。
+原始 3.8\% 的可达率较低，但对 307 个未命中用例的检查结果呈现出清晰的规律。payload 使用 BEM~\cite{bemMethodology}: 每个组件声明一个 \texttt{baseClass} 常量（例如 \texttt{const baseClass = 'dashboard'}），并以 \texttt{\{`\$\{baseClass\}\_\_add-button`\}} 这样的模板字面量写出 className。测试引用\emph{渲染后}的类 \texttt{.dashboard\_\_add-button}，这对一个纯字面量的 AST 抽取器是不可见的。
 
 \subsubsection{解读}
 这一结果并非对 HealReact L1 设计的否证，而是识别出一处范围明确的盲区，其修复对应一次确定性的 AST 处理：构造一个 \texttt{baseClass} 解析器，回溯到常量声明并展开其模板字面量，并配以一个 CSS Modules~\cite{cssModules} 等价的展开器。基于对 307 个未命中用例的\emph{非系统}采样，本文\emph{假设}修复后原始可达率会显著抬升，但该结论尚属假设而非测量；对全部 307 个未命中用例做系统化的失因标注（BEM、CSS Modules、运行时 DOM、解析器局限等类别计数）、固定并记录 payload 的 HEAD commit SHA 以及与 ReproBreak 的逐 commit 配对对齐，均留作后续工作（当前冻结工件仅记录了 payload 的仓库、配对数与记录数，未记录精确 HEAD SHA，属已知复现缺口）。3.8\% 是当前抽取器下诚实的原始测量值。该发现真正的贡献是这条可证伪的跨应用泛化\emph{假设}本身：锚点文化的多样性（\texttt{data-testid} vs 自定义 \texttt{data-*} vs BEM 模板字面量）很可能是定位器修复工具泛化能力的关卡，任何仅在单一应用上完成基准测试的工具都可能高估其泛化性。
