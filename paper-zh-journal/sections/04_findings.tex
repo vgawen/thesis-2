@@ -7,9 +7,9 @@
 为便于复现，本文固定以下设置：L3 修复器与意图标注器分别经 Ollama 运行 \texttt{qwen2.5-coder:7b} 与 \texttt{qwen2.5:3b}，二者均取 \texttt{temperature}=0（贪心解码、单次采样）；候选检索采用加性 token 重叠打分，权重为 testId$\times 3$、dataAttr key/value$\times 2$、aria/id/class/text/path$\times 1$，取 top-$k$ 候选（$k$ 与各探针配置一并记录在工件 JSON 中）。每个失效用例的逐条记录（用例 id、koenig 所属 commit、断裂选择器、ReproBreak \texttt{new\_locator}、模型给出的选择器与所选候选下标、rationale、选择器语法校验结果、解析得到的目标元素、是否判为误修复/精确匹配）以及汇总头部的模型 tag（\texttt{qwen2.5-coder:7b}）均随 \texttt{healreact/bench/cases/} 工件一并发布，作为本文结果的复现与审计依据。\textbf{代码与数据可用性}：上述脚本、JSON 工件、工件清单与论文快照已公开归档于 GitHub: \url{https://github.com/vgawen/healreact}；表~\ref{tab:falseheal}--\ref{tab:cross-app} 中的每一项原始计数（样本数、放弃/误修复/未解析、精确匹配）均可由该归档直接复算。工件清单汇总各脚本的运行命令、输入数据校验和、koenig 与 payload 的 commit 标识及模型版本。
 
 \subsection{共享 L3 协议}
-在 F1 与 F2 中，L3 修复器都经由 Ollama 以 \texttt{temperature=0} 调用 \texttt{qwen2.5-coder:7b}。用户提示包含: (i) 原样给出的断裂 Playwright 选择器；(ii) 失效行附近的 $\pm 3$ 行测试源码；(iii) 来自 LocatorSheet 的 top-$k$ 候选，按加性 token 重叠打分检索（testId $\times 3$、dataAttr key/value $\times 2$、aria/id/class/text/path $\times 1$）。模型必须给出三行: \texttt{SELECTOR}、\texttt{CANDIDATE\_IDX}、\texttt{RATIONALE}（纯文本，非 JSON: 在模型反复在选择器中输出未转义引号后放弃了 JSON）。解析器的多匹配冲突处理规则如下：按 \texttt{(componentFile, line)} 顺序的第一个匹配记录作为解析目标；多匹配的选择器会被标记，但指标计算中使用第一个命中。
+在 \S\ref{sec:f1} 与 \S\ref{sec:f2} 中，L3 修复器都经由 Ollama 以 \texttt{temperature}=0 调用 \texttt{qwen2.5-coder:7b}。用户提示包含: (i) 原样给出的断裂 Playwright 选择器；(ii) 失效行附近的 $\pm 3$ 行测试源码；(iii) 来自 LocatorSheet 的 top-$k$ 候选，按加性 token 重叠打分检索（testId $\times 3$、dataAttr key/value $\times 2$、aria/id/class/text/path $\times 1$）。模型必须给出三行: \texttt{SELECTOR}、\texttt{CANDIDATE\_IDX}、\texttt{RATIONALE}（纯文本，非 JSON: 在模型反复在选择器中输出未转义引号后放弃了 JSON）。解析器的多匹配冲突处理规则如下：按 \texttt{(componentFile, line)} 顺序的第一个匹配记录作为解析目标；多匹配的选择器会被标记，但指标计算中使用第一个命中。
 
-\subsection{F1: 目标缺失下的隐性误修复}
+\subsection{目标缺失下的隐性误修复}
 \label{sec:f1}
 
 \subsubsection{设置}
@@ -67,7 +67,7 @@ Vanilla＼Abstain & 放弃 & 误修复 & 未解析 \\
 
 \textsc{Vanilla} 与 \textsc{Abstain} 之间的等同性是更具诊断意义的发现，且这一等同性是\emph{逐用例}成立的（表~\ref{tab:falseheal-paired}：75 个用例的配对判定无一发生改变）：一个 7B 规模的代码模型在该任务上不会因软提示式的守门规则而改变其可观察行为。任何稳健的放弃机制都必须置于模型\emph{之外}：例如确定性的检索分数阈值、锚点类别归属规则，或能够证伪通过补丁的行为验证器。该结果从实证层面支持将 HealReact 的 L4 层（行为重放验证器）作为下一层加以构建，而非依赖提示级别的安全网。
 
-\subsection{F2：L3 基线与两个低开销确定性手段}
+\subsection{L3 基线与两个低开销确定性手段}
 \label{sec:f2}
 
 \subsubsection{设置}
@@ -80,7 +80,9 @@ Vanilla＼Abstain & 放弃 & 误修复 & 未解析 \\
 为分离两个杠杆各自的贡献，文章进一步以\emph{二因子析因}（testId 加权 $\in\{$关,开$\}$ $\times$ 后置过滤 $\in\{$关,开$\}$）跑满 4 个臂（表~\ref{tab:l3-factorial}）。所有臂均使用 \texttt{qwen2.5-coder:7b}、\texttt{temperature=0}、同一系统提示；真值是 ReproBreak 中 \texttt{new\_locator} 字符串所匹配的目标元素（经解析器解析）。
 
 \subsubsection{结果}
-\begin{table}[t]
+表~\ref{tab:l3-levers} 汇总 L3 v0 与 v1 的端到端对比，表~\ref{tab:l3-factorial} 给出 testId 加权检索与强锚点后置过滤的二因子析因结果。
+
+\begin{table}[H]
 \centering
 \caption{L3 v0 $\to$ v1 端到端对比（75 个可达 koenig 失效）。v1 = v0 + testId 加权检索 + 强锚点后置过滤；v0 为两杠杆均关的统一权重基线。}
 \label{tab:l3-levers}
@@ -101,7 +103,7 @@ top-1 精确元素匹配 & 55 / 75 (73.3\%) & \textbf{58 / 75 (77.3\%)} \\
 \end{tabular}}
 \end{table}
 
-\begin{table}[t]
+\begin{table}[H]
 \centering
 \caption{两杠杆二因子析因（top-1 精确元素匹配，$n=75$）。行=testId 加权，列=强锚点后置过滤。每个杠杆单独带来 +2、两者合计 +3、零回归；方向一致但在该样本量下未达统计显著。}
 \label{tab:l3-factorial}
@@ -119,9 +121,9 @@ top-1 精确元素匹配 & 55 / 75 (73.3\%) & \textbf{58 / 75 (77.3\%)} \\
 \end{table}
 
 \subsubsection{解读}
-两项手段均为低开销改动（一次正则优先级调整、一段约 10 行的后置过滤）、完全确定性、无需任何模型再训练。借助表~\ref{tab:l3-factorial} 的二因子析因可分离两者贡献：以“两杠杆均关”为基线（55/75），单开 testId 加权检索与单开强锚点过滤各带来 +2 个精确匹配，两者全开合计 +3、且\emph{零回归}；强锚点后置过滤器在过滤单开臂触发 2 次且均正确，在 v1 全开臂触发 1 次且正确，消除了部分“LLM 选中正确候选但在生成选择器时挂到了不稳定锚点上”的失败模式。须如实说明：这些增益方向一致、无一造成回归，但在 $n=75$ 的样本量下经 McNemar 精确检验均\emph{未达统计显著}（$p\ge0.25$）；因此，文章把它们定位为“低开销、零回归的确定性工程杠杆”，而非已被统计确立的性能提升。该结果与 F1 相互呼应：在确定性介入有效之处，提示级介入的效果较为有限。
+两项手段均为低开销改动（一次正则优先级调整、一段约 10 行的后置过滤）、完全确定性、无需任何模型再训练。借助表~\ref{tab:l3-factorial} 的二因子析因可分离两者贡献：以“两杠杆均关”为基线（55/75），单开 testId 加权检索与单开强锚点过滤各带来 +2 个精确匹配，两者全开合计 +3、且\emph{零回归}；强锚点后置过滤器在过滤单开臂触发 2 次且均正确，在 v1 全开臂触发 1 次且正确，消除了部分“LLM 选中正确候选但在生成选择器时挂到了不稳定锚点上”的失败模式。须如实说明：这些增益方向一致、无一造成回归，但在 $n=75$ 的样本量下经 McNemar 精确检验均\emph{未达统计显著}（$p\ge0.25$）；因此，文章把它们定位为“低开销、零回归的确定性工程杠杆”，而非已被统计确立的性能提升。该结果与 \S\ref{sec:f1} 相互呼应：在确定性介入有效之处，提示级介入的效果较为有限。
 
-\subsection{F3: 跨应用泛化与 BEM 盲区}
+\subsection{跨应用泛化与 BEM 盲区}
 \label{sec:f3}
 
 \subsubsection{设置}

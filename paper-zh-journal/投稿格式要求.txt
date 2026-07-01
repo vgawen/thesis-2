@@ -1,0 +1,190 @@
+
+
+《无线互联科技》投稿格式要求
+
+（2024年）
+
+1.中英文标题
+
+（1）文稿应列出中文标题，并有相应的英文标题（英文标题第1个单词首字母大写，除专有名字之外其他单词均为小写）。
+
+（2）文章标题以简短精练为原则，建议20字以内，如有必要，可列副标题。
+
+（3）尽量不用“浅议”“浅析”“初探”之类的字眼。
+
+2.中英文作者、单位
+
+（1）文章要有中英文署名，用中英文标明工作单位全称、单位所在城市和邮政编码。
+
+（2）作者人数不得超过相对应的版面数，若需增加，每增加一位作者收取100元，作者及署名顺序务必在投稿时确定，之后不得另行更改。
+
+具体格式如下：
+
+
+
+
+杨某某1，苗某某2，张某某3
+
+（1.三江学院，江苏 南京 210012；2.南京林业大学，江苏 南京 210037；3.南通大学，江苏 南通 226000）
+
+Yang Moumou1，Miao Moumou2，Zhang Moumou3
+
+（1.Sanjiang University，Nanjing 210012，China；2.Nanjing Forestry University，Nanjing 210037，China；3.Nantong University，Nantong 226000，China）
+
+
+         3.作者简介
+
+第一作者和通信作者需提供作者简介，并按姓名、出生年、性别、职称、学位、研究方向等顺序依次标出。本科及以上学历者按照如下规则标注：本科未毕业——本科生；本科已毕业——学士；硕士未毕业——硕士研究生；硕士已毕业——硕士；博士未毕业——博士研究生；博士已毕业——博士。
+
+具体格式示例如下：
+
+作者简介：周某某（1978—），女，工程师，硕士；研究方向：电子信息工程。
+
+*通信作者：吴某某（1975—），女，副研究员，博士；研究方向：智能推荐，隐私保护。
+
+4.中英文摘要、关键词
+
+（1）摘要应为报道式摘要，须反映研究目的、方法及主要结果与结论，具有自明性，仅阅读摘要即可了解全文研究内容及创新之处，以200字左右为宜。
+
+（2）关键词应选取3～8个文章题目、摘要或正文中出现的、能反映论文主题内容的名词或名词性词组。
+
+（3）中英文摘要、关键词内容一致，无语法错误。
+
+具体格式如下：
+
+摘 要：高阶脉冲幅度调制（Pulse Amplitude Modulation, PAM）方式在相同码元内可以传输更多比特信息，进一步提升了通信系统的调制效率和频带利用率。但高阶PAM调制系统的抗噪声性能较差，信号振幅在传输过程中易受信道衰减的影响。为了提升高阶PAM系统的可靠性，文章提出一种改进的PAM码元波形结构，改进方案使系统在相同信噪和调制阶数下误码率降低。将TMS32C6748浮点型数字信号处理器（Digital Signal Processing, DSP）作为光通信系统的控制芯片，设计并实现了基于高阶PAM室内的可见光通信系统。通过搭建实验平台验证了该方案下的系统通信性能，实验结果表明该通信系统具有误码率低、调制效率高等优点，满足高性能室内可见光通信系统的要求。
+
+关键词：可见光通信；脉冲幅度调制；改进脉冲幅度调制；TMS320C6748
+
+       Abstract：A high-order pulse amplitude modulation (PAM) method can transmit more bits of information within the same symbol, improving the modulation efficiency and the frequency band utilization of the communication system. However, the high-order PAM system has poor anti-noise ability, and the signal amplitude is easily affected by channel attenuation during transmission. To improve the reliability of high-order PAM systems, an improved PAM symbol waveform structure is proposed. The improved scheme reduces the bit error rate of the system at the same signal-to-noise and modulation order. Using TMS32 C6748 floating-point digital signal processing (DSP) as the control chip of the optical communication system, a visible light communication system based on the high-end PAM room is designed and implemented. The system communication performance of the scheme is verified by an experimental platform. Experimental results show that the communication system has the advantages of low bit error rate and high modulation efficiency, thus meeting the requirements of high-performance indoor visible light communication systems.
+
+Key words：visible light communication; pulse amplitude modulation; improved pulse amplitude modulation; TMS320C6748
+
+5.基金项目
+
+基金项目应与论文主题相关，格式应包含项目类别、项目名称、项目编号。
+
+6. 文献标识码、中图分类号
+
+来稿请务必标注中图分类号和文献标识码。
+
+文献标识码的标注方法具体如下：A——理论与应用研究学术论文（包括综述报告）；B——实用性技术成果报告（科技）、理论学习与社会实践总结（社科）；C——业务指导与技术管理性文章（包括领导讲话、特约评论等）；D——一般动态性信息（通讯、报道、会议活动、专访等）；E——文件、资料（包括历史资料、统计资料、机构、人物、书刊、知识介绍等）。
+
+中图分类号的标注方法请参照《中国图书馆分类法》。
+
+7. 正文层次标题
+
+一律用阿拉伯数字连续编号，尽量减少层次（一般不超过3级），如“3” “3.1” “3.1.1”等，不要跳跃或重复，引言部分以“0”标注。
+
+ 8.图表要求
+
+（1）图表要设计合理，文字通顺，达到自明性（即不阅读正文，只看图/表题、图/表、图例及图/表注就可理解图/表的意思）。
+
+（2）图表一律标注数量单位，有纵横坐标的图，要标明纵横坐标代表的含义及单位。
+
+（3）图表必须在正文中被提及。
+
+（4）表格尽量采用省线表，有具体的表题名。
+
+（5）为了提高印刷清晰度，文中所有图片应提供高像素原始图片，用Excel制作的图片要提供.xls文件，并将彩色图表转换成黑白印刷后清晰可辨的图表。尽量不要采用颜色深浅区分不同图例。
+
+9.相关标准
+
+
+
+（1）来稿文字要求精炼、准确，表达通顺，符合学术论文要求，杜绝口语化。标点符号、数字、计量单位、统计学符号均需按照相关的标准进行使用。相关标准如下：
+
+  ①标点符号——《标点符号用法》（GB/T15834—2011）。
+
+  ②数字——《出版物上数字用法的规定》（GB/T15835—2011）。
+
+  ③计量单位——《国际单位制及其应用》（GB3100—1993）、《有关量、单位和符号的一般原则》（GB3101—1994）。
+
+  ④统计学符号——《统计学词汇及符号》（GB/T 3358—2009）。
+
+（2）尽量少用缩略语，必须使用时，需于首次出现处先写出中文全称，然后于括号内注出中文缩略语或英文全称及其缩略语，但对已公知、公用的缩略语除外。
+
+10. 参考文献
+
+（1）参考文献格式请按照《信息与文献 参考文献著录规则（GB/T 7714—2015）》著录，每篇文章参考文献不少于6条。
+
+（2）所有参考文献请核对作者（外文文献的作者按照姓前名后，姓全称，名缩写，均大写），题名，文献类型标识码（专著为M，期刊为J，报纸为N，论文集为C，学位论文为D），刊名，年，期号以及起至页码。
+
+（3）所有参考文献信息应该完整著录。
+
+（4）所有文献应采用顺序编码制，在正文中标明引用位置，并按引用的先后顺序列于文末。
+
+参考文献举例：
+
+ ①适用于期刊：
+
+［1］罗兵，于会强.存货影响销售率且销售价格可变的 EOQ模型[J].重庆大学学报（自然科学版），2002（11）：100-103.
+
+［2］朱晓亮，杜旭，李浩，等.基于MOOC 的高校移动云课堂设计与应用研究[J].中国教育信息化，2016（14）：20-26.
+
+［3］JAMAL A M M，BHABA R S，WANG S J. Optimal payment time for a retailer under permitted delay of Payment by the wholesaler[J].International Journal of Production Economics，2000（66）：59-66.
+
+ ②适用于图书：
+
+［1］孙钧.岩土材料流变及工程应用[M].2版.北京：建筑工业出版社，1999.
+
+［2］罗斯基.战前中国经济的增长[M].唐巧天，毛立坤，姜修宪，译.杭州：浙江大学出版社，2009.
+
+  ③适用于学位论文：
+
+［1］汤雅青.非平稳随机需求库存控制模型控制研究[D].上海：上海交通大学，2011.
+
+［2］陈理凤. 土地利用总体规划与城市规划的协调评价研究[D].南京：南京农业大学，2016.
+
+［3］彭博.Z所预研创新项目管理模式研究及应用[D]. 北京：中国科学院大学，2014.
+
+  ④适用于标准文献：
+
+［1］国防科学技术工业委员会.飞机燃气涡轮辅助动力装置安装设计指南：HB/Z 312-98[S]. 北京: 航空工业出版社，1998.
+
+［2］中华人民共和国建设部，南京水利科学研究院.土工试验方法标准：GB/T 50123-1999 [S].北京：中国计划出版社，1999.
+
+  ⑤适用于论文集：
+
+［1］雷光春.综合湿地管理：综合湿地管理国际研讨会论文集[C].北京：海洋出版社，2012.
+
+［2］BABU B V, NAGAR A K, DEEP K, et al. Proceedings of the Second International Conference on Soft Computing for Problem Solving, December 28-30, 2012[C]. New Delhi: Springer, 2014.
+
+  ⑥适用于电子文献：
+
+［1］南京市浦口区人民政府.浦口区城镇低效用地再开发工作实施方案[EB/OL].(2014-11-28)[2018-10-20].http://www.nanjing.gov.cn/xxgk/qzf/pkq/201412/t20141203_4767934.html.
+
+［2］扬州市统计局. 2017年扬州市国民经济和社会发展统计公报[EB/OL].（2018-03-26）[2018-10-10].http://tjj.yangzhou.gov.cn/yztjj/tjjtjgb/201803/68ea9e083
+
+c084972ba1ffd90181be5b9.shtml
+
+  ⑦适用于报告：
+
+［1］南京农业大学.江苏农村信息化发展报告2014[R].北京：科学出版社，2014.
+
+［2］中国电子商务研究中心.2015年度中国电子商务市场数据监测报告[R/OL]. (2016-05-17)[2016-05-20].www.100ec.cn/zt/data/.
+
+ ⑧适用于报纸中析出的文献：
+
+［1］窦晓竹. 2035年我省全面建成具有全球影响力的产业科技创新中心[N]. 江苏科技报，2016-01-15（A03）.
+
+  ⑨适用于专利：
+
+［1］张凯军. 轨道火车及高速轨道火车紧急安全制动辅助装置：201220158825.2[P].2012-04-05.
+
+11.篇幅要求
+
+本刊录用文章的版面数最低4版（纯文字字符数为8000字符）。具体文章版面数须由责任编辑具体估算。
+
+12.  投稿约定
+
+（1）编辑部有权对文稿进行适当压缩、修改，作者如不同意删改，请在投稿时注明。
+
+（2）来稿请务必注明详细的通信地址、邮政编码、电话、电子邮件和开票信息。
+
+（3）作者文责自负，请勿一稿多投。
+
+（4）自投稿之日起，凡10个工作日内未收到审稿回复者，稿件可自行处理。限于人力，本刊一律不办理退稿事宜，请作者自留底稿。
+
+
+

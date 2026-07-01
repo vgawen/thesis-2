@@ -11,4 +11,4 @@ ReproBreak~\cite{mouraReproBreak2026} 是迄今最大的可复现定位器失效
 上述工作均未在真实基准数据集上隔离\emph{隐性误修复}——即修复器给出语法通过、但指向错误元素的选择器、从而遮蔽真实 UI 变更的比率。Joseph 在一个右侧答案按构造一定可达的 demo 上报告了通过率；ReproBreak 提供了数据基底但未在其上评估任何修复器。\S\ref{sec:findings} 通过一个对抗性构造的探针填补这一空缺。
 
 \subsection{React 相关细节}
-\texttt{koenig-lexical}~\cite{lexicalRichText, koenig} 是一个基于 React + Lexical 的现代富文本编辑器，其 Playwright 套件在很大程度上依赖自定义 \texttt{data-kg-*} 属性（约占其失效的一半），而非 \texttt{data-testid}。\texttt{payloadcms/payload}~\cite{payloadCMS} 是一个 Next.js 后台 UI，其 CSS 类名遵循\rev{块、元素、修饰符（Block Element Modifier，BEM）}方法~\cite{bemMethodology}，使用 \texttt{\$\{baseClass\}\_\_suffix} 模板字面量 —— 这些字面量对 React 可见，但对纯字面量的 AST 抽取器不可见。这两种锚点文化的对比是文章跨应用发现的依据（\S\ref{sec:findings}，F3）。
+\texttt{koenig-lexical}~\cite{lexicalRichText, koenig} 是一个基于 React + Lexical 的现代富文本编辑器，其 Playwright 套件在很大程度上依赖自定义 \texttt{data-kg-*} 属性（约占其失效的一半），而非 \texttt{data-testid}。\texttt{payloadcms/payload}~\cite{payloadCMS} 是一个 Next.js 后台 UI，其 CSS 类名遵循\rev{块、元素、修饰符（Block Element Modifier，BEM）}方法~\cite{bemMethodology}，使用 \texttt{\$\{baseClass\}\_\_suffix} 模板字面量 —— 这些字面量对 React 可见，但对纯字面量的 AST 抽取器不可见。这两种锚点文化的对比是文章跨应用发现的依据（见 \S\ref{sec:f3}）。
