@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Homebrew) (preloaded format=xelatex 2026.3.4)  30 JUN 2026 22:45
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Homebrew) (preloaded format=xelatex 2026.3.4)  1 JUL 2026 22:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1354,10 +1354,7 @@ Underfull \hbox (badness 1062) in paragraph at lines 11--12
 \TU/SongtiSC(0)/m/n/10.53937 修 复 器
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
+[1
 
 
 ]
@@ -1366,7 +1363,7 @@ Underfull \hbox (badness 1112) in paragraph at lines 13--14
 r/m/n/10.53937 React+Playwright \TU/SongtiSC(0)/m/n/10.53937 代 码 库
  []
 
-) (./sections/02_background.tex [2]) (./sections/03_l1_substrate.tex
+) (./sections/02_background.tex) (./sections/03_l1_substrate.tex
 Underfull \hbox (badness 1472) in paragraph at lines 14--1
 \TU/SongtiSC(0)/m/n/10.53937 套 件 在 很 大 程 度 上 依 赖 自 定 义 \TU/lmtt/m/n/10.53937 da
 ta-kg-* \TU/SongtiSC(0)/m/n/10.53937 属
@@ -1386,6 +1383,7 @@ Underfull \hbox (badness 2635) in paragraph at lines 14--1
  素、|  修 饰 符
  []
 
+[2]
 
 Package fontspec Info: 
 (fontspec)             Could not resolve font "PingFang SC/I" (it probably
@@ -1406,7 +1404,11 @@ Package fontspec Info:
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"PingFang
 (fontspec)             SC/BI/OT:script=hani;language=dflt;"
 
-[3]) (./sections/04_findings.tex
+
+Underfull \vbox (badness 1389) has occurred while \output is active []
+
+)
+(./sections/04_findings.tex [3]
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 []\TU/SongtiSC(0)/m/n/10.53937 下 文 所 有 数 字 都 可 由 开 放 脚 本
  []
@@ -1469,10 +1471,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  29201 strings out of 468168
  682870 string characters out of 5423555
- 1068464 words of memory out of 5000000
+ 1068448 words of memory out of 5000000
  57413 multiletter control sequences out of 15000+600000
  636610 words of font info for 126 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 102i,10n,107p,849b,908s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,10n,107p,869b,908s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (8 pages, 295028 bytes).
+Output written on main.pdf (8 pages).
