@@ -4,6 +4,23 @@ Always reply to the user in **Simplified Chinese (中文)** by default in this p
 
 ---
 
+## Word Document Generation
+
+When generating or modifying Word (`.docx`) files for the Chinese journal paper, first read and follow:
+
+`paper-zh-journal/WORD_GENERATION_GUIDE.md`
+
+Treat that guide as the project-specific workflow for Word delivery. In particular:
+
+- Do not rely on one-shot Pandoc conversion as the final deliverable for this paper.
+- Use the LaTeX source as the authoritative content source.
+- Prefer a known-good editable Word file as the layout baseline.
+- Apply small, controlled OOXML patches for text/style synchronization.
+- Preserve red revision markers through a real Word character style.
+- Render the final DOCX to PDF/PNG and visually inspect key pages before delivery.
+
+---
+
 <!-- ARIS-CODEX:BEGIN -->
 ## ARIS Codex Skill Scope
 ARIS Codex packages installed in this project: skills-codex
