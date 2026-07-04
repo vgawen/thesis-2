@@ -53,7 +53,7 @@ HealReact 的 L1 层是 L3 修复器与\rev{未来行为验证器（L4）所依�
 HealReact 还包含一个 LLM 意图标注流程（经 Ollama~\cite{ollama} 运行的 \texttt{qwen2.5:3b}），它依据组件源码与 JSX 上下文为每个交互元素生成简短的功能性意图标签（例如 \texttt{submit-order-button}、\texttt{toggle-email-notification}）；随后由一个十条规则（A--J）构成的确定性校准层负责识别并降低可疑标签的置信度，可疑模式包括兄弟集合的塌缩标签、把 HTML tag 直接\rev{当作}名词的退化、以及 role 与 intent 不匹配等。被标记的记录将被重新提交给 \texttt{qwen2.5-coder:7b} 重打标签，形成“先低开销、后高开销”的分级验证机制。\textbf{范围说明}：本文对意图层的评估限定在 32 元素的\rev{构造样例集}上；\S\ref{sec:findings} 中针对真实失效用例的所有数字仅使用抽取器输出的锚点与词法检索，\emph{不}使用 L1 意图标签。真实代码库上对意图稳定性的大规模评估超出本文范围。
 
 \subsection{定位器解析器作为可证伪的透镜}
-文章构建了一个 Playwright 选择器解析/匹配器，它接受任意选择器表达式（\texttt{page.locator}、\texttt{getByTestId}、\texttt{getByRole}、\texttt{waitForSelector}、原始 CSS）并返回它会匹配的 LocatorSheet 记录集。这是 \S\ref{sec:findings} 中各项论断的\rev{判定工具}：可达性是“断裂的选择器是否能解析到 sheet 中的某条记录？”；L3 正确性是“解析器是否把 LLM 提议的选择器与\rev{真值选择器}映射到同一元素？”。构建这个\rev{判定工具}要求研究处理引号感知的嵌套参数、动态 \rev{JavaScript（JS）}表达式属性值、以及裸属性选择器；早期版本由于\rev{解析器缺陷}把可达率虚抬到 85--98\%，文章现在在诚实性审计中明确标注了这一点。
+文章构建了一个 Playwright 选择器解析/匹配器，它接受任意选择器表达式（\texttt{page.locator}、\texttt{getByTestId}、\texttt{getByRole}、\texttt{waitForSelector}、原始 CSS）并返回它会匹配的 LocatorSheet 记录集。这是 \S\ref{sec:findings} 中各项论断的\rev{判定工具}：可达性是“\rev{失效}选择器是否能解析到 sheet 中的某条记录？”；L3 正确性是“解析器是否把 LLM 提议的选择器与\rev{真值选择器}映射到同一元素？”。构建这个\rev{判定工具}要求研究处理引号感知的嵌套参数、动态 \rev{JavaScript（JS）}表达式属性值、以及裸属性选择器；早期版本由于\rev{解析器缺陷}把可达率虚抬到 85--98\%，文章现在在诚实性审计中明确标注了这一点。
 
 \subsection{核心指标}
 在 \texttt{koenig-lexical} 的 19 个失效\rev{版本提交}上，抽取器在每个\rev{版本提交}中平均产出约 400 条 LocatorSheet 记录（\rev{跨提交}范围 314--489），解析器在静态层面可达真实 Playwright 失效目标的 \textbf{75 / 93 = 80.6\%}。剩余 18 个用例需要运行时 DOM（例如 Lexical 框架在运行时才渲染出的 \texttt{<p>} 节点），属于经典的运行时 DOM 捕获范畴，由 HealReact 的 L2 层负责。

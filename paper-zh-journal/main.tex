@@ -44,9 +44,9 @@
 \large \mdseries Research on silent false healing in Playwright test repair}
 
 \author{
-  高东彪\\
-  \small（软视软件（苏州）有限公司，江苏 苏州 \,215000）\\
-  \small Gao Dongbiao\\
+  高东彪\\[-1pt]
+  \small（软视软件（苏州）有限公司，江苏 苏州 \,215000）\\[2pt]
+  \small Gao Dongbiao\\[-1pt]
   \small (Zoom Video Communications (Suzhou), Inc., Suzhou 215000, China)
 }
 \date{}
@@ -66,9 +66,6 @@
 
   \vspace{2pt}
   \noindent\textbf{中图分类号：}TP311.5\quad\textbf{文献标识码：}A
-
-  \vspace{2pt}
-  \noindent\rev{\textbf{基金项目：}无。}
 
   \vspace{4pt}
   \noindent\textbf{Abstract：} To reduce the maintenance cost of brittle locators in Playwright tests, this paper studies whether large language model (LLM)-driven test self-healing causes silent false healing. Using 75 real reachable break cases from the koenig project in the ReproBreak dataset, qwen2.5-coder:7b is evaluated at the selector-resolution level, and an abstract syntax tree-based HealReact static substrate is built. The results show that, when the target element is removed, 78.7\% of cases produce resolver-valid selectors pointing to wrong elements, and the static substrate covers 80.6\% of real break targets. The study concludes that unattended continuous integration self-healing requires a behavioral replay verifier.

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Homebrew) (preloaded format=xelatex 2026.3.4)  1 JUL 2026 22:29
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Homebrew) (preloaded format=xelatex 2026.3.4)  3 JUL 2026 09:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1286,18 +1286,18 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12.045> on input line 82.
+(Font)              <12.045> on input line 79.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 82.
+(Font)              <8> on input line 79.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 82.
+(Font)              <6> on input line 79.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.52812> on input line 86.
+(Font)              <7.52812> on input line 83.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 86.
+(Font)              <5> on input line 83.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 86.
+Package hyperref Warning: Ignoring empty anchor on input line 83.
 
 (./sections/01_intro.tex
 
@@ -1343,12 +1343,6 @@ Underfull \hbox (badness 1077) in paragraph at lines 11--12
  []
 
 
-Underfull \hbox (badness 2707) in paragraph at lines 11--12
-\TU/SongtiSC(0)/b/n/10.53937 软 提 示 守 门 无 效。|  \TU/SongtiSC(0)/m/n/10.53937 当 真 
-实 目 标 元 素 被 强
- []
-
-
 Underfull \hbox (badness 1062) in paragraph at lines 11--12
 \TU/SongtiSC(0)/m/n/10.53937 制 从 候 选 集 中 移 除 时，|  朴 素 \TU/lmr/m/n/10.53937 LLM 
 \TU/SongtiSC(0)/m/n/10.53937 修 复 器
@@ -1358,6 +1352,11 @@ Underfull \hbox (badness 1062) in paragraph at lines 11--12
 
 
 ]
+Underfull \hbox (badness 1325) in paragraph at lines 13--14
+[]\TU/SongtiSC(0)/b/n/10.53937 第 三 项 发 现：|  跨 应 用 泛 化 受[]锚 点 约 定[]差 异
+ []
+
+
 Underfull \hbox (badness 1112) in paragraph at lines 13--14
 \TU/SongtiSC(0)/b/n/10.53937 的 制 约。|  \TU/SongtiSC(0)/m/n/10.53937 在 另 一 \TU/lm
 r/m/n/10.53937 React+Playwright \TU/SongtiSC(0)/m/n/10.53937 代 码 库
@@ -1471,10 +1470,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  29201 strings out of 468168
  682870 string characters out of 5423555
- 1068448 words of memory out of 5000000
+ 1069468 words of memory out of 5000000
  57413 multiletter control sequences out of 15000+600000
  636610 words of font info for 126 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 102i,10n,107p,869b,908s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,10n,107p,875b,908s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (8 pages).
