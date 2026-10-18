@@ -1,0 +1,129 @@
+\begin{thebibliography}{18}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}
+  \def\eprint#1#2{#2}
+\else
+  \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \let\eprint\href
+\fi
+
+\bibitem[李聪\ 等(2022)李聪, 蒋炎岩, and 许畅]{li2022androidReplay}
+李聪, 蒋炎岩, 许畅.
+\newblock 基于 {GUI}
+  事件的安卓应用录制重放关键技术综述\allowbreak[J].
+\newblock 软件学报, 2022, 33\allowbreak (5): 1612-1634.
+
+\bibitem[王博\ 等(2025)王博, 陈冲, 邓明, 董震, 林友芳, and
+  郝丹]{wang2025mobileGui}
+王博, 陈冲, 邓明, 等.
+\newblock 移动应用 {GUI} 测试自动生成技术综述\allowbreak[J].
+\newblock 软件学报, 2025, 36\allowbreak (6): 2713-2746.
+
+\bibitem[杨丽波(2017)]{yang2017wirelessAutoTest}
+杨丽波.
+\newblock 软件自动化测试方法的发展现状分析\allowbreak[J].
+\newblock 无线互联科技, 2017\allowbreak (4): 49-50.
+
+\bibitem[刘宝银(2022)]{liu2022wirelessTesting}
+刘宝银.
+\newblock 软件测试技术的应用及其发展形势分析\allowbreak[J].
+\newblock 无线互联科技, 2022, 19\allowbreak (12): 38-40.
+
+\bibitem[{Healenium Contributors}(2024)]{healenium}
+{Healenium Contributors}.
+\newblock {Healenium}: self-healing library for {Selenium}-based
+  tests\allowbreak[EB/OL].
+\newblock 2024\allowbreak[2026-06-20].
+\newblock \url{https://healenium.io}.
+
+\bibitem[Joseph(2026)]{joseph2026zerocost}
+JOSEPH R~N.
+\newblock Beyond {LLM}-based test automation: a zero-cost self-healing approach
+  using {DOM} accessibility tree extraction\allowbreak[EB/OL].
+\newblock 2026\allowbreak[2026-06-20].
+\newblock \url{https://arxiv.org/abs/2603.20358}.
+
+\bibitem[{DE MOURA} et~al.(2026){DE MOURA}, Adamietz, Mehboob, and
+  Noller]{mouraReproBreak2026}
+{DE MOURA} T~S, ADAMIETZ L, MEHBOOB S, et~al.
+\newblock {ReproBreak}: a dataset of reproducible web locator
+  breaks\allowbreak[EB/OL].
+\newblock 2026\allowbreak[2026-06-20].
+\newblock \url{https://arxiv.org/abs/2605.12158}.
+
+\bibitem[香佳宏\ 等(2025)香佳宏, 徐霄阳, 孔繁初, 彭湃, 张钊,
+  and 张煜群]{xiang2025llmRepair}
+香佳宏, 徐霄阳, 孔繁初, 等.
+\newblock
+  大模型在软件缺陷检测与修复的应用发展综述\allowbreak[J].
+\newblock 软件学报, 2025, 36\allowbreak (4): 1489-1529.
+
+\bibitem[李岩\ 等(2025)李岩, 杨文章, 张翼, and
+  薛吟兴]{li2025llmFuzzing}
+李岩, 杨文章, 张翼, 等.
+\newblock 基于大语言模型的模糊测试研究综述\allowbreak[J].
+\newblock 软件学报, 2025, 36\allowbreak (6): 2404-2431.
+
+\bibitem[Hui et~al.(2024)Hui, Yang, Cui, Yang, Liu, Zhang, Lin,
+  et~al.]{qwenCoderTech2024}
+HUI B, YANG J, CUI Z, et~al.
+\newblock {Qwen2.5-Coder} technical report\allowbreak[EB/OL].
+\newblock 2024\allowbreak[2026-06-20].
+\newblock \url{https://arxiv.org/abs/2409.12186}.
+
+\bibitem[{Ghost Foundation}(2025)]{koenig}
+{Ghost Foundation}.
+\newblock {koenig-lexical}: {Ghost}'s {Lexical}-based rich-text
+  editor\allowbreak[EB/OL].
+\newblock 2025\allowbreak[2026-06-20].
+\newblock \url{https://github.com/tryghost/koenig}.
+
+\bibitem[李斌\ 等(2019)李斌, 贺也平, and
+  马恒太]{li2019programRepair}
+李斌, 贺也平, 马恒太.
+\newblock 程序自动修复: 关键问题及技术\allowbreak[J].
+\newblock 软件学报, 2019, 30\allowbreak (2): 244-265.
+
+\bibitem[{Meta Open Source}(2025)]{lexicalRichText}
+{Meta Open Source}.
+\newblock {Lexical}: an extensible text editor framework\allowbreak[EB/OL].
+\newblock 2025\allowbreak[2026-06-20].
+\newblock \url{https://lexical.dev}.
+
+\bibitem[{Payload CMS Inc.}(2025)]{payloadCMS}
+{Payload CMS Inc.}
+\newblock {Payload CMS}: headless {Node.js} {CMS} on
+  {Next.js}\allowbreak[EB/OL].
+\newblock 2025\allowbreak[2026-06-20].
+\newblock \url{https://payloadcms.com}.
+
+\bibitem[{Yandex}(2009)]{bemMethodology}
+{Yandex}.
+\newblock {BEM}: block, element, modifier {CSS} methodology\allowbreak[EB/OL].
+\newblock 2009\allowbreak[2026-06-20].
+\newblock \url{https://en.bem.info/methodology/}.
+
+\bibitem[Sherret(2024)]{tsmorph}
+SHERRET D.
+\newblock {ts-morph}: a {TypeScript} compiler {API} wrapper for programmatic
+  code manipulation\allowbreak[EB/OL].
+\newblock 2024\allowbreak[2026-06-20].
+\newblock \url{https://github.com/dsherret/ts-morph}.
+
+\bibitem[{Ollama Contributors}(2024)]{ollama}
+{Ollama Contributors}.
+\newblock {Ollama}: local inference for open-weights {LLMs}\allowbreak[EB/OL].
+\newblock 2024\allowbreak[2026-06-20].
+\newblock \url{https://ollama.com}.
+
+\bibitem[{CSS Modules Authors}(2020)]{cssModules}
+{CSS Modules Authors}.
+\newblock {CSS Modules}: locally-scoped {CSS} class names\allowbreak[EB/OL].
+\newblock 2020\allowbreak[2026-06-20].
+\newblock \url{https://github.com/css-modules/css-modules}.
+
+\end{thebibliography}

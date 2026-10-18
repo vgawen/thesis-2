@@ -12,18 +12,18 @@
 \usepackage{booktabs}
 \usepackage{tikz}
 \usetikzlibrary{positioning, arrows.meta, shapes.geometric, fit, backgrounds}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{xurl}
 \usepackage{caption}
 \usepackage{float}
 \usepackage{titlesec}
-\usepackage[numbers,sort&compress]{gbt7714}
+\usepackage[sort&compress]{gbt7714}
 
 \pagestyle{plain}
 
-\newcommand{\rev}[1]{\textcolor{red}{#1}}
+\newcommand{\rev}[1]{#1}
 \setlength{\parindent}{2em}
 \linespread{1.18}
 \captionsetup{font=small, labelsep=quad}
@@ -34,10 +34,8 @@
 \sloppy
 
 \hypersetup{
-  colorlinks=true,
-  linkcolor=black,
-  citecolor=black,
-  urlcolor=blue!60!black,
+  hidelinks,
+  pdfborder={0 0 0},
 }
 
 \title{Playwright 测试隐性误修复研究\\
@@ -46,7 +44,7 @@
 \author{
   高东彪\\[-1pt]
   \small（软视软件（苏州）有限公司，江苏 苏州 \,215000）\\[2pt]
-  \small Gao Dongbiao\\[-1pt]
+  \small GAO Dongbiao\\[-1pt]
   \small (Zoom Video Communications (Suzhou), Inc., Suzhou 215000, China)
 }
 \date{}
@@ -59,7 +57,11 @@
   \vspace{-12pt}
   \begin{quote}
   \small
-  \noindent\textbf{摘\ 要：}为降低 Playwright 测试中脆弱定位器维护成本，本文研究大语言模型（Large Language Model，LLM）驱动的测试自愈是否产生隐性误修复。本文以 ReproBreak 数据集 koenig 项目 75 个真实可达失效用例为对象，在选择器解析层面测试 qwen2.5-coder:7b，并构建基于抽象语法树\rev{（Abstract Syntax Tree，AST）}的 HealReact 静态基底。结果表明，目标元素被移除时，78.7\% 的用例生成指向错误元素的可解析选择器，静态基底覆盖 80.6\% 的真实失效目标。本文认为，无人值守持续集成\rev{（Continuous Integration，CI）}自愈需要行为重放验证器。
+  \noindent\textbf{作者简介：}高东彪（1986—），男，工程师，学士；研究方向：软件测试。\\
+  \noindent\textbf{*通信作者：}高东彪（1986—），男，工程师，学士；研究方向：软件测试。
+
+  \vspace{4pt}
+  \noindent\textbf{摘\ 要：}针对 Playwright 自动化测试中定位器易失效的问题，文章研究大语言模型驱动测试自愈的隐性误修复风险。该研究以 ReproBreak 数据集 koenig 项目的真实失效用例为对象，构建 HealReact 静态基底，并在选择器解析层面分析修复行为。结果表明，当目标元素缺失时，朴素修复器易生成指向错误元素的可解析选择器，而静态基底可覆盖多数真实失效目标。文章认为，持续集成场景应引入行为重放验证机制，以降低误修复风险。
 
   \vspace{2pt}
   \noindent\textbf{关键词：}测试自愈；大语言模型；Playwright；React；隐性误修复
@@ -68,7 +70,7 @@
   \noindent\textbf{中图分类号：}TP311.5\quad\textbf{文献标识码：}A
 
   \vspace{4pt}
-  \noindent\textbf{Abstract：} To reduce the maintenance cost of brittle locators in Playwright tests, this paper studies whether large language model (LLM)-driven test self-healing causes silent false healing. Using 75 real reachable break cases from the koenig project in the ReproBreak dataset, qwen2.5-coder:7b is evaluated at the selector-resolution level, and an abstract syntax tree-based HealReact static substrate is built. The results show that, when the target element is removed, 78.7\% of cases produce resolver-valid selectors pointing to wrong elements, and the static substrate covers 80.6\% of real break targets. The study concludes that unattended continuous integration self-healing requires a behavioral replay verifier.
+  \noindent\textbf{Abstract：} This paper investigates the risk of silent false healing in large language model (LLM)-driven self-healing for Playwright tests with brittle locators. Using real break cases from the koenig project in the ReproBreak dataset, the study builds HealReact, an abstract syntax tree-based static substrate, and analyzes repair behavior at the selector-resolution level. The results show that, when the target element is missing, a naive repairer easily generates resolver-valid selectors for wrong elements, while the static substrate covers most real break targets. The study indicates that continuous integration scenarios require a behavioral replay verification mechanism to reduce false-healing risk.
 
   \vspace{2pt}
   \noindent\textbf{Key words：} self-healing test; large language model; Playwright; React; silent false healing
@@ -77,12 +79,6 @@
   \end{quote}
   \end{@twocolumnfalse}
 ]
-
-\begingroup
-\renewcommand{\thefootnote}{}
-\footnotetext{\footnotesize 作者简介：高东彪（1986—），男，工程师，学士；研究方向：AI 在软件测试中的应用。\\*通信作者：高东彪（1986—），男，工程师，学士；研究方向：AI 在软件测试中的应用。E-mail：gdb\_1986@163.com。}
-\endgroup
-\setcounter{footnote}{0}
 
 \setcounter{section}{-1}
 \input{sections/01_intro}

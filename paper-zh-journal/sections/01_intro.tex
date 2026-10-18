@@ -1,11 +1,11 @@
 \section{引言}
 \label{sec:intro}
 
-维护脆弱的用户界面（User Interface，UI）测试套件是现代 Web 工程中持续存在的维护成本。一次层叠样式表（Cascading Style Sheets，CSS）类名重命名、一次 React 组件的重新嵌套，或是一次行为不变的处理函数重构，都足以让数十个端到端（End-to-End，E2E）Playwright 测试\rev{失效}。这一问题在图形用户界面（Graphical User Interface，GUI）测试录制重放与自动生成的研究综述中被多次列为关键挑战~\cite{li2022androidReplay, wang2025mobileGui}。\rev{国内行业期刊也持续关注软件测试自动化方法和测试技术应用形势，相关研究为工程化测试维护问题提供了应用背景~\cite{yang2017wirelessAutoTest, liu2022wirelessTesting}。}无论是工业界工具（如 Healenium~\cite{healenium}）还是日益增长的学术工作~\cite{joseph2026zerocost, mouraReproBreak2026}，相关方案给出的自然回应都是\emph{自愈}\rev{：}在定位器失效时，修复器自动将其重写为指向新文档对象模型（Document Object Model，DOM）中等价元素的形式。近年来，大语言模型（Large Language Model，LLM）被广泛引入软件测试与修复任务~\cite{xiang2025llmRepair, li2025llmFuzzing}，自动测试修复（含定位器修复）是其中最直接受益的方向之一。
+脆弱用户界面（User Interface，UI）测试套件的维护是现代 Web 工程中的持续性成本来源。一次层叠样式表（Cascading Style Sheets，CSS）类名重命名、一次 React 组件重新嵌套，或一次行为不变的处理函数重构，都足以使数十个端到端（End-to-End，E2E）Playwright 测试失效。这一问题在图形用户界面（Graphical User Interface，GUI）测试录制重放与自动生成研究综述中被多次列为关键挑战~\cite{li2022androidReplay, wang2025mobileGui}。国内行业期刊也持续关注软件测试自动化方法及测试技术应用形势，相关研究为工程化测试维护问题提供了应用背景~\cite{yang2017wirelessAutoTest, liu2022wirelessTesting}。无论是工业界工具（如 Healenium~\cite{healenium}）还是持续增长的学术工作~\cite{joseph2026zerocost, mouraReproBreak2026}，相关方案通常都将\emph{自愈}作为应对路径，即在定位器失效时由修复器自动将其重写为指向新文档对象模型（Document Object Model，DOM）中等价元素的形式。近年来，大语言模型（Large Language Model，LLM）被广泛引入软件测试与修复任务~\cite{xiang2025llmRepair, li2025llmFuzzing}，自动测试修复（含定位器修复）已成为其中较直接的受益方向。
 
-这一前景看似乐观，近期文献也使该问题看起来接近解决。Joseph~\cite{joseph2026zerocost} 通过一个确定性可访问性阶梯在\rev{单一演示样例}上报告了 100\% 通过率；当代基于 LLM 的定位器修复工作通常借助一致性\rev{安全约束}报告修复成功率或解释一致性。然而这些指标共享一处结构性盲区：它们衡量的是\emph{\rev{修复后的测试是否通过}}，而非\emph{补丁是否指向开发者真正期望的元素}。一个总能找到“某个”可解析选择器（任何属性近似的元素皆可）的修复器存在隐蔽的危险性——每一次“通过但错指”的修复都会掩盖一次本应被作为回归暴露的真实 UI 变更。
+这一研究方向虽然前景乐观，但现有文献容易给人以问题已接近解决的印象。Joseph~\cite{joseph2026zerocost} 通过一个确定性可访问性阶梯在单一演示样例上报告了 100\% 通过率；当代基于 LLM 的定位器修复工作通常借助一致性安全约束报告修复成功率或解释一致性。然而，这些指标共享一处结构性盲区：相关研究衡量的是修复后的测试是否通过，而不是补丁是否真正指向开发者期望的元素。对于总能找到“某个”可解析选择器的修复器而言，这种盲区具有隐蔽风险，因为每一次“通过但错指”的修复都可能掩盖一次本应暴露为回归的真实 UI 变更。
 
-文章在 ReproBreak~\cite{mouraReproBreak2026} 数据集中的真实 Playwright 失效用例上直接测量这种失败模式。在 koenig 的 75 个可达失效用例上，研究结果显示出明显风险:
+文章在 ReproBreak~\cite{mouraReproBreak2026} 数据集的真实 Playwright 失效用例上直接测量了这一失败模式。在 koenig 的 75 个可达失效用例上，该研究得到以下结果：
 
 \begin{itemize}
 \item \textbf{第一项发现：隐性误修复是默认行为，且软提示\rev{放弃约束}无效。}当真实目标元素被强制从候选集中移除时，朴素 LLM 修复器（\texttt{qwen2.5-coder:7b}~\cite{qwenCoderTech2024}）在 \textbf{78.7\%} 的用例中给出语法正确但元素错误的选择器（59/75）；仅 17.3\% 的情形下能正确放弃。在系统提示中追加明确的“如无候选契合则放弃”\rev{约束}后，结果数字\emph{完全一致}（两版本均为 59/75，$\Delta=0$），表明模型并未将该规则纳入决策。
@@ -13,12 +13,12 @@
 \item \textbf{第三项发现：跨应用泛化受\rev{锚点约定}差异的制约。}在另一 React+Playwright 代码库（\texttt{payloadcms/payload}，319 个失效配对）上，由于其采用 BEM 风格的模板字面量类名、当前静态抽取器无法对其求值，原始可达率从 koenig 的 80.6\% 跌至 3.8\%。本文将其诊断为一处明确且可修复的盲区，而非对方法本身的否证。
 \end{itemize}
 
-\noindent 前两个发现为无人值守自愈流水线引入行为重放验证层提供了直接的经验性动机。第三个发现给出一条可证伪的跨应用泛化论断：任何仅在单一应用上完成基准测试的定位器修复工具，都很可能高估其泛化能力，因为\rev{锚点约定}（\texttt{data-testid} vs \texttt{data-kg-*} vs BEM 模板字面量）在不同 React 代码库之间存在显著差异。
+\noindent 文章的前两个发现为无人值守自愈流水线引入行为重放验证层提供了直接的经验性动机。文章的第三个发现给出一条可证伪的跨应用泛化论断：任何仅在单一应用上完成基准测试的定位器修复工具，都可能高估其泛化能力，因为锚点约定（\texttt{data-testid}、\texttt{data-kg-*} 与 BEM 模板字面量）在不同 React 代码库之间存在显著差异。
 
-此外，文章介绍 HealReact 的 L1 基底 —— 一个抽象语法树（Abstract Syntax Tree，AST）抽取器加一个带确定性后置校准的 LLM 派生意图标注器 —— 该基底静态可达 koenig 93 个失效目标中的 80.6\%；在其之上，一个小型本地 L3 修复器在可达用例上给出正确选择器的比例为 77.3\%（在完整数据集上为 62.4\% 的静态修复代理指标\footnote{文章全文使用“静态修复代理指标”而非“端到端修复率”\rev{：}该指标是选择器解析层面的替代评估指标。解析器在元素层面的精确一致性与 Playwright 通过率\emph{相关}，但既不是其下界也不是其上界（静态精确匹配的选择器可能在可见性/时序约束下运行时失败；静态不匹配的选择器也可能在重渲染 DOM 中运行时通过）。两者之间的换算需要基于 Docker 的真实重放。}）。两个低开销确定性杠杆 —— testId 加权检索与强锚点后置过滤 —— 经二因子析因分离后各带来边际改进、合计 3 个新正确用例、零回归（方向一致，McNemar 未达显著），表明确定性后处理可作为比提示工程更可靠的安全网。
+此外，文章构建了 HealReact 的 L1 基底。该基底由抽象语法树（Abstract Syntax Tree，AST）抽取器和带确定性后置校准的 LLM 派生意图标注器组成，在静态层面可达 koenig 93 个失效目标中的 80.6\%。在这一基底之上，小型本地 L3 修复器在可达用例上的正确选择器比例为 77.3\%（在完整数据集上的静态修复代理指标为 62.4\%\footnote{文章全文使用“静态修复代理指标”而非“端到端修复率”：该指标是选择器解析层面的替代评估指标。解析器在元素层面的精确一致性与 Playwright 通过率相关，但既不是其下界，也不是其上界。静态精确匹配的选择器可能因可见性或时序约束在运行时失败，静态不匹配的选择器也可能在重渲染 DOM 中运行通过。两者之间的换算仍需基于 Docker 的真实重放。}）。testId 加权检索与强锚点后置过滤这两个低开销确定性杠杆经二因子析因分离后分别带来边际改进，合计新增 3 个正确用例且未引入回归。这一结果表明，确定性后处理可作为比提示工程更可靠的安全网。
 
 \noindent\textbf{文章贡献：}（i）在真实 Playwright 数据集上对隐性误修复的诊断性测量，以及对软提示放弃指令无效的展示（\S\ref{sec:findings}）；
 （ii）HealReact 的 L1 基底作为一个可证伪、可本地运行的静态层（\S\ref{sec:l1}）；
 （iii）两个确定性安全杠杆经二因子析因分离，各自带来边际改进、合计 3 增 0 减（方向一致但在 $n=75$ 下 McNemar 未显著，见 \S\ref{sec:findings}）。
 
-78.7\% 是选择器层面的对抗性上界（对抗性构造）；将其与 koenig 真正不可达的 18/93 用例朴素相乘，得到无人值守工作负载下约 15\% 的\emph{粗略上界估计}（而非测得的部署率，详见 \S\ref{sec:findings}）。即便作为上界估计，文章（\S\ref{sec:discussion}）仍认为该风险已经高到足以拒绝在持续集成（Continuous Integration，CI）中无人值守地自动提交 LLM 提出的选择器补丁。
+该研究测得的 78.7\% 是选择器层面的对抗性上界。若将该数值与 koenig 中真正不可达的 18/93 用例作朴素相乘，则可得到无人值守工作负载下约 15\% 的粗略上界估计，而非实测部署率，详见 \S\ref{sec:findings}。即便仅作为上界估计，文章在 \S\ref{sec:discussion} 中仍指出，该风险已经高到不宜在持续集成（Continuous Integration，CI）场景下无人值守地自动提交 LLM 提出的选择器补丁。

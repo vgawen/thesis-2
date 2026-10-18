@@ -1,0 +1,104 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\citation{li2022androidReplay,wang2025mobileGui}
+\citation{yang2017wirelessAutoTest,liu2022wirelessTesting}
+\citation{healenium}
+\citation{joseph2026zerocost,mouraReproBreak2026}
+\citation{xiang2025llmRepair,li2025llmFuzzing}
+\citation{joseph2026zerocost}
+\citation{mouraReproBreak2026}
+\citation{qwenCoderTech2024}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {0}引言}{1}{section.0}\protected@file@percent }
+\newlabel{sec:intro}{{0}{1}{引言}{section.0}{}}
+\citation{mouraReproBreak2026}
+\citation{koenig}
+\citation{li2019programRepair}
+\citation{healenium}
+\citation{joseph2026zerocost}
+\citation{lexicalRichText,koenig}
+\citation{payloadCMS}
+\citation{bemMethodology}
+\@writefile{toc}{\contentsline {section}{\numberline {1}背景与相关工作}{2}{section.1}\protected@file@percent }
+\newlabel{sec:background}{{1}{2}{背景与相关工作}{section.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}定位器脆性与基准数据集}{2}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}自愈工具}{2}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}缺失的部分}{2}{subsection.1.3}\protected@file@percent }
+\citation{tsmorph}
+\citation{ollama}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces HealReact 流水线。L1（本文）是静态 AST 锚点基底，意图标注层在本文中仅在 32 元素的小规模构造样例集上评估；L3 是 \S  \ref {sec:findings} 中评估的 LLM 修复器。L2（运行时 DOM 捕获）与 L4（行为重放验证器）以虚线框表示，二者在本文中均为设计占位、留作后续工作：L2 负责静态不可见的运行时元素，L4 的必要性由 \S  \ref {sec:findings} 中的对抗性误修复探针在经验上得到充分动机化。}}{3}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:arch}{{1}{3}{HealReact 流水线。L1（本文）是静态 AST 锚点基底，意图标注层在本文中仅在 32 元素的小规模\rev {构造样例集}上评估；L3 是 \S \ref {sec:findings} 中评估的 LLM 修复器。L2（运行时 DOM 捕获）与 L4（\rev {行为重放验证器}）以虚线框表示，二者在本文中均为设计占位、留作后续工作：L2 负责静态不可见的运行时元素，L4 的必要性由 \S \ref {sec:findings} 中的对抗性误修复探针在经验上得到充分动机化。}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}React 相关细节}{3}{subsection.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}HealReact L1 静态基底}{3}{section.2}\protected@file@percent }
+\newlabel{sec:l1}{{2}{3}{HealReact L1 静态基底}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}AST 抽取器}{3}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}意图标注器与校准器}{3}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}定位器解析器作为可证伪的透镜}{3}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}核心指标}{4}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}三个实证发现}{4}{section.3}\protected@file@percent }
+\newlabel{sec:findings}{{3}{4}{三个实证发现}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}复现配置}{4}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}共享 L3 协议}{4}{subsection.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 误修复探针（\S  \ref {sec:f1}）。两个提示变体产出\emph  {完全一致}的数字：软提示放弃约束并不降低隐性误修复。}}{4}{table.caption.2}\protected@file@percent }
+\newlabel{tab:falseheal}{{1}{4}{误修复探针（\S \ref {sec:f1}）。两个提示变体产出\emph {完全一致}的数字\rev {：}软提示\rev {放弃约束}并不降低隐性误修复。}{table.caption.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Vanilla 与 Abstain 的逐用例配对交叉表（\S  \ref {sec:f1}，$n=75$）。所有非对角元素均为 0，表明两变体在每一个用例上给出\emph  {完全相同}的判定，而非仅聚合计数相同。}}{4}{table.caption.3}\protected@file@percent }
+\newlabel{tab:falseheal-paired}{{2}{4}{Vanilla 与 Abstain 的逐用例配对交叉表（\S \ref {sec:f1}，$n=75$）。所有非对角元素均为 0，表明两变体在每一个用例上给出\emph {完全相同}的判定，而非仅聚合计数相同。}{table.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}目标缺失下的隐性误修复}{4}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:f1}{{3.3}{4}{目标缺失下的隐性误修复}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}设置}{4}{subsubsection.3.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}结果}{4}{subsubsection.3.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}解读}{4}{subsubsection.3.3.3}\protected@file@percent }
+\citation{payloadCMS}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}L3 基线与两个低开销确定性手段}{5}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:f2}{{3.4}{5}{L3 基线与两个低开销确定性手段}{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}设置}{5}{subsubsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}结果}{5}{subsubsection.3.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces L3 v0 $\to $ v1 端到端对比（75 个可达 koenig 失效）。v1 = v0 + testId 加权检索 + 强锚点后置过滤；v0 为两杠杆均关的统一权重基线。}}{5}{table.caption.4}\protected@file@percent }
+\newlabel{tab:l3-levers}{{3}{5}{L3 v0 $\to $ v1 端到端对比（75 个可达 koenig 失效）。v1 = v0 + testId 加权检索 + 强锚点后置过滤；v0 为两杠杆均关的统一权重基线。}{table.caption.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 两杠杆二因子析因（首位候选精确元素匹配，$n=75$）。行=testId 加权，列=强锚点后置过滤。每个杠杆单独带来 +2、两者合计 +3、零回归；方向一致但在该样本量下未达统计显著。}}{5}{table.caption.5}\protected@file@percent }
+\newlabel{tab:l3-factorial}{{4}{5}{两杠杆二因子析因（\rev {首位候选精确元素匹配}，$n=75$）。行=testId 加权，列=强锚点后置过滤。每个杠杆单独带来 +2、两者合计 +3、零回归；方向一致但在该样本量下未达统计显著。}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}解读}{5}{subsubsection.3.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}跨应用泛化与 BEM 盲区}{5}{subsection.3.5}\protected@file@percent }
+\newlabel{sec:f3}{{3.5}{5}{跨应用泛化与 BEM 盲区}{subsection.3.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}设置}{5}{subsubsection.3.5.1}\protected@file@percent }
+\citation{bemMethodology}
+\citation{cssModules}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces 跨应用 L1 可达率（\S  \ref {sec:f3}）。原始下降是真实的，但成因可诊断。}}{6}{table.caption.6}\protected@file@percent }
+\newlabel{tab:cross-app}{{5}{6}{跨应用 L1 可达率（\S \ref {sec:f3}）。原始下降是真实的，但成因可诊断。}{table.caption.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.2}结果}{6}{subsubsection.3.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3}解读}{6}{subsubsection.3.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}讨论与局限}{6}{section.4}\protected@file@percent }
+\newlabel{sec:discussion}{{4}{6}{讨论与局限}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}78.7\% 对无人值守 CI 自愈意味着什么}{6}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}为什么软提示安全网会失效}{6}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}为什么两个低开销确定性杠杆胜过提示工程}{6}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}局限}{6}{subsection.4.4}\protected@file@percent }
+\bibstyle{gbt7714-numerical}
+\bibdata{references}
+\bibcite{li2022androidReplay}{{1}{2022}{{李聪\ 等}}{{李聪, 蒋炎岩, and 许畅}}}
+\bibcite{wang2025mobileGui}{{2}{2025}{{王博\ 等}}{{王博, 陈冲, 邓明, 董震, 林友芳, and 郝丹}}}
+\bibcite{yang2017wirelessAutoTest}{{3}{2017}{{杨丽波}}{{}}}
+\bibcite{liu2022wirelessTesting}{{4}{2022}{{刘宝银}}{{}}}
+\bibcite{healenium}{{5}{2024}{{Healenium Contributors}}{{}}}
+\bibcite{joseph2026zerocost}{{6}{2026}{{Joseph}}{{}}}
+\bibcite{mouraReproBreak2026}{{7}{2026}{{{DE MOURA} et~al.}}{{{DE MOURA}, Adamietz, Mehboob, and Noller}}}
+\bibcite{xiang2025llmRepair}{{8}{2025}{{香佳宏\ 等}}{{香佳宏, 徐霄阳, 孔繁初, 彭湃, 张钊, and 张煜群}}}
+\bibcite{li2025llmFuzzing}{{9}{2025}{{李岩\ 等}}{{李岩, 杨文章, 张翼, and 薛吟兴}}}
+\bibcite{qwenCoderTech2024}{{10}{2024}{{Hui et~al.}}{{Hui, Yang, Cui, Yang, Liu, Zhang, Lin, et~al.}}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces 解析器 strict/permissive 敏感性（koenig，$n=93$）。permissive 为本文所采用的假设；strict 关闭“动态属性值视为可能匹配”与“同文件祖先近似”两处过近似。}}{7}{table.caption.7}\protected@file@percent }
+\newlabel{tab:resolver-sens}{{6}{7}{解析器 strict/permissive 敏感性（koenig，$n=93$）。permissive 为本文所采用的假设；strict 关闭“动态属性值视为可能匹配”与“同文件祖先近似”两处过近似。}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}有效性威胁}{7}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}未来工作}{7}{subsection.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}结论}{7}{section.5}\protected@file@percent }
+\newlabel{sec:conclusion}{{5}{7}{结论}{section.5}{}}
+\bibcite{koenig}{{11}{2025}{{Ghost Foundation}}{{}}}
+\bibcite{li2019programRepair}{{12}{2019}{{李斌\ 等}}{{李斌, 贺也平, and 马恒太}}}
+\bibcite{lexicalRichText}{{13}{2025}{{Meta Open Source}}{{}}}
+\bibcite{payloadCMS}{{14}{2025}{{Payload CMS Inc.}}{{}}}
+\bibcite{bemMethodology}{{15}{2009}{{Yandex}}{{}}}
+\bibcite{tsmorph}{{16}{2024}{{Sherret}}{{}}}
+\bibcite{ollama}{{17}{2024}{{Ollama Contributors}}{{}}}
+\bibcite{cssModules}{{18}{2020}{{CSS Modules Authors}}{{}}}
+\gdef \@abspage@last{8}
