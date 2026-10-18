@@ -81,6 +81,28 @@ def chat(model: str, system: str, user: str) -> str:
     return j["choices"][0]["message"]["content"]
 
 
+def chat_with_retry(args, model: str, system: str, user: str) -> str:
+    """Chat with optional 429/5xx backoff for non-Ollama backends.
+
+    Defaults (max_retries=0) preserve the original single-shot behaviour used
+    by the qwen2.5-coder:7b runs.
+    """
+    for attempt in range(args.max_retries + 1):
+        try:
+            return chat(model, system, user)
+        except urllib.error.HTTPError as e:
+            retryable = e.code == 429 or e.code >= 500
+            if not retryable or attempt >= args.max_retries:
+                raise
+            retry_after = e.headers.get("Retry-After")
+            delay = float(retry_after) if retry_after else min(
+                60.0, args.retry_base_sec * (2 ** attempt))
+            print(f"rate limited by API; retrying in {delay:.1f}s "
+                  f"(attempt {attempt + 1}/{args.max_retries})", file=sys.stderr)
+            time.sleep(delay)
+    raise RuntimeError("unreachable retry loop exit")
+
+
 def parse_response(s: str) -> dict:
     """Parse SELECTOR: / CANDIDATE_IDX: / RATIONALE: lines from LLM output."""
     out = {"selector": "", "candidate_idx": -1, "rationale": ""}
@@ -283,6 +305,13 @@ def main() -> int:
                     help="disable testId x3 retrieval weighting (use uniform anchor weights)")
     ap.add_argument("--no-post-filter", dest="post_filter", action="store_false",
                     help="disable deterministic strong-anchor post-filter (getByTestId rewrite)")
+    # Optional API pacing/backoff; defaults preserve the original Ollama behaviour.
+    ap.add_argument("--request-delay-sec", type=float,
+                    default=float(os.environ.get("HEALREACT_REQUEST_DELAY_SEC", "0")))
+    ap.add_argument("--max-retries", type=int,
+                    default=int(os.environ.get("HEALREACT_MAX_RETRIES", "0")))
+    ap.add_argument("--retry-base-sec", type=float,
+                    default=float(os.environ.get("HEALREACT_RETRY_BASE_SEC", "5.0")))
     ap.set_defaults(testid_weighting=True, post_filter=True)
     args = ap.parse_args()
     testid_weight = 3 if args.testid_weighting else 1
@@ -336,11 +365,15 @@ def main() -> int:
         )
         t = time.time()
         try:
-            raw = chat(args.model, SYSTEM_PROMPT, user_prompt)
+            raw = chat_with_retry(args, args.model, SYSTEM_PROMPT, user_prompt)
             obj = parse_response(raw)
         except Exception as e:
             results.append({"id": meta["id"], "error": str(e)})
+            if args.request_delay_sec > 0:
+                time.sleep(args.request_delay_sec)
             continue
+        if args.request_delay_sec > 0:
+            time.sleep(args.request_delay_sec)
 
         proposed = obj.get("selector", "")
         cand_idx = obj.get("candidate_idx", -1)
@@ -410,6 +443,10 @@ def main() -> int:
 
     args.out.write_text(json.dumps({
         "model": args.model,
+        "api_base": API_BASE,
+        "request_delay_sec": args.request_delay_sec,
+        "max_retries": args.max_retries,
+        "retry_base_sec": args.retry_base_sec,
         "n": len(all_cases),
         "exact_match": exact,
         "same_file_match": same_file,

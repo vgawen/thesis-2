@@ -1,0 +1,1658 @@
+{
+  "model": "deepseek-v4-flash",
+  "api_base": "https://api.deepseek.com/v1",
+  "request_delay_sec": 0.5,
+  "max_retries": 8,
+  "retry_base_sec": 5.0,
+  "n": 75,
+  "exact_match": 68,
+  "same_file_match": 69,
+  "valid_selector": 73,
+  "elapsed_sec": 279.5,
+  "rows": [
+    {
+      "id": 702,
+      "commit": "02d257a7",
+      "old_locator": "page.locator('[data-test-id=\"color-picker-accent\"]')",
+      "new_locator": "page.locator('[data-testid=\"color-picker-accent\"]')",
+      "proposed_selector": "page.getByTestId('color-picker-accent')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 1,
+      "guard_note": "",
+      "rationale": "Same ColorOption button; only the attribute name was wrong (data-test-id vs data-testid).",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 4016
+    },
+    {
+      "id": 703,
+      "commit": "02d257a7",
+      "old_locator": "page.locator('[data-test-id=\"color-picker-text\"]')",
+      "new_locator": "page.locator('[data-testid=\"color-picker-text\"]')",
+      "proposed_selector": "page.getByTestId('color-picker-text')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 1,
+      "guard_note": "",
+      "rationale": "The color option button receives the dynamic test id color-picker-text, matching the intended text color option.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 5708
+    },
+    {
+      "id": 749,
+      "commit": "0f131733",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]').filter({ hasText: 'snippet' })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 1,
+      "guard_note": "",
+      "rationale": "Selected item is the CardSnippetItem div menuitem; keep data-kg anchor (value is JS expr) and text filter.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 9667
+    },
+    {
+      "id": 768,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 is the MediaPlaceholder with the matching media-upload-placeholder test id.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1751
+    },
+    {
+      "id": 769,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('custom-thumbnail-filled'))",
+      "new_locator": "page.getByTestId('media-upload-filled'))",
+      "proposed_selector": "page.getByTestId('media-upload-filled')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 3,
+      "guard_note": "",
+      "rationale": "Candidate 3 is the filled media-upload thumbnail state the test now expects.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2628
+    },
+    {
+      "id": 770,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder'))",
+      "new_locator": "page.getByTestId('media-upload-placeholder'))",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "MediaPlaceholder carries the media-upload-placeholder testid, the intended placeholder shown after removal.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1974
+    },
+    {
+      "id": 771,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "MediaPlaceholder component now exposes testId media-upload-placeholder, matching the test's expected thumbnail placeholder element.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1634
+    },
+    {
+      "id": 772,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "MediaPlaceholder component exposes media-upload-placeholder testid for the empty thumbnail state.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1358
+    },
+    {
+      "id": 774,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "The MediaPlaceholder component carries the matching data-testid in the same upload flow.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1714
+    },
+    {
+      "id": 775,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 is the MediaPlaceholder drop zone matching the context's expected test id.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1750
+    },
+    {
+      "id": 776,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "The MediaPlaceholder retains the media-upload-placeholder test id used in the context line.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1628
+    },
+    {
+      "id": 777,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('custom-thumbnail-filled'))",
+      "new_locator": "page.getByTestId('media-upload-filled'))",
+      "proposed_selector": "page.getByTestId('media-upload-filled')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 3,
+      "guard_note": "",
+      "rationale": "Candidate 3 is the filled media-upload state in the same SettingsPanel, matching the assertion's intent.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1717
+    },
+    {
+      "id": 778,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 exposes the same media-upload-placeholder test id used by the test line.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1443
+    },
+    {
+      "id": 779,
+      "commit": "1a453f7c",
+      "old_locator": "page.getByTestId('thumbnail-media-placeholder')",
+      "new_locator": "page.getByTestId('media-upload-placeholder')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "MediaPlaceholder now exposes the renamed test id used by the test for drop events.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1857
+    },
+    {
+      "id": 780,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 is the MediaPlaceholder carrying the exact data-testid the test waits on.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1623
+    },
+    {
+      "id": 781,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 has the matching media-upload-placeholder test id for the media placeholder element.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2042
+    },
+    {
+      "id": 782,
+      "commit": "1a453f7c",
+      "old_locator": "page.waitForSelector('[data-testid=\"thumbnail-media-placeholder\"]')",
+      "new_locator": "page.waitForSelector('[data-testid=\"media-upload-placeholder\"]')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 has the exact media-upload-placeholder testid used in the test line.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1093
+    },
+    {
+      "id": 746,
+      "commit": "3ba4b1aa",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-card-menu-item][data-kg-cardmenu-selected]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Targets the selected snippet menu item via stable data-kg attributes without relying on the boolean value.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 5043
+    },
+    {
+      "id": 704,
+      "commit": "47847878",
+      "old_locator": "page.click('[data-testid=\"media-upload-placeholder\"]')",
+      "new_locator": "page.getByTestId('cta-background-color-picker')",
+      "proposed_selector": "page.getByTestId('media-upload-placeholder')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 1,
+      "guard_note": "",
+      "rationale": "Refactored v2 card now renders the placeholder via MediaUploaderBeta, same test id.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        91
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 5731
+    },
+    {
+      "id": 750,
+      "commit": "7efd028b",
+      "old_locator": "page.locator('[data-testid=\"signup-card-container\"]')",
+      "new_locator": "page.locator('[data-testid=\"signup-card-content\"]')",
+      "proposed_selector": "page.getByTestId('signup-card-content')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 1,
+      "guard_note": "",
+      "rationale": "The class assertion targets the content div that now carries the flex-row-reverse class.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2453
+    },
+    {
+      "id": 836,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "new_locator": "page.getByTestId('tk-indicator')",
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "selector_syntax_valid": true,
+      "candidate_idx": -1,
+      "guard_note": "",
+      "rationale": "No candidates returned; context indicates the tk-indicator test id marks the same element.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2248
+    },
+    {
+      "id": 837,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]'))",
+      "new_locator": "page.getByTestId('tk-indicator'))",
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "selector_syntax_valid": true,
+      "candidate_idx": -1,
+      "guard_note": "",
+      "rationale": "No candidates given; fall back to the testid asserted in the surrounding source line.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2566
+    },
+    {
+      "id": 839,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "new_locator": "page.getByTestId('tk-indicator')",
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "selector_syntax_valid": true,
+      "candidate_idx": -1,
+      "guard_note": "",
+      "rationale": "No candidates provided; the test's own test-id anchor on the same element is the steadiest reference.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2297
+    },
+    {
+      "id": 840,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "new_locator": "page.getByTestId('tk-indicator')",
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "selector_syntax_valid": true,
+      "candidate_idx": -1,
+      "guard_note": "",
+      "rationale": "No candidates provided; context line directly targets tk-indicator test id for this element.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 3432
+    },
+    {
+      "id": 841,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "new_locator": "page.getByTestId('tk-indicator')",
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "selector_syntax_valid": true,
+      "candidate_idx": -1,
+      "guard_note": "",
+      "rationale": "No candidates provided; fall back to the test-id of the same ticket indicator control.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2691
+    },
+    {
+      "id": 842,
+      "commit": "88a6de9d",
+      "old_locator": "page.locator('[data-has-tk]')",
+      "new_locator": "page.getByTestId('tk-indicator')",
+      "proposed_selector": "page.getByTestId('tk-indicator')",
+      "selector_syntax_valid": true,
+      "candidate_idx": -1,
+      "guard_note": "",
+      "rationale": "No candidates rendered; test line exposes stable test id 'tk-indicator' for the same token indicator.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        89
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2303
+    },
+    {
+      "id": 616,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Same data attribute present on the FloatingToolbar root div; retained as stable test anchor.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1692
+    },
+    {
+      "id": 619,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Same data-kg-floating-toolbar anchor on FloatingToolbar root; keep locator for toHaveCount.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1807
+    },
+    {
+      "id": 626,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-button]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 still carries the data-kg-plus-button attribute on the PlusMenu element.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1413
+    },
+    {
+      "id": 627,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-button]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 still carries the data-kg-plus-button anchor on the same plus-button element.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2762
+    },
+    {
+      "id": 628,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-button]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Same data-kg-plus-button anchor persists on the PlusMenu button container.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1579
+    },
+    {
+      "id": 634,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-button]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Same data-kg-plus-button attribute persists on the PlusMenu div, so the count assertion still targets it.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1548
+    },
+    {
+      "id": 638,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-button]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Same data-kg-plus-button anchor still exists on the plus button div in PlusMenu.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1394
+    },
+    {
+      "id": 640,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 3,
+      "guard_note": "",
+      "rationale": "The plus button is now the aria-labeled button; its data attribute moved to an always-rendered wrapper.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 4507
+    },
+    {
+      "id": 644,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 3,
+      "guard_note": "",
+      "rationale": "Refactor left data-kg-plus-button on a wrapper div; the real plus button is the labeled button.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 8798
+    },
+    {
+      "id": 647,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.getByRole('button', { name: 'Add a card' })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 3,
+      "guard_note": "",
+      "rationale": "The real plus button is the button with aria-label \"Add a card\"; data-kg-plus-button moved to a wrapper.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/DesignSandbox.jsx",
+        172
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 5219
+    },
+    {
+      "id": 649,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 is the plus-menu container carrying the stable data-kg-plus-menu anchor.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1896
+    },
+    {
+      "id": 652,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 still carries the data-kg-plus-menu anchor, so keep the same stable attribute.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1786
+    },
+    {
+      "id": 655,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 carries the original data-kg-plus-menu attribute; same element, more stable than role/aria.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1673
+    },
+    {
+      "id": 660,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "data-kg-plus-menu anchor still exists on the PlusMenu root element; same functional target.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2625
+    },
+    {
+      "id": 662,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-button]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 1,
+      "guard_note": "",
+      "rationale": "Candidate 1 carries the stable data-kg-plus-button anchor matching the plus button element.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1842
+    },
+    {
+      "id": 664,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-menu]'))",
+      "new_locator": "page.locator('[data-kg-plus-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-menu]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "The plus menu div retains the data-kg-plus-menu anchor; use locator form.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        20
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 4809
+    },
+    {
+      "id": 783,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-plus-button]'))",
+      "new_locator": "page.locator('[data-kg-plus-button]'))",
+      "proposed_selector": "page.locator('[data-kg-plus-button]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 still exposes the data-kg-plus-button anchor, preserving the same element.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/PlusMenu.jsx",
+        5
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1741
+    },
+    {
+      "id": 784,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-slash-menu]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "SlashMenu root still carries data-kg-slash-menu, so locator with count assertion targets the same menu element.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 5329
+    },
+    {
+      "id": 785,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-slash-menu]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 retains the data-kg-slash-menu anchor in the refactored SlashMenu component.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1731
+    },
+    {
+      "id": 786,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Same data-kg-floating-toolbar attribute present on the single FloatingToolbar candidate; locator API used.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1488
+    },
+    {
+      "id": 788,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate retains the same data-kg-floating-toolbar attribute, the most stable anchor available.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1361
+    },
+    {
+      "id": 793,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-slash-menu]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 is the SlashMenu root carrying the same data-kg-slash-menu anchor.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1887
+    },
+    {
+      "id": 794,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-slash-menu]'))",
+      "new_locator": "page.locator('[data-kg-slash-menu]'))",
+      "proposed_selector": "page.locator('[data-kg-slash-container]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 1,
+      "guard_note": "",
+      "rationale": "Refactor moved the slash-menu marker to the plugin's container wrapper, which now hosts the menu.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/plugins/SlashCardMenuPlugin.jsx",
+        304
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/SlashMenu.jsx",
+        3
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 8049
+    },
+    {
+      "id": 795,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 retains the data-kg-floating-toolbar attribute; the old page.$ selector usage was the actual breakage.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1348
+    },
+    {
+      "id": 797,
+      "commit": "93882b2c",
+      "old_locator": "page.$('[data-kg-floating-toolbar]'))",
+      "new_locator": "page.locator('[data-kg-floating-toolbar]'))",
+      "proposed_selector": "page.locator('[data-kg-floating-toolbar]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate retains the same data-kg-floating-toolbar anchor, now queried via page.locator like the test line.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/FloatingToolbar.jsx",
+        77
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1825
+    },
+    {
+      "id": 685,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-card-menu-item][data-kg-cardmenu-selected]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Selected snippet item now identified by stable card-menu data attributes and text filter.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 5460
+    },
+    {
+      "id": 698,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]').filter({ hasText: 'snippet' })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Use surviving data attribute on menu item button, filtered by snippet text.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 7434
+    },
+    {
+      "id": 699,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]').filter({ hasText: 'snippet' })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "The selected attr value is a JS expression, so omit value and keep the hasText filter on the menu item.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 10111
+    },
+    {
+      "id": 700,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-card-menu-item]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Uses stable card-menu item data attribute on the same menuitem button.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 4812
+    },
+    {
+      "id": 705,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]').filter({ hasText: 'snippet' })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Reuses the same data-kg attribute (value is dynamic, so no value) on the menuitem button, filtered by snippet text.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 6610
+    },
+    {
+      "id": 709,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Selected menu item keeps data-kg-cardmenu-selected (JS value, so omit it); filter by text still works.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2942
+    },
+    {
+      "id": 714,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Selected menu item carries data-kg-cardmenu-selected on the role=menuitem button; value is dynamic so omitted.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 3317
+    },
+    {
+      "id": 720,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Selected state captured via data-kg-cardmenu-selected now a JS expression, so value omitted; text filter targets snippet item.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 5914
+    },
+    {
+      "id": 723,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-card-menu-item]').filter({ hasText: 'snippet' })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Uses the stable card-menu item data attribute on the target button and filters by item text.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 8649
+    },
+    {
+      "id": 724,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-card-menu-item][data-kg-cardmenu-selected]').filter({hasText: 'snippet'})",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 is the selected card menu item and has stable data attributes.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 5942
+    },
+    {
+      "id": 756,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-card-menu-item]').filter({ hasText: 'snippet' })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Stable data-kg-card-menu-item anchor identifies the snippet menu item on candidate 0.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 10292
+    },
+    {
+      "id": 764,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-card-menu-item][data-kg-cardmenu-selected]').filter({ hasText: 'snippet' })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Use the card-menu item's data attributes, omitting dynamic JS values, and keep the snippet text filter.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 17551
+    },
+    {
+      "id": 834,
+      "commit": "be7221b0",
+      "old_locator": "page.waitForSelector('[data-kg-cardmenu-selected=\"true\"]')",
+      "new_locator": "page.locator('[data-kg-cardmenu-selected=\"true\"]')",
+      "proposed_selector": "page.locator('[data-kg-cardmenu-selected]').filter({hasText: 'planes'})",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Attribute value is now a JS boolean, so match by attribute presence plus text filter.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2957
+    },
+    {
+      "id": 614,
+      "commit": "c5a1dbf5",
+      "old_locator": "page.locator('[data-kg-card-toolbar=\"html\"] [aria-label=\"Visibility\"]'))",
+      "new_locator": "page.locator('[data-kg-card-toolbar=\"html\"] [data-testid=\"edit-html\"]'))",
+      "proposed_selector": "page.locator('[data-kg-card-toolbar=\"html\"]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "The Visibility aria-label no longer exists; the toolbar's data-kg-card-toolbar=\"html\" is the stable anchor.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/nodes/HtmlNodeComponent.jsx",
+        107
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/nodes/HtmlNodeComponent.jsx",
+        119
+      ],
+      "exact_match": false,
+      "same_file_match": true,
+      "ms": 3349
+    },
+    {
+      "id": 615,
+      "commit": "c5a1dbf5",
+      "old_locator": "page.getByTestId('visibility-show-on-web-Toggle')",
+      "new_locator": "page.getByTestId('visibility-show-on-web')",
+      "proposed_selector": "page.getByTestId('visibility-show-on-web')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "The ToggleSetting root now exposes the plain testid used elsewhere in the test, dropping the \"-Toggle\" suffix.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        90
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        90
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1852
+    },
+    {
+      "id": 765,
+      "commit": "cabe34a7",
+      "old_locator": "page.getByTestId('custom-thumbnail-replace')",
+      "new_locator": "page.getByTestId('media-upload-remove')",
+      "proposed_selector": "page.getByTestId('remove-thumbnail')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 6,
+      "guard_note": "",
+      "rationale": "Same remove/replace-thumbnail action; refactor moved it to the remove-thumbnail IconButton testid.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 6369
+    },
+    {
+      "id": 766,
+      "commit": "cabe34a7",
+      "old_locator": "page.getByTestId('custom-thumbnails-errors'))",
+      "new_locator": "page.getByTestId('media-upload-errors'))",
+      "proposed_selector": "page.getByTestId('thumbnail-errors')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 2,
+      "guard_note": "",
+      "rationale": "Same error message element for thumbnail upload, now anchored by its stable test id.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2193
+    },
+    {
+      "id": 767,
+      "commit": "cabe34a7",
+      "old_locator": "page.getByTestId('custom-thumbnails-errors'))",
+      "new_locator": "page.getByTestId('media-upload-errors'))",
+      "proposed_selector": "page.getByTestId('thumbnail-errors')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 2,
+      "guard_note": "",
+      "rationale": "The errors element's testid was renamed to thumbnail-errors, same functional error display.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/Button.jsx",
+        15
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1996
+    },
+    {
+      "id": 715,
+      "commit": "ddee33cf",
+      "old_locator": "page.locator('[data-kg-card-menu-item=\"Call to Action\"]'))",
+      "new_locator": "page.locator('[data-kg-card-menu-item=\"Call to action\"]'))",
+      "proposed_selector": "page.getByRole('menuitem', { name: 'Call to action', exact: true })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Menu item is now a role=menuitem button whose dynamic data attribute can't be value-matched.",
+      "proposed_target": null,
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 4765
+    },
+    {
+      "id": 716,
+      "commit": "ddee33cf",
+      "old_locator": "page.locator('[data-kg-card-menu-item=\"Call to Action\"]'))",
+      "new_locator": "page.locator('[data-kg-card-menu-item=\"Call to action\"]'))",
+      "proposed_selector": "page.getByRole('menuitem', { name: 'Call to action' })",
+      "selector_syntax_valid": true,
+      "candidate_idx": 0,
+      "guard_note": "",
+      "rationale": "Candidate 0 is the CTA menu item; use role and accessible name since its data attribute value is dynamic.",
+      "proposed_target": null,
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardMenu.jsx",
+        50
+      ],
+      "exact_match": false,
+      "same_file_match": false,
+      "ms": 8660
+    },
+    {
+      "id": 621,
+      "commit": "ecee2a8e",
+      "old_locator": "page.locator('[data-kg-card=\"markdown\"]'))",
+      "new_locator": "page.locator('[data-kg-card=\"codeblock\"]'))",
+      "proposed_selector": "page.locator('[data-kg-card]')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 7,
+      "guard_note": "",
+      "rationale": "CardWrapper's data-kg-card is the card anchor; its value is dynamic so it is omitted.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardWrapper.jsx",
+        53
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/ui/CardWrapper.jsx",
+        53
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 2634
+    },
+    {
+      "id": 688,
+      "commit": "f2d79731",
+      "old_locator": "page.getByTestId('audio-caption')",
+      "new_locator": "page.getByTestId('audio-title')",
+      "proposed_selector": "page.getByTestId('audio-card-populated').getByTestId(/caption/)",
+      "selector_syntax_valid": true,
+      "candidate_idx": 2,
+      "guard_note": "",
+      "rationale": "Audio card container is stable; caption editor inside it is the refactored target.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 5755
+    },
+    {
+      "id": 689,
+      "commit": "f2d79731",
+      "old_locator": "page.getByTestId('audio-caption'))",
+      "new_locator": "page.getByTestId('audio-title'))",
+      "proposed_selector": "page.getByTestId('audio-title')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 3,
+      "guard_note": "",
+      "rationale": "Audio caption/title editor now exposes stable data-testid audio-title on the TextInput.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 1940
+    },
+    {
+      "id": 690,
+      "commit": "f2d79731",
+      "old_locator": "page.getByTestId('audio-caption'))",
+      "new_locator": "page.getByTestId('audio-title'))",
+      "proposed_selector": "page.getByTestId('audio-title')",
+      "selector_syntax_valid": true,
+      "candidate_idx": 3,
+      "guard_note": "",
+      "rationale": "AudioCard's caption was replaced by the title TextInput, matching the awaited audio-title element.",
+      "proposed_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "ground_truth_target": [
+        "bench/cases/koenig/_src/koenig-master/packages/koenig-lexical/src/components/KoenigComposableEditor.jsx",
+        87
+      ],
+      "exact_match": true,
+      "same_file_match": true,
+      "ms": 5299
+    }
+  ]
+}
