@@ -10,6 +10,7 @@
 | `Playwright 测试自愈隐性误修复检测与防范方法.docx` | 投稿用 Word 稿 |
 | `figures/fig1_workflow.png` | 图 1 源文件 |
 | `STYLE_NOTES.md` | 四篇样刊的行文与规格分析 |
+| `TERMINOLOGY.md` | 术语清单、统一口径与确认状态 |
 | `README.md` | 本文件 |
 
 ## 稿件与样刊的匹配情况
